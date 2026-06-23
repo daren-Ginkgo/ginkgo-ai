@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ginkgo AI — The Advice Engine</title>
+    <meta name="description" content="Ginkgo AI: an internal tool for Ginkgo advisers. The Advice Engine drafts suitability reports and annual advice meeting documents in house style, runs a compliance check, and outputs Word files.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon: drop the portrait logo in as assets/favicon.png (32/64/128px) -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ---------- Ginkgo brand variables (from the brand bible) ---------- */
+        :root {
+            --ginkgo-gold: #dd971a;
+            --ginkgo-grey: #545850;
+            --white: #ffffff;
+            --black: #000000;
+            --light-grey-bg: #f5f5f4;
+            --gold-hover: #c58615;
+            --grey-hover: #3d3f3b;
+            --gold-subtle: rgba(221, 151, 26, 0.15);
+            --font-primary: 'Mulish', sans-serif;
+            --section-spacing: 100px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--ginkgo-grey);
+            line-height: 1.6;
+            font-size: 18px;
+            background: var(--white);
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        h1 { font-size: 48px; font-weight: 700; color: var(--black); margin-bottom: 20px; line-height: 1.2; }
+        h2 { font-size: 36px; font-weight: 700; color: var(--ginkgo-grey); margin-bottom: 20px; line-height: 1.3; }
+        h3 { font-size: 24px; font-weight: 600; color: var(--ginkgo-grey); margin-bottom: 14px; line-height: 1.4; }
+        h4 { font-size: 22px; font-weight: 600; color: var(--ginkgo-grey); margin-bottom: 12px; }
+        p  { margin-bottom: 16px; font-size: 18px; font-weight: 400; }
+
+        /* ---------- Buttons ---------- */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            font-family: var(--font-primary);
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-weight: 700;
+        }
+        .btn-primary { background: var(--ginkgo-gold); color: var(--white); }
+        .btn-primary:hover {
+            background: var(--gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(221, 151, 26, 0.3);
+        }
+        .btn-secondary { background: transparent; color: var(--ginkgo-grey); border: 2px solid var(--ginkgo-grey); }
+        .btn-secondary:hover { background: var(--ginkgo-grey); color: var(--white); }
+        .btn-lg { padding: 20px 44px; font-size: 20px; }
+
+        /* ---------- Header ---------- */
+        .header { background: var(--white); padding: 18px 0; border-bottom: 1px solid var(--light-grey-bg); position: sticky; top: 0; z-index: 50; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo img { width: 240px; height: auto; max-width: 62vw; }
+        @media (max-width: 1024px) { .logo img { width: 200px; } }
+        @media (max-width: 768px)  { .logo img { width: 160px; } }
+        /* Wordmark fallback (shows if the logo image is not present yet) */
+        .logo-wordmark { display: flex; align-items: center; gap: 10px; }
+        .logo-leaf { width: 34px; height: 34px; }
+        .logo-text { font-size: 26px; font-weight: 700; color: var(--ginkgo-grey); letter-spacing: -0.5px; }
+        .logo-text span { color: var(--ginkgo-gold); }
+        .header nav { display: flex; gap: 24px; align-items: center; }
+        .nav-link { color: var(--ginkgo-grey); text-decoration: none; font-weight: 600; font-size: 16px; }
+        .nav-link:hover { color: var(--ginkgo-gold); }
+        .nav-cta { background: var(--ginkgo-gold); color: var(--white); padding: 10px 20px; border-radius: 4px; }
+        .nav-cta:hover { background: var(--gold-hover); color: var(--white); }
+        @media (max-width: 680px) { .header nav .nav-link { display: none; } }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-grey-bg) 100%);
+            padding: 110px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -150px; right: -150px;
+            width: 520px; height: 520px;
+            background-image: url('assets/GF_Symbol_RGB_Gold.png');
+            background-size: contain; background-repeat: no-repeat;
+            opacity: 0.15;
+        }
+        .hero-content { max-width: 720px; position: relative; z-index: 1; }
+        .hero-subtitle { font-size: 20px; color: var(--ginkgo-gold); font-weight: 700; margin-bottom: 12px; letter-spacing: 0.5px; }
+        .hero-buttons { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 32px; }
+
+        /* ---------- Sections ---------- */
+        .section { padding: var(--section-spacing) 0; }
+        .section-alt { background: var(--light-grey-bg); }
+        .section-head { max-width: 760px; margin-bottom: 12px; }
+        .section-head .eyebrow { font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--ginkgo-gold); font-weight: 700; margin-bottom: 10px; }
+
+        /* ---------- Cards ---------- */
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; margin-top: 44px; }
+        .card { background: var(--white); padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+        .card-icon { width: 60px; height: 60px; background: var(--gold-subtle); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 28px; }
+        .card p { font-size: 16px; margin-bottom: 0; }
+
+        /* ---------- Steps ---------- */
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; margin-top: 44px; }
+        .step { position: relative; padding-left: 8px; }
+        .step-num { width: 44px; height: 44px; border-radius: 50%; background: var(--ginkgo-gold); color: var(--white); font-weight: 700; font-size: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+        .step p { font-size: 16px; }
+
+        /* ---------- Portal CTA band ---------- */
+        .portal { background: var(--ginkgo-grey); color: var(--white); text-align: center; padding: 80px 0; position: relative; overflow: hidden; }
+        .portal::before {
+            content: '';
+            position: absolute; bottom: -120px; left: -120px;
+            width: 380px; height: 380px;
+            background-image: url('assets/GF_Symbol_W.png');
+            background-size: contain; background-repeat: no-repeat;
+            opacity: 0.15;
+        }
+        .portal h2 { color: var(--white); }
+        .portal p { color: rgba(255,255,255,0.85); max-width: 600px; margin-left: auto; margin-right: auto; }
+        .portal-inner { position: relative; z-index: 1; }
+
+        /* ---------- Notice box ---------- */
+        .notice { background: var(--light-grey-bg); border-left: 4px solid var(--ginkgo-gold); border-radius: 8px; padding: 28px 32px; margin-top: 28px; }
+        .notice ul { list-style: none; }
+        .notice li { position: relative; padding-left: 30px; margin-bottom: 14px; font-size: 17px; }
+        .notice li:last-child { margin-bottom: 0; }
+        .notice li::before { content: '🌳'; position: absolute; left: 0; top: 0; }
+        .notice strong { color: var(--ginkgo-grey); }
+
+        /* ---------- Reassurance / trust ---------- */
+        .trust-badges { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+        .badge { background: var(--white); padding: 12px 18px; border-radius: 4px; font-size: 14px; font-weight: 600; color: var(--ginkgo-grey); border: 1px solid #e5e5e3; }
+
+        /* ---------- Footer ---------- */
+        .footer { background: var(--ginkgo-grey); color: var(--white); padding: 60px 0 30px; }
+        .footer strong { color: var(--white); }
+        .footer p { color: rgba(255,255,255,0.8); font-size: 14px; }
+        .footer .disclaimer { margin-top: 22px; font-size: 13px; }
+        .footer-links { display: flex; gap: 28px; margin-top: 24px; flex-wrap: wrap; }
+        .footer-link { color: var(--white); text-decoration: none; font-size: 14px; }
+        .footer-link:hover { color: var(--ginkgo-gold); }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 34px; }
+            h2 { font-size: 27px; }
+            .section { padding: 64px 0; }
+            .hero { padding: 72px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HEADER ============ -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#top" class="logo">
+                    <!-- Official primary web logo: drop GF_Landscape_RGB_OnWhite.png into the /assets folder.
+                         Until it's there, the brand wordmark below shows instead. -->
+                    <img src="assets/GF_Landscape_RGB_OnWhite.png" alt="Ginkgo Financial"
+                         onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';">
+                    <span class="logo-wordmark" id="logoFallback" style="display:none;">
+                        <svg class="logo-leaf" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path fill="#dd971a" d="M50 6 C30 30 12 44 12 66 c0 16 16 28 38 28 s38-12 38-28 C88 44 70 30 50 6 Z M50 16 v78"
+                                  stroke="#dd971a" stroke-width="2"/>
+                        </svg>
+                        <span class="logo-text">Ginkgo<span> Financial</span></span>
+                    </span>
+                </a>
+                <nav>
+                    <a href="#what" class="nav-link">What it does</a>
+                    <a href="#how" class="nav-link">How it works</a>
+                    <a href="#notes" class="nav-link">Before you start</a>
+                    <a href="#launch" class="nav-link nav-cta">Open the app</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <span id="top"></span>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-subtitle">Ginkgo AI · for our advisers</div>
+                <h1>The Advice Engine</h1>
+                <p>Draft suitability reports and annual advice meeting documents in our house style — in minutes, not hours. The engine does the heavy lifting; you review, refine and sign off. Built for the Ginkgo team and our AI Pathfinders partners.</p>
+                <div class="hero-buttons">
+                    <a href="#launch" class="btn btn-primary btn-lg">Open the app</a>
+                    <a href="#what" class="btn btn-secondary">See what it does</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ WHAT IT DOES ============ -->
+    <section class="section" id="what">
+        <div class="container">
+            <div class="section-head">
+                <div class="eyebrow">What it does</div>
+                <h2>Your first draft, done for you</h2>
+                <p>Upload the case material and the engine produces a tidy first draft in our approved wording and layout. You stay in control — every document is yours to review, edit and sign off.</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">📄</div>
+                    <h3>Suitability reports</h3>
+                    <p>Drafts a full suitability report in the Ginkgo house style — summary first, client-friendly headings, and clear cost, plan and income tables.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🗓️</div>
+                    <h3>Annual advice meeting docs</h3>
+                    <p>Prepares your AAM documents for pre- and post-meeting, following our checklists so nothing important gets missed.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✅</div>
+                    <h3>Built-in compliance check</h3>
+                    <p>Runs a compliance check, flags genuine gaps as "information required", and never invents missing client facts.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📝</div>
+                    <h3>Ready-to-use Word files</h3>
+                    <p>Outputs polished Word documents in our font and layout — a clean client report plus a separate adviser QA file.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section section-alt" id="how">
+        <div class="container">
+            <div class="section-head">
+                <div class="eyebrow">How it works</div>
+                <h2>Getting started takes a minute</h2>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h4>Add your material</h4>
+                    <p>Upload the case documents (PDF, Word, text or CSV) or paste them in. Use dummy or anonymised data only.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h4>Check the data</h4>
+                    <p>The engine reviews what you've added and lists what's there and what's missing. Fill any gaps, then re-check.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h4>Build, review and sign off</h4>
+                    <p>Generate the Word documents, read them through carefully, make any changes, and apply your sign-off.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ BEFORE YOU START (governance notice) ============ -->
+    <section class="section" id="notes">
+        <div class="container">
+            <div class="section-head">
+                <div class="eyebrow">Before you start</div>
+                <h2>A few important ground rules</h2>
+            </div>
+            <div class="notice">
+                <ul>
+                    <li><strong>This is a prototype.</strong> It's here to test the experience, not the finished secure product.</li>
+                    <li><strong>Dummy or anonymised data only.</strong> Please don't put real client information into the app.</li>
+                    <li><strong>Every draft needs human sign-off.</strong> The engine produces a first draft — you remain responsible for checking and approving it.</li>
+                    <li><strong>It won't invent facts.</strong> Genuine gaps are flagged as "information required" rather than filled in.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PORTAL / LAUNCH ============ -->
+    <section class="portal" id="launch">
+        <div class="container portal-inner">
+            <h2>Open the Advice Engine</h2>
+            <p>The app opens in your browser. Sign in with the Ginkgo login you've been given (it's case-sensitive). Any trouble getting in? Give Daren a shout.</p>
+            <a href="https://ginkgo-advice-demo.streamlit.app" class="btn btn-primary btn-lg" style="margin-top:24px;" target="_blank" rel="noopener">Open the app →</a>
+            <p style="margin-top:18px;font-size:14px;">ginkgo-advice-demo.streamlit.app</p>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT GINKGO ============ -->
+    <section class="section section-alt" id="about">
+        <div class="container">
+            <div class="section-head">
+                <div class="eyebrow">About Ginkgo AI</div>
+                <h2>Good advice, made faster</h2>
+                <p>Ginkgo AI is our growing set of tools that take the slog out of advice admin, so we can spend more time with the people who matter. The Advice Engine is the first of these — built and tested in-house, in our own house style and approved wording.</p>
+                <p>It's part of the AI Pathfinders project. The technology helps, but the judgement, the relationships and the responsibility stay firmly with our advisers.</p>
+            </div>
+            <div class="trust-badges">
+                <span class="badge">Built in-house</span>
+                <span class="badge">House-style wording</span>
+                <span class="badge">Human sign-off always</span>
+                <span class="badge">AI Pathfinders</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <!-- White (reversed) logo for the dark footer: drop GF_Landscape_W.png into /assets -->
+            <img src="assets/GF_Landscape_W.png" alt="Ginkgo Financial"
+                 style="width:220px;height:auto;margin-bottom:18px;"
+                 onerror="this.style.display='none';">
+            <p><strong>Ginkgo Financial Ltd</strong></p>
+            <p>Unit 1, 2 Delacourt Road, Blackheath, London, SE3 8XA</p>
+            <p style="margin-top:10px;">Questions? Daren Wallbank · 020 7078 8683 · daren@ginkgofinancial.com</p>
+
+            <p class="disclaimer"><strong>Internal tool.</strong> For Ginkgo Financial advisers and AI Pathfinders partners only — not for client or public distribution. This is a prototype for testing with dummy or anonymised data, and every document it produces requires human review and sign-off.</p>
+            <p style="font-size:13px;">Company No. 08220047 · ginkgofinancial.com</p>
+
+            <div class="footer-links">
+                <a href="https://www.ginkgofinancial.com" class="footer-link" target="_blank" rel="noopener">ginkgofinancial.com</a>
+                <a href="#launch" class="footer-link">Open the app</a>
+                <a href="mailto:daren@ginkgofinancial.com" class="footer-link">Contact Daren</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

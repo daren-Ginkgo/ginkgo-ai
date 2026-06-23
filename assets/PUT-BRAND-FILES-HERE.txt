@@ -1,0 +1,19 @@
+BRAND FILES FOR THE WEBSITE
+===========================
+
+GOOD NEWS: your main logo is already in place (GF_Landscape_RGB_OnWhite.png),
+so the header looks right out of the box.
+
+The site will also use these OPTIONAL extras if you drop them in here, using the
+exact names below (copy from the SharePoint brand bible / asset package). Without
+them the page still looks fine - they just add a little polish.
+
+  GF_Landscape_W.png        -> white logo for the dark footer
+  GF_Symbol_RGB_Gold.png    -> faint gold tree-ring watermark (top of the page)
+  GF_Symbol_W.png           -> faint white tree-ring watermark (dark band)
+  favicon.png               -> little icon in the browser tab (square logo, 64x64px)
+
+HOW TO ADD THEM
+---------------
+Drag-and-drop each file into this "assets" folder, keep the names the same,
+then refresh the page. That's it.
