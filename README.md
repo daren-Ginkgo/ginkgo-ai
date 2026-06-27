@@ -1,11 +1,15 @@
-# Ginkgo AI — The Advice Engine (intro page)
+# The Advice Engine — marketing landing page
 
-An internal landing/portal page for Ginkgo Financial advisers and AI Pathfinders
-partners. It introduces the Advice Engine and links through to the app.
+The public landing page for the white-label Advice Engine, built by Ginkgo Financial.
+It pitches the engine to other UK advice firms and links through to the live demo.
 
-- **The app it links to:** https://ginkgo-advice-demo.streamlit.app
-- **Audience:** internal advisers only — not for client or public distribution
-- **Status:** prototype; dummy/anonymised data only; every output needs human sign-off
+- **The demo it links to:** https://ginkgo-advice-demo.streamlit.app
+- **Audience:** prospective advice-firm customers (Quilter-network and wider UK advice market)
+- **Positioning:** white-label — the same engine produces documents in each firm's own brand,
+  voice and approved wording, read from a per-firm configuration file
+- **Capabilities shown:** suitability reports, annual advice meetings, first client meetings,
+  IHT / Whole of Life protection, the WOL Ready-Reckoner, and the built-in compliance check
+- **Status:** demonstration; dummy/anonymised data only; every output needs human sign-off
 
 ## Files
 - `index.html` — the whole website (one self-contained page)
