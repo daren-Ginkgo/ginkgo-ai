@@ -3,7 +3,7 @@
 The public landing page for the white-label Advice Engine, built by Ginkgo Financial.
 It pitches the engine to other UK advice firms and links through to the live demo.
 
-- **The demo it links to:** https://ginkgo-advice-demo.streamlit.app
+- **The demo it links to:** https://ginkgo-advice-engine-demo-fzaje7g8hpfcachh.ukwest-01.azurewebsites.net
 - **Audience:** prospective advice-firm customers (Quilter-network and wider UK advice market)
 - **Positioning:** white-label — the same engine produces documents in each firm's own brand,
   voice and approved wording, read from a per-firm configuration file
