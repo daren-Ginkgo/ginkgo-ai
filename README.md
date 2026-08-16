@@ -5,58 +5,48 @@ advice firms, built and operated by Ginkgo Financial Ltd.
 
 - **Live:** https://theadviceengine.ai
 - **Redirect:** adviceengine.co.uk → theadviceengine.ai (forwarded at the registrar)
-- **Hosting:** GitHub Pages from `main`. Pushing to `main` publishes.
-- **The app itself** lives in a separate repo (`ginkgo-advice-engine-demo`) on Azure.
+- **Hosting:** GitHub Pages from `main`. Pushing to `main` publishes. **No build step** —
+  plain HTML/CSS/JS, deliberately, so anyone can edit it.
 
-## Brand
+## How this site is maintained
 
-The Advice Engine has its own identity, deliberately separate from the Ginkgo
-Financial brand — Ginkgo appears as the credibility line in the footer, not as the
-logo in the header.
-
-| Token | Light | Dark | Used for |
-|---|---|---|---|
-| `--ink` | `#141D26` | `#E8EDF1` | Headings, wordmark |
-| `--paper` | `#F4F5F3` | `#0D1319` | Page ground |
-| `--sign` | `#1D4E89` | `#79ABE0` | Primary accent — sign-off blue |
-| `--flag` | `#A96B10` | `#E0A94D` | **Flagged gaps only.** Never decoration. |
-| `--confirm` | `#2F6F4F` | `#71BE95` | Verified / confirmed states |
-
-**Typography rule:** the sans face is the engine's voice. The serif (`.verbatim`)
-is reserved for text quoted word-for-word from a client's file — nowhere else.
-That distinction is the point, so don't spend it on pull quotes.
-
-## Files
+The design and page structure came from an approved external build (Aug 2026).
+Shared navigation/footer markup is intentionally duplicated in each HTML file so
+GitHub Pages can serve it with no build step — **if you change the header, footer
+or legal wording, change it in every page**. There is no generator any more
+(`sitegen.py` was retired when this design landed; it lives in git history).
 
 ```
-sitegen.py                    ONE SOURCE OF TRUTH — generates every page. Edit this, not the HTML.
-index.html                    generated: home
-quilter.html                  generated: For Quilter advisers (flagship positioning page)
-suitability.html              generated: suitability reports in detail
-meetings.html                 generated: first meetings + annual advice reviews
-compliance.html               generated: compliance check in detail
-finprom.html                  generated: financial promotions pre-vet in detail
-find.html                     generated: advice gap scanner + client facts extract
-organise.html                 generated: fees, authorities, front door, protection tools
-assets/site.css               shared stylesheet (palette, both themes, all components)
-CNAME                         custom domain for GitHub Pages
-favicon.ico                   root favicon for older clients
-assets/favicon.svg            primary favicon
-assets/favicon-32/180/512.png raster favicons + apple-touch-icon
+index.html                    homepage
+quilter.html                  For Quilter advisers (flagship positioning page)
+suitability.html              suitability reports in detail
+meetings.html                 first meetings + annual advice reviews
+compliance.html               compliance check in detail
+finprom.html                  financial promotions pre-vet in detail
+find.html                     advice gap scanner + client facts extract
+organise.html                 fees, authorities, front door, protection tools
+404.html                      not-found page (GitHub Pages serves it automatically)
+styles.css                    all styling (palette variables at the top)
+script.js                     mobile navigation toggle only
+CNAME                         custom domain — DO NOT DELETE, the domain breaks
+favicon.ico + assets/favicon* icons (navy/indigo brand palette)
 assets/og.png                 1200x630 social card
-assets/make_brand_assets.py   regenerates every raster asset above
-assets/incoming/              drop real screenshots/photos here for Claude to place
+assets/make_brand_assets.py   regenerates the raster icons + social card
+assets/incoming/              drop real screenshots/photos here for placement
 ```
 
-To change any page: edit `sitegen.py`, run `python sitegen.py`, commit the
-regenerated HTML alongside it. Never edit the generated .html files directly —
-the next regeneration overwrites them.
-
-Regenerate the images after any wordmark, palette or headline change:
+Regenerate the images after any palette or headline change:
 
 ```bash
 python assets/make_brand_assets.py
 ```
+
+## Pricing currently encoded (Daren's figures, Aug 2026)
+
+- 1–4 advisers: £250 per adviser per month
+- 5–10 advisers: £200 per adviser per month
+- 11+ advisers: price on application
+- One free trial month for all new firms; minimum one-year contract after the trial
 
 ## Compliance rules for this site
 
@@ -64,21 +54,23 @@ These are not style preferences. Anything added here must hold to them:
 
 - No claim that the engine gives advice, approves financial promotions, or
   certifies compliance. It drafts and it flags.
-- Quilter: describe the network environment factually (built inside an AR firm,
-  every live firm is in the network, file-check-shaped outputs). NEVER state the
-  engine is Quilter-approved and NEVER state it is not — silence on approval, in
-  both directions. The footer carries a neutral trade-mark line only.
-- No superlatives, no guarantees, no performance promises.
+- Quilter: describe the network environment factually. NEVER state the engine is
+  Quilter-approved and NEVER state it is not — silence on approval, in both
+  directions. The footer carries a neutral trade-mark line only.
+- Keep the footer regulatory wording unchanged unless Daren provides replacement
+  wording. It must appear on every page.
+- Supplier SOC 2 Type II / ISO 27001 / ISO 42001 reports are described only as
+  supplier assurance. Do not badge The Advice Engine itself with certifications.
+- No superlatives, no guarantees, no invented customers, numbers or testimonials.
 - Ginkgo is not described as Chartered.
-- The engine-as-tool disclaimer stays in the footer.
-- Any example or specimen is fictitious and labelled as such.
+- Contact address: `hello@theadviceengine.ai`.
+- Demonstrations and specimens are fictitious and labelled as such.
 
 ## Known gaps
 
-- **Pricing is provisional.** The £995 figure needs Daren's sign-off against the
-  real bands before it can be treated as published.
-- **No customer testimonials yet.** The biggest remaining credibility gap against
-  Saturn and Aveni. Needs one attributable line each from beta firms.
-- **No product screenshots or Test Drive video.** The hero panel is a hand-built
-  specimen standing in for a real screen recording.
+- **No customer testimonials yet.** The biggest remaining credibility gap.
+  Needs one attributable line each from beta firms.
+- **No real product screenshots.** The interface mockups are hand-built HTML.
+  Real screenshots go in `assets/incoming/` for placement.
 - **CTAs are `mailto:`.** Should become a booking form plus calendar link.
+- **No analytics.**

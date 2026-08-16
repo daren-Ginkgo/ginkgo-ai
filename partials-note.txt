@@ -1,0 +1,1 @@
+Static site: shared navigation/footer markup is intentionally duplicated in each HTML file so GitHub Pages can serve it with no build step.

@@ -8,12 +8,12 @@ import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
-INK = (20, 29, 38)
+INK = (16, 27, 61)
 PAPER = (244, 245, 243)
-FLAG = (224, 169, 77)
-SIGN = (121, 171, 224)
-MUTED = (140, 156, 168)
-LINE = (51, 67, 77)
+FLAG = (233, 141, 123)
+SIGN = (165, 166, 249)
+MUTED = (146, 155, 185)
+LINE = (43, 55, 95)
 
 FONTS = r"C:\Windows\Fonts"
 
