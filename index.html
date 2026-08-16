@@ -4,198 +4,525 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Advice Engine - AI-drafted advice paperwork for UK advice firms, in your own brand</title>
-<meta name="description" content="The Advice Engine drafts, checks and organises advice paperwork for UK financial advice firms - suitability reports, annual review packs, gap analysis and more - in each firm's own brand. Built by a working advice firm. Every output is a draft until a named adviser signs it off.">
+<meta name="description" content="The Advice Engine drafts, checks and organises advice paperwork for UK financial advice firms - suitability reports, annual review packs, advice gap scanning and more - in each firm's own brand, from its own client files. Built inside a regulated UK advice firm. Every output is a draft until a named adviser signs it off.">
+<link rel="canonical" href="https://theadviceengine.ai/">
+<meta name="theme-color" content="#141D26">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Advice Engine">
+<meta property="og:url" content="https://theadviceengine.ai/">
+<meta property="og:title" content="The Advice Engine">
+<meta property="og:description" content="Drafts the paperwork. Checks the file. Finds the business you already had. AI-drafted advice paperwork for UK advice firms, in your own brand - built inside a regulated UK advice firm.">
+<meta property="og:image" content="https://theadviceengine.ai/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Advice Engine - drafts the paperwork, checks the file, finds the business you already had.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Advice Engine">
+<meta name="twitter:description" content="Drafts the paperwork. Checks the file. Finds the business you already had.">
+<meta name="twitter:image" content="https://theadviceengine.ai/assets/og.png">
+
 <style>
-  :root{
-    --green:#2f6f4f; --green-dark:#24513b; --ink:#1e2a25; --body:#3d4a44;
-    --paper:#ffffff; --mist:#f2f6f4; --line:#dbe5e0; --accent:#c9a54e;
+:root{
+  /* light */
+  --paper:#F4F5F3;
+  --surface:#FFFFFF;
+  --raise:#EBEDE9;
+  --ink:#141D26;
+  --body:#404C55;
+  --muted:#6E7C85;
+  --line:#DCE0DB;
+  --line-strong:#BCC4BE;
+  --sign:#1D4E89;        /* signature ink blue - primary accent */
+  --sign-deep:#153A67;
+  --flag:#A96B10;        /* semantic: flagged gap / attention only */
+  --flag-bg:#FBF2E2;
+  --confirm:#2F6F4F;     /* semantic: confirmed / verified */
+  --confirm-bg:#E8F1EC;
+  --btn-fg:#FFFFFF;
+  --close-bg:#141D26;
+  --close-fg:#F4F5F3;
+  --close-muted:rgba(244,245,243,.62);
+  --close-btn-bg:#F4F5F3;
+  --close-btn-fg:#141D26;
+  --close-ghost-line:rgba(244,245,243,.4);
+  --shadow:0 1px 2px rgba(20,29,38,.05),0 10px 30px -20px rgba(20,29,38,.35);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0D1319;
+    --surface:#141C23;
+    --raise:#1A242C;
+    --ink:#E8EDF1;
+    --body:#AEBBC4;
+    --muted:#78888F;
+    --line:#222E37;
+    --line-strong:#33434D;
+    --sign:#79ABE0;
+    --sign-deep:#A3C7EE;
+    --flag:#E0A94D;
+    --flag-bg:#2A2115;
+    --confirm:#71BE95;
+    --confirm-bg:#16261E;
+    --btn-fg:#0D1319;
+    --close-bg:#1A242C;
+    --close-fg:#E8EDF1;
+    --close-muted:#78888F;
+    --close-btn-bg:#79ABE0;
+    --close-btn-fg:#0D1319;
+    --close-ghost-line:#33434D;
+    --shadow:0 1px 2px rgba(0,0,0,.5),0 10px 30px -20px rgba(0,0,0,.9);
   }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;color:var(--body);background:var(--paper);line-height:1.6}
-  h1,h2,h3{color:var(--ink);line-height:1.25;font-weight:650}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-  header{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:5}
-  .bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
-  .bar img{height:44px}
-  .cta{display:inline-block;background:var(--green);color:#fff;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:600}
-  .cta:hover{background:var(--green-dark)}
-  .cta.ghost{background:transparent;color:var(--green);border:1.5px solid var(--green)}
-  .hero{background:linear-gradient(180deg,var(--mist),var(--paper));padding:72px 0 56px}
-  .hero h1{font-size:clamp(1.9rem,4.2vw,3rem);max-width:21ch}
-  .hero p.lead{font-size:1.2rem;max-width:58ch;margin:20px 0 28px}
-  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-  .badge{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:.88rem;color:var(--ink)}
-  section{padding:58px 0}
-  section.tint{background:var(--mist)}
-  .kicker{color:var(--green);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem}
-  h2{font-size:clamp(1.4rem,2.8vw,2rem);margin:6px 0 14px}
-  .grid{display:grid;gap:18px;margin-top:26px}
-  .grid.cols3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px}
-  .card h3{font-size:1.02rem;margin-bottom:8px}
-  .card p{font-size:.94rem}
-  .card .tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
-  .feature{display:grid;gap:34px;grid-template-columns:1fr;align-items:center}
-  @media(min-width:840px){.feature{grid-template-columns:1.1fr .9fr}}
-  .quotebox{background:var(--green-dark);color:#e9f2ed;border-radius:14px;padding:26px 28px;font-size:.95rem}
-  .quotebox strong{color:#fff}
-  .quotebox .q{border-left:3px solid var(--accent);padding-left:14px;margin:14px 0;font-style:italic}
-  ol.steps{counter-reset:s;list-style:none;display:grid;gap:14px;margin-top:24px}
-  ol.steps li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px 18px 64px;position:relative}
-  ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:18px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
-  .trust li{margin:9px 0 9px 22px}
-  .note{background:#fff;border-left:4px solid var(--accent);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:16px 18px;font-size:.92rem;margin-top:26px}
-  footer{border-top:1px solid var(--line);padding:36px 0 44px;font-size:.85rem;color:#5a6862}
-  footer p{margin:8px 0}
-  .foot-cta{padding:64px 0;text-align:center;background:var(--green-dark)}
-  .foot-cta h2{color:#fff}
-  .foot-cta p{color:#dcebe3;max-width:56ch;margin:12px auto 26px}
-  .foot-cta .cta{background:#fff;color:var(--green-dark)}
-  a{color:var(--green)}
+}
+:root[data-theme="dark"]{
+  --paper:#0D1319;
+  --surface:#141C23;
+  --raise:#1A242C;
+  --ink:#E8EDF1;
+  --body:#AEBBC4;
+  --muted:#78888F;
+  --line:#222E37;
+  --line-strong:#33434D;
+  --sign:#79ABE0;
+  --sign-deep:#A3C7EE;
+  --flag:#E0A94D;
+  --flag-bg:#2A2115;
+  --confirm:#71BE95;
+  --confirm-bg:#16261E;
+  --btn-fg:#0D1319;
+  --close-bg:#1A242C;
+  --close-fg:#E8EDF1;
+  --close-muted:#78888F;
+  --close-btn-bg:#79ABE0;
+  --close-btn-fg:#0D1319;
+  --close-ghost-line:#33434D;
+  --shadow:0 1px 2px rgba(0,0,0,.5),0 10px 30px -20px rgba(0,0,0,.9);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--paper);color:var(--body);
+  font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{color:var(--ink);margin:0;text-wrap:balance;letter-spacing:-.015em;line-height:1.15}
+h1{font-size:clamp(2.15rem,5.2vw,3.5rem);font-weight:680}
+h2{font-size:clamp(1.55rem,3.2vw,2.2rem);font-weight:660}
+h3{font-size:1.06rem;font-weight:700;letter-spacing:-.005em}
+h4{font-size:.95rem;font-weight:700;letter-spacing:0}
+p{margin:0}
+a{color:var(--sign);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--sign);outline-offset:3px;border-radius:2px}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.col{max-width:64ch}
+.stack{display:flex;flex-direction:column;gap:16px}
+
+.eyebrow{
+  font-family:ui-monospace,Consolas,"SF Mono",monospace;
+  font-size:.71rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+}
+.eyebrow.s{color:var(--sign)}
+
+/* the serif is reserved for the client's own words */
+.verbatim{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-style:italic;color:var(--ink)}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--sign);color:#fff;padding:10px 16px;z-index:50}
+.skip:focus{left:8px;top:8px}
+
+/* ---------- wordmark ---------- */
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mark svg{display:block;flex:none}
+.mark .wm{display:flex;flex-direction:column;line-height:1}
+.mark .wm .t{font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.mark .wm .n{font-size:1.06rem;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 0}
+nav.links{display:none;gap:26px;font-size:.92rem}
+@media(min-width:880px){nav.links{display:flex}}
+nav.links a{color:var(--body);text-decoration:none}
+nav.links a:hover{color:var(--ink)}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:640;font-size:.94rem;
+  padding:10px 18px;border-radius:4px;border:1px solid transparent;white-space:nowrap;
+  background:var(--sign);color:var(--btn-fg);
+}
+.btn:hover{background:var(--sign-deep)}
+.btn.ghost{background:transparent;color:var(--sign);border-color:var(--line-strong)}
+.btn.ghost:hover{background:var(--raise);border-color:var(--sign)}
+
+/* ---------- hero ---------- */
+.hero{padding:74px 0 58px;border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;gap:44px;grid-template-columns:1fr}
+@media(min-width:940px){.hero-grid{grid-template-columns:1.05fr .95fr;align-items:start;gap:56px}}
+.hero h1 .find{color:var(--sign)}
+.lead{font-size:1.16rem;line-height:1.55;max-width:54ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:4px}
+.cta-note{font-size:.87rem;color:var(--muted)}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.badge{font-size:.82rem;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--body)}
+
+/* ---------- panel ---------- */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow);overflow:hidden}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 16px;background:var(--raise);border-bottom:1px solid var(--line)}
+.panel-head .ttl{font-family:ui-monospace,Consolas,monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.chip{font-family:ui-monospace,Consolas,monospace;font-size:.67rem;letter-spacing:.09em;text-transform:uppercase;padding:3px 8px;border-radius:3px;white-space:nowrap;font-weight:600}
+.chip.flag{color:var(--flag);background:var(--flag-bg);border:1px solid var(--flag)}
+.chip.ok{color:var(--confirm);background:var(--confirm-bg);border:1px solid var(--confirm)}
+.panel-body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:14px}
+.src{font-size:.78rem;color:var(--muted);font-family:ui-monospace,Consolas,monospace}
+.quote{border-left:3px solid var(--flag);background:var(--flag-bg);padding:12px 14px;border-radius:0 4px 4px 0;font-size:.97rem;line-height:1.5;margin:0}
+.finding{display:flex;flex-direction:column;gap:6px;padding-top:2px}
+.finding .h{font-weight:700;color:var(--ink);font-size:.95rem}
+.finding .d{font-size:.9rem}
+.panel-foot{border-top:1px dashed var(--line);padding:12px 18px;font-size:.83rem;color:var(--muted);display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+
+/* ---------- sections ---------- */
+section{padding:66px 0;border-bottom:1px solid var(--line)}
+section.tint{background:var(--surface)}
+.sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:30px;max-width:60ch}
+
+/* ---------- workflows ---------- */
+.group{margin-top:30px}
+.group-label{display:flex;align-items:baseline;gap:12px;padding-bottom:9px;border-bottom:1px solid var(--line-strong);margin-bottom:16px;flex-wrap:wrap}
+.group-label h3{font-size:.79rem;letter-spacing:.15em;text-transform:uppercase;font-family:ui-monospace,Consolas,monospace;color:var(--sign)}
+.group-label .g-sub{font-size:.86rem;color:var(--muted)}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(255px,1fr))}
+.wcard{background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:17px 18px;display:flex;flex-direction:column;gap:7px}
+section.tint .wcard{background:var(--paper)}
+.wcard p{font-size:.9rem;line-height:1.5}
+
+/* ---------- split ---------- */
+.split{display:grid;gap:36px;grid-template-columns:1fr;align-items:start}
+@media(min-width:900px){.split{grid-template-columns:1.02fr .98fr;gap:52px}}
+
+.notdo{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.notdo div{padding:14px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:baseline}
+.notdo .x{color:var(--sign);font-weight:700;flex:none;font-family:ui-monospace,Consolas,monospace;font-size:.85rem}
+.notdo p{font-size:.95rem}
+.notdo strong{color:var(--ink)}
+
+/* ---------- steps ---------- */
+.steps{display:flex;flex-direction:column;counter-reset:s;margin-top:8px}
+.stepx{display:grid;grid-template-columns:auto 1fr;gap:0 20px;padding:20px 0;border-top:1px solid var(--line)}
+.stepx:first-child{border-top:0}
+.stepx::before{
+  counter-increment:s;content:counter(s);
+  font-family:ui-monospace,Consolas,monospace;font-weight:700;font-size:.85rem;color:var(--sign);
+  border:1px solid var(--line-strong);border-radius:50%;
+  width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+}
+.stepx .sb{display:flex;flex-direction:column;gap:5px}
+.stepx p{font-size:.95rem}
+
+/* ---------- pricing ---------- */
+.price{background:var(--surface);border:1px solid var(--line-strong);border-radius:6px;padding:28px;display:flex;flex-direction:column;gap:18px;box-shadow:var(--shadow)}
+section.tint .price{background:var(--paper)}
+.price .amt{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.price .amt .n{font-size:2.6rem;font-weight:700;color:var(--ink);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.price .amt .per{color:var(--muted);font-size:.95rem}
+.incl{display:grid;gap:9px 22px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));font-size:.94rem}
+.incl div{display:flex;gap:9px;align-items:baseline}
+.incl .t{color:var(--confirm);font-weight:700;flex:none}
+.compare{font-size:.9rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+
+/* ---------- governance ---------- */
+.gov{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.gov div{border-left:2px solid var(--line-strong);padding:2px 0 2px 14px;display:flex;flex-direction:column;gap:3px}
+.gov h4{color:var(--ink)}
+.gov p{font-size:.9rem}
+
+/* ---------- closing ---------- */
+.close{background:var(--close-bg);padding:66px 0;border:0}
+.close h2,.close p{color:var(--close-fg)}
+.close .eyebrow{color:var(--close-muted)}
+.close .inner{display:flex;flex-direction:column;gap:16px;align-items:flex-start;max-width:56ch}
+.close .btn{background:var(--close-btn-bg);color:var(--close-btn-fg);border-color:var(--close-btn-bg)}
+.close .btn:hover{filter:brightness(1.08)}
+.close .btn.ghost{background:transparent;color:var(--close-fg);border-color:var(--close-ghost-line);filter:none}
+.close .btn.ghost:hover{border-color:var(--close-fg)}
+
+footer{padding:44px 0 56px;font-size:.86rem;color:var(--muted)}
+footer .frow{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:flex-start;margin-bottom:26px}
+footer .fnav{display:flex;flex-wrap:wrap;gap:20px}
+footer .fnav a{color:var(--body);text-decoration:none}
+footer .legal{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:20px;max-width:78ch}
 </style>
 </head>
 <body>
 
+<a class="skip" href="#main">Skip to content</a>
+
 <header>
   <div class="wrap bar">
-    <img src="assets/GF_Landscape_RGB_OnWhite.png" alt="Ginkgo Financial">
-    <nav><a class="cta" href="https://ginkgo-advice-engine-demo-fzaje7g8hpfcachh.ukwest-01.azurewebsites.net">See it live</a></nav>
+    <a class="mark" href="#top" aria-label="The Advice Engine - home">
+      <svg width="30" height="30" viewBox="0 0 30 30" role="img" aria-hidden="true" focusable="false">
+        <rect x="0.75" y="0.75" width="28.5" height="28.5" rx="4" fill="none" stroke="var(--line-strong)" stroke-width="1.5"></rect>
+        <rect x="7" y="9" width="16" height="2.2" rx="1.1" fill="var(--ink)"></rect>
+        <rect x="7" y="13.9" width="16" height="2.2" rx="1.1" fill="var(--flag)"></rect>
+        <rect x="7" y="18.8" width="10" height="2.2" rx="1.1" fill="var(--ink)"></rect>
+      </svg>
+      <span class="wm"><span class="t">The</span><span class="n">Advice Engine</span></span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#what">What it does</a>
+      <a href="#gap">Gap scanner</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#governance">Security</a>
+    </nav>
+    <a class="btn" href="#book">Book a Test Drive</a>
   </div>
 </header>
 
+<main id="main">
+<span id="top"></span>
+
 <section class="hero">
-  <div class="wrap">
-    <p class="kicker">The Advice Engine</p>
-    <h1>The paperwork engine built inside a working advice firm</h1>
-    <p class="lead">The Advice Engine drafts, checks and organises the documents your firm produces
-    every day: suitability reports, annual review packs, first-meeting packs, fee paperwork and more.
-    In your brand, in your wording, from your client files. You review, you decide, you sign off.</p>
-    <a class="cta" href="mailto:daren@ginkgofinancial.com?subject=The%20Advice%20Engine">Talk to us</a>
-    &nbsp; <a class="cta ghost" href="https://ginkgo-advice-engine-demo-fzaje7g8hpfcachh.ukwest-01.azurewebsites.net">See it live</a>
-    <div class="badges">
-      <span class="badge">Built and used daily by a regulated UK advice firm</span>
-      <span class="badge">White-label: your brand, your approved wording</span>
-      <span class="badge">Powered by Anthropic's Claude - latest generation</span>
-      <span class="badge">UK-hosted - Microsoft sign-in - MFA</span>
+  <div class="wrap hero-grid">
+    <div class="stack">
+      <p class="eyebrow s">For UK financial advice firms</p>
+      <h1>Drafts the paperwork. Checks the file. <span class="find">Finds the business you already had.</span></h1>
+      <p class="lead">The Advice Engine drafts, checks and organises the documents your firm produces every day &mdash; in your brand, from your own client files. Built inside a regulated UK advice firm and used on real cases every day.</p>
+      <div class="cta-row">
+        <a class="btn" href="#book">Book a Test Drive</a>
+        <a class="btn ghost" href="#pricing">See the pricing</a>
+      </div>
+      <p class="cta-note">Four facts about a fictitious client in, a full specimen report out &mdash; through the real pipeline, before any live case goes near it.</p>
+      <div class="badges">
+        <span class="badge">Built and used daily by a regulated UK advice firm</span>
+        <span class="badge">Your brand, your approved wording</span>
+        <span class="badge">No client data retained</span>
+        <span class="badge">UK-hosted &middot; Microsoft sign-in &middot; MFA</span>
+      </div>
+    </div>
+
+    <div class="panel" aria-label="Example of an advice gap scanner finding">
+      <div class="panel-head">
+        <span class="ttl">Advice gap scan &middot; specimen</span>
+        <span class="chip flag">1 gap flagged</span>
+      </div>
+      <div class="panel-body">
+        <p class="src">Source &mdash; annual review meeting transcript, 14 Mar 2026</p>
+        <blockquote class="quote verbatim">&ldquo;&hellip;and there's the little pension from the Marconi days, I've honestly never touched it, I couldn't tell you what's in it.&rdquo;</blockquote>
+        <div class="finding">
+          <span class="h">Legacy scheme mentioned once, never traced</span>
+          <p class="d">Raised by the client in March, not recorded on the file and not carried into the review outcome. No letter of authority on record for this provider.</p>
+        </div>
+        <div class="finding">
+          <span class="h">Suggested next step</span>
+          <p class="d">Add to the agenda for the next meeting. An LOA and provider information request can be drafted from this file.</p>
+        </div>
+      </div>
+      <div class="panel-foot">
+        <span class="chip ok">Quote verified</span>
+        <span>Every quote is checked against the source document in code. This is an agenda for a conversation &mdash; not advice, and not a review of past advice.</span>
+      </div>
     </div>
   </div>
 </section>
 
-<section>
+<section id="what" class="tint">
   <div class="wrap">
-    <p class="kicker">What it does</p>
-    <h2>From first meeting to annual review, one engine</h2>
-    <div class="grid cols3">
-      <div class="card"><span class="tag">Draft</span><h3>Suitability reports</h3>
-        <p>Full and shortened advice processes across 19 case types, drafted from your case pack,
-        then checked against the compliance framework before you ever see them.</p></div>
-      <div class="card"><span class="tag">Draft</span><h3>Annual advice meetings</h3>
-        <p>Pre-meeting briefing and the complete post-meeting pack, with the allowances position
-        (ISA, pension, CGT, dividend) evidenced per client.</p></div>
-      <div class="card"><span class="tag">Draft</span><h3>First-meeting packs</h3>
-        <p>Briefings before, follow-up packs after: agenda, introduction report, disclosure summary
-        and initial fact find, clearly flagged as pre-advice.</p></div>
-      <div class="card"><span class="tag">Check</span><h3>Compliance check</h3>
-        <p>Reviews an existing report the way a file checker would: grade, commentary and a completed
-        checklist. It flags gaps; it never certifies anything.</p></div>
-      <div class="card"><span class="tag">Check</span><h3>Financial promotions</h3>
-        <p>Pre-vets marketing material, web pages and stationery before submission to your network's
-        approval team, cutting resubmission round trips. It never approves.</p></div>
-      <div class="card"><span class="tag">Find</span><h3>Advice gap scanner</h3>
-        <p>Reads a client's own file - meeting transcripts especially - and surfaces needs that were
-        raised but never actioned, quoting the file verbatim. An evidenced agenda for your next
-        conversation, and business your book already holds.</p></div>
-      <div class="card"><span class="tag">Find</span><h3>Client facts extract</h3>
-        <p>Turns a case pack into a source-attributed CRM update sheet: every fact carries its
-        document and a confirmed / estimated / unclear status. It never writes to your systems.</p></div>
-      <div class="card"><span class="tag">Organise</span><h3>Fee and authority paperwork</h3>
-        <p>Fee authority forms pre-filled from your own terms of business, and letters of authority
-        with one information-request letter per provider, validated before download.</p></div>
-      <div class="card"><span class="tag">Organise</span><h3>One front door</h3>
-        <p>Not sure which workflow you need? Throw the file in with a line of context and the engine
-        picks the right one, tells you why, and lets you overrule it in one click.</p></div>
+    <div class="sec-head">
+      <p class="eyebrow s">What it does</p>
+      <h2>Twelve workflows, from first meeting to annual review</h2>
+      <p>All of them included, for every adviser, paraplanner and administrator in the firm. No per-seat maths.</p>
     </div>
-    <div class="note"><strong>Protection tools included:</strong> an instant Whole of Life
-    ready-reckoner and an IHT cover affordability calculator, both indicative and clearly labelled
-    as not advice.</div>
+
+    <div class="group">
+      <div class="group-label"><h3>Draft</h3><span class="g-sub">Documents produced from your case pack, in your firm's own styling</span></div>
+      <div class="cards">
+        <div class="wcard"><h4>Suitability reports</h4><p>Full and shortened advice processes across 19 case types, drafted from your case pack and checked against the compliance framework before you ever see them.</p></div>
+        <div class="wcard"><h4>Annual advice meetings</h4><p>Pre-meeting briefing and the complete post-meeting pack, with the allowances position &mdash; ISA, pension, CGT, dividend &mdash; evidenced per client.</p></div>
+        <div class="wcard"><h4>First-meeting packs</h4><p>Briefings before, follow-up packs after: agenda, introduction report, disclosure summary and initial fact find, clearly flagged as pre-advice.</p></div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-label"><h3>Check</h3><span class="g-sub">A second pair of eyes before anything leaves the firm</span></div>
+      <div class="cards">
+        <div class="wcard"><h4>Compliance check</h4><p>Reviews an existing report the way a file checker would: grade, commentary and a completed checklist. It flags gaps; it never certifies anything.</p></div>
+        <div class="wcard"><h4>Financial promotions</h4><p>Pre-vets marketing material, web pages and stationery before submission to your network's approval team, cutting resubmission round trips. It never approves.</p></div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-label"><h3>Find</h3><span class="g-sub">What is already sitting in the files you hold</span></div>
+      <div class="cards">
+        <div class="wcard"><h4>Advice gap scanner</h4><p>Reads a client's own file &mdash; meeting transcripts especially &mdash; and surfaces needs that were raised but never actioned, quoting the file verbatim.</p></div>
+        <div class="wcard"><h4>Client facts extract</h4><p>Turns a case pack into a source-attributed update sheet: every fact carries its document and a confirmed, estimated or unclear status.</p></div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-label"><h3>Organise</h3><span class="g-sub">The administrative work around the advice</span></div>
+      <div class="cards">
+        <div class="wcard"><h4>Fee and authority paperwork</h4><p>Fee authority forms pre-filled from your own terms of business, and letters of authority with one information request per provider, validated before download.</p></div>
+        <div class="wcard"><h4>One front door</h4><p>Not sure which workflow you need? Put the file in with a line of context. The engine picks, tells you why it picked, and lets you overrule it in one click.</p></div>
+        <div class="wcard"><h4>Protection tools</h4><p>A whole-of-life ready-reckoner and an IHT cover affordability calculator, both indicative and clearly labelled as not advice.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gap">
+  <div class="wrap split">
+    <div class="stack">
+      <p class="eyebrow s">The difference</p>
+      <h2>Everyone else sells you time. We can also show you revenue.</h2>
+      <p>Every AI tool in this market is sold on hours saved. Useful &mdash; and hard to put in front of a board. The advice gap scanner does something different: it reads the files you already hold and finds the needs that were raised and never actioned.</p>
+      <p>Open promises. Assets mentioned once in a meeting and never traced. Exposures that only appear when two facts on the file are read together. Conflicting signals between what a client said and what the file records.</p>
+      <p>It quotes the file word for word, and every quote is verified in code against the source document &mdash; anything unverified is tagged and demoted, never quietly dropped. What comes out is a prioritised agenda for your next conversation, with a tracking sheet. It is not advice, and it is not a review of past advice.</p>
+    </div>
+    <div class="stack">
+      <div class="panel">
+        <div class="panel-head"><span class="ttl">What it reads</span></div>
+        <div class="panel-body">
+          <div class="finding"><span class="h">Meeting transcripts</span><p class="d">The richest source by far &mdash; clients say things in meetings that never reach the file.</p></div>
+          <div class="finding"><span class="h">The client file</span><p class="d">Fact finds, previous reports, review notes, correspondence, provider paperwork.</p></div>
+          <div class="finding"><span class="h">Pulled from your own library</span><p class="d">Pick files straight from your firm's SharePoint with your own Microsoft sign-in, or upload them.</p></div>
+        </div>
+        <div class="panel-foot"><span>Processed in the moment. Nothing is retained after the run.</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="tint">
-  <div class="wrap feature">
-    <div>
-      <p class="kicker">Why firms pick it</p>
+  <div class="wrap split">
+    <div class="stack">
+      <p class="eyebrow s">Why firms pick it</p>
       <h2>Built by advisers who file the same paperwork you do</h2>
-      <p>The Advice Engine is not a tech company's guess at what advice work looks like. It is built
-      inside Ginkgo Financial, a regulated UK advice firm, and shaped every week by the advisers,
-      paraplanners and administrators who use it on real cases. When a network reviewer wants
-      something evidenced differently, the engine learns it - and every firm on the engine benefits.</p>
-      <p style="margin-top:12px">It is white-label from the ground up: your logo, your document
-      styling, your fee schedule, your approved wording, your regulatory details - all read from
-      your firm's own configuration, never from another firm's.</p>
+      <p>The Advice Engine is not a technology company's guess at what advice work looks like. It is built inside Ginkgo Financial, a regulated UK advice firm, and shaped every week by the advisers, paraplanners and administrators using it on real cases.</p>
+      <p>When a network reviewer wants something evidenced differently, the engine learns it &mdash; and every firm on the engine gets that improvement. It is white-label from the ground up: your logo, your document styling, your fee schedule, your approved wording and your regulatory details, read from your firm's own configuration and never from another firm's.</p>
     </div>
-    <div class="quotebox">
-      <strong>The discipline that makes it safe:</strong>
-      <div class="q">Every output is a draft until a named adviser signs it off.</div>
-      <div class="q">It never gives advice, never approves a promotion, never marks a file
-      "compliant".</div>
-      <div class="q">It never invents missing client data - gaps are flagged, not filled.</div>
-      These are not settings. They are built into every workflow and enforced in code.
+    <div class="stack">
+      <p class="eyebrow">The discipline that makes it safe</p>
+      <div class="notdo">
+        <div><span class="x">01</span><p><strong>Every output is a draft</strong> until a named adviser signs it off.</p></div>
+        <div><span class="x">02</span><p><strong>It never gives advice</strong>, never approves a financial promotion and never marks a file compliant.</p></div>
+        <div><span class="x">03</span><p><strong>It never invents missing client data.</strong> Gaps are flagged, not filled.</p></div>
+        <div><span class="x">04</span><p><strong>It never writes to your systems.</strong> Nothing changes in your back office without a person doing it.</p></div>
+      </div>
+      <p style="font-size:.92rem;color:var(--muted)">These are not settings that can be switched off. They are built into every workflow and enforced in code.</p>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <p class="kicker">How it works</p>
-    <h2>Four steps, adviser in control throughout</h2>
-    <ol class="steps">
-      <li><strong>Give it the case.</strong> Upload documents, paste a transcript, or pick files
-      straight from your firm's own client library with your own Microsoft sign-in.</li>
-      <li><strong>It drafts and data-checks.</strong> The engine reviews the material for gaps and
-      inconsistencies first, then drafts against your firm's standards.</li>
-      <li><strong>It checks its own work.</strong> Every draft is graded against the compliance
-      framework and revised before it reaches you, with the working shown.</li>
-      <li><strong>You review and sign off.</strong> Documents arrive as branded Word files with an
-      adviser QA sheet. Nothing goes near a client without a named adviser's approval.</li>
-    </ol>
-    <div class="note"><strong>Try before you trust it:</strong> every new user gets a Test Drive - a
-    few basic facts about a fictitious client in, a full watermarked specimen report out, through the
-    exact live pipeline. You see precisely what to expect before any real case goes in.</div>
+    <div class="sec-head">
+      <p class="eyebrow s">How it works</p>
+      <h2>Four steps, with the adviser in control throughout</h2>
+    </div>
+    <div class="steps col">
+      <div class="stepx"><div class="sb"><h3>Give it the case</h3><p>Upload documents, paste a transcript, or pick files straight from your firm's own client library using your Microsoft sign-in.</p></div></div>
+      <div class="stepx"><div class="sb"><h3>It drafts and data-checks</h3><p>The engine reviews the material for gaps and inconsistencies first, then drafts against your firm's standards.</p></div></div>
+      <div class="stepx"><div class="sb"><h3>It checks its own work</h3><p>Every draft is graded against the compliance framework and revised before it reaches you, with the working shown.</p></div></div>
+      <div class="stepx"><div class="sb"><h3>You review and sign off</h3><p>Documents arrive as branded Word files with an adviser QA sheet. Nothing goes near a client without a named adviser's approval.</p></div></div>
+    </div>
   </div>
 </section>
 
-<section class="tint">
+<section id="pricing" class="tint">
   <div class="wrap">
-    <p class="kicker">Governance</p>
-    <h2>Built for firms that answer to a network</h2>
-    <ul class="trust">
-      <li>UK-region Microsoft Azure hosting; sign-in with your firm's Microsoft accounts and MFA.</li>
-      <li>Named users only, per-firm isolation, unknown domains refused by default.</li>
-      <li>Client documents are processed in the moment, not retained; your data is not used to train models.</li>
-      <li>Metadata-only audit logging: who used the engine, when and for what - never case content.</li>
-      <li>DPIA, records of processing and data-processing agreements available for your due diligence.</li>
-    </ul>
+    <div class="sec-head">
+      <p class="eyebrow s">Pricing</p>
+      <h2>One price for the firm. Every workflow, every seat.</h2>
+      <p>Most tools in this market charge per adviser, per month, per module &mdash; and won't tell you the number until you've had a call. We would rather you could just work it out.</p>
+    </div>
+    <div class="split">
+      <div class="price">
+        <div>
+          <p class="eyebrow">Typical firm &middot; up to 5 advisers</p>
+          <div class="amt"><span class="n">&pound;995</span><span class="per">per firm, per month</span></div>
+        </div>
+        <div class="incl">
+          <div><span class="t">&#10003;</span><span>All twelve workflows</span></div>
+          <div><span class="t">&#10003;</span><span>Unlimited documents</span></div>
+          <div><span class="t">&#10003;</span><span>Every adviser, paraplanner and administrator</span></div>
+          <div><span class="t">&#10003;</span><span>Your branding and wording configured with you</span></div>
+          <div><span class="t">&#10003;</span><span>Onboarding and setup included</span></div>
+          <div><span class="t">&#10003;</span><span>New workflows as they ship</span></div>
+        </div>
+        <p class="compare">Larger firms are banded. Ask us for the band that fits &mdash; we will tell you the number on the first call.</p>
+      </div>
+      <div class="stack">
+        <p class="eyebrow">For comparison</p>
+        <p>Priced per adviser, a single tool for suitability reports alone is commonly around &pound;299 per user per month. At five advisers, the Advice Engine works out at roughly &pound;199 per adviser for all twelve workflows. At twenty advisers it is a fraction of that, because the price is set for the firm and not the seat.</p>
+        <p style="font-size:.93rem;color:var(--muted)">No per-document charges. No per-module upsell. No charge for the people in your back office who do most of the work.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="foot-cta">
+<section id="governance">
   <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow s">Security and governance</p>
+      <h2>Built for firms that answer to a network</h2>
+      <p>Most tools in this category need to hold your client data to work. This one does not, which makes your data protection impact assessment a considerably shorter conversation.</p>
+    </div>
+    <div class="gov">
+      <div><h4>No client data retained</h4><p>Client material is processed in the moment and not written to disk. Nothing is stranded with us if you leave.</p></div>
+      <div><h4>Not used to train models</h4><p>Your data is never used to train any model &mdash; ours or our suppliers'.</p></div>
+      <div><h4>UK-region hosting</h4><p>Microsoft Azure, UK region, so data residency is satisfied by default.</p></div>
+      <div><h4>Your own Microsoft sign-in</h4><p>Entra single sign-on with MFA. Named users only, and unknown domains are refused by default.</p></div>
+      <div><h4>Per-firm isolation</h4><p>Each firm sees only its own configuration, branding and wording. Never another firm's.</p></div>
+      <div><h4>Metadata-only audit log</h4><p>Who used the engine, when and for what workflow &mdash; never the content of a case.</p></div>
+      <div><h4>Due diligence pack</h4><p>DPIA, records of processing and data processing agreements available for your review.</p></div>
+      <div><h4>Supplier assurance on file</h4><p>Our AI supplier's SOC 2 Type II, ISO 27001 and ISO 42001 reports are held and can be shared under NDA.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="close" id="book">
+  <div class="wrap inner">
+    <p class="eyebrow">Get started</p>
     <h2>See it on your own paperwork</h2>
-    <p>We onboard a small number of firms at a time, set up your branding and wording with you, and
-    stay close while your team gets comfortable. Start with a conversation and a Test Drive.</p>
-    <a class="cta" href="mailto:daren@ginkgofinancial.com?subject=The%20Advice%20Engine">Email Daren Wallbank</a>
+    <p>We onboard a small number of firms at a time, set your branding and wording up with you, and stay close while your team gets comfortable. Start with a Test Drive: a specimen report through the real pipeline, with nothing of yours at stake.</p>
+    <div class="cta-row">
+      <a class="btn" href="mailto:daren@ginkgofinancial.com?subject=The%20Advice%20Engine%20-%20Test%20Drive">Book a Test Drive</a>
+      <a class="btn ghost" href="mailto:daren@ginkgofinancial.com?subject=The%20Advice%20Engine%20-%20question">Ask a question</a>
+    </div>
   </div>
 </div>
 
+</main>
+
 <footer>
   <div class="wrap">
-    <p><strong>The Advice Engine</strong> is built and operated by Ginkgo Financial Ltd.</p>
-    <p>The Advice Engine is a document drafting and checking tool for authorised advice firms. It
-    does not provide financial advice, does not approve financial promotions and does not certify
-    compliance. Every output is a draft requiring review and sign-off by a named adviser at the
-    using firm, which remains responsible for its own advice and its own regulatory obligations.</p>
-    <p>Demonstrations use fictitious or anonymised data only.</p>
+    <div class="frow">
+      <a class="mark" href="#top" aria-label="The Advice Engine">
+        <svg width="30" height="30" viewBox="0 0 30 30" role="img" aria-hidden="true" focusable="false">
+          <rect x="0.75" y="0.75" width="28.5" height="28.5" rx="4" fill="none" stroke="var(--line-strong)" stroke-width="1.5"></rect>
+          <rect x="7" y="9" width="16" height="2.2" rx="1.1" fill="var(--ink)"></rect>
+          <rect x="7" y="13.9" width="16" height="2.2" rx="1.1" fill="var(--flag)"></rect>
+          <rect x="7" y="18.8" width="10" height="2.2" rx="1.1" fill="var(--ink)"></rect>
+        </svg>
+        <span class="wm"><span class="t">The</span><span class="n">Advice Engine</span></span>
+      </a>
+      <nav class="fnav" aria-label="Footer">
+        <a href="#what">What it does</a>
+        <a href="#gap">Gap scanner</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#governance">Security</a>
+        <a href="#book">Contact</a>
+      </nav>
+    </div>
+    <div class="legal">
+      <p><strong style="color:var(--ink)">The Advice Engine</strong> is built and operated by Ginkgo Financial Ltd, a regulated UK financial advice firm.</p>
+      <p>The Advice Engine is a document drafting and checking tool for authorised advice firms. It does not provide financial advice, does not approve financial promotions and does not certify compliance. Every output is a draft requiring review and sign-off by a named adviser at the using firm, which remains responsible for its own advice and its own regulatory obligations.</p>
+      <p>Demonstrations use fictitious or anonymised data only. The specimen gap scan shown on this page relates to a fictitious client.</p>
+    </div>
   </div>
 </footer>
 
