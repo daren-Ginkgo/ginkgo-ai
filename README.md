@@ -29,14 +29,28 @@ That distinction is the point, so don't spend it on pull quotes.
 ## Files
 
 ```
-index.html                    the whole site — single page, no build step, no dependencies
+sitegen.py                    ONE SOURCE OF TRUTH — generates every page. Edit this, not the HTML.
+index.html                    generated: home
+quilter.html                  generated: For Quilter advisers (flagship positioning page)
+suitability.html              generated: suitability reports in detail
+meetings.html                 generated: first meetings + annual advice reviews
+compliance.html               generated: compliance check in detail
+finprom.html                  generated: financial promotions pre-vet in detail
+find.html                     generated: advice gap scanner + client facts extract
+organise.html                 generated: fees, authorities, front door, protection tools
+assets/site.css               shared stylesheet (palette, both themes, all components)
 CNAME                         custom domain for GitHub Pages
 favicon.ico                   root favicon for older clients
 assets/favicon.svg            primary favicon
 assets/favicon-32/180/512.png raster favicons + apple-touch-icon
 assets/og.png                 1200x630 social card
 assets/make_brand_assets.py   regenerates every raster asset above
+assets/incoming/              drop real screenshots/photos here for Claude to place
 ```
+
+To change any page: edit `sitegen.py`, run `python sitegen.py`, commit the
+regenerated HTML alongside it. Never edit the generated .html files directly —
+the next regeneration overwrites them.
 
 Regenerate the images after any wordmark, palette or headline change:
 
@@ -50,6 +64,10 @@ These are not style preferences. Anything added here must hold to them:
 
 - No claim that the engine gives advice, approves financial promotions, or
   certifies compliance. It drafts and it flags.
+- Quilter: describe the network environment factually (built inside an AR firm,
+  every live firm is in the network, file-check-shaped outputs). NEVER state the
+  engine is Quilter-approved and NEVER state it is not — silence on approval, in
+  both directions. The footer carries a neutral trade-mark line only.
 - No superlatives, no guarantees, no performance promises.
 - Ginkgo is not described as Chartered.
 - The engine-as-tool disclaimer stays in the footer.

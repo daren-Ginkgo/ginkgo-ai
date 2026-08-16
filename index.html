@@ -7,329 +7,23 @@
 <meta name="description" content="The Advice Engine drafts, checks and organises advice paperwork for UK financial advice firms - suitability reports, annual review packs, advice gap scanning and more - in each firm's own brand, from its own client files. Built inside a regulated UK advice firm. Every output is a draft until a named adviser signs it off.">
 <link rel="canonical" href="https://theadviceengine.ai/">
 <meta name="theme-color" content="#141D26">
-
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="assets/favicon-180.png">
-
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/favicon-180.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Advice Engine">
 <meta property="og:url" content="https://theadviceengine.ai/">
-<meta property="og:title" content="The Advice Engine">
-<meta property="og:description" content="Drafts the paperwork. Checks the file. Finds the business you already had. AI-drafted advice paperwork for UK advice firms, in your own brand - built inside a regulated UK advice firm.">
+<meta property="og:title" content="The Advice Engine - AI-drafted advice paperwork for UK advice firms, in your own brand">
+<meta property="og:description" content="The Advice Engine drafts, checks and organises advice paperwork for UK financial advice firms - suitability reports, annual review packs, advice gap scanning and more - in each firm's own brand, from its own client files. Built inside a regulated UK advice firm. Every output is a draft until a named adviser signs it off.">
 <meta property="og:image" content="https://theadviceengine.ai/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Advice Engine - drafts the paperwork, checks the file, finds the business you already had.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Advice Engine">
-<meta name="twitter:description" content="Drafts the paperwork. Checks the file. Finds the business you already had.">
+<meta name="twitter:title" content="The Advice Engine - AI-drafted advice paperwork for UK advice firms, in your own brand">
+<meta name="twitter:description" content="The Advice Engine drafts, checks and organises advice paperwork for UK financial advice firms - suitability reports, annual review packs, advice gap scanning and more - in each firm's own brand, from its own client files. Built inside a regulated UK advice firm. Every output is a draft until a named adviser signs it off.">
 <meta name="twitter:image" content="https://theadviceengine.ai/assets/og.png">
-
-<style>
-:root{
-  /* light */
-  --paper:#F4F5F3;
-  --surface:#FFFFFF;
-  --raise:#EBEDE9;
-  --ink:#141D26;
-  --body:#404C55;
-  --muted:#6E7C85;
-  --line:#DCE0DB;
-  --line-strong:#BCC4BE;
-  --sign:#1D4E89;        /* signature ink blue - primary accent */
-  --sign-deep:#153A67;
-  --flag:#A96B10;        /* semantic: flagged gap / attention only */
-  --flag-bg:#FBF2E2;
-  --confirm:#2F6F4F;     /* semantic: confirmed / verified */
-  --confirm-bg:#E8F1EC;
-  --btn-fg:#FFFFFF;
-  --close-bg:#141D26;
-  --close-fg:#F4F5F3;
-  --close-muted:rgba(244,245,243,.62);
-  --close-btn-bg:#F4F5F3;
-  --close-btn-fg:#141D26;
-  --close-ghost-line:rgba(244,245,243,.4);
-  --shadow:0 1px 2px rgba(20,29,38,.05),0 10px 30px -20px rgba(20,29,38,.35);
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --paper:#0D1319;
-    --surface:#141C23;
-    --raise:#1A242C;
-    --ink:#E8EDF1;
-    --body:#AEBBC4;
-    --muted:#78888F;
-    --line:#222E37;
-    --line-strong:#33434D;
-    --sign:#79ABE0;
-    --sign-deep:#A3C7EE;
-    --flag:#E0A94D;
-    --flag-bg:#2A2115;
-    --confirm:#71BE95;
-    --confirm-bg:#16261E;
-    --btn-fg:#0D1319;
-    --close-bg:#1A242C;
-    --close-fg:#E8EDF1;
-    --close-muted:#78888F;
-    --close-btn-bg:#79ABE0;
-    --close-btn-fg:#0D1319;
-    --close-ghost-line:#33434D;
-    --shadow:0 1px 2px rgba(0,0,0,.5),0 10px 30px -20px rgba(0,0,0,.9);
-  }
-}
-:root[data-theme="dark"]{
-  --paper:#0D1319;
-  --surface:#141C23;
-  --raise:#1A242C;
-  --ink:#E8EDF1;
-  --body:#AEBBC4;
-  --muted:#78888F;
-  --line:#222E37;
-  --line-strong:#33434D;
-  --sign:#79ABE0;
-  --sign-deep:#A3C7EE;
-  --flag:#E0A94D;
-  --flag-bg:#2A2115;
-  --confirm:#71BE95;
-  --confirm-bg:#16261E;
-  --btn-fg:#0D1319;
-  --close-bg:#1A242C;
-  --close-fg:#E8EDF1;
-  --close-muted:#78888F;
-  --close-btn-bg:#79ABE0;
-  --close-btn-fg:#0D1319;
-  --close-ghost-line:#33434D;
-  --shadow:0 1px 2px rgba(0,0,0,.5),0 10px 30px -20px rgba(0,0,0,.9);
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{
-  margin:0;background:var(--paper);color:var(--body);
-  font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
-  font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;
-}
-h1,h2,h3,h4{color:var(--ink);margin:0;text-wrap:balance;letter-spacing:-.015em;line-height:1.15}
-h1{font-size:clamp(2.15rem,5.2vw,3.5rem);font-weight:680}
-h2{font-size:clamp(1.55rem,3.2vw,2.2rem);font-weight:660}
-h3{font-size:1.06rem;font-weight:700;letter-spacing:-.005em}
-h4{font-size:.95rem;font-weight:700;letter-spacing:0}
-p{margin:0}
-a{color:var(--sign);text-underline-offset:3px}
-a:focus-visible,button:focus-visible{outline:2px solid var(--sign);outline-offset:3px;border-radius:2px}
-
-.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
-.col{max-width:64ch}
-.stack{display:flex;flex-direction:column;gap:16px}
-
-.eyebrow{
-  font-family:ui-monospace,Consolas,"SF Mono",monospace;
-  font-size:.71rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
-}
-.eyebrow.s{color:var(--sign)}
-
-/* the serif is reserved for the client's own words */
-.verbatim{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-style:italic;color:var(--ink)}
-
-.skip{position:absolute;left:-9999px;top:0;background:var(--sign);color:#fff;padding:10px 16px;z-index:50}
-.skip:focus{left:8px;top:8px}
-
-/* ---------- wordmark ---------- */
-.mark{display:flex;align-items:center;gap:10px;text-decoration:none}
-.mark svg{display:block;flex:none}
-.mark .wm{display:flex;flex-direction:column;line-height:1}
-.mark .wm .t{font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.mark .wm .n{font-size:1.06rem;font-weight:700;color:var(--ink);letter-spacing:-.02em}
-
-/* ---------- header ---------- */
-header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 0}
-nav.links{display:none;gap:26px;font-size:.92rem}
-@media(min-width:880px){nav.links{display:flex}}
-nav.links a{color:var(--body);text-decoration:none}
-nav.links a:hover{color:var(--ink)}
-.btn{
-  display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:640;font-size:.94rem;
-  padding:10px 18px;border-radius:4px;border:1px solid transparent;white-space:nowrap;
-  background:var(--sign);color:var(--btn-fg);
-}
-.btn:hover{background:var(--sign-deep)}
-.btn.ghost{background:transparent;color:var(--sign);border-color:var(--line-strong)}
-.btn.ghost:hover{background:var(--raise);border-color:var(--sign)}
-
-/* ---------- hero ---------- */
-.hero{padding:74px 0 58px;border-bottom:1px solid var(--line)}
-.hero-grid{display:grid;gap:44px;grid-template-columns:1fr}
-@media(min-width:940px){.hero-grid{grid-template-columns:1.05fr .95fr;align-items:start;gap:56px}}
-.hero h1 .find{color:var(--sign)}
-.lead{font-size:1.16rem;line-height:1.55;max-width:54ch}
-.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:4px}
-.cta-note{font-size:.87rem;color:var(--muted)}
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.badge{font-size:.82rem;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--body)}
-
-/* ---------- panel ---------- */
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow);overflow:hidden}
-.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 16px;background:var(--raise);border-bottom:1px solid var(--line)}
-.panel-head .ttl{font-family:ui-monospace,Consolas,monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.chip{font-family:ui-monospace,Consolas,monospace;font-size:.67rem;letter-spacing:.09em;text-transform:uppercase;padding:3px 8px;border-radius:3px;white-space:nowrap;font-weight:600}
-.chip.flag{color:var(--flag);background:var(--flag-bg);border:1px solid var(--flag)}
-.chip.ok{color:var(--confirm);background:var(--confirm-bg);border:1px solid var(--confirm)}
-.panel-body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:14px}
-.src{font-size:.78rem;color:var(--muted);font-family:ui-monospace,Consolas,monospace}
-.quote{border-left:3px solid var(--flag);background:var(--flag-bg);padding:12px 14px;border-radius:0 4px 4px 0;font-size:.97rem;line-height:1.5;margin:0}
-.finding{display:flex;flex-direction:column;gap:6px;padding-top:2px}
-.finding .h{font-weight:700;color:var(--ink);font-size:.95rem}
-.finding .d{font-size:.9rem}
-.panel-foot{border-top:1px dashed var(--line);padding:12px 18px;font-size:.83rem;color:var(--muted);display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
-
-/* ---------- sections ---------- */
-section{padding:66px 0;border-bottom:1px solid var(--line)}
-section.tint{background:var(--surface)}
-.sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:30px;max-width:60ch}
-
-/* ---------- workflows ---------- */
-.group{margin-top:30px}
-.group-label{display:flex;align-items:baseline;gap:12px;padding-bottom:9px;border-bottom:1px solid var(--line-strong);margin-bottom:16px;flex-wrap:wrap}
-.group-label h3{font-size:.79rem;letter-spacing:.15em;text-transform:uppercase;font-family:ui-monospace,Consolas,monospace;color:var(--sign)}
-.group-label .g-sub{font-size:.86rem;color:var(--muted)}
-.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(255px,1fr))}
-.wcard{background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:17px 18px;display:flex;flex-direction:column;gap:7px}
-section.tint .wcard{background:var(--paper)}
-.wcard p{font-size:.9rem;line-height:1.5}
-
-/* ---------- split ---------- */
-.split{display:grid;gap:36px;grid-template-columns:1fr;align-items:start}
-@media(min-width:900px){.split{grid-template-columns:1.02fr .98fr;gap:52px}}
-
-.notdo{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
-.notdo div{padding:14px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:baseline}
-.notdo .x{color:var(--sign);font-weight:700;flex:none;font-family:ui-monospace,Consolas,monospace;font-size:.85rem}
-.notdo p{font-size:.95rem}
-.notdo strong{color:var(--ink)}
-
-/* ---------- steps ---------- */
-.steps{display:flex;flex-direction:column;counter-reset:s;margin-top:8px}
-.stepx{display:grid;grid-template-columns:auto 1fr;gap:0 20px;padding:20px 0;border-top:1px solid var(--line)}
-.stepx:first-child{border-top:0}
-.stepx::before{
-  counter-increment:s;content:counter(s);
-  font-family:ui-monospace,Consolas,monospace;font-weight:700;font-size:.85rem;color:var(--sign);
-  border:1px solid var(--line-strong);border-radius:50%;
-  width:28px;height:28px;display:flex;align-items:center;justify-content:center;
-}
-.stepx .sb{display:flex;flex-direction:column;gap:5px}
-.stepx p{font-size:.95rem}
-
-/* ---------- pricing ---------- */
-.price{background:var(--surface);border:1px solid var(--line-strong);border-radius:6px;padding:28px;display:flex;flex-direction:column;gap:18px;box-shadow:var(--shadow)}
-section.tint .price{background:var(--paper)}
-.price .amt{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.price .amt .n{font-size:2.6rem;font-weight:700;color:var(--ink);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.price .amt .per{color:var(--muted);font-size:.95rem}
-.incl{display:grid;gap:9px 22px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));font-size:.94rem}
-.incl div{display:flex;gap:9px;align-items:baseline}
-.incl .t{color:var(--confirm);font-weight:700;flex:none}
-.compare{font-size:.9rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
-
-/* ---------- governance ---------- */
-.gov{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.gov div{border-left:2px solid var(--line-strong);padding:2px 0 2px 14px;display:flex;flex-direction:column;gap:3px}
-.gov h4{color:var(--ink)}
-.gov p{font-size:.9rem}
-
-/* ---------- closing ---------- */
-.close{background:var(--close-bg);padding:66px 0;border:0}
-.close h2,.close p{color:var(--close-fg)}
-.close .eyebrow{color:var(--close-muted)}
-.close .inner{display:flex;flex-direction:column;gap:16px;align-items:flex-start;max-width:56ch}
-.close .btn{background:var(--close-btn-bg);color:var(--close-btn-fg);border-color:var(--close-btn-bg)}
-.close .btn:hover{filter:brightness(1.08)}
-.close .btn.ghost{background:transparent;color:var(--close-fg);border-color:var(--close-ghost-line);filter:none}
-.close .btn.ghost:hover{border-color:var(--close-fg)}
-
-footer{padding:44px 0 56px;font-size:.86rem;color:var(--muted)}
-footer .frow{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:flex-start;margin-bottom:26px}
-footer .fnav{display:flex;flex-wrap:wrap;gap:20px}
-footer .fnav a{color:var(--body);text-decoration:none}
-footer .legal{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:20px;max-width:78ch}
-
-/* ================= visual layer ================= */
-
-/* line icons */
-.ic{width:22px;height:22px;flex:none;stroke:var(--sign);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.wcard .ic-wrap{
-  width:38px;height:38px;border-radius:8px;background:var(--raise);
-  display:flex;align-items:center;justify-content:center;margin-bottom:4px;
-}
-section.tint .wcard .ic-wrap{background:var(--surface)}
-
-/* app window chrome around the hero product view */
-.app{
-  border:1px solid var(--line-strong);border-radius:9px;overflow:hidden;
-  background:var(--surface);box-shadow:0 2px 4px rgba(20,29,38,.05),0 24px 48px -28px rgba(20,29,38,.45);
-}
-:root[data-theme="dark"] .app{box-shadow:0 2px 4px rgba(0,0,0,.5),0 24px 48px -28px rgba(0,0,0,1)}
-.app-bar{
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:9px 14px;background:var(--raise);border-bottom:1px solid var(--line);
-}
-.app-bar .who{display:flex;align-items:center;gap:8px}
-.app-bar .nm{font-size:.8rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
-.app-bar .user{
-  font-size:.7rem;color:var(--muted);border:1px solid var(--line-strong);
-  border-radius:999px;padding:3px 9px;font-family:ui-monospace,Consolas,monospace;
-}
-.app .panel{border:0;border-radius:0;box-shadow:none}
-
-/* document output mockup */
-.docs{position:relative;padding:14px 0 8px;display:flex;justify-content:center}
-.sheet{
-  width:min(330px,100%);background:var(--surface);border:1px solid var(--line);
-  border-radius:3px;box-shadow:0 2px 4px rgba(20,29,38,.06),0 18px 40px -26px rgba(20,29,38,.5);
-  padding:20px 22px;display:flex;flex-direction:column;gap:11px;
-}
-:root[data-theme="dark"] .sheet{box-shadow:0 2px 4px rgba(0,0,0,.6),0 18px 40px -26px rgba(0,0,0,1)}
-.sheet.back{position:absolute;top:0;left:50%;transform:translateX(-46%) rotate(3.5deg);opacity:.55;z-index:0}
-.sheet.front{position:relative;z-index:1;transform:rotate(-1.2deg)}
-.sheet .brandrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:2px solid var(--sign)}
-.sheet .logo{width:44px;height:13px;border-radius:2px;background:var(--sign);opacity:.85}
-.sheet .firm{font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-family:ui-monospace,Consolas,monospace}
-.sheet .dtitle{font-size:.95rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
-.lines{display:flex;flex-direction:column;gap:6px}
-.lines i{display:block;height:5px;border-radius:3px;background:var(--line);}
-.lines i.w95{width:95%}.lines i.w88{width:88%}.lines i.w70{width:70%}.lines i.w60{width:60%}.lines i.w45{width:45%}
-.sheet .hl{background:var(--flag-bg);border-left:2px solid var(--flag);padding:8px 10px;border-radius:0 3px 3px 0;display:flex;flex-direction:column;gap:5px}
-.sheet .hl span{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--flag);font-weight:700;font-family:ui-monospace,Consolas,monospace}
-.sheet .stamp{
-  margin-top:2px;align-self:flex-start;font-family:ui-monospace,Consolas,monospace;
-  font-size:.6rem;letter-spacing:.11em;text-transform:uppercase;font-weight:700;
-  color:var(--sign);border:1.5px solid var(--sign);border-radius:3px;padding:4px 9px;
-}
-
-/* data-flow diagram */
-.flow{display:grid;gap:12px;grid-template-columns:1fr;align-items:stretch}
-@media(min-width:720px){.flow{grid-template-columns:1fr auto 1fr auto 1fr}}
-.fnode{
-  background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px 18px;
-  display:flex;flex-direction:column;gap:6px;text-align:left;
-}
-section.tint .fnode{background:var(--paper)}
-.fnode.mid{border-style:dashed;border-color:var(--sign)}
-.fnode h4{color:var(--ink)}
-.fnode p{font-size:.86rem}
-.farrow{display:flex;align-items:center;justify-content:center;color:var(--line-strong)}
-.farrow svg{width:26px;height:26px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
-@media(max-width:719px){.farrow svg{transform:rotate(90deg)}}
-.flow-note{
-  margin-top:18px;display:flex;gap:10px;align-items:baseline;
-  border-left:3px solid var(--confirm);background:var(--confirm-bg);
-  padding:12px 16px;border-radius:0 4px 4px 0;font-size:.93rem;
-}
-.flow-note strong{color:var(--ink)}
-</style>
 </head>
 <body>
 
@@ -348,10 +42,9 @@ section.tint .fnode{background:var(--paper)}
   <symbol id="i-shieldheart" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.4 3 8.2 7 9 4-.8 7-4.6 7-9V6z"/><path d="M12 16s-3-2-3-4a1.7 1.7 0 0 1 3-1 1.7 1.7 0 0 1 3 1c0 2-3 4-3 4z"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
 </defs></svg>
-
 <header>
   <div class="wrap bar">
-    <a class="mark" href="#top" aria-label="The Advice Engine - home">
+    <a class="mark" href="/" aria-label="The Advice Engine - home">
       <svg width="30" height="30" viewBox="0 0 30 30" role="img" aria-hidden="true" focusable="false">
         <rect x="0.75" y="0.75" width="28.5" height="28.5" rx="4" fill="none" stroke="var(--line-strong)" stroke-width="1.5"></rect>
         <rect x="7" y="9" width="16" height="2.2" rx="1.1" fill="var(--ink)"></rect>
@@ -361,22 +54,21 @@ section.tint .fnode{background:var(--paper)}
       <span class="wm"><span class="t">The</span><span class="n">Advice Engine</span></span>
     </a>
     <nav class="links" aria-label="Main">
-      <a href="#what">What it does</a>
-      <a href="#gap">Gap scanner</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#governance">Security</a>
+      <a href="/quilter.html">For Quilter advisers</a>
+      <a href="/#what">What it does</a>
+      <a href="/find.html">Gap scanner</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#governance">Security</a>
     </nav>
     <a class="btn" href="#book">Book a Test Drive</a>
   </div>
 </header>
 
 <main id="main">
-<span id="top"></span>
-
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="stack">
-      <p class="eyebrow s">For UK financial advice firms</p>
+      <p class="eyebrow s">Built inside the Quilter network &middot; for UK advice firms</p>
       <h1>Drafts the paperwork. Checks the file. <span class="find">Finds the business you already had.</span></h1>
       <p class="lead">The Advice Engine drafts, checks and organises the documents your firm produces every day &mdash; in your brand, from your own client files. Built inside a regulated UK advice firm and used on real cases every day.</p>
       <div class="cta-row">
@@ -385,7 +77,7 @@ section.tint .fnode{background:var(--paper)}
       </div>
       <p class="cta-note">Four facts about a fictitious client in, a full specimen report out &mdash; through the real pipeline, before any live case goes near it.</p>
       <div class="badges">
-        <span class="badge">Built and used daily by a regulated UK advice firm</span>
+        <span class="badge">Built and used daily inside a Quilter-network firm</span>
         <span class="badge">Your brand, your approved wording</span>
         <span class="badge">No client data retained</span>
         <span class="badge">UK-hosted &middot; Microsoft sign-in &middot; MFA</span>
@@ -431,7 +123,24 @@ section.tint .fnode{background:var(--paper)}
   </div>
 </section>
 
-<section id="what" class="tint">
+<section class="tint">
+  <div class="wrap split">
+    <div class="stack">
+      <p class="eyebrow s">For Quilter advisers</p>
+      <h2>If your firm answers to the Quilter network, this was built for you</h2>
+      <p>The Advice Engine is built and used daily inside an appointed representative firm in the Quilter network &mdash; and every firm live on it today sits in the network. It drafts against full and shortened advice processes, produces the allowances position reviewers ask for, reads reports the way a file check reads them, and pre-vets financial promotions before they reach the approvals team.</p>
+      <p><a href="/quilter.html"><strong>What network-native actually means &rarr;</strong></a></p>
+    </div>
+    <div class="notdo">
+      <div><span class="x">&#10003;</span><p><strong>Your advice processes</strong> &mdash; full and shortened, across 19 case types.</p></div>
+      <div><span class="x">&#10003;</span><p><strong>The allowances table reviewers ask for</strong>, evidenced per client.</p></div>
+      <div><span class="x">&#10003;</span><p><strong>File-check-shaped review</strong> &mdash; grade, commentary, completed checklist.</p></div>
+      <div><span class="x">&#10003;</span><p><strong>Promotions pre-vetted</strong> before they reach the network approvals team.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="what">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow s">What it does</p>
@@ -442,34 +151,34 @@ section.tint .fnode{background:var(--paper)}
     <div class="group">
       <div class="group-label"><h3>Draft</h3><span class="g-sub">Documents produced from your case pack, in your firm's own styling</span></div>
       <div class="cards">
-        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-report"></use></svg></span><h4>Suitability reports</h4><p>Full and shortened advice processes across 19 case types, drafted from your case pack and checked against the compliance framework before you ever see them.</p></div>
-        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-review"></use></svg></span><h4>Annual advice meetings</h4><p>Pre-meeting briefing and the complete post-meeting pack, with the allowances position &mdash; ISA, pension, CGT, dividend &mdash; evidenced per client.</p></div>
-        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-meeting"></use></svg></span><h4>First-meeting packs</h4><p>Briefings before, follow-up packs after: agenda, introduction report, disclosure summary and initial fact find, clearly flagged as pre-advice.</p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-report"></use></svg></span><h4>Suitability reports</h4><p>Full and shortened advice processes across 19 case types, drafted from your case pack and checked against the compliance framework before you ever see them.</p><p class="more"><a href="/suitability.html">In detail &rarr;</a></p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-review"></use></svg></span><h4>Annual advice meetings</h4><p>Pre-meeting briefing and the complete post-meeting pack, with the allowances position &mdash; ISA, pension, CGT, dividend &mdash; evidenced per client.</p><p class="more"><a href="/meetings.html">In detail &rarr;</a></p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-meeting"></use></svg></span><h4>First-meeting packs</h4><p>Briefings before, follow-up packs after: agenda, introduction report, disclosure summary and initial fact find, clearly flagged as pre-advice.</p><p class="more"><a href="/meetings.html">In detail &rarr;</a></p></div>
       </div>
     </div>
 
     <div class="group">
       <div class="group-label"><h3>Check</h3><span class="g-sub">A second pair of eyes before anything leaves the firm</span></div>
       <div class="cards">
-        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-shield"></use></svg></span><h4>Compliance check</h4><p>Reviews an existing report the way a file checker would: grade, commentary and a completed checklist. It flags gaps; it never certifies anything.</p></div>
-        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-promo"></use></svg></span><h4>Financial promotions</h4><p>Pre-vets marketing material, web pages and stationery before submission to your network's approval team, cutting resubmission round trips. It never approves.</p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-shield"></use></svg></span><h4>Compliance check</h4><p>Reviews an existing report the way a file checker would: grade, commentary and a completed checklist. It flags gaps; it never certifies anything.</p><p class="more"><a href="/compliance.html">In detail &rarr;</a></p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-promo"></use></svg></span><h4>Financial promotions</h4><p>Pre-vets marketing material, web pages and stationery before submission to your network's approval team, cutting resubmission round trips. It never approves.</p><p class="more"><a href="/finprom.html">In detail &rarr;</a></p></div>
       </div>
     </div>
 
     <div class="group">
       <div class="group-label"><h3>Find</h3><span class="g-sub">What is already sitting in the files you hold</span></div>
       <div class="cards">
-        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-scan"></use></svg></span><h4>Advice gap scanner</h4><p>Reads a client's own file &mdash; meeting transcripts especially &mdash; and surfaces needs that were raised but never actioned, quoting the file verbatim.</p></div>
-        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-facts"></use></svg></span><h4>Client facts extract</h4><p>Turns a case pack into a source-attributed update sheet: every fact carries its document and a confirmed, estimated or unclear status.</p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-scan"></use></svg></span><h4>Advice gap scanner</h4><p>Reads a client's own file &mdash; meeting transcripts especially &mdash; and surfaces needs that were raised but never actioned, quoting the file verbatim.</p><p class="more"><a href="/find.html">In detail &rarr;</a></p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-facts"></use></svg></span><h4>Client facts extract</h4><p>Turns a case pack into a source-attributed update sheet: every fact carries its document and a confirmed, estimated or unclear status.</p><p class="more"><a href="/find.html">In detail &rarr;</a></p></div>
       </div>
     </div>
 
     <div class="group">
       <div class="group-label"><h3>Organise</h3><span class="g-sub">The administrative work around the advice</span></div>
       <div class="cards">
-        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sign"></use></svg></span><h4>Fee and authority paperwork</h4><p>Fee authority forms pre-filled from your own terms of business, and letters of authority with one information request per provider, validated before download.</p></div>
-        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-door"></use></svg></span><h4>One front door</h4><p>Not sure which workflow you need? Put the file in with a line of context. The engine picks, tells you why it picked, and lets you overrule it in one click.</p></div>
-        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-shieldheart"></use></svg></span><h4>Protection tools</h4><p>A whole-of-life ready-reckoner and an IHT cover affordability calculator, both indicative and clearly labelled as not advice.</p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sign"></use></svg></span><h4>Fee and authority paperwork</h4><p>Fee authority forms pre-filled from your own terms of business, and letters of authority with one information request per provider, validated before download.</p><p class="more"><a href="/organise.html">In detail &rarr;</a></p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-door"></use></svg></span><h4>One front door</h4><p>Not sure which workflow you need? Put the file in with a line of context. The engine picks, tells you why it picked, and lets you overrule it in one click.</p><p class="more"><a href="/organise.html">In detail &rarr;</a></p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-shieldheart"></use></svg></span><h4>Protection tools</h4><p>A whole-of-life ready-reckoner and an IHT cover affordability calculator, both indicative and clearly labelled as not advice.</p><p class="more"><a href="/organise.html">In detail &rarr;</a></p></div>
       </div>
     </div>
   </div>
@@ -507,14 +216,14 @@ section.tint .fnode{background:var(--paper)}
   </div>
 </section>
 
-<section id="gap">
+<section id="gap" class="tint">
   <div class="wrap split">
     <div class="stack">
       <p class="eyebrow s">The difference</p>
       <h2>Everyone else sells you time. We can also show you revenue.</h2>
       <p>Every AI tool in this market is sold on hours saved. Useful &mdash; and hard to put in front of a board. The advice gap scanner does something different: it reads the files you already hold and finds the needs that were raised and never actioned.</p>
-      <p>Open promises. Assets mentioned once in a meeting and never traced. Exposures that only appear when two facts on the file are read together. Conflicting signals between what a client said and what the file records.</p>
-      <p>It quotes the file word for word, and every quote is verified in code against the source document &mdash; anything unverified is tagged and demoted, never quietly dropped. What comes out is a prioritised agenda for your next conversation, with a tracking sheet. It is not advice, and it is not a review of past advice.</p>
+      <p>It quotes the file word for word, and every quote is verified in code against the source document. What comes out is a prioritised agenda for your next conversation, with a tracking sheet. It is not advice, and it is not a review of past advice.</p>
+      <p><a href="/find.html"><strong>How the gap scanner works &rarr;</strong></a></p>
     </div>
     <div class="stack">
       <div class="panel">
@@ -530,7 +239,7 @@ section.tint .fnode{background:var(--paper)}
   </div>
 </section>
 
-<section class="tint">
+<section>
   <div class="wrap split">
     <div class="stack">
       <p class="eyebrow s">Why firms pick it</p>
@@ -551,7 +260,7 @@ section.tint .fnode{background:var(--paper)}
   </div>
 </section>
 
-<section>
+<section class="tint">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow s">How it works</p>
@@ -566,7 +275,7 @@ section.tint .fnode{background:var(--paper)}
   </div>
 </section>
 
-<section id="pricing" class="tint">
+<section id="pricing">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow s">Pricing</p>
@@ -598,7 +307,7 @@ section.tint .fnode{background:var(--paper)}
   </div>
 </section>
 
-<section id="governance">
+<section id="governance" class="tint">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow s">Security and governance</p>
@@ -640,6 +349,8 @@ section.tint .fnode{background:var(--paper)}
   </div>
 </section>
 
+</main>
+
 <div class="close" id="book">
   <div class="wrap inner">
     <p class="eyebrow">Get started</p>
@@ -652,32 +363,35 @@ section.tint .fnode{background:var(--paper)}
   </div>
 </div>
 
-</main>
-
 <footer>
   <div class="wrap">
     <div class="frow">
-      <a class="mark" href="#top" aria-label="The Advice Engine">
-        <svg width="30" height="30" viewBox="0 0 30 30" role="img" aria-hidden="true" focusable="false">
-          <rect x="0.75" y="0.75" width="28.5" height="28.5" rx="4" fill="none" stroke="var(--line-strong)" stroke-width="1.5"></rect>
-          <rect x="7" y="9" width="16" height="2.2" rx="1.1" fill="var(--ink)"></rect>
-          <rect x="7" y="13.9" width="16" height="2.2" rx="1.1" fill="var(--flag)"></rect>
-          <rect x="7" y="18.8" width="10" height="2.2" rx="1.1" fill="var(--ink)"></rect>
-        </svg>
-        <span class="wm"><span class="t">The</span><span class="n">Advice Engine</span></span>
-      </a>
+      <a class="mark" href="/" aria-label="The Advice Engine - home">
+      <svg width="30" height="30" viewBox="0 0 30 30" role="img" aria-hidden="true" focusable="false">
+        <rect x="0.75" y="0.75" width="28.5" height="28.5" rx="4" fill="none" stroke="var(--line-strong)" stroke-width="1.5"></rect>
+        <rect x="7" y="9" width="16" height="2.2" rx="1.1" fill="var(--ink)"></rect>
+        <rect x="7" y="13.9" width="16" height="2.2" rx="1.1" fill="var(--flag)"></rect>
+        <rect x="7" y="18.8" width="10" height="2.2" rx="1.1" fill="var(--ink)"></rect>
+      </svg>
+      <span class="wm"><span class="t">The</span><span class="n">Advice Engine</span></span>
+    </a>
       <nav class="fnav" aria-label="Footer">
-        <a href="#what">What it does</a>
-        <a href="#gap">Gap scanner</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#governance">Security</a>
-        <a href="#book">Contact</a>
+        <a href="/quilter.html">For Quilter advisers</a>
+        <a href="/suitability.html">Suitability reports</a>
+        <a href="/meetings.html">Client meetings</a>
+        <a href="/compliance.html">Compliance check</a>
+        <a href="/finprom.html">Financial promotions</a>
+        <a href="/find.html">Gap scanner</a>
+        <a href="/organise.html">Fees &amp; admin</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#governance">Security</a>
       </nav>
     </div>
     <div class="legal">
-      <p><strong style="color:var(--ink)">The Advice Engine</strong> is built and operated by Ginkgo Financial Ltd, a regulated UK financial advice firm.</p>
+      <p><strong style="color:var(--ink)">The Advice Engine</strong> is built and operated by Ginkgo Financial Ltd. Ginkgo Financial Ltd is an appointed representative of Quilter Financial Services Limited, which is authorised and regulated by the Financial Conduct Authority.</p>
       <p>The Advice Engine is a document drafting and checking tool for authorised advice firms. It does not provide financial advice, does not approve financial promotions and does not certify compliance. Every output is a draft requiring review and sign-off by a named adviser at the using firm, which remains responsible for its own advice and its own regulatory obligations.</p>
-      <p>Demonstrations use fictitious or anonymised data only. The specimen gap scan shown on this page relates to a fictitious client.</p>
+      <p>References to Quilter on this site describe the network environment the engine is built and operated in. Quilter is a trade mark of its owner; The Advice Engine is an independent product of Ginkgo Financial Ltd.</p>
+      <p>Demonstrations and specimens on this site are fictitious and labelled as such.</p>
     </div>
   </div>
 </footer>
