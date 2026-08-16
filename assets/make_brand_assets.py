@@ -66,7 +66,7 @@ def make_og():
         ("Drafts the paperwork.", PAPER),
         ("Checks the file.", PAPER),
         ("Finds the business", SIGN),
-        ("you already had.", SIGN),
+        ("you may have missed.", SIGN),
     ]
     y = 214
     for text, col in lines:
