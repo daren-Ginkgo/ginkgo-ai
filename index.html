@@ -255,11 +255,99 @@ footer .frow{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;
 footer .fnav{display:flex;flex-wrap:wrap;gap:20px}
 footer .fnav a{color:var(--body);text-decoration:none}
 footer .legal{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:20px;max-width:78ch}
+
+/* ================= visual layer ================= */
+
+/* line icons */
+.ic{width:22px;height:22px;flex:none;stroke:var(--sign);stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.wcard .ic-wrap{
+  width:38px;height:38px;border-radius:8px;background:var(--raise);
+  display:flex;align-items:center;justify-content:center;margin-bottom:4px;
+}
+section.tint .wcard .ic-wrap{background:var(--surface)}
+
+/* app window chrome around the hero product view */
+.app{
+  border:1px solid var(--line-strong);border-radius:9px;overflow:hidden;
+  background:var(--surface);box-shadow:0 2px 4px rgba(20,29,38,.05),0 24px 48px -28px rgba(20,29,38,.45);
+}
+:root[data-theme="dark"] .app{box-shadow:0 2px 4px rgba(0,0,0,.5),0 24px 48px -28px rgba(0,0,0,1)}
+.app-bar{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:9px 14px;background:var(--raise);border-bottom:1px solid var(--line);
+}
+.app-bar .who{display:flex;align-items:center;gap:8px}
+.app-bar .nm{font-size:.8rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.app-bar .user{
+  font-size:.7rem;color:var(--muted);border:1px solid var(--line-strong);
+  border-radius:999px;padding:3px 9px;font-family:ui-monospace,Consolas,monospace;
+}
+.app .panel{border:0;border-radius:0;box-shadow:none}
+
+/* document output mockup */
+.docs{position:relative;padding:14px 0 8px;display:flex;justify-content:center}
+.sheet{
+  width:min(330px,100%);background:var(--surface);border:1px solid var(--line);
+  border-radius:3px;box-shadow:0 2px 4px rgba(20,29,38,.06),0 18px 40px -26px rgba(20,29,38,.5);
+  padding:20px 22px;display:flex;flex-direction:column;gap:11px;
+}
+:root[data-theme="dark"] .sheet{box-shadow:0 2px 4px rgba(0,0,0,.6),0 18px 40px -26px rgba(0,0,0,1)}
+.sheet.back{position:absolute;top:0;left:50%;transform:translateX(-46%) rotate(3.5deg);opacity:.55;z-index:0}
+.sheet.front{position:relative;z-index:1;transform:rotate(-1.2deg)}
+.sheet .brandrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:2px solid var(--sign)}
+.sheet .logo{width:44px;height:13px;border-radius:2px;background:var(--sign);opacity:.85}
+.sheet .firm{font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-family:ui-monospace,Consolas,monospace}
+.sheet .dtitle{font-size:.95rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.lines{display:flex;flex-direction:column;gap:6px}
+.lines i{display:block;height:5px;border-radius:3px;background:var(--line);}
+.lines i.w95{width:95%}.lines i.w88{width:88%}.lines i.w70{width:70%}.lines i.w60{width:60%}.lines i.w45{width:45%}
+.sheet .hl{background:var(--flag-bg);border-left:2px solid var(--flag);padding:8px 10px;border-radius:0 3px 3px 0;display:flex;flex-direction:column;gap:5px}
+.sheet .hl span{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--flag);font-weight:700;font-family:ui-monospace,Consolas,monospace}
+.sheet .stamp{
+  margin-top:2px;align-self:flex-start;font-family:ui-monospace,Consolas,monospace;
+  font-size:.6rem;letter-spacing:.11em;text-transform:uppercase;font-weight:700;
+  color:var(--sign);border:1.5px solid var(--sign);border-radius:3px;padding:4px 9px;
+}
+
+/* data-flow diagram */
+.flow{display:grid;gap:12px;grid-template-columns:1fr;align-items:stretch}
+@media(min-width:720px){.flow{grid-template-columns:1fr auto 1fr auto 1fr}}
+.fnode{
+  background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px 18px;
+  display:flex;flex-direction:column;gap:6px;text-align:left;
+}
+section.tint .fnode{background:var(--paper)}
+.fnode.mid{border-style:dashed;border-color:var(--sign)}
+.fnode h4{color:var(--ink)}
+.fnode p{font-size:.86rem}
+.farrow{display:flex;align-items:center;justify-content:center;color:var(--line-strong)}
+.farrow svg{width:26px;height:26px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:719px){.farrow svg{transform:rotate(90deg)}}
+.flow-note{
+  margin-top:18px;display:flex;gap:10px;align-items:baseline;
+  border-left:3px solid var(--confirm);background:var(--confirm-bg);
+  padding:12px 16px;border-radius:0 4px 4px 0;font-size:.93rem;
+}
+.flow-note strong{color:var(--ink)}
 </style>
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <symbol id="i-report" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></symbol>
+  <symbol id="i-review" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/></symbol>
+  <symbol id="i-meeting" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 20a5.5 5.5 0 0 1 5.5-5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.4 3 8.2 7 9 4-.8 7-4.6 7-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-promo" viewBox="0 0 24 24"><path d="M4 10v4a1 1 0 0 0 1 1h3l6 4V5L8 9H5a1 1 0 0 0-1 1z"/><path d="M18 9a4 4 0 0 1 0 6"/></symbol>
+  <symbol id="i-scan" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/><path d="M9 11h4"/></symbol>
+  <symbol id="i-facts" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v3h6V3"/><path d="M9 12h6M9 16h4"/></symbol>
+  <symbol id="i-sign" viewBox="0 0 24 24"><path d="M4 18c3 0 3-9 6-9s3 6 5 6 2-3 5-3"/><path d="M4 21h16"/></symbol>
+  <symbol id="i-door" viewBox="0 0 24 24"><path d="m12 3 1.7 4.3L18 9l-4.3 1.7L12 15l-1.7-4.3L6 9l4.3-1.7z"/><path d="M18 15.5 19 18l2.5 1-2.5 1-1 2.5-1-2.5L14.5 19l2.5-1z"/></symbol>
+  <symbol id="i-shieldheart" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.4 3 8.2 7 9 4-.8 7-4.6 7-9V6z"/><path d="M12 16s-3-2-3-4a1.7 1.7 0 0 1 3-1 1.7 1.7 0 0 1 3 1c0 2-3 4-3 4z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+</defs></svg>
 
 <header>
   <div class="wrap bar">
@@ -304,6 +392,19 @@ footer .legal{display:flex;flex-direction:column;gap:10px;border-top:1px solid v
       </div>
     </div>
 
+    <div class="app" aria-label="The Advice Engine showing a specimen advice gap scan">
+    <div class="app-bar">
+      <span class="who">
+        <svg width="18" height="18" viewBox="0 0 30 30" aria-hidden="true" focusable="false">
+          <rect width="30" height="30" rx="5" fill="var(--ink)"></rect>
+          <rect x="7" y="9" width="16" height="2.4" rx="1.2" fill="var(--paper)"></rect>
+          <rect x="7" y="13.8" width="16" height="2.4" rx="1.2" fill="var(--flag)"></rect>
+          <rect x="7" y="18.6" width="10" height="2.4" rx="1.2" fill="var(--paper)"></rect>
+        </svg>
+        <span class="nm">The Advice Engine</span>
+      </span>
+      <span class="user">signed in &middot; your firm</span>
+    </div>
     <div class="panel" aria-label="Example of an advice gap scanner finding">
       <div class="panel-head">
         <span class="ttl">Advice gap scan &middot; specimen</span>
@@ -326,6 +427,7 @@ footer .legal{display:flex;flex-direction:column;gap:10px;border-top:1px solid v
         <span>Every quote is checked against the source document in code. This is an agenda for a conversation &mdash; not advice, and not a review of past advice.</span>
       </div>
     </div>
+    </div>
   </div>
 </section>
 
@@ -340,34 +442,66 @@ footer .legal{display:flex;flex-direction:column;gap:10px;border-top:1px solid v
     <div class="group">
       <div class="group-label"><h3>Draft</h3><span class="g-sub">Documents produced from your case pack, in your firm's own styling</span></div>
       <div class="cards">
-        <div class="wcard"><h4>Suitability reports</h4><p>Full and shortened advice processes across 19 case types, drafted from your case pack and checked against the compliance framework before you ever see them.</p></div>
-        <div class="wcard"><h4>Annual advice meetings</h4><p>Pre-meeting briefing and the complete post-meeting pack, with the allowances position &mdash; ISA, pension, CGT, dividend &mdash; evidenced per client.</p></div>
-        <div class="wcard"><h4>First-meeting packs</h4><p>Briefings before, follow-up packs after: agenda, introduction report, disclosure summary and initial fact find, clearly flagged as pre-advice.</p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-report"></use></svg></span><h4>Suitability reports</h4><p>Full and shortened advice processes across 19 case types, drafted from your case pack and checked against the compliance framework before you ever see them.</p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-review"></use></svg></span><h4>Annual advice meetings</h4><p>Pre-meeting briefing and the complete post-meeting pack, with the allowances position &mdash; ISA, pension, CGT, dividend &mdash; evidenced per client.</p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-meeting"></use></svg></span><h4>First-meeting packs</h4><p>Briefings before, follow-up packs after: agenda, introduction report, disclosure summary and initial fact find, clearly flagged as pre-advice.</p></div>
       </div>
     </div>
 
     <div class="group">
       <div class="group-label"><h3>Check</h3><span class="g-sub">A second pair of eyes before anything leaves the firm</span></div>
       <div class="cards">
-        <div class="wcard"><h4>Compliance check</h4><p>Reviews an existing report the way a file checker would: grade, commentary and a completed checklist. It flags gaps; it never certifies anything.</p></div>
-        <div class="wcard"><h4>Financial promotions</h4><p>Pre-vets marketing material, web pages and stationery before submission to your network's approval team, cutting resubmission round trips. It never approves.</p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-shield"></use></svg></span><h4>Compliance check</h4><p>Reviews an existing report the way a file checker would: grade, commentary and a completed checklist. It flags gaps; it never certifies anything.</p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-promo"></use></svg></span><h4>Financial promotions</h4><p>Pre-vets marketing material, web pages and stationery before submission to your network's approval team, cutting resubmission round trips. It never approves.</p></div>
       </div>
     </div>
 
     <div class="group">
       <div class="group-label"><h3>Find</h3><span class="g-sub">What is already sitting in the files you hold</span></div>
       <div class="cards">
-        <div class="wcard"><h4>Advice gap scanner</h4><p>Reads a client's own file &mdash; meeting transcripts especially &mdash; and surfaces needs that were raised but never actioned, quoting the file verbatim.</p></div>
-        <div class="wcard"><h4>Client facts extract</h4><p>Turns a case pack into a source-attributed update sheet: every fact carries its document and a confirmed, estimated or unclear status.</p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-scan"></use></svg></span><h4>Advice gap scanner</h4><p>Reads a client's own file &mdash; meeting transcripts especially &mdash; and surfaces needs that were raised but never actioned, quoting the file verbatim.</p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-facts"></use></svg></span><h4>Client facts extract</h4><p>Turns a case pack into a source-attributed update sheet: every fact carries its document and a confirmed, estimated or unclear status.</p></div>
       </div>
     </div>
 
     <div class="group">
       <div class="group-label"><h3>Organise</h3><span class="g-sub">The administrative work around the advice</span></div>
       <div class="cards">
-        <div class="wcard"><h4>Fee and authority paperwork</h4><p>Fee authority forms pre-filled from your own terms of business, and letters of authority with one information request per provider, validated before download.</p></div>
-        <div class="wcard"><h4>One front door</h4><p>Not sure which workflow you need? Put the file in with a line of context. The engine picks, tells you why it picked, and lets you overrule it in one click.</p></div>
-        <div class="wcard"><h4>Protection tools</h4><p>A whole-of-life ready-reckoner and an IHT cover affordability calculator, both indicative and clearly labelled as not advice.</p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-sign"></use></svg></span><h4>Fee and authority paperwork</h4><p>Fee authority forms pre-filled from your own terms of business, and letters of authority with one information request per provider, validated before download.</p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-door"></use></svg></span><h4>One front door</h4><p>Not sure which workflow you need? Put the file in with a line of context. The engine picks, tells you why it picked, and lets you overrule it in one click.</p></div>
+        <div class="wcard"><span class="ic-wrap"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-shieldheart"></use></svg></span><h4>Protection tools</h4><p>A whole-of-life ready-reckoner and an IHT cover affordability calculator, both indicative and clearly labelled as not advice.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="stack">
+      <p class="eyebrow s">What comes out</p>
+      <h2>A finished document in your firm's own styling</h2>
+      <p>Not a chat window and not a wall of text to tidy up afterwards. Every workflow produces a branded Word document, laid out the way your firm lays it out, with your logo, your regulatory footer and your approved wording.</p>
+      <p>Alongside it comes an adviser QA sheet: what the engine relied on, what it could not evidence, and every point it wants you to look at before you sign. Anything it could not find in the file is flagged in the margin rather than quietly invented.</p>
+      <p>If your network expects a particular house template, the engine can produce in that styling too.</p>
+    </div>
+    <div class="docs">
+      <div class="sheet back" aria-hidden="true">
+        <div class="brandrow"><span class="logo"></span><span class="firm">Adviser QA sheet</span></div>
+        <div class="lines"><i class="w88"></i><i class="w95"></i><i class="w70"></i><i class="w60"></i></div>
+      </div>
+      <div class="sheet front" role="img" aria-label="Mockup of a branded suitability report with a flagged item and a draft stamp">
+        <div class="brandrow">
+          <span class="logo"></span>
+          <span class="firm">Your firm Ltd</span>
+        </div>
+        <span class="dtitle">Suitability Report</span>
+        <div class="lines"><i class="w95"></i><i class="w88"></i><i class="w95"></i><i class="w70"></i></div>
+        <div class="hl">
+          <span>Flagged for adviser</span>
+          <div class="lines"><i class="w88"></i><i class="w45"></i></div>
+        </div>
+        <div class="lines"><i class="w95"></i><i class="w60"></i></div>
+        <span class="stamp">Draft &mdash; awaiting sign-off</span>
       </div>
     </div>
   </div>
@@ -471,7 +605,29 @@ footer .legal{display:flex;flex-direction:column;gap:10px;border-top:1px solid v
       <h2>Built for firms that answer to a network</h2>
       <p>Most tools in this category need to hold your client data to work. This one does not, which makes your data protection impact assessment a considerably shorter conversation.</p>
     </div>
-    <div class="gov">
+
+    <div class="flow" role="img" aria-label="Client material goes in, is processed in memory, documents come out, and nothing is retained afterwards">
+      <div class="fnode">
+        <h4>Your material goes in</h4>
+        <p>Uploaded, pasted, or picked from your own SharePoint library using your Microsoft sign-in.</p>
+      </div>
+      <div class="farrow"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></div>
+      <div class="fnode mid">
+        <h4>Processed in the moment</h4>
+        <p>Held in memory for the length of the run only. Never written to disk, never used to train a model.</p>
+      </div>
+      <div class="farrow"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></div>
+      <div class="fnode">
+        <h4>Documents come back</h4>
+        <p>Branded Word files and a QA sheet, downloaded to your machine and your systems.</p>
+      </div>
+    </div>
+    <div class="flow-note">
+      <span aria-hidden="true">&#10003;</span>
+      <span><strong>Then nothing is left.</strong> No client record on our side, nothing to delete if you leave, and no copy of your files sitting in a vendor's database. All we keep is a metadata line saying who ran which workflow and when &mdash; never the content.</span>
+    </div>
+
+    <div class="gov" style="margin-top:30px">
       <div><h4>No client data retained</h4><p>Client material is processed in the moment and not written to disk. Nothing is stranded with us if you leave.</p></div>
       <div><h4>Not used to train models</h4><p>Your data is never used to train any model &mdash; ours or our suppliers'.</p></div>
       <div><h4>UK-region hosting</h4><p>Microsoft Azure, UK region, so data residency is satisfied by default.</p></div>
