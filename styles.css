@@ -10,6 +10,6 @@
 @media(max-width:640px){.container{width:min(100% - 28px,var(--max))}.section{padding:62px 0}.hero{padding-top:52px}.cards-4,.cards-3,.steps,.pricing-grid,.security-grid,.two-col{grid-template-columns:1fr}.security-grid .card:last-child{grid-column:auto}.trust-grid{grid-template-columns:1fr}.trust-item+.trust-item{border-left:0;border-top:1px solid var(--border)}.section-head{display:block}.trial{display:block}.cta{padding:34px 25px}.ui-shell{padding:8px}.ui-panel{padding:14px}.nav{min-height:64px}.nav.open .nav-links{top:64px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
-.brand img{display:block;height:40px;width:auto}
-.footer .brand img{height:34px}
-@media(max-width:640px){.brand img{height:34px}}
+.brand img{display:block;height:50px;width:auto}
+.footer .brand img{height:40px}
+@media(max-width:640px){.brand img{height:40px}}
