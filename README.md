@@ -18,6 +18,9 @@ or legal wording, change it in every page**. There is no generator any more
 
 ```
 index.html                    homepage
+tools.html                    the full inventory: 36 workflows and tools (GENERATED - see below)
+trial.html                    the free month: self-serve signup for Quilter FS AR firms
+demo.html                     book a demo: the route in for firms outside the Quilter network
 quilter.html                  For Quilter advisers (flagship positioning page)
 suitability.html              suitability reports in detail
 meetings.html                 first meetings + annual advice reviews
@@ -74,3 +77,31 @@ These are not style preferences. Anything added here must hold to them:
   Real screenshots go in `assets/incoming/` for placement.
 - **CTAs are `mailto:`.** Should become a booking form plus calendar link.
 - **No analytics.**
+
+## The three ways in
+
+The site points at three destinations and they are not interchangeable:
+
+- **trial.html** then `https://app.theadviceengine.ai/` - the self-serve free month. It only
+  works while `SELF_SIGNUP_ENABLED` is set on the live web app; without it a new visitor signs
+  in and is refused. Firms are vetted live against the FCA register and must be a current
+  Quilter Financial Services appointed representative.
+- **Sign in**, in the header of every page - the same URL. There is no separate password: the
+  engine uses Microsoft Entra sign-in, so an existing customer who has lost the link simply
+  signs in with the work account they already have.
+- **demo.html** - the booking route, for firms the register cannot verify automatically.
+
+"Test Drive" means the in-app fictitious-client run and nothing else. The booking route for
+non-Quilter firms is a **demo** (Daren, 26 August 2026). Do not reintroduce "Book a Test Drive"
+as a booking CTA - the two were being used for different things on the same site.
+
+The demo booking destination is set in ONE place per page, the `BOOK_URL` at the top of
+`demo.html`'s generator and the `href` on `demo.html` itself. Change it there.
+
+## tools.html is generated
+
+`tools.html` is built from the engine's own `WORKFLOW_CARDS` registry so the public list cannot
+drift from the product. When workflows are added or renamed in the engine, regenerate it rather
+than hand-editing. Quilter's internal calculator references (RAP-xxxx and PRF-xxxx) are stripped
+on the way out: they are Quilter's own, and the selling point is that the calculators are
+replicated, not their internal codes.
