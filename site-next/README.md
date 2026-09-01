@@ -40,8 +40,10 @@ the application itself redirects and authorises `/funnel`.
 Pushing this directory to the `new-marketing-site` branch runs
 `deploy-marketing-staging.yml`. The workflow expects:
 
+
 - repository variable `AZURE_MARKETING_APP_NAME`;
 - repository secrets `AZURE_MARKETING_CLIENT_ID`, `AZURE_TENANT_ID`, and
   `AZURE_SUBSCRIPTION_ID` for an Azure federated identity.
 
 No production domain is changed by this workflow.
+First staging deploy triggered 1 September 2026
