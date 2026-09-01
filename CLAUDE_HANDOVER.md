@@ -13,7 +13,7 @@ website while staging is being completed.
 
 - Repository: `daren-Ginkgo/ginkgo-ai` (public)
 - Working branch: `new-marketing-site`
-- Remote handover commit: `a2df9edc1d886026e2ff10ac38e16877686041b0`
+- Implementation commit: `a2df9edc1d886026e2ff10ac38e16877686041b0`
 - New application directory: `site-next/`
 - Deployment workflow: `.github/workflows/deploy-marketing-staging.yml`
 - Current production branch: `main`
@@ -21,9 +21,10 @@ website while staging is being completed.
 - Product login/domain: `https://app.theadviceengine.ai`
 - Private product repository/Web App: `ginkgo-advice-engine-demo`
 
-The branch is one commit ahead of `main`. All 121 replacement-site files are in
-GitHub. The existing root-level HTML website, `main`, GitHub Pages configuration,
-DNS and production domain have not been altered.
+The branch contains the complete replacement-site commit plus this handover. All
+121 replacement-site files are in GitHub. The existing root-level HTML website,
+`main`, GitHub Pages configuration, DNS and production domain have not been
+altered.
 
 The replacement passed these local checks before handover:
 
