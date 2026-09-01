@@ -150,6 +150,17 @@ export async function submitBetaApplication(input: {
   return { duplicate: false, application: fromApplicationEntity(entity), availability: await betaAvailability() };
 }
 
+export async function getApplication(id: string): Promise<StoredApplication | null> {
+  await ensureTables();
+  try {
+    const entity = await applicationClient().getEntity<ApplicationEntity>(APPLICATION_PARTITION, id);
+    return fromApplicationEntity(entity);
+  } catch (error) {
+    if (statusCode(error) === 404) return null;
+    throw error;
+  }
+}
+
 export async function updateApplicationStatus(id: string, status: ApplicationStatus) {
   await ensureTables();
   const client = applicationClient();

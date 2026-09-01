@@ -3817,11 +3817,20 @@ svg {
 .funnel-table th { padding: 13px 16px; background: #f7f8fb; color: var(--muted); text-align: left; font-size: 0.67rem; letter-spacing: 0.05em; text-transform: uppercase; }
 .funnel-table td { min-width: 130px; max-width: 320px; padding: 17px 16px; border-top: 1px solid var(--line); vertical-align: top; }
 .funnel-table td:first-child { min-width: 200px; }
-.funnel-table td:nth-child(4) { min-width: 300px; }
+.funnel-table td:nth-child(5) { min-width: 300px; }
 .funnel-table td strong, .funnel-table td span, .funnel-table td a { display: block; }
 .funnel-table td a { margin-top: 4px; color: var(--violet); }
 .funnel-table td span, .funnel-table td p { margin: 4px 0 0; color: var(--muted); line-height: 1.45; }
 .funnel-table select { min-width: 110px; height: 36px; padding: 0 8px; font-size: 0.74rem; text-transform: capitalize; }
+.funnel-table td:nth-child(3) { min-width: 210px; }
+.fca-result { display: block; margin-bottom: 8px; }
+.funnel-table td .fca-line { display: block; margin: 2px 0 0; font-size: 0.72rem; line-height: 1.4; }
+.funnel-table td .fca-line.fca-ok { color: #157347; }
+.funnel-table td .fca-line.fca-bad { color: #b3261e; }
+.funnel-table td .fca-line.fca-warn { color: #8a6d1a; }
+.fca-check-button { height: 32px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: white; font-size: 0.72rem; cursor: pointer; }
+.fca-check-button:disabled { opacity: 0.6; cursor: default; }
+.funnel-table td .fca-note { margin-top: 6px; font-size: 0.64rem; color: var(--muted); }
 .funnel-analytics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
 .funnel-analytics-grid > div { padding: 28px; }
 .funnel-analytics-grid > div + div { border-left: 1px solid var(--line); }
