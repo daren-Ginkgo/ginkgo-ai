@@ -1,0 +1,80 @@
+name: Deploy marketing site to Azure PRODUCTION
+
+# Manual promote only: staging auto-deploys on every push to new-marketing-site;
+# production ships when a human presses Run workflow (or `gh workflow run`).
+# Builds the SAME source as staging - the new-marketing-site branch's site-next/.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: advice-engine-marketing-production
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: "22.x"
+  APP_DIRECTORY: site-next
+  AZURE_WEBAPP_NAME: ${{ vars.AZURE_MARKETING_PROD_APP_NAME }}
+
+jobs:
+  build-and-deploy:
+    # Dormant until the production Web App and repository variable exist.
+    if: ${{ vars.AZURE_MARKETING_PROD_APP_NAME != '' }}
+    runs-on: ubuntu-latest
+    environment: marketing-production
+
+    steps:
+      - name: Check out the marketing-site branch
+        uses: actions/checkout@v4
+        with:
+          ref: new-marketing-site
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: ${{ env.APP_DIRECTORY }}/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ${{ env.APP_DIRECTORY }}
+        run: npm ci
+
+      - name: Build standalone application
+        working-directory: ${{ env.APP_DIRECTORY }}
+        run: npm run build
+
+      - name: Assemble Azure deployment package
+        working-directory: ${{ env.APP_DIRECTORY }}
+        run: |
+          mkdir -p deploy-package/.next
+          cp -R .next/standalone/. deploy-package/
+          cp -R .next/static deploy-package/.next/static
+          cp -R public deploy-package/public
+
+      - name: Sign in to Azure with GitHub OIDC
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_MARKETING_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Deploy to Azure App Service
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          package: ${{ env.APP_DIRECTORY }}/deploy-package
+
+      - name: Verify public health endpoint
+        run: |
+          for attempt in 1 2 3 4 5 6; do
+            if curl --fail --silent --show-error --max-time 20 \
+              "https://${AZURE_WEBAPP_NAME}.azurewebsites.net/api/health"; then
+              exit 0
+            fi
+            sleep 10
+          done
+          exit 1
