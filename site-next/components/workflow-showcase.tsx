@@ -41,7 +41,7 @@ const workflows: Workflow[] = [
     id: "suitability",
     tab: "Suitability report",
     eyebrow: "Transcript to branded recommendation",
-    title: "Start with the conversation—not a blank report.",
+    title: "Start with the conversation – not a blank report.",
     promise:
       "The engine brings the client’s circumstances, objectives, risk position, existing arrangements and recommendation evidence into one structured draft.",
     inputs: [

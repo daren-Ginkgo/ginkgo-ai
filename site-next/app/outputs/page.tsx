@@ -1,10 +1,16 @@
+import type { Metadata } from "next";
 import { Calculator, Check, FileCheck2, FileText, Mail, ShieldCheck } from "lucide-react";
 import { ArrowButton, FinalCta, PageHero, SiteFooter, SiteHeader } from "@/components/marketing";
 import { WorkflowShowcase } from "@/components/workflow-showcase";
 
+export const metadata: Metadata = {
+  title: "Outputs",
+  description: "Specimen outputs from The Advice Engine: branded draft documents, adviser QA sheets and calculation workings. All specimens are fictitious and labelled as such.",
+};
+
 export default function OutputsPage() {
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <PageHero eyebrow="Outputs and workflow demonstrations" title="Judge the work, not the promise." copy="See how transcripts, client documents and household data become branded Word drafts, adviser QA sheets, cashflow reports and calculation workings." primary={{ href: "#workflow-demos", label: "See the workflows" }} />
       <section className="section workflow-demo-section" id="workflow-demos">

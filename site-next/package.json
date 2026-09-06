@@ -7,10 +7,10 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/check-em-dash.mjs && next build",
     "start": "next start",
     "test": "npm run lint && npm run build",
-    "lint": "eslint . --ignore-pattern .next"
+    "lint": "eslint . --ignore-pattern .next && node scripts/check-em-dash.mjs"
   },
   "dependencies": {
     "@azure/data-tables": "^13.3.1",

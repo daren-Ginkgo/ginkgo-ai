@@ -13,6 +13,12 @@
   --blue: #2c3e9e;
   --mist: #dfe6f2;
   --muted: #667085;
+  /* Small-label text (10-12px micro-labels): 5.5:1 on --paper, 5.9:1 on white.
+     Route every pale blue-grey label through this token, never a hardcoded hex. */
+  --muted-small: #5a6478;
+  /* Eyebrow/kicker text: --violet at 12px measures 4.37:1 on --paper, so small
+     violet text uses this darker step (5.4:1). */
+  --violet-text: #5b4ce8;
   --green: #167c63;
   --amber: #a55c09;
   --line: rgba(11, 29, 58, 0.13);
@@ -227,7 +233,7 @@ svg {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--violet);
+  color: var(--violet-text);
   font-size: 0.72rem;
   font-weight: 850;
   letter-spacing: 0.13em;
@@ -335,7 +341,7 @@ svg {
   position: absolute;
   top: 28px;
   left: 30px;
-  color: #79859a;
+  color: var(--muted-small);
   font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.11em;
@@ -372,7 +378,7 @@ svg {
 
 .source-card span {
   margin-top: 3px;
-  color: #7a8598;
+  color: var(--muted-small);
   font-size: 0.6rem;
 }
 
@@ -454,7 +460,7 @@ svg {
 
 .document-client {
   margin-top: 6px;
-  color: #7c8798;
+  color: var(--muted-small);
   font-size: 0.61rem;
 }
 
@@ -523,7 +529,7 @@ svg {
   margin-top: 34px;
   padding-top: 13px;
   border-top: 1px solid #e4e7eb;
-  color: #7a8495;
+  color: var(--muted-small);
   font-size: 0.58rem;
 }
 
@@ -707,7 +713,7 @@ svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #9ba4b3;
+  color: var(--muted-small);
   font-size: 0.72rem;
   font-weight: 800;
 }
@@ -841,7 +847,7 @@ svg {
 }
 
 .report-brand small {
-  color: #8b95a5;
+  color: var(--muted-small);
   font-size: 0.43rem;
 }
 
@@ -867,7 +873,7 @@ svg {
 
 .report-meta {
   margin: 0;
-  color: #8590a0;
+  color: var(--muted-small);
   font-size: 0.58rem;
 }
 
@@ -1714,7 +1720,9 @@ svg {
     text-align: center;
   }
 
-  .announcement span:last-child {
+  /* On a phone, keep the founding-places counter (last child) and hide the
+     network strapline instead: the strapline already repeats in the hero. */
+  .announcement span:first-child {
     display: none;
   }
 
@@ -4513,7 +4521,7 @@ svg {
 
 .connected-files > div > svg:first-child {
   width: 19px;
-  color: #8b95a5;
+  color: var(--muted-small);
 }
 
 .connected-files > div.selected > svg:first-child {
@@ -4841,4 +4849,110 @@ svg {
   .founding-login-actions {
     justify-items: start;
   }
+}
+
+/* ------------------------------------------------------------------ */
+/* Accessibility fixes, 6 Sep 2026: skip link, focus ring, tap targets */
+/* ------------------------------------------------------------------ */
+
+/* Skip link: first focusable element, visually hidden until focused. */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  z-index: 200;
+  padding: 13px 20px;
+  border-radius: 0 0 12px 12px;
+  background: var(--ink, #0b1d3a);
+  color: #ffffff;
+  font-size: 0.84rem;
+  font-weight: 700;
+  transition: top 160ms ease;
+}
+
+.skip-link:focus-visible {
+  top: 0;
+}
+
+#main-content {
+  scroll-margin-top: 18px;
+}
+
+/* Designed focus ring instead of the browser default outline. */
+:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+}
+
+/* Form fields already carry a designed focus (border + shadow below). */
+.beta-form-grid input:focus-visible,
+.beta-form-grid select:focus-visible,
+.beta-form-grid textarea:focus-visible {
+  outline: none;
+}
+
+/* Tap targets (WCAG 2.2 SC 2.5.8): nav and footer links rendered 14-20px
+   tall. Vertical padding lifts each to a 24px+ hit area without moving the
+   visual layout. */
+.desktop-nav a,
+.sign-in {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+.footer-links a,
+.footer-product-links a {
+  display: inline-block;
+  padding: 8px 0;
+  margin: -8px 0;
+}
+
+.beta-form-checks a {
+  display: inline-block;
+  padding: 6px 2px;
+  margin: -6px -2px;
+}
+
+/* The two required consent checkboxes: 24px minimum target, label clickable. */
+.beta-form-checks label {
+  grid-template-columns: 24px 1fr;
+}
+
+.beta-form-checks input {
+  width: 24px;
+  height: 24px;
+  margin-top: 0;
+}
+
+/* Screen-reader announcement region for form validation output. */
+.beta-form-status:empty {
+  display: none;
+}
+
+/* ------------------------------------------------------------- */
+/* Funnel: test rows are kept but excluded from the public count. */
+/* ------------------------------------------------------------- */
+.funnel-test-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  color: var(--muted-small);
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.funnel-test-toggle input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--violet);
+}
+
+.funnel-row-test td {
+  background: #f3f4f8;
+}
+
+.funnel-row-test .funnel-test-toggle {
+  color: var(--amber);
+  font-weight: 700;
 }

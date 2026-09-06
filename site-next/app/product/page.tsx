@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import { ArrowRight, Calculator, FileCheck2, FileText, FolderSearch, Search, ShieldCheck } from "lucide-react";
 import { FinalCta, PageHero, SiteFooter, SiteHeader } from "@/components/marketing";
 import { QuilterMethod } from "@/components/quilter-method";
+
+export const metadata: Metadata = {
+  title: "Product",
+  description: "How The Advice Engine turns client case material into branded draft documents, adviser QA checks and auditable calculations for UK advice firms.",
+};
 
 const groups = [
   { icon: FileText, title: "Draft", copy: "Create branded suitability reports, annual-review progress and outcome reports, cashflow packs, meeting packs and client correspondence.", href: "/suitability.html" },
@@ -20,7 +26,7 @@ const jobs = [
 
 export default function ProductPage() {
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <PageHero
         eyebrow="The adviser workflow engine"

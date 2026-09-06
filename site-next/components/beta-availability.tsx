@@ -1,30 +1,23 @@
-"use client";
+import { cache } from "react";
+import { connection } from "next/server";
+import { betaAvailability } from "@/lib/azure-storage";
+import { AvailabilityBadge, type Availability } from "@/components/availability-badge";
 
-import { useEffect, useState } from "react";
+const LOOKUP_TIMEOUT_MS = 2000;
 
-type Availability = { total: number; active: number; remaining: number };
+// Deduped per request: the badge appears more than once on most pages.
+const loadAvailability = cache(() =>
+  Promise.race<Availability | null>([
+    betaAvailability().catch(() => null),
+    new Promise<null>((resolve) => setTimeout(() => resolve(null), LOOKUP_TIMEOUT_MS)),
+  ]),
+);
 
-export function BetaAvailability({ variant = "default" }: { variant?: "default" | "announcement" | "kicker" }) {
-  const [availability, setAvailability] = useState<Availability>({ total: 15, active: 0, remaining: 15 });
-
-  useEffect(() => {
-    let active = true;
-    fetch("/api/beta-availability", { cache: "no-store" })
-      .then((response) => response.ok ? response.json() : null)
-      .then((data) => { if (active && data) setAvailability(data); })
-      .catch(() => undefined);
-    return () => { active = false; };
-  }, []);
-
-  const label = availability.remaining === 1 ? "founding place remaining" : "founding places remaining";
-  if (variant === "announcement") {
-    return <span className="beta-availability beta-availability-announcement"><strong>{availability.remaining}</strong> {label}</span>;
-  }
-
-  return (
-    <span className={`beta-availability beta-availability-${variant}`}>
-      <strong>{availability.remaining}</strong>
-      <span>{availability.remaining > 0 ? label : "places filled · waiting list open"}</span>
-    </span>
-  );
+// Server-rendered so the first paint carries the real figure, not a hardcoded
+// 15 that hydration then corrects in front of the visitor. `connection()`
+// keeps the count out of the build-time HTML.
+export async function BetaAvailability({ variant = "default" }: { variant?: "default" | "announcement" | "kicker" }) {
+  await connection();
+  const availability = await loadAvailability();
+  return <AvailabilityBadge variant={variant} availability={availability} />;
 }

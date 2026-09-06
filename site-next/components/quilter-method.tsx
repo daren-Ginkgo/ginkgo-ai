@@ -29,7 +29,7 @@ const stages = [
     icon: FileCheck2,
     number: "05",
     title: "Show what still needs judgement",
-    copy: "Anything the evidence cannot safely resolve remains visible in the adviser QA sheet and information-needed list—never silently invented.",
+    copy: "Anything the evidence cannot safely resolve remains visible in the adviser QA sheet and information-needed list, never silently invented.",
   },
 ];
 
@@ -44,7 +44,7 @@ export function QuilterMethod() {
           </div>
           <div className="quilter-method-intro">
             <p>Every workflow is designed to improve the draft before the adviser sees it: structured around Quilter material, challenged against Business Assurance requirements, then redrafted using the evidence already available.</p>
-            <div><ShieldCheck /><span><strong>Independent software—not Quilter approval</strong>References describe the framework the engine is built and checked against. The authorised firm and named adviser retain responsibility.</span></div>
+            <div><ShieldCheck /><span><strong>Independent software – not Quilter approval</strong>References describe the framework the engine is built and checked against. The authorised firm and named adviser retain responsibility.</span></div>
           </div>
         </div>
         <div className="quilter-method-flow">

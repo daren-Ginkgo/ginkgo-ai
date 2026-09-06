@@ -56,7 +56,7 @@ export const capabilities: Record<string, Capability> = {
   finprom: {
     eyebrow: "Financial promotion support",
     title: "A disciplined first review for every promotion.",
-    copy: "Check draft communications for balance, clarity, evidence and likely review points—without presenting software output as approval.",
+    copy: "Check draft communications for balance, clarity, evidence and likely review points, without presenting software output as approval.",
     image: adviserPhoto,
     imageAlt: "Professional reviewing written material on a laptop",
     outcomeTitle: "Better-prepared promotions and a cleaner review trail.",
@@ -83,7 +83,7 @@ export const capabilities: Record<string, Capability> = {
       { title: "Prepare the conversation", copy: "Turn verified findings into agenda prompts and appropriate follow-up work." },
     ],
     specimenTitle: "Verified advice-gap summary",
-    specimenCopy: "A fictitious legacy-pension finding, source quotation and suggested next conversation—all separated clearly from financial advice.",
+    specimenCopy: "A fictitious legacy-pension finding, source quotation and suggested next conversation, all separated clearly from financial advice.",
   },
   organise: {
     eyebrow: "Organise client work",

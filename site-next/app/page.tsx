@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   ArrowRight,
   Calculator,
@@ -18,12 +19,17 @@ import { ArrowButton, SiteFooter, SiteHeader } from "@/components/marketing";
 import { QuilterMethod } from "@/components/quilter-method";
 import { BetaAvailability } from "@/components/beta-availability";
 
+export const metadata: Metadata = {
+  title: { absolute: "The Advice Engine | Advice paperwork, built around the evidence" },
+  description: "The Advice Engine turns client case material into branded draft documents, adviser QA checks and auditable calculations for UK advice firms.",
+};
+
 const outcomes = [
   {
     icon: FileText,
     number: "01",
     title: "Draft the work",
-    copy: "Suitability reports, annual reviews, meeting packs and adviser correspondence—produced in your firm’s styling from the case material you already hold.",
+    copy: "Suitability reports, annual reviews, meeting packs and adviser correspondence, produced in your firm’s styling from the case material you already hold.",
   },
   {
     icon: FileCheck2,
@@ -35,7 +41,7 @@ const outcomes = [
     icon: Search,
     number: "03",
     title: "Find the next conversation",
-    copy: "The Advice Gap Scanner surfaces needs that were raised but never actioned—with the source quote verified before anything reaches the adviser.",
+    copy: "The Advice Gap Scanner surfaces needs that were raised but never actioned, with the source quote verified before anything reaches the adviser.",
   },
 ];
 
@@ -50,14 +56,14 @@ const adviserJourney = [
   {
     number: "01",
     title: "Drop in the case",
-    copy: "Add the meeting transcript, fact-find, statements, illustrations, emails or existing reports—or select them from SharePoint and OneDrive.",
+    copy: "Add the meeting transcript, fact-find, statements, illustrations, emails or existing reports, or select them from SharePoint and OneDrive.",
     detail: "PDF · Word · Excel · transcripts · client records",
   },
   {
     number: "02",
     title: "Choose what you need",
     copy: "Start a suitability report, annual review, cashflow, calculator, meeting pack or one of the engine’s other focused workflows.",
-    detail: "A defined job—not a blank chat box",
+    detail: "A defined job, not a blank chat box",
   },
   {
     number: "03",
@@ -80,16 +86,18 @@ const outputFamilies = [
   [FolderSearch, "Meeting and follow-up work", "Prepare meeting packs, actions, client correspondence and next-conversation prompts from the same source material."],
 ];
 
+// Retention wording approved by Daren on 6 Sep 2026 (staging only until the
+// DPIA sign-off is recorded). Do not reintroduce "written to disk", "processed
+// in the moment" or any zero-retention claim.
 const securityItems = [
-  [LockKeyhole, "Microsoft sign-in", "Your firm’s existing Entra account and MFA."],
-  [Database, "Processed in the moment", "Client material is not written to disk or used to train models."],
-  [ShieldCheck, "Adviser-controlled", "Every output remains a draft until a named adviser signs it off."],
-  [FileCheck2, "Due-diligence ready", "DPIA, processing records and supplier assurance available for review."],
+  [LockKeyhole, "UK hosted, your own Microsoft sign-in", "UK Azure-region hosting, with your firm’s existing Entra account and MFA."],
+  [ShieldCheck, "Never used to train AI models", "A binding term of our agreement with our AI provider, not a setting we switch on."],
+  [Database, "Nothing kept in the app after your session", "The audit log records who ran what and when, never client content."],
 ];
 
 export default function Home() {
   return (
-    <main id="top">
+    <main id="main-content">
       <SiteHeader />
 
       <section className="hero">
@@ -105,9 +113,9 @@ export default function Home() {
             <p className="hero-lede">
               Drop in a meeting transcript and whatever client information you already hold. The Advice Engine
               organises the evidence, runs the relevant calculations and creates branded suitability, review and
-              cashflow drafts—built around Quilter templates and challenged before you see the first draft.
+              cashflow drafts, built around Quilter templates and challenged before you see the first draft.
             </p>
-            <p className="founder-proof">Created by Daren Wallbank at Ginkgo Financial from the real work of running advice cases—not from a generic software brief.</p>
+            <p className="founder-proof">Created by Daren Wallbank at Ginkgo Financial from the real work of running advice cases, not from a generic software brief.</p>
             <div className="hero-actions">
               <ArrowButton href="/start">Apply for a founding place</ArrowButton>
               <a className="text-link" href="#simple-workflow">See the simple workflow <ArrowRight aria-hidden="true" /></a>
@@ -163,7 +171,7 @@ export default function Home() {
         <div className="shell proof-strip-grid">
           <div><strong>36</strong><span>named workflows and tools</span></div>
           <div><strong>25</strong><span>adviser calculators</span></div>
-          <div><strong>0</strong><span>client files written to disk</span></div>
+          <div><strong>15</strong><span>founding adviser places</span></div>
           <div><strong>UK</strong><span>Azure-region hosting</span></div>
         </div>
       </section>
@@ -177,7 +185,7 @@ export default function Home() {
             </div>
             <p>
               The engine is deliberately simple to use. It turns the client material already scattered across
-              transcripts, documents and records into a professional starting point for the adviser—not another
+              transcripts, documents and records into a professional starting point for the adviser, not another
               system that needs everything re-keyed.
             </p>
           </div>
@@ -229,7 +237,7 @@ export default function Home() {
           </figure>
           <div className="human-copy">
             <span className="kicker">Built by an adviser who needed it</span>
-            <h2>Created inside a Quilter advice firm—not a software lab.</h2>
+            <h2>Created inside a Quilter advice firm – not a software lab.</h2>
             <p>Daren built the first workflows at Ginkgo Financial to reduce repeated preparation, surface missing information earlier and give advisers a stronger starting point.</p>
             <a className="text-link" href="/product">Explore the complete product <ArrowRight aria-hidden="true" /></a>
           </div>
@@ -337,7 +345,7 @@ export default function Home() {
             <h2>It finds the right evidence before it starts writing.</h2>
             <p>
               Search the client’s OneDrive or SharePoint folder from inside the workflow. The engine
-              scans names and dates, suggests the files most likely to matter and tells you why—before
+              scans names and dates, suggests the files most likely to matter and tells you why, before
               retrieving their contents.
             </p>
             <div className="step-list">

@@ -1,10 +1,16 @@
+import type { Metadata } from "next";
 import { Check, CircleCheck } from "lucide-react";
 import { FinalCta, PageHero, SiteFooter, SiteHeader } from "@/components/marketing";
 import { QuilterMethod } from "@/components/quilter-method";
 
+export const metadata: Metadata = {
+  title: "For advisers in the Quilter network",
+  description: "How The Advice Engine was built around Quilter advice work. Independent software: the adviser and authorised firm retain responsibility.",
+};
+
 export default function QuilterPage() {
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <PageHero
         eyebrow="For advisers in the Quilter network"

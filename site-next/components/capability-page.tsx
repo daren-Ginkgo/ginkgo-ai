@@ -16,7 +16,7 @@ export type Capability = {
 
 export function CapabilityPage({ data }: { data: Capability }) {
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <PageHero eyebrow={data.eyebrow} title={data.title} copy={data.copy} image={data.image} imageAlt={data.imageAlt} />
       <section className="section page-outcomes">

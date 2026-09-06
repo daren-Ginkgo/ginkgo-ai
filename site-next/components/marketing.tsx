@@ -49,6 +49,7 @@ export function SiteHeader() {
             <a href="/product">Product</a>
             <a href="/find.html">Gap Scanner</a>
             <a href="/microsoft">Microsoft 365</a>
+            <a href="/security">Security</a>
             <a href="/pricing">Pricing</a>
             <a href="/about">Daren &amp; Ginkgo</a>
           </nav>

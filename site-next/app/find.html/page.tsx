@@ -1,21 +1,27 @@
+import type { Metadata } from "next";
 import { ArrowRight, Check, CircleCheck, FileSearch, FileText, MessagesSquare, ScanSearch } from "lucide-react";
 import { ArrowButton, FinalCta, PageHero, SiteFooter, SiteHeader } from "@/components/marketing";
+
+export const metadata: Metadata = {
+  title: "Advice Gap Scanner",
+  description: "Surface client needs that were discussed but never carried forward, with every finding tied back to its source for adviser verification.",
+};
 
 const scannerBenefits = [
   { icon: MessagesSquare, title: "Meeting transcripts first", copy: "Clients often mention an old pension, protection concern or unfinished objective in conversation long before it reaches the structured record." },
   { icon: FileSearch, title: "Source quote attached", copy: "Every surfaced finding carries the wording and source file the adviser can use to check the context." },
   { icon: ScanSearch, title: "Unfinished needs prioritised", copy: "The scanner distinguishes a passing reference from a need that appears to have been raised but not carried into the recorded outcome." },
-  { icon: Check, title: "Next conversation prepared", copy: "Verified findings become agenda prompts and possible follow-up work—not automated advice or a judgement on earlier advice." },
+  { icon: Check, title: "Next conversation prepared", copy: "Verified findings become agenda prompts and possible follow-up work, not automated advice or a judgement on earlier advice." },
 ];
 
 export default function AdviceGapPage() {
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <PageHero
         eyebrow="The Advice Gap Scanner"
         title="Find the client needs already hiding in the file."
-        copy="Point the engine at the evidence you already hold—especially meeting transcripts—and surface needs, concerns and agreed actions that were discussed but never carried forward. Every finding is tied back to its source for adviser verification."
+        copy="Point the engine at the evidence you already hold, especially meeting transcripts, and surface needs, concerns and agreed actions that were discussed but never carried forward. Every finding is tied back to its source for adviser verification."
         primary={{ href: "/start", label: "Apply for the founding beta" }}
         secondary={{ href: "/microsoft", label: "See the OneDrive workflow" }}
       />
@@ -60,7 +66,7 @@ export default function AdviceGapPage() {
 
       <section className="section two-gap-section">
         <div className="shell">
-          <div className="section-intro split-intro"><div><span className="kicker light">Two different questions</span><h2>Find missing evidence—and find missed opportunity.</h2></div><p>The same client folder can support two distinct checks. Keeping them separate makes each result clearer and safer for the adviser to use.</p></div>
+          <div className="section-intro split-intro"><div><span className="kicker light">Two different questions</span><h2>Find missing evidence – and find missed opportunity.</h2></div><p>The same client folder can support two distinct checks. Keeping them separate makes each result clearer and safer for the adviser to use.</p></div>
           <div className="two-gap-grid">
             <article><span>01 · Before an output</span><h3>Case-readiness gap analysis</h3><p>Does the selected source pack contain the evidence needed for this suitability report, review or cashflow?</p><ul><li><Check />Suggest the likely relevant files</li><li><Check />Flag missing, stale or conflicting information</li><li><Check />Add new evidence and recheck before drafting</li></ul></article>
             <article><span>02 · Across the relationship</span><h3>Advice Gap Scanner</h3><p>Did the client raise a need, concern or objective that never appeared in the recorded action or outcome?</p><ul><li><Check />Quote and verify the original source</li><li><Check />Surface the unfinished conversation</li><li><Check />Prepare an adviser-owned next step</li></ul></article>

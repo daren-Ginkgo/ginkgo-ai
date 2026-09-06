@@ -21,6 +21,9 @@ export type StoredApplication = {
   microsoft365: string;
   bottleneck: string;
   status: ApplicationStatus;
+  // Test submissions are kept (never deleted) but excluded from the public
+  // founding-places count. Rows created before the flag existed read as false.
+  isTest: boolean;
   createdAt: string;
   updatedAt: string;
 };
@@ -81,11 +84,13 @@ function fromApplicationEntity(entity: ApplicationEntity): StoredApplication {
     workEmail: entity.workEmail,
     phone: entity.phone ?? "",
     firmName: entity.firmName,
-    firmReference: entity.firmReference,
-    adviserCount: entity.adviserCount,
-    microsoft365: entity.microsoft365,
-    bottleneck: entity.bottleneck,
+    // Optional since 6 Sep 2026: empty means "not supplied", never a failure.
+    firmReference: entity.firmReference ?? "",
+    adviserCount: entity.adviserCount ?? "",
+    microsoft365: entity.microsoft365 ?? "",
+    bottleneck: entity.bottleneck ?? "",
     status: entity.status,
+    isTest: entity.isTest ?? false,
     createdAt: entity.createdAt,
     updatedAt: entity.updatedAt,
   };
@@ -100,9 +105,13 @@ export async function listApplications(): Promise<StoredApplication[]> {
   return rows.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 }
 
+export function holdsPlace(row: StoredApplication) {
+  return !row.isTest && ACTIVE_BETA_STATUSES.includes(row.status as typeof ACTIVE_BETA_STATUSES[number]);
+}
+
 export async function betaAvailability() {
   const applications = await listApplications();
-  const active = applications.filter((row) => ACTIVE_BETA_STATUSES.includes(row.status as typeof ACTIVE_BETA_STATUSES[number])).length;
+  const active = applications.filter(holdsPlace).length;
   return { total: FOUNDING_PLACES, active, remaining: remainingPlaces(active) };
 }
 
@@ -141,6 +150,7 @@ export async function submitBetaApplication(input: {
     microsoft365: input.microsoft365,
     bottleneck: input.bottleneck,
     status: before.remaining > 0 ? "pending" : "waitlist",
+    isTest: false,
     createdAt: now,
     updatedAt: now,
   };
@@ -167,13 +177,14 @@ export async function getApplication(id: string): Promise<StoredApplication | nu
   }
 }
 
-export async function updateApplicationStatus(id: string, status: ApplicationStatus) {
+export async function updateApplication(id: string, changes: { status?: ApplicationStatus; isTest?: boolean }) {
   await ensureTables();
   const client = applicationClient();
   const existing = await client.getEntity<ApplicationEntity>(APPLICATION_PARTITION, id);
   await client.updateEntity({
     ...existing,
-    status,
+    ...(changes.status !== undefined ? { status: changes.status } : {}),
+    ...(changes.isTest !== undefined ? { isTest: changes.isTest } : {}),
     updatedAt: new Date().toISOString(),
   }, "Replace");
 }

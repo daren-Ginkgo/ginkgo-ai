@@ -13,6 +13,7 @@ export type BetaApplicationRow = {
   microsoft365: string;
   bottleneck: string;
   status: string;
+  isTest?: boolean;
   createdAt: string;
 };
 
@@ -44,8 +45,8 @@ function FcaVerdict({ check }: { check: FcaCheck }) {
     "? Quilter AR status undetermined";
   return (
     <span className="fca-result">
-      <span className={`fca-line ${check.firmFound ? "fca-ok" : "fca-bad"}`}>
-        {check.firmFound ? `✓ FRN ${check.frn} found` : `✗ FRN ${check.frn ?? "?"} not on register`}
+      <span className={`fca-line ${check.firmFound ? "fca-ok" : check.frn ? "fca-bad" : "fca-warn"}`}>
+        {check.firmFound ? `✓ FRN ${check.frn} found` : check.frn ? `✗ FRN ${check.frn} not on register` : "FRN not supplied"}
       </span>
       <span className={`fca-line ${check.statusAcceptable ? "fca-ok" : "fca-bad"}`}>
         {check.registerStatus ? `${check.statusAcceptable ? "✓" : "✗"} ${check.registerStatus}` : "? no status returned"}
@@ -71,6 +72,21 @@ export function BetaAdminTable({ initialApplications }: { initialApplications: B
       });
       if (!response.ok) throw new Error("Update failed");
       setApplications((rows) => rows.map((row) => row.id === id ? { ...row, status } : row));
+    } finally {
+      setSaving(null);
+    }
+  }
+
+  async function updateTestFlag(id: string, isTest: boolean) {
+    setSaving(id);
+    try {
+      const response = await fetch(`/api/beta-applications/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ isTest }),
+      });
+      if (!response.ok) throw new Error("Update failed");
+      setApplications((rows) => rows.map((row) => row.id === id ? { ...row, isTest } : row));
     } finally {
       setSaving(null);
     }
@@ -103,18 +119,18 @@ export function BetaAdminTable({ initialApplications }: { initialApplications: B
           {applications.map((application) => {
             const check = checks[application.id];
             return (
-              <tr key={application.id}>
+              <tr key={application.id} className={application.isTest ? "funnel-row-test" : undefined}>
                 <td>
                   <strong>{application.fullName}</strong>
                   <a href={`mailto:${application.workEmail}`}>{application.workEmail}</a>
                   {application.phone ? (
                     <span>
                       <a href={`tel:${application.phone}`}>{application.phone}</a>
-                      <span className="fca-note">Applicant-supplied — cross-check against the firm&apos;s FCA-register number.</span>
+                      <span className="fca-note">Applicant-supplied – cross-check against the firm&apos;s FCA-register number.</span>
                     </span>
                   ) : null}
                 </td>
-                <td><strong>{application.firmName}</strong><span>{application.firmReference} · {application.adviserCount} advisers</span></td>
+                <td><strong>{application.firmName}</strong><span>{application.firmReference || "FRN not supplied"} · {application.adviserCount ? `${application.adviserCount} advisers` : "adviser count not supplied"}</span></td>
                 <td>
                   {check && check !== "loading" ? <FcaVerdict check={check} /> : null}
                   <button
@@ -125,12 +141,23 @@ export function BetaAdminTable({ initialApplications }: { initialApplications: B
                   >
                     {check === "loading" ? "Checking…" : check ? "Re-check" : "Check register"}
                   </button>
-                  <span className="fca-note">Advisory only — your status decision always stands.</span>
+                  <span className="fca-note">Advisory only – your status decision always stands.</span>
                 </td>
-                <td>{application.microsoft365}</td>
-                <td><p>{application.bottleneck}</p></td>
+                <td>{application.microsoft365 || "not supplied"}</td>
+                <td><p>{application.bottleneck || "not supplied"}</p></td>
                 <td>{new Date(application.createdAt).toLocaleDateString("en-GB")}</td>
-                <td><select value={application.status} disabled={saving === application.id} onChange={(event) => updateStatus(application.id, event.target.value)}>{statuses.map((status) => <option value={status} key={status}>{status}</option>)}</select></td>
+                <td>
+                  <select value={application.status} disabled={saving === application.id} onChange={(event) => updateStatus(application.id, event.target.value)}>{statuses.map((status) => <option value={status} key={status}>{status}</option>)}</select>
+                  <label className="funnel-test-toggle">
+                    <input
+                      type="checkbox"
+                      checked={application.isTest ?? false}
+                      disabled={saving === application.id}
+                      onChange={(event) => updateTestFlag(application.id, event.target.checked)}
+                    />
+                    <span>Test row, excluded from the public count</span>
+                  </label>
+                </td>
               </tr>
             );
           })}

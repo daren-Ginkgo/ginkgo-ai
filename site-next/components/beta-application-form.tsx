@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { ArrowRight, CheckCircle2, LoaderCircle, LockKeyhole } from "lucide-react";
-import { BetaAvailability } from "@/components/beta-availability";
+import { AvailabilityBadge, type Availability } from "@/components/availability-badge";
 import { trackConversion } from "@/components/conversion-tracker";
 
 type SubmissionResult = {
@@ -15,13 +15,14 @@ type SubmissionResult = {
 export function BetaApplicationForm() {
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState<SubmissionResult | null>(null);
-  const [remaining, setRemaining] = useState(15);
+  const [availability, setAvailability] = useState<Availability | null>(null);
+  const remaining = availability?.remaining ?? 15;
   const started = useRef(false);
 
   useEffect(() => {
     fetch("/api/beta-availability", { cache: "no-store" })
       .then((response) => response.ok ? response.json() : null)
-      .then((data) => { if (data) setRemaining(data.remaining); })
+      .then((data) => { if (data) setAvailability(data); })
       .catch(() => undefined);
   }, []);
 
@@ -57,10 +58,10 @@ export function BetaApplicationForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      const body = await response.json() as SubmissionResult & { availability?: { remaining: number } };
+      const body = await response.json() as SubmissionResult & { availability?: Availability };
       if (!response.ok) throw new Error(body.error ?? "Please check the form and try again.");
       setResult(body);
-      if (body.availability) setRemaining(body.availability.remaining);
+      if (body.availability) setAvailability(body.availability);
       form.reset();
     } catch (error) {
       setResult({ error: error instanceof Error ? error.message : "Please try again." });
@@ -85,18 +86,18 @@ export function BetaApplicationForm() {
     <form className="beta-application-form" onSubmit={submitApplication} onFocus={markStarted}>
       <div className="beta-form-head">
         <div><span>FOUNDING ADVISER BETA</span><h2>{remaining > 0 ? "Apply for a founding place" : "Join the waiting list"}</h2></div>
-        <BetaAvailability />
+        <AvailabilityBadge availability={availability} />
       </div>
 
       <div className="beta-form-grid">
         <label><span>Full name *</span><input name="fullName" autoComplete="name" required minLength={2} maxLength={100} placeholder="Your full name" /></label>
         <label><span>Work email *</span><input name="workEmail" type="email" autoComplete="email" required maxLength={180} placeholder="you@yourfirm.co.uk" /></label>
-        <label><span>Phone number *</span><input name="phone" type="tel" autoComplete="tel" required minLength={7} maxLength={30} placeholder="Your direct number" /><small>Daren calls every Founding Adviser personally to set up your first sign-in.</small></label>
+        <label><span>Best number for Daren&apos;s call (optional)</span><input name="phone" type="tel" autoComplete="tel" maxLength={30} placeholder="Your direct number" /><small>Daren calls every Founding Adviser personally to set up your first sign-in.</small></label>
         <label><span>Firm name *</span><input name="firmName" autoComplete="organization" required minLength={2} maxLength={160} placeholder="Your advice firm" /></label>
-        <label><span>Firm or FCA reference *</span><input name="firmReference" required minLength={2} maxLength={80} placeholder="Firm reference number" /></label>
-        <label><span>Number of advisers in the firm *</span><select name="adviserCount" required defaultValue=""><option value="" disabled>Select one</option><option value="1">1 adviser</option><option value="2-4">2–4 advisers</option><option value="5-10">5–10 advisers</option><option value="11+">11+ advisers</option></select></label>
-        <label><span>Microsoft 365 work account *</span><select name="microsoft365" required defaultValue=""><option value="" disabled>Select one</option><option value="yes">Yes</option><option value="not-sure">Not sure</option><option value="no">No</option></select></label>
-        <label className="beta-form-wide"><span>What is your biggest workflow or paperwork bottleneck? *</span><textarea name="bottleneck" required minLength={20} maxLength={1800} rows={5} placeholder="Tell Daren where adviser time is being lost or where files tend to come back for rework." /></label>
+        <label><span>Firm FCA reference (optional, or tell us on the call)</span><input name="firmReference" maxLength={80} placeholder="Firm reference number" /></label>
+        <label><span>Number of advisers in the firm (optional)</span><select name="adviserCount" defaultValue=""><option value="">Select one</option><option value="1">1 adviser</option><option value="2-4">2–4 advisers</option><option value="5-10">5–10 advisers</option><option value="11+">11+ advisers</option></select></label>
+        <label><span>Microsoft 365 work account (optional)</span><select name="microsoft365" defaultValue=""><option value="">Select one</option><option value="yes">Yes</option><option value="not-sure">Not sure</option><option value="no">No</option></select></label>
+        <label className="beta-form-wide"><span>What is the paperwork job you most want to fix? (optional)</span><input name="bottleneck" maxLength={1800} placeholder="Tell Daren where adviser time is being lost or where files tend to come back for rework." /></label>
         <label className="beta-honeypot" aria-hidden="true"><span>Website</span><input name="website" tabIndex={-1} autoComplete="off" /></label>
       </div>
 
@@ -105,10 +106,14 @@ export function BetaApplicationForm() {
         <label><input name="contactConsent" type="checkbox" required /><span><strong>I agree to be contacted about The Advice Engine beta.</strong>Your application details will be used only to assess and manage the beta relationship. See the <a href="/privacy">privacy notice</a>.</span></label>
       </div>
 
-      {result?.error ? <p className="beta-form-error" role="alert">{result.error}</p> : null}
+      {/* Persistent polite live region: present in the DOM before any error
+          exists, so screen readers announce validation output when it arrives. */}
+      <div className="beta-form-status" aria-live="polite">
+        {result?.error ? <p className="beta-form-error">{result.error}</p> : null}
+      </div>
       <div className="beta-form-submit">
         <button className="button button-primary" type="submit" disabled={submitting}>{submitting ? <><LoaderCircle className="spin" />Submitting application</> : <>{remaining > 0 ? "Submit beta application" : "Join the waiting list"}<ArrowRight /></>}</button>
-        <span><LockKeyhole />Application only—no client data, passwords or payment details.</span>
+        <span><LockKeyhole />Application only: no client data, passwords or payment details.</span>
       </div>
     </form>
   );

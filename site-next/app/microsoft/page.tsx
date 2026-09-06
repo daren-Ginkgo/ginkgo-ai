@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import { ArrowRight, Check, CircleCheck, Cloud, Database, FileCheck2, FileSearch, FileText, FolderSearch, KeyRound, LockKeyhole, LogIn, ScanSearch, ShieldCheck, Upload } from "lucide-react";
 import { ArrowButton, FinalCta, PageHero, SiteFooter, SiteHeader } from "@/components/marketing";
+
+export const metadata: Metadata = {
+  title: "Microsoft 365 and OneDrive",
+  description: "Your client folder becomes the starting point. The Advice Engine works with the Microsoft 365 and OneDrive setup your firm already runs.",
+};
 
 const accessFacts = [
   { icon: KeyRound, title: "Your Microsoft work account", copy: "No separate Advice Engine password to create or remember." },
@@ -18,11 +24,11 @@ const fileExamples = [
 
 export default function MicrosoftPage() {
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <PageHero
         eyebrow="Microsoft 365 and OneDrive"
-        title="Your client folder becomes the starting point—not another database to maintain."
+        title="Your client folder becomes the starting point – not another database to maintain."
         copy="Sign in with the Microsoft 365 work account your firm already uses. The Advice Engine can then help locate the relevant evidence in an approved OneDrive or SharePoint client folder, run gap analysis and build the selected adviser output."
         primary={{ href: "/start", label: "Apply for the founding beta" }}
         secondary={{ href: "https://app.theadviceengine.ai/", label: "Approved adviser sign in" }}
@@ -65,7 +71,7 @@ export default function MicrosoftPage() {
           <div className="section-intro split-intro"><div><span className="kicker light">More than file selection</span><h2>Two analyses from the same client evidence.</h2></div><p>One asks whether the file is ready for a particular output. The other looks across the relationship for a client need that may have been left behind.</p></div>
           <div className="microsoft-analysis-grid">
             <article><FileCheck2 /><span>Case-readiness analysis</span><h3>Do we have enough to create this report properly?</h3><p>The engine checks the selected material against what the workflow needs, flags stale, missing or conflicting evidence, and tells the adviser what else may be required.</p><ul><li><Check />Relevant documents suggested</li><li><Check />Missing evidence made visible</li><li><Check />New information can be added and rechecked</li></ul></article>
-            <article><ScanSearch /><span>Advice Gap Scanner</span><h3>What did the client raise that the file never carried forward?</h3><p>The scanner searches selected meeting evidence for unfinished needs, verifies the source wording and prepares an agenda item for adviser consideration.</p><ul><li><Check />Source quote attached</li><li><Check />Potential opportunity clearly labelled</li><li><Check />Conversation prompt—not automated advice</li></ul><a href="/find.html">Explore the Advice Gap Scanner <ArrowRight /></a></article>
+            <article><ScanSearch /><span>Advice Gap Scanner</span><h3>What did the client raise that the file never carried forward?</h3><p>The scanner searches selected meeting evidence for unfinished needs, verifies the source wording and prepares an agenda item for adviser consideration.</p><ul><li><Check />Source quote attached</li><li><Check />Potential opportunity clearly labelled</li><li><Check />Conversation prompt, not automated advice</li></ul><a href="/find.html">Explore the Advice Gap Scanner <ArrowRight /></a></article>
           </div>
         </div>
       </section>

@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import { ArrowRight, Check, Lightbulb, Rocket, Settings2, Users } from "lucide-react";
 import { ArrowButton, FinalCta, SiteFooter, SiteHeader } from "@/components/marketing";
+
+export const metadata: Metadata = {
+  title: "Daren and Ginkgo",
+  description: "The Advice Engine was created by Daren Wallbank at Ginkgo Financial, shaped by the real work of running advice cases in the Quilter network.",
+};
 
 const timeline = [
   { icon: Lightbulb, label: "The problem", title: "Too much expert time was being spent rebuilding the file.", copy: "Evidence sat across meeting notes, documents, calculations and previous correspondence. Starting the next piece of work often meant retracing the same ground." },
@@ -10,7 +16,7 @@ const timeline = [
 
 export default function AboutPage() {
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <section className="founder-hero">
         <div className="shell founder-hero-grid">
@@ -36,7 +42,7 @@ export default function AboutPage() {
 
       <section className="section story-timeline">
         <div className="shell">
-          <div className="section-intro split-intro"><div><span className="kicker light">From frustration to working engine</span><h2>A product shaped one advice workflow at a time.</h2></div><p>No invented overnight-success story—just a practical sequence of problems, workflows, testing and improvement.</p></div>
+          <div className="section-intro split-intro"><div><span className="kicker light">From frustration to working engine</span><h2>A product shaped one advice workflow at a time.</h2></div><p>No invented overnight-success story: just a practical sequence of problems, workflows, testing and improvement.</p></div>
           <div className="timeline-grid">{timeline.map(({ icon: Icon, label, title, copy }, index) => <article key={label}><div><Icon /><span>0{index + 1}</span></div><small>{label}</small><h3>{title}</h3><p>{copy}</p></article>)}</div>
         </div>
       </section>
@@ -47,7 +53,7 @@ export default function AboutPage() {
             <img src="/ginkgo-financial-logo.png" alt="Ginkgo Financial" />
             <figcaption>Where The Advice Engine was first conceived, built and tested in daily practice.</figcaption>
           </figure>
-          <div><span className="kicker">The proving ground</span><h2>Why Ginkgo matters to the story.</h2><p>Ginkgo Financial provided the real operating context in which The Advice Engine’s workflows were conceived and shaped. That matters because the product starts with adviser work and adviser responsibility—not with a technology searching for a use.</p><p>The next chapter is to learn with 15 founding Quilter advisers and refine the engine around a wider range of genuine advice workflows.</p></div>
+          <div><span className="kicker">The proving ground</span><h2>Why Ginkgo matters to the story.</h2><p>Ginkgo Financial provided the real operating context in which The Advice Engine’s workflows were conceived and shaped. That matters because the product starts with adviser work and adviser responsibility, not with a technology searching for a use.</p><p>The next chapter is to learn with 15 founding Quilter advisers and refine the engine around a wider range of genuine advice workflows.</p></div>
         </div>
       </section>
 

@@ -167,7 +167,10 @@ export async function runFcaCheck(firmName: string, firmReference: string): Prom
     return result;
   }
   if (!result.frn) {
-    result.error = "No FRN found in the application's firm reference.";
+    // The FRN became optional on 6 Sep 2026: Daren asks for it on the call.
+    result.error = firmReference.trim()
+      ? "No FRN found in the application's firm reference."
+      : "No FRN supplied";
     return result;
   }
 

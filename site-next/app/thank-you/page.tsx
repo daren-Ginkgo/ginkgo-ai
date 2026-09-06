@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import { ArrowRight, CheckCircle2, FileText, KeyRound, MessagesSquare, TestTube2 } from "lucide-react";
 import { ArrowButton, SiteFooter, SiteHeader } from "@/components/marketing";
+
+export const metadata: Metadata = {
+  title: "Application received",
+  description: "Daren will contact you personally to arrange a practical demonstration and confirm the onboarding route for your firm.",
+};
 
 const steps = [
   { icon: MessagesSquare, number: "01", title: "A conversation with Daren", copy: "Daren will review your application, understand your firm and identify the workflow that will make the most useful first test." },
@@ -9,5 +15,5 @@ const steps = [
 ];
 
 export default function ThankYouPage() {
-  return <main><SiteHeader /><section className="thank-you-hero"><div className="shell narrow-shell"><CheckCircle2 /><span>APPLICATION RECEIVED</span><h1>Thank you. Daren will contact you personally.</h1><p>There is no checkout and no payment is required. The next step is a short practical conversation to confirm whether the founding beta is right for you and your firm.</p></div></section><section className="section onboarding-section"><div className="shell"><div className="section-intro split-intro"><div><span className="kicker">The founding-adviser route</span><h2>From application to first useful workflow.</h2></div><p>The beta is deliberately supported. The purpose is not simply to issue a login—it is to learn which workflows save advisers the most time and where the engine should improve.</p></div><div className="onboarding-grid">{steps.map(({ icon: Icon, number, title, copy }) => <article key={number}><div><span>{number}</span><Icon /></div><h3>{title}</h3><p>{copy}</p></article>)}</div><div className="onboarding-actions"><ArrowButton href="/microsoft">Understand the Microsoft workflow</ArrowButton><a href="/find.html">Explore the Advice Gap Scanner <ArrowRight /></a></div></div></section><SiteFooter /></main>;
+  return <main id="main-content"><SiteHeader /><section className="thank-you-hero"><div className="shell narrow-shell"><CheckCircle2 /><span>APPLICATION RECEIVED</span><h1>Thank you. Daren will contact you personally.</h1><p>There is no checkout and no payment is required. The next step is a short practical conversation to confirm whether the founding beta is right for you and your firm.</p></div></section><section className="section onboarding-section"><div className="shell"><div className="section-intro split-intro"><div><span className="kicker">The founding-adviser route</span><h2>From application to first useful workflow.</h2></div><p>The beta is deliberately supported. The purpose is not simply to issue a login: it is to learn which workflows save advisers the most time and where the engine should improve.</p></div><div className="onboarding-grid">{steps.map(({ icon: Icon, number, title, copy }) => <article key={number}><div><span>{number}</span><Icon /></div><h3>{title}</h3><p>{copy}</p></article>)}</div><div className="onboarding-actions"><ArrowButton href="/microsoft">Understand the Microsoft workflow</ArrowButton><a href="/find.html">Explore the Advice Gap Scanner <ArrowRight /></a></div></div></section><SiteFooter /></main>;
 }
