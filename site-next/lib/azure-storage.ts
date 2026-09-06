@@ -12,6 +12,9 @@ export type StoredApplication = {
   id: string;
   fullName: string;
   workEmail: string;
+  // Applicant-supplied contact number (empty on rows created before 6 Sep 2026).
+  // The verification channel remains the firm's FCA-register number, never this.
+  phone: string;
   firmName: string;
   firmReference: string;
   adviserCount: string;
@@ -76,6 +79,7 @@ function fromApplicationEntity(entity: ApplicationEntity): StoredApplication {
     id: entity.rowKey,
     fullName: entity.fullName,
     workEmail: entity.workEmail,
+    phone: entity.phone ?? "",
     firmName: entity.firmName,
     firmReference: entity.firmReference,
     adviserCount: entity.adviserCount,
@@ -105,6 +109,7 @@ export async function betaAvailability() {
 export async function submitBetaApplication(input: {
   fullName: string;
   workEmail: string;
+  phone: string;
   firmName: string;
   firmReference: string;
   adviserCount: string;
@@ -129,6 +134,7 @@ export async function submitBetaApplication(input: {
     rowKey,
     fullName: input.fullName,
     workEmail: input.workEmail.toLowerCase(),
+    phone: input.phone,
     firmName: input.firmName,
     firmReference: input.firmReference,
     adviserCount: input.adviserCount,

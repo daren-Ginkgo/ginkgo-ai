@@ -40,6 +40,7 @@ export function BetaApplicationForm() {
     const payload = {
       fullName: data.get("fullName"),
       workEmail: data.get("workEmail"),
+      phone: data.get("phone"),
       firmName: data.get("firmName"),
       firmReference: data.get("firmReference"),
       adviserCount: data.get("adviserCount"),
@@ -90,6 +91,7 @@ export function BetaApplicationForm() {
       <div className="beta-form-grid">
         <label><span>Full name *</span><input name="fullName" autoComplete="name" required minLength={2} maxLength={100} placeholder="Your full name" /></label>
         <label><span>Work email *</span><input name="workEmail" type="email" autoComplete="email" required maxLength={180} placeholder="you@yourfirm.co.uk" /></label>
+        <label><span>Phone number *</span><input name="phone" type="tel" autoComplete="tel" required minLength={7} maxLength={30} placeholder="Your direct number" /><small>Daren calls every Founding Adviser personally to set up your first sign-in.</small></label>
         <label><span>Firm name *</span><input name="firmName" autoComplete="organization" required minLength={2} maxLength={160} placeholder="Your advice firm" /></label>
         <label><span>Firm or FCA reference *</span><input name="firmReference" required minLength={2} maxLength={80} placeholder="Firm reference number" /></label>
         <label><span>Number of advisers in the firm *</span><select name="adviserCount" required defaultValue=""><option value="" disabled>Select one</option><option value="1">1 adviser</option><option value="2-4">2–4 advisers</option><option value="5-10">5–10 advisers</option><option value="11+">11+ advisers</option></select></label>

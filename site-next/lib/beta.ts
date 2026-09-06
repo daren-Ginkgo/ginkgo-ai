@@ -7,6 +7,8 @@ export const BETA_STATUSES = ["pending", "contacted", "approved", "declined", "w
 export const betaApplicationSchema = z.object({
   fullName: z.string().trim().min(2, "Please enter your full name.").max(100),
   workEmail: z.string().trim().email("Please enter a valid work email.").max(180),
+  phone: z.string().trim().min(7, "Please enter a phone number we can reach you on.").max(30)
+    .regex(/^[+()\d][\d\s()-]{5,28}\d$/, "Please enter a valid phone number."),
   firmName: z.string().trim().min(2, "Please enter your firm name.").max(160),
   firmReference: z.string().trim().min(2, "Please enter your firm or FCA reference.").max(80),
   adviserCount: z.enum(["1", "2-4", "5-10", "11+"]),

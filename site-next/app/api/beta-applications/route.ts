@@ -22,6 +22,7 @@ export async function POST(request: Request) {
     const result = await submitBetaApplication({
       fullName: input.fullName,
       workEmail: input.workEmail,
+      phone: input.phone,
       firmName: input.firmName,
       firmReference: input.firmReference,
       adviserCount: input.adviserCount,

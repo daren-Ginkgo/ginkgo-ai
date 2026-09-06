@@ -6,6 +6,7 @@ export type BetaApplicationRow = {
   id: string;
   fullName: string;
   workEmail: string;
+  phone?: string;
   firmName: string;
   firmReference: string;
   adviserCount: string;
@@ -103,7 +104,16 @@ export function BetaAdminTable({ initialApplications }: { initialApplications: B
             const check = checks[application.id];
             return (
               <tr key={application.id}>
-                <td><strong>{application.fullName}</strong><a href={`mailto:${application.workEmail}`}>{application.workEmail}</a></td>
+                <td>
+                  <strong>{application.fullName}</strong>
+                  <a href={`mailto:${application.workEmail}`}>{application.workEmail}</a>
+                  {application.phone ? (
+                    <span>
+                      <a href={`tel:${application.phone}`}>{application.phone}</a>
+                      <span className="fca-note">Applicant-supplied — cross-check against the firm&apos;s FCA-register number.</span>
+                    </span>
+                  ) : null}
+                </td>
                 <td><strong>{application.firmName}</strong><span>{application.firmReference} · {application.adviserCount} advisers</span></td>
                 <td>
                   {check && check !== "loading" ? <FcaVerdict check={check} /> : null}
