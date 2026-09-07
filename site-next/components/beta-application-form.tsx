@@ -92,7 +92,7 @@ export function BetaApplicationForm() {
       <div className="beta-form-grid">
         <label><span>Full name *</span><input name="fullName" autoComplete="name" required minLength={2} maxLength={100} placeholder="Your full name" /></label>
         <label><span>Work email *</span><input name="workEmail" type="email" autoComplete="email" required maxLength={180} placeholder="you@yourfirm.co.uk" /></label>
-        <label><span>Best number for Daren&apos;s call (optional)</span><input name="phone" type="tel" autoComplete="tel" maxLength={30} placeholder="Your direct number" /><small>Daren calls every Founding Adviser personally to set up your first sign-in.</small></label>
+        <label><span>Best number for Daren&apos;s call (optional)</span><input name="phone" type="tel" autoComplete="tel" maxLength={30} placeholder="Your direct number" /><small>Daren calls every founding adviser personally to set up your first sign-in.</small></label>
         <label><span>Firm name *</span><input name="firmName" autoComplete="organization" required minLength={2} maxLength={160} placeholder="Your advice firm" /></label>
         <label><span>Firm FCA reference (optional, or tell us on the call)</span><input name="firmReference" maxLength={80} placeholder="Firm reference number" /></label>
         <label><span>Number of advisers in the firm (optional)</span><select name="adviserCount" defaultValue=""><option value="">Select one</option><option value="1">1 adviser</option><option value="2-4">2–4 advisers</option><option value="5-10">5–10 advisers</option><option value="11+">11+ advisers</option></select></label>
@@ -113,7 +113,7 @@ export function BetaApplicationForm() {
       </div>
       <p className="beta-network-note">Check your network&apos;s position on third party AI tools before you run live client material. We will support your notification, and the Test Drive uses a fictitious case so you can assess the work before that conversation.</p>
       <div className="beta-form-submit">
-        <button className="button button-primary" type="submit" disabled={submitting}>{submitting ? <><LoaderCircle className="spin" />Submitting application</> : <>{remaining > 0 ? "Submit beta application" : "Join the waiting list"}<ArrowRight /></>}</button>
+        <button className="button button-primary" type="submit" disabled={submitting}>{submitting ? <><LoaderCircle className="spin" />Submitting application</> : <>{remaining > 0 ? "Submit application" : "Join the waiting list"}<ArrowRight /></>}</button>
         <span><LockKeyhole />Application only: no client data, passwords or payment details.</span>
       </div>
     </form>

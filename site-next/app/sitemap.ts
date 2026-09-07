@@ -6,22 +6,20 @@ const BASE = "https://theadviceengine.ai";
 // /funnel is owner-only behind Easy Auth and must not be advertised.
 const publicRoutes = [
   "/",
-  "/product",
   "/outputs",
+  "/evidence",
   "/security",
   "/pricing",
   "/about",
+  "/product",
   "/microsoft",
+  "/gap-scanner",
   "/start",
   "/demo",
   "/privacy",
   "/terms",
   "/thank-you",
-  "/find.html",
-  "/suitability.html",
-  "/meetings.html",
   "/finprom.html",
-  "/organise.html",
   "/quilter.html",
 ];
 

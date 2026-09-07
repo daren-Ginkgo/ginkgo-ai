@@ -1,22 +1,17 @@
 import type { Metadata } from "next";
 import {
   ArrowRight,
-  Calculator,
   Check,
   CircleCheck,
   Database,
-  FileCheck2,
   FileText,
-  FolderSearch,
   LockKeyhole,
-  Search,
   ShieldCheck,
   Sparkles,
   Upload,
 } from "lucide-react";
 
 import { ArrowButton, SiteFooter, SiteHeader } from "@/components/marketing";
-import { QuilterMethod } from "@/components/quilter-method";
 import { BetaAvailability } from "@/components/beta-availability";
 
 export const metadata: Metadata = {
@@ -24,33 +19,9 @@ export const metadata: Metadata = {
   description: "The Advice Engine turns client case material into branded draft documents, adviser QA checks and auditable calculations for UK advice firms.",
 };
 
-const outcomes = [
-  {
-    icon: FileText,
-    number: "01",
-    title: "Draft the work",
-    copy: "Suitability reports, annual reviews, meeting packs and adviser correspondence, produced in your firm’s styling from the case material you already hold.",
-  },
-  {
-    icon: FileCheck2,
-    number: "02",
-    title: "Strengthen the file",
-    copy: "Before the first draft appears, the engine runs a pre-review file check built from the COBS 9 suitability requirements, fills supportable gaps from the case evidence and redrafts.",
-  },
-  {
-    icon: Search,
-    number: "03",
-    title: "Find the next conversation",
-    copy: "The Advice Gap Scanner surfaces needs that were raised but never actioned, with the source quote verified before anything reaches the adviser.",
-  },
-];
-
-const workflowGroups = [
-  ["Draft", "Branded suitability reports", "Annual review progress and outcomes", "Cashflow reports and client emails"],
-  ["Check", "Evidence and consistency review", "Missing-information flags", "Separate adviser QA sheet"],
-  ["Find", "Advice gap scanner", "Client fact extraction", "Relevant SharePoint and OneDrive files"],
-  ["Calculate", "25 adviser calculators", "Source-labelled workings", "Figures carried into the report"],
-];
+// Restructured 7 Sep 2026 (handover 2, task B): eleven sections became six
+// plus the retained security strip. The removed sections live on /product,
+// /outputs, /gap-scanner, /about and /pricing.
 
 const adviserJourney = [
   {
@@ -79,16 +50,16 @@ const adviserJourney = [
   },
 ];
 
-const outputFamilies = [
-  [FileText, "Suitability reports", "Turn transcripts and case evidence into a structured, branded draft without beginning from a blank page."],
-  [FileCheck2, "Annual review reports", "Create progress-check or outcome reports from the meeting record, previous review and current client data."],
-  [Calculator, "Cashflows and calculators", "Build client cashflow packs and source-labelled calculations for charges, tax, withdrawals, critical yield and more."],
-  [FolderSearch, "Meeting and follow-up work", "Prepare meeting packs, actions, client correspondence and next-conversation prompts from the same source material."],
+// The adviser job table, moved up from /product (handover 2, task B item 2).
+const jobs = [
+  ["Suitability", "Transcript + fact-find + illustrations", "Branded suitability-report draft + adviser QA"],
+  ["Annual review", "Meeting record + previous report + current values", "Progress-check or outcome report + action list"],
+  ["Cashflow", "Household data + objectives + agreed assumptions", "Professional cashflow report + client email draft"],
+  ["Calculators", "Case figures + source documents", "Workings for charges, CGT, withdrawals, critical yield and more"],
 ];
 
-// Retention wording approved by Daren on 6 Sep 2026 (staging only until the
-// DPIA sign-off is recorded). Do not reintroduce "written to disk", "processed
-// in the moment" or any zero-retention claim.
+// Retention wording approved by Daren on 6 Sep 2026. Do not reintroduce
+// "written to disk", "processed in the moment" or any zero-retention claim.
 const securityItems = [
   [LockKeyhole, "UK hosted, your own Microsoft sign-in", "UK Azure-region hosting, with your firm’s existing Entra account and MFA."],
   [ShieldCheck, "Never used to train AI models", "A binding term of our agreement with our AI provider, not a setting we switch on."],
@@ -145,7 +116,7 @@ export default function Home() {
                 <span>Draft</span>
               </div>
               <div className="document-title">Annual Review Outcome</div>
-              <div className="document-client">Mrs Jane Smith · 14 March 2026</div>
+              <div className="document-client">Alex and Sam Taylor · 14 March 2026</div>
               <div className="document-section"><span>01</span><div><strong>Your position</strong><i /></div></div>
               <div className="document-lines"><i /><i /><i /><i /></div>
               <div className="document-note">
@@ -167,12 +138,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="proof-strip" aria-label="Product facts">
-        <div className="shell proof-strip-grid">
-          <div><strong>36</strong><span>named workflows and tools</span></div>
-          <div><strong>25</strong><span>adviser calculators</span></div>
-          <div><strong>15</strong><span>founding adviser places</span></div>
-          <div><strong>UK</strong><span>Azure-region hosting</span></div>
+      <section className="section job-map-section">
+        <div className="shell">
+          <div className="section-intro split-intro"><div><span className="kicker">From source material to useful work</span><h2>Show the engine the case once. Put it to work in different ways.</h2></div><p>The value is not a single report. It is the time saved across the repeated drafting, checking, calculating and follow-up work surrounding the same client.</p></div>
+          <div className="job-map">
+            <div className="job-map-head"><span>Adviser job</span><span>What goes in</span><span>What comes out</span></div>
+            {jobs.map(([job, input, output]) => <div className="job-map-row" key={job}><strong>{job}</strong><span>{input}</span><span>{output}</span></div>)}
+          </div>
         </div>
       </section>
 
@@ -199,84 +171,9 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <div className="input-output-story">
-            <div className="input-stack" aria-label="Examples of client information the engine can use">
-              <span className="io-label">Bring what you already have</span>
-              <div><Upload /><strong>Meeting transcript</strong><small>Conversation, objectives and agreed actions</small></div>
-              <div><FileText /><strong>Client documents</strong><small>Fact-finds, statements, illustrations and existing reports</small></div>
-              <div><FolderSearch /><strong>SharePoint or OneDrive</strong><small>Find and confirm the relevant case files</small></div>
-            </div>
-            <div className="io-arrow"><Sparkles /><span>The Advice Engine</span><ArrowRight /></div>
-            <div className="output-stack">
-              <span className="io-label">Receive work ready to review</span>
-              <div><FileText /><strong>Branded Word draft</strong><small>Professional, editable and structured for the job</small></div>
-              <div><Calculator /><strong>Calculations and workings</strong><small>Figures carried forward with their source visible</small></div>
-              <div><ShieldCheck /><strong>Adviser QA</strong><small>Gaps, conflicts and decisions clearly separated</small></div>
-            </div>
-          </div>
-          <div className="output-family-grid">
-            {outputFamilies.map(([Icon, title, copy]) => {
-              const OutputIcon = Icon as typeof FileText;
-              return <article key={title as string}><OutputIcon /><div><h3>{title as string}</h3><p>{copy as string}</p></div></article>;
-            })}
-          </div>
           <div className="workflow-sale-action">
             <p><strong>One source pack can support several pieces of work.</strong> Reuse verified client facts rather than finding and typing them again for every document.</p>
             <a className="text-link" href="/outputs#workflow-demos">See three complete workflow demonstrations <ArrowRight /></a>
-          </div>
-        </div>
-      </section>
-
-      <QuilterMethod />
-
-      <section className="human-section">
-        <div className="shell human-grid">
-          <figure className="human-photo">
-            <img src="/daren-wallbank.webp" alt="Daren Wallbank at Ginkgo Financial" />
-            <figcaption>Daren Wallbank · Founder, Chartered Financial Planner and practising adviser.</figcaption>
-          </figure>
-          <div className="human-copy">
-            <span className="kicker">Built by an adviser who needed it</span>
-            <h2>Created inside a Quilter advice firm – not a software lab.</h2>
-            <p>Daren built the first workflows at Ginkgo Financial to reduce repeated preparation, surface missing information earlier and give advisers a stronger starting point.</p>
-            <a className="text-link" href="/product">Explore the complete product <ArrowRight aria-hidden="true" /></a>
-          </div>
-        </div>
-      </section>
-
-      <section className="founder-promo">
-        <div className="shell founder-promo-grid">
-          <div className="founder-brand-lockup"><img src="/ginkgo-financial-logo.png" alt="Ginkgo Financial" /><span>Built in daily advice practice</span></div>
-          <div>
-            <span className="kicker light">Built inside Ginkgo Financial</span>
-            <h2>Advice technology shaped by an adviser who needed it to work.</h2>
-            <p>Daren Wallbank built The Advice Engine after seeing how much skilled adviser time disappears into gathering evidence, starting reports, checking files and retracing client needs.</p>
-            <a className="text-link light-link" href="/about">Read Daren and Ginkgo’s story <ArrowRight aria-hidden="true" /></a>
-          </div>
-          <blockquote>“The idea was simple: give the adviser a stronger starting point, without pretending software should make the final decision.”<cite>Daren Wallbank · Founder</cite></blockquote>
-        </div>
-      </section>
-
-      <section className="section outcomes" id="outcomes">
-        <div className="shell">
-          <div className="section-intro split-intro">
-            <div>
-              <span className="kicker">What it changes</span>
-              <h2>The work still needs an adviser.<br />It no longer needs a blank page.</h2>
-            </div>
-            <p>
-              This is not a general-purpose chat window. Each workflow is built around a specific
-              job, the documents it needs and the evidence a reviewer expects to see.
-            </p>
-          </div>
-          <div className="outcome-grid">
-            {outcomes.map(({ icon: Icon, number, title, copy }) => (
-              <article className="outcome-card" key={title}>
-                <div className="outcome-meta"><span>{number}</span><Icon aria-hidden="true" /></div>
-                <h3>{title}</h3>
-                <p>{copy}</p>
-              </article>
-            ))}
           </div>
         </div>
       </section>
@@ -305,7 +202,7 @@ export default function Home() {
               <div className="report-brand"><span className="mini-mark" /> YOUR FIRM <small>FINANCIAL ADVICE</small></div>
               <span className="draft-pill">DRAFT · ADVISER REVIEW</span>
               <h3>Annual Review Outcome</h3>
-              <p className="report-meta">Prepared for Mrs Jane Smith · 14 March 2026</p>
+              <p className="report-meta">Prepared for Alex and Sam Taylor · 14 March 2026</p>
               <div className="report-rule" />
               <h4>Executive summary</h4>
               <p>Your arrangements remain aligned with the objectives and risk position recorded at this review. The actions agreed are set out below.</p>
@@ -327,84 +224,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section smart-files" id="how-it-works">
-        <div className="shell smart-grid">
-          <div className="file-browser">
-            <div className="browser-head">
-              <div><FolderSearch aria-hidden="true" /><strong>Suggest relevant files</strong></div>
-              <span>Client / Jane Smith / Review 2026</span>
-            </div>
-            <div className="file-row selected"><span><FileText />Meeting transcript.pdf</span><b>Review objectives and agreed actions</b><Check /></div>
-            <div className="file-row selected"><span><FileText />Platform statement.pdf</span><b>Current values and holdings</b><Check /></div>
-            <div className="file-row"><span><FileText />ID verification.pdf</span><b>Not relevant to this workflow</b><i /></div>
-            <div className="file-row selected"><span><FileText />Previous outcome report.docx</span><b>Compare changes since last review</b><Check /></div>
-            <div className="browser-foot"><LockKeyhole /> File contents are fetched only after you confirm the selection.</div>
-          </div>
-          <div className="smart-copy">
-            <span className="kicker">Built around your case files</span>
-            <h2>It finds the right evidence before it starts writing.</h2>
-            <p>
-              Search the client’s OneDrive or SharePoint folder from inside the workflow. The engine
-              scans names and dates, suggests the files most likely to matter and tells you why, before
-              retrieving their contents.
-            </p>
-            <div className="step-list">
-              <div><span>1</span><p><strong>Choose the job</strong>The workflow knows what evidence that job usually needs.</p></div>
-              <div><span>2</span><p><strong>Confirm the source pack</strong>You stay in control of which files are actually used.</p></div>
-              <div><span>3</span><p><strong>Review the output</strong>Word draft, QA sheet and workings arrive together.</p></div>
-            </div>
-            <a className="text-link smart-link" href="/microsoft">Explore the Microsoft 365 integration <ArrowRight /></a>
-          </div>
-        </div>
-      </section>
-
-      <section className="section gap-section">
-        <div className="shell gap-grid">
-          <div className="gap-copy">
-            <span className="kicker light">The Advice Gap Scanner</span>
-            <h2>Your client files already contain the next conversation.</h2>
-            <p>
-              Find evidenced needs that were discussed but never carried into the review outcome.
-              Every finding is quoted and verified against its source before it becomes an agenda item.
-            </p>
-            <a className="text-link light-link" href="/find.html">See how the Advice Gap Scanner works <ArrowRight /></a>
-          </div>
-          <div className="gap-evidence">
-            <div className="quote-source">Meeting transcript · 14 March 2026</div>
-            <blockquote>“There’s the little pension from my old job. I’ve honestly never touched it.”</blockquote>
-            <div className="evidence-result">
-              <div><span>Verified finding</span><strong>Legacy pension mentioned once, never traced.</strong></div>
-              <CircleCheck />
-            </div>
-            <div className="next-action"><span>Suggested next step</span><strong>Add to the next meeting agenda. Draft an LOA and provider request.</strong></div>
-            <p>Conversation prompt only · not advice · fictitious specimen</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section workflows" id="workflows">
-        <div className="shell">
-          <div className="section-intro split-intro">
-            <div><span className="kicker">One subscription</span><h2>From the first transcript to the annual review.</h2></div>
-            <p>Thirty-six named workflows and 25 calculators. Use the client information you already hold to draft, check, calculate, find and organise the work around the case.</p>
-          </div>
-          <div className="workflow-grid">
-            {workflowGroups.map(([group, ...items], index) => {
-              const Icons = [FileText, FileCheck2, FolderSearch, Calculator];
-              const Icon = Icons[index];
-              return (
-                <article key={group}>
-                  <div className="workflow-icon"><Icon /></div>
-                  <h3>{group}</h3>
-                  <ul>{items.map((item) => <li key={item}>{item}</li>)}</ul>
-                </article>
-              );
-            })}
-          </div>
-          <div className="workflow-cta">
-            <span>Plus meeting packs, letters of authority, fee paperwork, client emails, protection tools, fact extraction and more.</span>
-            <a href="/product">See how the workflows fit together <ArrowRight /></a>
-          </div>
+      <section className="section evidence-teaser">
+        <div className="shell narrow-shell">
+          <span className="kicker">Can you defend it?</span>
+          <h2>Every figure points back to the document it came from.</h2>
+          <p>Every gap is flagged rather than filled. The named adviser reviews, approves and issues, and the file shows that they did.</p>
+          <a className="text-link" href="/evidence">See how a draft survives a file review <ArrowRight /></a>
         </div>
       </section>
 
@@ -417,8 +242,8 @@ export default function Home() {
               The safeguards are part of the workflow, not an appendix. Your team keeps its existing
               Microsoft identity controls and every output preserves a clear line of adviser responsibility.
             </p>
-            <a className="text-link" href="mailto:hello@theadviceengine.ai?subject=Advice%20Engine%20due%20diligence%20pack">
-              Request the due-diligence pack <ArrowRight />
+            <a className="text-link" href="/security">
+              Read the security page <ArrowRight />
             </a>
           </div>
           <div className="security-list">
@@ -430,43 +255,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section pricing" id="pricing">
-        <div className="shell">
-          <div className="pricing-head">
-            <div><span className="kicker light">Simple pricing</span><h2>Clear firm pricing.<br />A founding-adviser advantage.</h2></div>
-            <p>Fifteen individual Quilter advisers can join the pre-launch beta free of charge, then receive 50% off their individual subscription for 12 months after launch.</p>
-          </div>
-          <div className="pricing-grid">
-            <article className="price-card featured">
-              <span className="price-tag">Most firms</span>
-              <p>1–4 advisers</p>
-              <div className="price"><strong>£250</strong><span>per adviser<br />per month</span></div>
-              <ul><li><Check />All workflows and tools</li><li><Check />Whole team included</li><li><Check />Branding and setup included</li></ul>
-              <ArrowButton href="/start" light>Apply for the beta</ArrowButton>
-            </article>
-            <article className="price-card">
-              <p>5–10 advisers</p>
-              <div className="price"><strong>£200</strong><span>per adviser<br />per month</span></div>
-              <ul><li><Check />All workflows and tools</li><li><Check />Whole team included</li><li><Check />New workflows included</li></ul>
-              <a href="/start">Apply for the beta <ArrowRight /></a>
-            </article>
-            <article className="price-card">
-              <p>11+ advisers</p>
-              <div className="price"><strong>Let’s talk</strong><span>A commercial arrangement matched to scale.</span></div>
-              <ul><li><Check />Firm-wide access</li><li><Check />Onboarding included</li><li><Check />Direct implementation support</li></ul>
-              <a href="mailto:hello@theadviceengine.ai?subject=Pricing%20for%2011%2B%20advisers">Ask for pricing <ArrowRight /></a>
-            </article>
-          </div>
-          <p className="pricing-note">Standard 12-month agreement. The founding offer replaces the normal first-month-free offer and cannot be combined with it.</p>
-        </div>
-      </section>
-
       <section className="section start-section" id="start">
         <div className="shell start-card">
           <div>
             <BetaAvailability variant="kicker" />
             <h2>Help shape an engine built around real adviser work.</h2>
-            <p>Join free throughout beta, begin with a fictitious case and work directly with Daren before deciding whether to continue after launch.</p>
+            <p>Join free throughout beta, begin with a fictitious case and work directly with Daren. Standard pricing runs from £200 per adviser per month: <a href="/pricing">see the pricing page</a>.</p>
           </div>
           <div className="start-actions">
             <ArrowButton href="/start">Apply for a founding place</ArrowButton>

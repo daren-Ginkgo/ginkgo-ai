@@ -20,6 +20,13 @@ const nextConfig: NextConfig = {
       // the software as a compliance function and named the Q Business
       // Assurance Manual. /product owns this ground now.
       { source: "/compliance.html", destination: "/product", permanent: true },
+      // Site restructure, 7 Sep 2026 (handover 2, task E): eighteen URLs to
+      // six public pages. The legacy capability shells fold into /outputs and
+      // /microsoft; the Gap Scanner keeps its page under a clean URL.
+      { source: "/suitability.html", destination: "/outputs", permanent: true },
+      { source: "/meetings.html", destination: "/outputs", permanent: true },
+      { source: "/organise.html", destination: "/microsoft", permanent: true },
+      { source: "/find.html", destination: "/gap-scanner", permanent: true },
     ];
   },
 };

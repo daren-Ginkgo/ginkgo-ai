@@ -22,7 +22,7 @@ export default async function FunnelPage() {
   ];
 
   return <main id="main-content" className="funnel-page">
-    <header className="funnel-header"><div className="shell"><div><span>PRIVATE · OWNER ONLY</span><h1>Founding Adviser funnel</h1><p>Review applications, manage the 15 places and see which parts of the site are driving action.</p></div><Link href="/">View website</Link></div></header>
+    <header className="funnel-header"><div className="shell"><div><span>PRIVATE · OWNER ONLY</span><h1>Founding adviser funnel</h1><p>Review applications, manage the 15 places and see which parts of the site are driving action.</p></div><Link href="/">View website</Link></div></header>
     <section className="shell funnel-body">
       <div className="funnel-metrics">{metrics.map(({ icon: Icon, label, value, note }) => <article key={label}><Icon /><span>{label}</span><strong>{value}</strong><p>{note}</p></article>)}</div>
       <div className="funnel-panel"><div className="funnel-panel-head"><div><span>APPLICATIONS</span><h2>Founding adviser pipeline</h2></div><p>Pending, contacted and approved applications hold a place. Declined, withdrawn, waiting-list and test-flagged records do not. Mark internal submissions as test rows to keep the public counter honest without deleting anything.</p></div><BetaAdminTable initialApplications={applications} /></div>

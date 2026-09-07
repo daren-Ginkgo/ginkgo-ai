@@ -3,7 +3,7 @@ import { ArrowRight, Check, CircleCheck, FileSearch, FileText, MessagesSquare, S
 import { ArrowButton, FinalCta, PageHero, SiteFooter, SiteHeader } from "@/components/marketing";
 
 export const metadata: Metadata = {
-  title: "Advice Gap Scanner",
+  title: "Gap Scanner",
   description: "Surface client needs that were discussed but never carried forward, with every finding tied back to its source for adviser verification.",
 };
 
@@ -19,10 +19,10 @@ export default function AdviceGapPage() {
     <main id="main-content">
       <SiteHeader />
       <PageHero
-        eyebrow="The Advice Gap Scanner"
+        eyebrow="The Gap Scanner"
         title="Find the client needs already hiding in the file."
         copy="Point the engine at the evidence you already hold, especially meeting transcripts, and surface needs, concerns and agreed actions that were discussed but never carried forward. Every finding is tied back to its source for adviser verification."
-        primary={{ href: "/start", label: "Apply for the founding beta" }}
+        primary={{ href: "/start", label: "Apply for a founding place" }}
         secondary={{ href: "/microsoft", label: "See the OneDrive workflow" }}
       />
 
@@ -69,7 +69,7 @@ export default function AdviceGapPage() {
           <div className="section-intro split-intro"><div><span className="kicker light">Two different questions</span><h2>Find missing evidence – and find missed opportunity.</h2></div><p>The same client folder can support two distinct checks. Keeping them separate makes each result clearer and safer for the adviser to use.</p></div>
           <div className="two-gap-grid">
             <article><span>01 · Before an output</span><h3>Case-readiness gap analysis</h3><p>Does the selected source pack contain the evidence needed for this suitability report, review or cashflow?</p><ul><li><Check />Suggest the likely relevant files</li><li><Check />Flag missing, stale or conflicting information</li><li><Check />Add new evidence and recheck before drafting</li></ul></article>
-            <article><span>02 · Across the relationship</span><h3>Advice Gap Scanner</h3><p>Did the client raise a need, concern or objective that never appeared in the recorded action or outcome?</p><ul><li><Check />Quote and verify the original source</li><li><Check />Surface the unfinished conversation</li><li><Check />Prepare an adviser-owned next step</li></ul></article>
+            <article><span>02 · Across the relationship</span><h3>Gap Scanner</h3><p>Did the client raise a need, concern or objective that never appeared in the recorded action or outcome?</p><ul><li><Check />Quote and verify the original source</li><li><Check />Surface the unfinished conversation</li><li><Check />Prepare an adviser-owned next step</li></ul></article>
           </div>
           <div className="gap-control-note"><strong>The adviser remains in control.</strong><span>The scanner does not invent facts, provide advice or make a judgement about earlier advice. It finds evidence and prepares a conversation for a named adviser to assess.</span><ArrowButton href="/start" light>Apply for a founding place</ArrowButton></div>
         </div>

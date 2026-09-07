@@ -46,9 +46,13 @@ export function SiteHeader() {
       <header className="site-header">
         <div className="shell nav-shell">
           <Brand />
+          {/* Evidence replaced Product in the desktop nav (handover 2, task C):
+              a seventh item wraps the header at 1280px, and the restructure's
+              six-page shape does not include /product. Product stays in the
+              mobile menu and footer. */}
           <nav className="desktop-nav" aria-label="Main navigation">
-            <a href="/product">Product</a>
-            <a href="/find.html">Gap Scanner</a>
+            <a href="/evidence">Evidence</a>
+            <a href="/gap-scanner">Gap Scanner</a>
             <a href="/microsoft">Microsoft 365</a>
             <a href="/security">Security</a>
             <a href="/pricing">Pricing</a>
@@ -57,21 +61,22 @@ export function SiteHeader() {
           <div className="nav-actions">
             <a className="sign-in" href="https://app.theadviceengine.ai/">Sign in</a>
             <Button asChild className="button button-primary nav-cta">
-              <a href="/start">Apply for the beta</a>
+              <a href="/start">Apply for a founding place</a>
             </Button>
           </div>
           <details className="mobile-nav">
             <summary aria-label="Open navigation"><Menu aria-hidden="true" /> Menu</summary>
             <div>
-              <a href="/product">Product</a>
               <a href="/outputs">Outputs</a>
-              <a href="/find.html">Advice Gap Scanner</a>
-              <a href="/microsoft">Microsoft &amp; OneDrive</a>
+              <a href="/evidence">Evidence</a>
+              <a href="/product">Product</a>
+              <a href="/gap-scanner">Gap Scanner</a>
+              <a href="/microsoft">Microsoft 365</a>
               <a href="/security">Security</a>
               <a href="/pricing">Pricing</a>
               <a href="/about">Daren &amp; Ginkgo</a>
-              <a href="/start">Apply for the beta</a>
-              <a href="/demo">Book a demo</a>
+              <a href="/start">Apply for a founding place</a>
+              <a href="/demo">Book a demonstration</a>
             </div>
           </details>
         </div>
@@ -86,21 +91,19 @@ export function SiteFooter() {
       <div className="shell footer-grid">
         <div><Brand reversed /><p>Advice paperwork, built around the evidence.</p></div>
         <div className="footer-links">
-          <a href="/product">Product</a><a href="/outputs">Outputs</a>
+          <a href="/outputs">Outputs</a><a href="/evidence">Evidence</a>
           <a href="/security">Security</a><a href="/pricing">Pricing</a>
-          <a href="/about">Daren &amp; Ginkgo</a><a href="/demo">Book a demo</a>
+          <a href="/about">Daren &amp; Ginkgo</a><a href="/demo">Book a demonstration</a>
           <a href="mailto:hello@theadviceengine.ai">Contact</a>
           <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
         </div>
       </div>
       <div className="shell footer-product-links">
         <span>Explore</span>
-        <a href="/suitability.html">Suitability</a>
-        <a href="/meetings.html">Meetings</a>
+        <a href="/product">Product</a>
+        <a href="/gap-scanner">Gap Scanner</a>
+        <a href="/microsoft">Microsoft 365</a>
         <a href="/finprom.html">Financial promotions</a>
-        <a href="/find.html">Advice Gap Scanner</a>
-        <a href="/microsoft">Microsoft &amp; OneDrive</a>
-        <a href="/organise.html">Organise work</a>
       </div>
       <div className="shell legal">
         <p>The Advice Engine is operated by The Advice Engine Ltd, a company registered in England and Wales, company number 17404907. The Advice Engine Ltd is not authorised or regulated by the Financial Conduct Authority: it supplies software, not advice.</p>
@@ -115,7 +118,7 @@ export function PageHero({
   eyebrow,
   title,
   copy,
-  primary = { href: "/start", label: "Apply for the beta" },
+  primary = { href: "/start", label: "Apply for a founding place" },
   secondary = { href: "/demo", label: "Book a demonstration" },
   image,
   imageAlt,
@@ -161,7 +164,7 @@ export function FinalCta() {
           <p>Founding advisers receive free access throughout beta and 50% off their individual subscription for 12 months after launch.</p>
         </div>
         <div className="start-actions">
-          <ArrowButton href="/start">Apply for the beta</ArrowButton>
+          <ArrowButton href="/start">Apply for a founding place</ArrowButton>
           <a href="/demo">Book a demonstration</a>
         </div>
       </div>

@@ -56,7 +56,7 @@ export function CapabilityPage({ data }: { data: Capability }) {
           <div className="mini-output-card">
             <div className="mini-output-top"><FileText /><span>Client output</span><b>Draft</b></div>
             <h3>{data.specimenTitle}</h3>
-            <p>Prepared for Mrs Jane Smith · Fictitious specimen</p>
+            <p>Prepared for Alex and Sam Taylor · Fictitious specimen</p>
             <div className="mini-lines"><i /><i /><i /></div>
             <div className="mini-qa"><FileCheck2 /><div><strong>Adviser QA</strong><span>Evidence checked · items to confirm shown</span></div><ShieldCheck /></div>
           </div>

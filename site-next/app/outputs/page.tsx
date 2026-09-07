@@ -59,6 +59,21 @@ export default function OutputsPage() {
           </div>
         </div>
       </section>
+      {/* SLOT: downloadable specimen pack. Daren is producing the files; when
+          they exist, replace the mailto with the download links. Do not
+          fabricate specimen documents. */}
+      <section className="section specimen-pack-slot">
+        <div className="shell start-card">
+          <div>
+            <span className="kicker light">The specimen pack</span>
+            <h2>The complete fictitious pack, ready to download.</h2>
+            <p>The branded Word draft, adviser QA sheet and calculation workings for the Alex and Sam Taylor specimen are being prepared as a downloadable pack.</p>
+          </div>
+          <div className="start-actions">
+            <ArrowButton href="mailto:hello@theadviceengine.ai?subject=Specimen%20pack%20request">Ask for the specimen pack</ArrowButton>
+          </div>
+        </div>
+      </section>
       <section className="section specimen-note"><div className="shell"><Check /><p>All client names, values and circumstances shown on this page are fictitious specimens created to demonstrate the workflow.</p></div></section>
       <FinalCta />
       <SiteFooter />

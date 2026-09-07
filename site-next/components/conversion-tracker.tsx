@@ -37,7 +37,7 @@ export function ConversionTracker() {
       else if (href === "/demo" || href.startsWith("/demo?")) eventName = "demo_cta_click";
       else if (href.startsWith("https://app.theadviceengine.ai")) eventName = "engine_signin_click";
       else if (href === "/microsoft") eventName = "microsoft_page_click";
-      else if (href === "/find.html") eventName = "gap_scanner_click";
+      else if (href === "/gap-scanner") eventName = "gap_scanner_click";
       if (eventName) trackConversion(eventName, window.location.pathname, { destination: href.split("?")[0] });
     };
     document.addEventListener("click", onClick);
