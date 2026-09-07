@@ -40,6 +40,18 @@ export default function SecurityPage() {
           <p>Check your network&apos;s position on third party AI tools before you run live client material. We will support your notification, and the Test Drive uses a fictitious case so you can assess the work before that conversation.</p>
         </div>
       </section>
+      {/* Published subprocessor list: keep in step with the DPA's Annex C and
+          AEL_Subprocessor_List in the governance folder. Any change here is a
+          change there, with 15 days' notice to customer firms. */}
+      <section className="section privacy-section">
+        <div className="shell narrow-shell privacy-copy">
+          <h2>Subprocessors</h2>
+          <p>The Advice Engine Ltd (company number 17404907) uses the following subprocessors to provide The Advice Engine. We give customer firms at least 15 days&apos; notice before adding or replacing a subprocessor, and remain fully responsible for our subprocessors&apos; data protection performance.</p>
+          <p><strong>Anthropic PBC.</strong> AI drafting (the Claude model): case material relevant to a draft is sent to Anthropic, in the United States, to generate it. The transfer is covered by EU Standard Contractual Clauses and the UK International Data Transfer Addendum under our commercial agreement. Client material is never used to train any AI model, a binding term rather than a setting, and inputs and outputs are held briefly for trust and safety purposes and then deleted. Anthropic holds SOC 2 Type II, SOC 3, ISO 27001, ISO 42001 and CSA STAR L2 certifications, and publishes its own subprocessor list with an objection window.</p>
+          <p><strong>Microsoft Corporation.</strong> Cloud hosting: the application, transient session processing and the metadata-only audit log run on Microsoft Azure in the United Kingdom (UK West), under Microsoft&apos;s Products and Services Data Protection Addendum, with platform encryption in transit and at rest.</p>
+          <p>No other party processes client personal data on our behalf. Questions or objections: <a href="mailto:hello@theadviceengine.ai">hello@theadviceengine.ai</a>. Last updated 7 September 2026.</p>
+        </div>
+      </section>
       <section className="section responsibility-section"><div className="shell responsibility-grid"><div><span className="kicker light">A precise boundary</span><h2>The engine supports regulated work. It does not become the regulated adviser.</h2></div><div><p>It drafts, calculates, organises and challenges. It does not provide financial advice, approve financial promotions or certify compliance.</p><ArrowButton href="mailto:hello@theadviceengine.ai?subject=Advice%20Engine%20due%20diligence%20pack" light>Request the due-diligence pack</ArrowButton></div></div></section>
       <FinalCta />
       <SiteFooter />
