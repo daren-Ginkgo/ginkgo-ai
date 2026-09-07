@@ -53,7 +53,7 @@ const workflows: Workflow[] = [
       "Extract and organise client facts",
       "Link statements to their source",
       "Build from the relevant Quilter report structure",
-      "Run the initial Q Business Assurance sweep",
+      "Run the pre-review file check",
       "Fill supportable gaps, then redraft and flag the rest",
     ],
     output: {
@@ -85,7 +85,7 @@ const workflows: Workflow[] = [
       "Compare circumstances and objectives",
       "Identify changes since the last review",
       "Check against the relevant Quilter review requirements",
-      "Run the initial compliance sweep and recover evidence",
+      "Run the pre-review file check and recover evidence",
       "Redraft the report and separate work still needed",
     ],
     output: {
@@ -118,7 +118,7 @@ const workflows: Workflow[] = [
       "Model spending phases and income sources",
       "Run cautious, central and stronger growth bases",
       "Check the workings against the applicable template logic",
-      "Run the initial compliance sweep, redraft and show gaps",
+      "Run the pre-review file check, redraft and show gaps",
     ],
     output: {
       label: "Your firm · Lifetime cashflow",

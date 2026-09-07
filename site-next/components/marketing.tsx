@@ -37,9 +37,10 @@ export function ArrowButton({
 export function SiteHeader() {
   return (
     <>
+      {/* Copy deck Part A (7 Sep 2026): the bar carries the founding-places
+          count alone; the network strapline moved to the hero as a personal
+          credential rather than a possessive framing. */}
       <div className="announcement">
-        <span>For Quilter advisers, by a Quilter adviser</span>
-        <span className="announcement-divider" />
         <BetaAvailability variant="announcement" />
       </div>
       <header className="site-header">
@@ -96,7 +97,6 @@ export function SiteFooter() {
         <span>Explore</span>
         <a href="/suitability.html">Suitability</a>
         <a href="/meetings.html">Meetings</a>
-        <a href="/compliance.html">Compliance</a>
         <a href="/finprom.html">Financial promotions</a>
         <a href="/find.html">Advice Gap Scanner</a>
         <a href="/microsoft">Microsoft &amp; OneDrive</a>

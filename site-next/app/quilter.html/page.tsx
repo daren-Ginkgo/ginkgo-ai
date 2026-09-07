@@ -15,7 +15,7 @@ export default function QuilterPage() {
       <PageHero
         eyebrow="For advisers in the Quilter network"
         title="Built from the ground up around Quilter advice work."
-        copy="Reports, calculators and QA workflows are structured around the relevant Quilter templates, process documents and calculation logic, then challenged against the applicable requirements encoded from the Q Business Assurance Manual."
+        copy="Reports, calculators and QA workflows are built to match the templates and processes your firm already uses, then challenged against a structured file check built from the COBS 9 suitability requirements and the file standards network firms are typically reviewed against."
       />
       <QuilterMethod />
       <section className="section quilter-section">
@@ -26,8 +26,8 @@ export default function QuilterPage() {
             <p>The initial sweep does more than produce a list of warnings. Where the confirmed source pack already answers a question, the engine carries that evidence into the draft and shows where it came from. Unresolved points remain separate and visible.</p>
           </div>
           <div className="quilter-points">
-            <span><CircleCheck />Built around relevant Quilter templates and processes</span>
-            <span><CircleCheck />Initial Business Assurance compliance sweep</span>
+            <span><CircleCheck />Built to match the templates and processes your firm already uses</span>
+            <span><CircleCheck />Initial pre-review file check on every draft</span>
             <span><CircleCheck />Evidence-backed gap recovery and redraft</span>
             <span><CircleCheck />Branded Word document, workings and QA sheet</span>
             <span><Check />Independent software; adviser and firm retain responsibility</span>

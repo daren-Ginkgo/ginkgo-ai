@@ -111,6 +111,7 @@ export function BetaApplicationForm() {
       <div className="beta-form-status" aria-live="polite">
         {result?.error ? <p className="beta-form-error">{result.error}</p> : null}
       </div>
+      <p className="beta-network-note">Check your network&apos;s position on third party AI tools before you run live client material. We will support your notification, and the Test Drive uses a fictitious case so you can assess the work before that conversation.</p>
       <div className="beta-form-submit">
         <button className="button button-primary" type="submit" disabled={submitting}>{submitting ? <><LoaderCircle className="spin" />Submitting application</> : <>{remaining > 0 ? "Submit beta application" : "Join the waiting list"}<ArrowRight /></>}</button>
         <span><LockKeyhole />Application only: no client data, passwords or payment details.</span>

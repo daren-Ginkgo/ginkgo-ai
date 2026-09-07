@@ -76,12 +76,6 @@ svg {
   text-transform: uppercase;
 }
 
-.announcement-divider {
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: var(--violet-2);
-}
 
 .site-header {
   position: sticky;
@@ -1720,15 +1714,8 @@ svg {
     text-align: center;
   }
 
-  /* On a phone, keep the founding-places counter (last child) and hide the
-     network strapline instead: the strapline already repeats in the hero. */
-  .announcement span:first-child {
-    display: none;
-  }
-
-  .announcement-divider {
-    display: none;
-  }
+  /* The announcement bar carries only the founding-places counter (7 Sep
+     2026): nothing needs hiding on a phone any more. */
 
   .nav-shell {
     min-height: 68px;
@@ -4978,4 +4965,16 @@ svg {
   color: var(--muted-small);
   font-size: 0.8rem;
   font-weight: 700;
+}
+
+/* Network-notification note above the beta form's submit button. */
+.beta-network-note {
+  margin: 18px 0 0;
+  padding: 13px 16px;
+  border-left: 3px solid var(--violet);
+  border-radius: 0 10px 10px 0;
+  background: #f6f7fb;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
 }

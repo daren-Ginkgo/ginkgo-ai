@@ -35,7 +35,7 @@ const outcomes = [
     icon: FileCheck2,
     number: "02",
     title: "Strengthen the file",
-    copy: "Before the first draft appears, the engine runs an initial compliance sweep against the applicable Q Business Assurance requirements, fills supportable gaps from the case evidence and redrafts.",
+    copy: "Before the first draft appears, the engine runs a pre-review file check built from the COBS 9 suitability requirements, fills supportable gaps from the case evidence and redrafts.",
   },
   {
     icon: Search,
@@ -104,7 +104,7 @@ export default function Home() {
         <div className="hero-glow" />
         <div className="shell hero-grid">
           <div className="hero-copy">
-            <div className="eyebrow"><Sparkles aria-hidden="true" />For Quilter advisers, by a Quilter adviser</div>
+            <div className="eyebrow"><Sparkles aria-hidden="true" />Built by a Chartered Financial Planner in the Quilter network</div>
             <h1>
               Client data in.<br />
               Professional advice work out.<br />
@@ -113,7 +113,7 @@ export default function Home() {
             <p className="hero-lede">
               Drop in a meeting transcript and whatever client information you already hold. The Advice Engine
               organises the evidence, runs the relevant calculations and creates branded suitability, review and
-              cashflow drafts, built around Quilter templates and challenged before you see the first draft.
+              cashflow drafts, built to match your firm&apos;s own templates and challenged before you see the first draft.
             </p>
             <p className="founder-proof">Created by Daren Wallbank at Ginkgo Financial from the real work of running advice cases, not from a generic software brief.</p>
             <div className="hero-actions">

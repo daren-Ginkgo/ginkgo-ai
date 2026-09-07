@@ -4,14 +4,14 @@ const stages = [
   {
     icon: BookOpenCheck,
     number: "01",
-    title: "Built on the Quilter foundation",
-    copy: "Reports and calculators are designed from the ground up around the relevant Quilter templates, process documents and calculation logic used by advice firms.",
+    title: "Built around your firm's templates",
+    copy: "Reports and calculators are built to match your firm's own report structure and calculation needs, including the network templates you upload.",
   },
   {
     icon: ScanSearch,
     number: "02",
-    title: "Initial compliance sweep",
-    copy: "Before presenting a first draft, the workflow challenges the case against the applicable requirements encoded from the Q Business Assurance Manual.",
+    title: "Pre-review file check",
+    copy: "Before presenting a first draft, the workflow runs a structured file check built from the COBS 9 suitability requirements and the file standards network firms are typically reviewed against.",
   },
   {
     icon: FolderCheck,
@@ -43,7 +43,7 @@ export function QuilterMethod() {
             <h2>Compliance is the first pass.<br />Not the final obstacle.</h2>
           </div>
           <div className="quilter-method-intro">
-            <p>Every workflow is designed to improve the draft before the adviser sees it: structured around Quilter material, challenged against Business Assurance requirements, then redrafted using the evidence already available.</p>
+            <p>Every workflow is designed to improve the draft before the adviser sees it: built around your firm&apos;s own templates, challenged against the COBS 9 suitability requirements and the file standards network firms are typically reviewed against, then redrafted using the evidence already available.</p>
             <div><ShieldCheck /><span><strong>Independent software – not Quilter approval</strong>References describe the framework the engine is built and checked against. The authorised firm and named adviser retain responsibility.</span></div>
           </div>
         </div>

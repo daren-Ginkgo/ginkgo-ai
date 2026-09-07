@@ -20,7 +20,6 @@ const publicRoutes = [
   "/find.html",
   "/suitability.html",
   "/meetings.html",
-  "/compliance.html",
   "/finprom.html",
   "/organise.html",
   "/quilter.html",

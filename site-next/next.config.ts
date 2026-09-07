@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
       { source: "/terms.html", destination: "/terms", permanent: true },
       { source: "/tools.html", destination: "/product", permanent: true },
       { source: "/trial.html", destination: "/start", permanent: true },
+      // Retired 7 Sep 2026 (copy deck Part A): the compliance page positioned
+      // the software as a compliance function and named the Q Business
+      // Assurance Manual. /product owns this ground now.
+      { source: "/compliance.html", destination: "/product", permanent: true },
     ];
   },
 };

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const groups = [
   { icon: FileText, title: "Draft", copy: "Create branded suitability reports, annual-review progress and outcome reports, cashflow packs, meeting packs and client correspondence.", href: "/suitability.html" },
-  { icon: FileCheck2, title: "Check", copy: "Review the source evidence, structure, consistency and missing facts before a document reaches formal adviser review.", href: "/compliance.html" },
+  { icon: FileCheck2, title: "Check", copy: "Review the source evidence, structure, consistency and missing facts before a document reaches formal adviser review.", href: "/outputs" },
   { icon: Search, title: "Find", copy: "Surface evidenced client needs that were discussed but never carried forward, ready for the next adviser conversation.", href: "/find.html" },
   { icon: FolderSearch, title: "Organise", copy: "Use uploaded material or select relevant OneDrive and SharePoint files without rebuilding the case by hand.", href: "/organise.html" },
   { icon: Calculator, title: "Calculate", copy: "Run 25 adviser calculators and carry source-labelled figures and workings into the wider case output.", href: "/outputs" },
@@ -31,7 +31,7 @@ export default function ProductPage() {
       <PageHero
         eyebrow="The adviser workflow engine"
         title="Give it the client material. Tell it the job. Review professional work."
-        copy="The Advice Engine turns transcripts, client documents and existing case data into branded drafts, calculations and QA packs built around Quilter templates and challenged against applicable Q Business Assurance requirements."
+        copy="The Advice Engine turns transcripts, client documents and existing case data into branded drafts, calculations and QA packs built to match your firm's own templates and challenged against the COBS 9 suitability requirements before the adviser's first review."
       />
       <section className="section product-flow-section">
         <div className="shell product-flow-grid">
@@ -43,7 +43,7 @@ export default function ProductPage() {
           <div className="product-flow-steps">
             <div><span>1</span><strong>Add the client material</strong><small>Transcripts, PDFs, Word files, spreadsheets and existing records</small></div>
             <div><span>2</span><strong>Select the adviser job</strong><small>Suitability, review, cashflow, calculator, meeting or file task</small></div>
-            <div><span>3</span><strong>Run the initial compliance sweep</strong><small>Challenge the evidence and draft against the applicable Business Assurance requirements</small></div>
+            <div><span>3</span><strong>Run the pre-review file check</strong><small>Challenge the evidence and draft against COBS 9 suitability requirements and network file standards</small></div>
             <div><span>4</span><strong>Fill supportable gaps and redraft</strong><small>Use confirmed case evidence where it exists; visibly flag what cannot be resolved</small></div>
             <div><span>5</span><strong>Review the complete pack</strong><small>Branded draft, QA points, evidence and calculation workings</small></div>
           </div>

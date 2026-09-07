@@ -37,6 +37,7 @@ export default function SecurityPage() {
           <p>Your material is never used to train any AI model. That is a binding term of that agreement, not a setting we switch on.</p>
           <p>Nothing is kept in The Advice Engine after your session. The audit log records who ran what and when, never client content. Anthropic holds inputs and outputs briefly for trust and safety purposes and then deletes them: not indefinitely, and never for training.</p>
           <p>Your firm remains the data controller. Anthropic and Microsoft are processors.</p>
+          <p>Check your network&apos;s position on third party AI tools before you run live client material. We will support your notification, and the Test Drive uses a fictitious case so you can assess the work before that conversation.</p>
         </div>
       </section>
       <section className="section responsibility-section"><div className="shell responsibility-grid"><div><span className="kicker light">A precise boundary</span><h2>The engine supports regulated work. It does not become the regulated adviser.</h2></div><div><p>It drafts, calculates, organises and challenges. It does not provide financial advice, approve financial promotions or certify compliance.</p><ArrowButton href="mailto:hello@theadviceengine.ai?subject=Advice%20Engine%20due%20diligence%20pack" light>Request the due-diligence pack</ArrowButton></div></div></section>
