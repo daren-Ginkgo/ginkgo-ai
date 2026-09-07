@@ -89,7 +89,7 @@ export function SiteFooter() {
           <a href="/security">Security</a><a href="/pricing">Pricing</a>
           <a href="/about">Daren &amp; Ginkgo</a><a href="/demo">Book a demo</a>
           <a href="mailto:hello@theadviceengine.ai">Contact</a>
-          <a href="/privacy">Privacy</a>
+          <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
         </div>
       </div>
       <div className="shell footer-product-links">

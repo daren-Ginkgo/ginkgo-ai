@@ -15,6 +15,7 @@ const publicRoutes = [
   "/start",
   "/demo",
   "/privacy",
+  "/terms",
   "/thank-you",
   "/find.html",
   "/suitability.html",

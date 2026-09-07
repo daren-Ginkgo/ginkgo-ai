@@ -4956,3 +4956,26 @@ svg {
   color: var(--amber);
   font-weight: 700;
 }
+
+/* Terms of use page (content restored from the pre-cutover site). */
+.privacy-copy ul {
+  margin: 12px 0 0;
+  padding-left: 22px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.privacy-copy li {
+  margin-bottom: 8px;
+}
+
+.privacy-copy li::marker {
+  color: var(--violet);
+}
+
+.terms-updated {
+  margin-top: 14px;
+  color: var(--muted-small);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
