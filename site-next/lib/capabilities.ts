@@ -8,11 +8,11 @@ export const capabilities: Record<string, Capability> = {
   suitability: {
     eyebrow: "Suitability and review documents",
     title: "Start with the evidence, not an empty report.",
-    copy: "Turn the client record, meeting evidence and calculations into a structured branded draft built to match your firm's own templates and challenged before the adviser sees it.",
+    copy: "Turn the client record, meeting evidence and calculations into a structured branded draft built to match the Quilter templates your firm already uses and challenged before the adviser sees it.",
     image: adviserPhoto,
     imageAlt: "Financial professional reviewing a report on a laptop",
     outcomeTitle: "A stronger first draft and a clearer final check.",
-    outcomes: ["Built to match your firm's own report structure, including the network templates you upload", "Pre-review file check built from the COBS 9 suitability requirements", "Evidence-backed redraft plus a separate information-needed list", "Final review and sign-off retained by the adviser"],
+    outcomes: ["Built to match the Quilter templates and report structure your firm already uses", "Pre-review file check built from the COBS 9 suitability requirements", "Evidence-backed redraft plus a separate information-needed list", "Final review and sign-off retained by the adviser"],
     steps: [
       { title: "Select the case evidence", copy: "Use the relevant client documents, meeting material and calculation workings." },
       { title: "Sweep, recover and redraft", copy: "The workflow challenges the draft, uses confirmed case evidence to close supportable gaps and rebuilds the document." },

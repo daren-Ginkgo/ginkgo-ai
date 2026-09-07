@@ -31,7 +31,7 @@ export default function ProductPage() {
       <PageHero
         eyebrow="The adviser workflow engine"
         title="Give it the client material. Tell it the job. Review professional work."
-        copy="The Advice Engine turns transcripts, client documents and existing case data into branded drafts, calculations and QA packs built to match your firm's own templates and challenged against the COBS 9 suitability requirements before the adviser's first review."
+        copy="The Advice Engine turns transcripts, client documents and existing case data into branded drafts, calculations and QA packs built to match the Quilter templates your firm already uses and challenged against the COBS 9 suitability requirements before the adviser's first review."
       />
       <section className="section product-flow-section">
         <div className="shell product-flow-grid">
@@ -43,7 +43,7 @@ export default function ProductPage() {
           <div className="product-flow-steps">
             <div><span>1</span><strong>Add the client material</strong><small>Transcripts, PDFs, Word files, spreadsheets and existing records</small></div>
             <div><span>2</span><strong>Select the adviser job</strong><small>Suitability, review, cashflow, calculator, meeting or file task</small></div>
-            <div><span>3</span><strong>Run the pre-review file check</strong><small>Challenge the evidence and draft against COBS 9 suitability requirements and network file standards</small></div>
+            <div><span>3</span><strong>Run the pre-review file check</strong><small>Challenge the evidence and draft against COBS 9 suitability requirements and the file standards Quilter firms are reviewed against</small></div>
             <div><span>4</span><strong>Fill supportable gaps and redraft</strong><small>Use confirmed case evidence where it exists; visibly flag what cannot be resolved</small></div>
             <div><span>5</span><strong>Review the complete pack</strong><small>Branded draft, QA points, evidence and calculation workings</small></div>
           </div>

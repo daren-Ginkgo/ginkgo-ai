@@ -4,14 +4,14 @@ const stages = [
   {
     icon: BookOpenCheck,
     number: "01",
-    title: "Built around your firm's templates",
-    copy: "Reports and calculators are built to match your firm's own report structure and calculation needs, including the network templates you upload.",
+    title: "Built around the Quilter templates you use",
+    copy: "Reports and calculators are built to match the Quilter templates, report structure and calculation approach your firm already uses.",
   },
   {
     icon: ScanSearch,
     number: "02",
     title: "Pre-review file check",
-    copy: "Before presenting a first draft, the workflow runs a structured file check built from the COBS 9 suitability requirements and the file standards network firms are typically reviewed against.",
+    copy: "Before presenting a first draft, the workflow runs a structured file check built from the COBS 9 suitability requirements and the file standards Quilter firms are typically reviewed against.",
   },
   {
     icon: FolderCheck,
@@ -43,8 +43,8 @@ export function QuilterMethod() {
             <h2>Compliance is the first pass.<br />Not the final obstacle.</h2>
           </div>
           <div className="quilter-method-intro">
-            <p>Every workflow is designed to improve the draft before the adviser sees it: built around your firm&apos;s own templates, challenged against the COBS 9 suitability requirements and the file standards network firms are typically reviewed against, then redrafted using the evidence already available.</p>
-            <div><ShieldCheck /><span><strong>Independent software – not Quilter approval</strong>References describe the framework the engine is built and checked against. The authorised firm and named adviser retain responsibility.</span></div>
+            <p>Every workflow is designed to improve the draft before the adviser sees it: built around the Quilter templates your firm already uses, challenged against the COBS 9 suitability requirements and the file standards Quilter firms are typically reviewed against, then redrafted using the evidence already available.</p>
+            <div><ShieldCheck /><span><strong>Independent software – not Quilter</strong>References describe the framework the engine is built and checked against. The authorised firm and named adviser retain responsibility.</span></div>
           </div>
         </div>
         <div className="quilter-method-flow">
