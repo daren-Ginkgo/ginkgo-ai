@@ -61,7 +61,10 @@ export async function POST(request: Request) {
 
     const system = buildSystem(await availabilityFact());
     const reply = await askAnthropic(system, parsed.data.messages.slice(-LIMITS.maxMessages));
-    return Response.json({ reply });
+    // The house no-em-dash rule is enforced at build time on our own source, but a
+    // model reply is neither source nor deterministic, and it does emit them. The
+    // spaced en dash is the house substitute.
+    return Response.json({ reply: reply.replace(/\s*—\s*/g, " – ") });
   } catch {
     return Response.json({ error: UNAVAILABLE }, { status: 500 });
   }
