@@ -22,14 +22,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
-    title: DEFAULT_TITLE,
-    description: DEFAULT_DESCRIPTION,
     locale: "en_GB",
+    // No title or description here on purpose. Hardcoding them gave all
+    // seventeen routes one identical share card, so the per-route metadata
+    // only ever reached <title>. Left undefined, Next resolves og:title and
+    // og:description from each page's own title and description.
+    // The image resolves against metadataBase and is inherited everywhere,
+    // since no page defines its own openGraph object.
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: SITE_NAME }],
   },
   twitter: {
-    card: "summary",
-    title: DEFAULT_TITLE,
-    description: DEFAULT_DESCRIPTION,
+    card: "summary_large_image",
+    images: ["/og.png"],
   },
   icons: {
     icon: "/favicon.svg",

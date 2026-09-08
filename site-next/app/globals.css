@@ -12,7 +12,9 @@
   --violet-2: #8a7cff;
   --blue: #2c3e9e;
   --mist: #dfe6f2;
-  --muted: #667085;
+  /* Darkened one step 8 Sep 2026: #667085 measured 4.45:1 on --paper at 16px,
+     fractionally under AA. #616b80 is 4.78:1 on --paper, 5.35:1 on white. */
+  --muted: #616b80;
   /* Small-label text (10-12px micro-labels): 5.5:1 on --paper, 5.9:1 on white.
      Route every pale blue-grey label through this token, never a hardcoded hex. */
   --muted-small: #5a6478;
@@ -253,6 +255,7 @@ svg {
   font-size: clamp(3.25rem, 5.4vw, 5.7rem);
   line-height: 0.98;
 }
+
 
 .hero h1 em {
   color: var(--violet);
@@ -908,7 +911,7 @@ svg {
   min-height: 27px;
   border-top: 0;
   background: #f4f5f7;
-  color: #687487;
+  color: var(--muted-small);
 }
 
 .report-table b {
@@ -937,7 +940,7 @@ svg {
   margin-top: 35px;
   padding-top: 12px;
   border-top: 1px solid #e4e7ec;
-  color: #9099a7;
+  color: var(--muted-small);
   font-size: 0.45rem;
 }
 
@@ -1091,7 +1094,7 @@ svg {
 
 .step-list p {
   margin: 0;
-  color: #687487;
+  color: var(--muted-small);
   font-size: 0.78rem;
   line-height: 1.6;
 }
@@ -1236,7 +1239,7 @@ svg {
   margin: 0;
   padding: 0;
   list-style: none;
-  color: #687487;
+  color: var(--muted-small);
   font-size: 0.72rem;
 }
 
@@ -1311,7 +1314,7 @@ svg {
 
 .security-list p {
   margin: 0;
-  color: #687487;
+  color: var(--muted-small);
   font-size: 0.73rem;
   line-height: 1.65;
 }
@@ -1459,9 +1462,14 @@ svg {
   gap: 16px;
 }
 
-.start-actions > a {
-  color: #687487;
-  font-size: 0.68rem;
+/* :not(.button) matters. ArrowButton renders an <a> as a direct child of
+   .start-actions, so the unscoped selector painted the closing "Apply for a
+   founding place" CTA #687487 grey on the violet fill: a 1.01:1 contrast
+   ratio, i.e. invisible. This rule is only ever for the plain text link
+   beneath the button. */
+.start-actions > a:not(.button) {
+  color: var(--muted-small);
+  font-size: 0.72rem;
   text-align: center;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -1729,9 +1737,19 @@ svg {
     padding: 45px 0 65px;
   }
 
+  /* Handover 3 pinned this on the base rule's 3.25rem floor, but the base
+     rule never applies on a phone: this block wins, and 13vw resolved to
+     50.7px at 390px wide, wrapping an eleven-word headline to six lines and
+     pushing the subhead and the CTA out of the first screen.
+
+     Its prescribed clamp(2.1rem, 8vw, 5.7rem) was also not desktop-safe:
+     8vw overtakes the old curve from ~640px up to ~1700px, giving 82px
+     instead of 55px at 1024px. Fixed here instead, where only phones are in
+     scope, on a line that meets the 1120px rule's 48px exactly at 620px so
+     there is no jump at the breakpoint. */
   .hero h1 {
-    font-size: clamp(2.75rem, 13vw, 4rem);
-    line-height: 1.01;
+    font-size: clamp(1.9rem, 10px + 6.1vw, 3rem);
+    line-height: 1.03;
   }
 
   .hero-lede {
@@ -2068,7 +2086,7 @@ svg {
 .story-timeline { background: #eef0f4; }
 .timeline-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); background: white; }
 .timeline-grid article { min-height: 370px; padding: 30px; border-right: 1px solid var(--line); }.timeline-grid article:last-child { border-right: 0; }
-.timeline-grid article > div { display: flex; justify-content: space-between; color: var(--violet); }.timeline-grid article svg { width: 24px; }.timeline-grid article > div span { color: #9aa4b4; font-size: .7rem; font-weight: 800; }
+.timeline-grid article > div { display: flex; justify-content: space-between; color: var(--violet); }.timeline-grid article svg { width: 24px; }.timeline-grid article > div span { color: var(--muted-small); font-size: .7rem; font-weight: 800; }
 .timeline-grid small { display: block; margin-top: 66px; color: var(--violet); font-size: .67rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
 .timeline-grid h3 { margin: 14px 0; font-size: 1.2rem; line-height: 1.4; }.timeline-grid p { margin: 0; color: #627085; font-size: .82rem; line-height: 1.74; }
 
@@ -2263,12 +2281,12 @@ svg {
 .output-story { background: #eef0f4; }
 .output-document { border-radius: 8px; }
 .output-document-top { display: flex; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid var(--line); text-transform: uppercase; font-size: 0.66rem; font-weight: 850; letter-spacing: 0.08em; }
-.output-document-top b { color: var(--amber); }.output-document > h2 { margin-top: 52px; font-size: 2.2rem; }.output-document > p { color: #7b8798; font-size: 0.73rem; }
+.output-document-top b { color: var(--amber); }.output-document > h2 { margin-top: 52px; font-size: 2.2rem; }.output-document > p { color: var(--muted-small); font-size: 0.73rem; }
 .output-rule { height: 4px; margin: 27px 0; background: linear-gradient(90deg,var(--violet) 0 28%,#dfe3e9 28%); }
 .output-document h3 { font-size: 0.9rem; }.output-body { color: #536074 !important; line-height: 1.7; }
 .output-table { margin: 28px 0; border: 1px solid #dfe3e9; }.output-table > div { display: grid; grid-template-columns: 1.2fr 1fr .7fr; padding: 12px; border-top: 1px solid #e4e7ec; font-size: 0.67rem; }.output-table > div:first-child { border-top: 0; background: #f3f5f7; }.output-table strong { color: var(--amber); }.output-table strong.good { color: var(--green); }
-.output-warning { display: grid; gap: 5px; padding: 15px; border-left: 3px solid var(--amber); background: #fff6e8; color: #715a3d; font-size: 0.7rem; }.output-document small { display: block; margin-top: 36px; color: #8993a2; }
-.output-features { display: grid; gap: 18px; margin: 32px 0; }.output-features > div { display: grid; grid-template-columns: 35px 1fr; gap: 13px; }.output-features svg { color: var(--violet); }.output-features span,.output-features strong { display: block; }.output-features span { color: #647186; font-size: .82rem; line-height: 1.55; }.output-features strong { margin-bottom: 3px; color: var(--ink); font-size: .92rem; }
+.output-warning { display: grid; gap: 5px; padding: 15px; border-left: 3px solid var(--amber); background: #fff6e8; color: #715a3d; font-size: 0.7rem; }.output-document small { display: block; margin-top: 36px; color: var(--muted-small); }
+.output-features { display: grid; gap: 18px; margin: 32px 0; }.output-features > div { display: grid; grid-template-columns: 35px 1fr; gap: 13px; }.output-features svg { color: var(--violet); }.output-features span,.output-features strong { display: block; }.output-features span { color: var(--muted-small); font-size: .82rem; line-height: 1.55; }.output-features strong { margin-bottom: 3px; color: var(--ink); font-size: .92rem; }
 .specimen-note { padding: 32px 0; background: white; }.specimen-note .shell { display: flex; align-items: center; gap: 13px; }.specimen-note svg { color: var(--green); }.specimen-note p { margin: 0; color: #5f6d81; font-size: .82rem; }
 
 .controls-section { background: white; }.control-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); }.control-grid article { min-height: 270px; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }.control-grid article:nth-child(3n) { border-right: 0; }.control-grid article:nth-child(n+4) { border-bottom: 0; }.control-grid svg { color: var(--violet); }.control-grid h2 { margin: 62px 0 12px; font-size: 1.25rem; }.control-grid p { margin: 0; color: #657286; font-size: .85rem; line-height: 1.7; }
@@ -2357,8 +2375,11 @@ svg {
   font-weight: 850;
 }
 
+/* --violet at 11.5px measures 4.18:1 on --paper and only 3.59:1 on the dark
+   last card, so the number takes --violet-text on the light cards (5.15:1)
+   and the light step below on the dark one (7.21:1, matching .process-grid). */
 .journey-number {
-  color: var(--violet);
+  color: var(--violet-text);
   font-size: 0.72rem;
   font-weight: 850;
   letter-spacing: 0.12em;
@@ -2372,9 +2393,13 @@ svg {
 
 .adviser-journey p {
   margin: 0;
-  color: #647186;
+  color: var(--muted-small);
   font-size: 0.83rem;
   line-height: 1.72;
+}
+
+.adviser-journey article:last-child .journey-number {
+  color: #a99eff;
 }
 
 .adviser-journey article:last-child p {
@@ -2384,7 +2409,7 @@ svg {
 .adviser-journey article > span {
   margin-top: auto;
   padding-top: 30px;
-  color: #8a94a4;
+  color: var(--muted-small);
   font-size: 0.65rem;
   font-weight: 750;
   line-height: 1.5;
@@ -2413,7 +2438,7 @@ svg {
 
 .io-label {
   margin-bottom: 4px;
-  color: #667085;
+  color: var(--muted-small);
   font-size: 0.67rem;
   font-weight: 850;
   letter-spacing: 0.11em;
@@ -2881,7 +2906,7 @@ svg {
 
 .showcase-heading > p {
   margin: 0;
-  color: #647186;
+  color: var(--muted-small);
   font-size: 0.84rem;
   line-height: 1.72;
 }
@@ -2909,7 +2934,7 @@ svg {
   align-items: center;
   gap: 9px;
   margin-bottom: 23px;
-  color: #687487;
+  color: var(--muted-small);
   font-size: 0.66rem;
   font-weight: 850;
   letter-spacing: 0.1em;
@@ -4007,6 +4032,13 @@ svg {
   line-height: 1.55;
 }
 
+/* The /product variant of the rule block, which links to /evidence. */
+.quilter-method-rule span a {
+  color: var(--violet-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 @media (max-width: 1060px) {
   .quilter-method-flow {
     grid-template-columns: repeat(2, 1fr);
@@ -4129,7 +4161,7 @@ svg {
 .gap-story-flow article > span {
   display: block;
   margin-top: 54px;
-  color: #7b8798;
+  color: var(--muted-small);
   font-size: 0.69rem;
   font-weight: 750;
 }
@@ -4898,6 +4930,22 @@ svg {
   display: inline-block;
   padding: 6px 2px;
   margin: -6px -2px;
+}
+
+/* The last two under-24px targets on the homepage, 8 Sep 2026: the inline
+   "see the pricing page" link in the closing card (143x21) and the
+   "Prefer a conversation?" link under the CTA (218x16). Negative margin
+   keeps the visual layout where it is. */
+.start-card p a {
+  display: inline-block;
+  padding: 6px 0;
+  margin: -6px 0;
+}
+
+.start-actions > a:not(.button) {
+  display: inline-block;
+  padding: 6px 0;
+  margin: -6px 0;
 }
 
 /* The two required consent checkboxes: 24px minimum target, label clickable. */

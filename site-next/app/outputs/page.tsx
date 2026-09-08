@@ -16,7 +16,7 @@ export default function OutputsPage() {
       <section className="section workflow-demo-section" id="workflow-demos">
         <div className="shell">
           <div className="section-intro split-intro">
-            <div><span className="kicker light">Three flagship demonstrations</span><h2>What goes in.<br />What the engine does.<br />What comes out.</h2></div>
+            <div><span className="kicker light">Three flagship demonstrations</span><h2>What goes in.{" "}<br />What the engine does.{" "}<br />What comes out.</h2></div>
             <p>These fictitious specimens are grounded in the actual Advice Engine workflow definitions, annual-review templates, cashflow outputs and calculator workbooks. They contain no real-client information.</p>
           </div>
           <WorkflowShowcase />

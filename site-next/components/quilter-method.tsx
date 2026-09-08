@@ -33,14 +33,18 @@ const stages = [
   },
 ];
 
-export function QuilterMethod() {
+/* /evidence exists to own the sourcing rule (handover 3, item 4), so /product
+   carries a pointer to it instead of a second copy. quilter.html keeps the rule
+   verbatim, which is why this is a prop and not a deletion: rule="full" stays
+   the default. */
+export function QuilterMethod({ rule = "full" }: { rule?: "full" | "link" }) {
   return (
     <section className="section quilter-method-section" id="quilter-method">
       <div className="shell">
         <div className="section-intro split-intro">
           <div>
             <span className="kicker light">Built for Quilter advice work</span>
-            <h2>Compliance is the first pass.<br />Not the final obstacle.</h2>
+            <h2>Compliance is the first pass.{" "}<br />Not the final obstacle.</h2>
           </div>
           <div className="quilter-method-intro">
             <p>Every workflow is designed to improve the draft before the adviser sees it: built around the Quilter templates your firm already uses, challenged against the COBS 9 suitability requirements and the file standards Quilter firms are typically reviewed against, then redrafted using the evidence already available.</p>
@@ -56,10 +60,20 @@ export function QuilterMethod() {
             </article>
           ))}
         </div>
-        <div className="quilter-method-rule">
-          <strong>The rule is simple</strong>
-          <span>If the evidence is present, use it and show its source. If it is absent, flag it for the adviser. Do not guess.</span>
-        </div>
+        {rule === "full" ? (
+          <div className="quilter-method-rule">
+            <strong>The rule is simple</strong>
+            <span>If the evidence is present, use it and show its source. If it is absent, flag it for the adviser. Do not guess.</span>
+          </div>
+        ) : (
+          <div className="quilter-method-rule">
+            <strong>The rule is simple</strong>
+            <span>
+              One rule governs every one of these five stages.{" "}
+              <a href="/evidence">Read it, and see a specimen against it</a>.
+            </span>
+          </div>
+        )}
       </div>
     </section>
   );

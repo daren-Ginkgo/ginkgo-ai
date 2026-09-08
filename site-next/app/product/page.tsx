@@ -42,7 +42,7 @@ export default function ProductPage() {
           </div>
         </div>
       </section>
-      <QuilterMethod />
+      <QuilterMethod rule="link" />
       {/* The adviser job table moved up to the homepage, 7 Sep 2026 (handover 2, task B). */}
       <section className="section product-directory">
         <div className="shell">

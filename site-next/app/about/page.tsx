@@ -28,7 +28,7 @@ export default function AboutPage() {
           </div>
           <div className="founder-identity">
             <img className="founder-portrait" src="/daren-wallbank.webp" alt="Daren Wallbank at Ginkgo Financial" />
-            <div><span>Founder</span><h2>Daren Wallbank</h2><p>Practising financial adviser<br />Ginkgo Financial</p></div>
+            <div><span>Founder</span><h2>Daren Wallbank</h2><p>Practising financial adviser{" "}<br />Ginkgo Financial</p></div>
           </div>
         </div>
       </section>

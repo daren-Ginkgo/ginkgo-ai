@@ -77,8 +77,8 @@ export default function Home() {
           <div className="hero-copy">
             <div className="eyebrow"><Sparkles aria-hidden="true" />Built by a Chartered Financial Planner in the Quilter network</div>
             <h1>
-              Client data in.<br />
-              Professional advice work out.<br />
+              Client data in.{" "}<br />
+              Professional advice work out.{" "}<br />
               <em>Without starting from scratch.</em>
             </h1>
             <p className="hero-lede">
@@ -127,7 +127,7 @@ export default function Home() {
             </div>
             <div className="qa-card">
               <div className="qa-heading"><ShieldCheck aria-hidden="true" /> Adviser QA</div>
-              <div className="qa-score"><strong>A</strong><span>Strong draft<br />2 points to confirm</span></div>
+              <div className="qa-score"><strong>A</strong><span>Strong draft{" "}<br />2 points to confirm</span></div>
               <div className="qa-row"><span>Evidence used</span><b>Shown</b></div>
               <div className="qa-row"><span>Missing facts</span><b className="amber">Flagged</b></div>
               <div className="qa-row"><span>Final decision</span><b>Adviser</b></div>
@@ -153,7 +153,7 @@ export default function Home() {
           <div className="section-intro split-intro workflow-sale-intro">
             <div>
               <span className="kicker">Designed to save adviser time</span>
-              <h2>Drag in the information.<br />Choose the work. Review the result.</h2>
+              <h2>Drag in the information.{" "}<br />Choose the work. Review the result.</h2>
             </div>
             <p>
               The engine is deliberately simple to use. It turns the client material already scattered across
@@ -182,7 +182,7 @@ export default function Home() {
         <div className="shell specimen-grid">
           <div className="specimen-copy">
             <span className="kicker light">What comes out</span>
-            <h2>Judge the output.<br />Not the promise.</h2>
+            <h2>Judge the output.{" "}<br />Not the promise.</h2>
             <p>
               A finished Word draft in your firm’s own styling, paired with the QA sheet an adviser
               needs to review it properly. Missing facts are made visible rather than quietly invented.
