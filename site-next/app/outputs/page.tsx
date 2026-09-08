@@ -66,8 +66,8 @@ export default function OutputsPage() {
         <div className="shell start-card">
           <div>
             <span className="kicker light">The specimen pack</span>
-            <h2>The complete fictitious pack, ready to download.</h2>
-            <p>The branded Word draft, adviser QA sheet and calculation workings for the Alex and Sam Taylor specimen are being prepared as a downloadable pack.</p>
+            <h2>The complete fictitious pack, on request.</h2>
+            <p>The branded Word draft, adviser QA sheet and calculation workings for the Alex and Sam Taylor specimen are still being assembled. Ask and Daren will send what is ready.</p>
           </div>
           <div className="start-actions">
             <ArrowButton href="mailto:hello@theadviceengine.ai?subject=Specimen%20pack%20request">Ask for the specimen pack</ArrowButton>
