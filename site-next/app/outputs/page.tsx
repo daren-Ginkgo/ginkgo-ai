@@ -66,11 +66,12 @@ export default function OutputsPage() {
         <div className="shell start-card">
           <div>
             <span className="kicker light">The specimen pack</span>
-            <h2>The complete fictitious pack, on request.</h2>
-            <p>The branded Word draft, adviser QA sheet and calculation workings for the Alex and Sam Taylor specimen are still being assembled. Ask and Daren will send what is ready.</p>
+            <h2>One specimen you can open now. The rest on request.</h2>
+            <p>The draft client email is engine output from the fictitious Alex and Sam cashflow case, in a fictitious firm&apos;s branding: the covering note an adviser reviews before anything reaches a client, carrying no figure the model did not compute. Word document, 50 KB. The cashflow plan it refers to, the adviser QA sheet and the calculation workings are still being assembled.</p>
           </div>
           <div className="start-actions">
-            <ArrowButton href="mailto:hello@theadviceengine.ai?subject=Specimen%20pack%20request">Ask for the specimen pack</ArrowButton>
+            <ArrowButton href="/specimens/specimen-draft-client-email-alex-and-sam.docx">Download the draft client email</ArrowButton>
+            <a href="mailto:hello@theadviceengine.ai?subject=Specimen%20pack%20request">Ask for the full pack</a>
           </div>
         </div>
       </section>
