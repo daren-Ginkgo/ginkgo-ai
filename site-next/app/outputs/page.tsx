@@ -13,6 +13,44 @@ export default function OutputsPage() {
     <main id="main-content">
       <SiteHeader />
       <PageHero eyebrow="Outputs and workflow demonstrations" title="Judge the work, not the promise." copy="See how transcripts, client documents and household data become branded Word drafts, adviser QA sheets, cashflow reports and calculation workings." primary={{ href: "#workflow-demos", label: "See the workflows" }} />
+      <section className="section specimen-pack-slot" id="specimen-pack">
+        <div className="shell start-card">
+          <div>
+            <span className="kicker light">Built on fictitious client data</span>
+            <h2>Six specimens you can open now.</h2>
+            <p>Every one is real engine output built on fictitious client data: invented people, invented holdings, invented circumstances, with no real client involved. Each arrives in a firm&apos;s own branding as a draft carrying the review markers an adviser signs off against, and the compliance check and QA sheet are the unedited results for the same case as the report, including the points they raised against it.</p>
+          </div>
+          <div className="specimen-downloads">
+            <a href="/specimens/specimen-suitability-report-draft-investment.docx">
+              <strong>Suitability report (draft)</strong>
+              <span>A new ISA and collective investment account for a fictitious client. Word, 75 KB</span>
+            </a>
+            <a href="/specimens/specimen-draft-client-email-alex-and-sam.docx">
+              <strong>Draft client email</strong>
+              <span>The covering note for a lifetime cashflow plan, with no figure the model did not compute. Word, 50 KB</span>
+            </a>
+            <a href="/specimens/specimen-adviser-qa-sheet-investment.docx">
+              <strong>Adviser QA sheet</strong>
+              <span>The checks run against that same report, with the outstanding items listed for the adviser. Word, 73 KB</span>
+            </a>
+            <a href="/specimens/specimen-compliance-check-investment.docx">
+              <strong>Compliance check</strong>
+              <span>The file check on the same case, graded partial, with the reasons stated. Word, 73 KB</span>
+            </a>
+            <a href="/specimens/specimen-bond-encashment-workings.xlsx">
+              <strong>Bond encashment workings</strong>
+              <span>Options on £50,000 from an onshore bond, every figure shown with its source. Excel, 12 KB</span>
+            </a>
+            <a href="/specimens/specimen-cost-and-charges-workings.xlsx">
+              <strong>Cost and charges workings</strong>
+              <span>First-year costs on a single premium, input by input. Excel, 7 KB</span>
+            </a>
+            <p className="specimen-downloads-note">
+              Prefer to ask? <a href="mailto:hello@theadviceengine.ai?subject=Specimen%20pack%20request">Email for the full pack</a>.
+            </p>
+          </div>
+        </div>
+      </section>
       <section className="section workflow-demo-section" id="workflow-demos">
         <div className="shell">
           <div className="section-intro split-intro">
@@ -62,44 +100,6 @@ export default function OutputsPage() {
       {/* SLOT: downloadable specimen pack. Daren is producing the files; when
           they exist, replace the mailto with the download links. Do not
           fabricate specimen documents. */}
-      <section className="section specimen-pack-slot" id="specimen-pack">
-        <div className="shell start-card">
-          <div>
-            <span className="kicker light">The specimen pack</span>
-            <h2>Six specimens you can open now.</h2>
-            <p>Every one is engine output on a fictitious case, in a firm&apos;s own branding, and every one arrives as a draft carrying the review markers an adviser signs off against. The compliance check and QA sheet are the unedited results for the same case as the report, including the points they raised against it.</p>
-          </div>
-          <div className="specimen-downloads">
-            <a href="/specimens/specimen-suitability-report-draft-investment.docx">
-              <strong>Suitability report (draft)</strong>
-              <span>A new ISA and collective investment account for a fictitious client. Word, 75 KB</span>
-            </a>
-            <a href="/specimens/specimen-draft-client-email-alex-and-sam.docx">
-              <strong>Draft client email</strong>
-              <span>The covering note for a lifetime cashflow plan, with no figure the model did not compute. Word, 50 KB</span>
-            </a>
-            <a href="/specimens/specimen-adviser-qa-sheet-investment.docx">
-              <strong>Adviser QA sheet</strong>
-              <span>The checks run against that same report, with the outstanding items listed for the adviser. Word, 73 KB</span>
-            </a>
-            <a href="/specimens/specimen-compliance-check-investment.docx">
-              <strong>Compliance check</strong>
-              <span>The file check on the same case, graded partial, with the reasons stated. Word, 73 KB</span>
-            </a>
-            <a href="/specimens/specimen-bond-encashment-workings.xlsx">
-              <strong>Bond encashment workings</strong>
-              <span>Options on £50,000 from an onshore bond, every figure shown with its source. Excel, 12 KB</span>
-            </a>
-            <a href="/specimens/specimen-cost-and-charges-workings.xlsx">
-              <strong>Cost and charges workings</strong>
-              <span>First-year costs on a single premium, input by input. Excel, 7 KB</span>
-            </a>
-            <p className="specimen-downloads-note">
-              Prefer to ask? <a href="mailto:hello@theadviceengine.ai?subject=Specimen%20pack%20request">Email for the full pack</a>.
-            </p>
-          </div>
-        </div>
-      </section>
       <section className="section specimen-note"><div className="shell"><Check /><p>All client names, values and circumstances shown on this page are fictitious specimens created to demonstrate the workflow.</p></div></section>
       <FinalCta />
       <SiteFooter />
