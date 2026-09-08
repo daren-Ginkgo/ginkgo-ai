@@ -52,8 +52,10 @@ founding beta. FOUNDING OFFER: fifteen individual Quilter advisers can join the
 pre-launch beta free of charge, and if they continue after commercial launch their
 individual subscription is discounted 50% for the first 12 months (this replaces the
 first-month-free offer). Apply at /start.
-BETA TERM: the founding beta runs until at least 1 November 2026, and there is no
-commitment to take a licence when it ends. That is the whole of what is published about
+BETA TERM: the founding beta runs until AT LEAST 1 November 2026, and there is no
+commitment to take a licence when it ends. "At least" is the whole of it: that date is
+the earliest the beta could close, not an announced end date, so never say the beta
+ends on 1 November 2026 or that it runs until that date. No closing date is published. That is the whole of what is published about
 commitment. Nothing is published about cancelling, giving notice, renewing or refunds
 once a licence IS taken, beyond the standard 12-month agreement above, so do not
 describe those terms: point at /terms and offer hello@theadviceengine.ai.
