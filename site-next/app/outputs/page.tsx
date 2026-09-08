@@ -66,12 +66,25 @@ export default function OutputsPage() {
         <div className="shell start-card">
           <div>
             <span className="kicker light">The specimen pack</span>
-            <h2>One specimen you can open now. The rest on request.</h2>
-            <p>The draft client email is engine output from the fictitious Alex and Sam cashflow case, in a fictitious firm&apos;s branding: the covering note an adviser reviews before anything reaches a client, carrying no figure the model did not compute. Word document, 50 KB. The cashflow plan it refers to, the adviser QA sheet and the calculation workings are still being assembled.</p>
+            <h2>Three specimens you can open now.</h2>
+            <p>Each one is engine output on a fictitious case, in a firm&apos;s own branding, and each arrives as a draft carrying the review markers an adviser signs off against. The adviser QA sheet that accompanies a report is available on request.</p>
           </div>
-          <div className="start-actions">
-            <ArrowButton href="/specimens/specimen-draft-client-email-alex-and-sam.docx">Download the draft client email</ArrowButton>
-            <a href="mailto:hello@theadviceengine.ai?subject=Specimen%20pack%20request">Ask for the full pack</a>
+          <div className="specimen-downloads">
+            <a href="/specimens/specimen-suitability-report-draft-investment.docx">
+              <strong>Suitability report (draft)</strong>
+              <span>A new ISA and collective investment account for a fictitious client. Word, 75 KB</span>
+            </a>
+            <a href="/specimens/specimen-draft-client-email-alex-and-sam.docx">
+              <strong>Draft client email</strong>
+              <span>The covering note for a lifetime cashflow plan, with no figure the model did not compute. Word, 50 KB</span>
+            </a>
+            <a href="/specimens/specimen-bond-encashment-workings.xlsx">
+              <strong>Calculation workings</strong>
+              <span>Bond encashment options on £50,000, every figure shown with its source. Excel, 12 KB</span>
+            </a>
+            <p className="specimen-downloads-note">
+              Prefer to ask? <a href="mailto:hello@theadviceengine.ai?subject=Specimen%20pack%20request">Email for the full pack</a>.
+            </p>
           </div>
         </div>
       </section>

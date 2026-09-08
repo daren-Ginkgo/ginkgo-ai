@@ -1485,6 +1485,69 @@ svg {
   text-underline-offset: 3px;
 }
 
+/* /outputs specimen pack. Three file links, so this card stacks instead of
+   using the narrow 0.35fr second column the other .start-cards want. Colours
+   are tokens so the contrast work from 8 Sep 2026 holds, and the cards carry
+   enough padding to clear the 24px tap target on their own. */
+.specimen-pack-slot .start-card {
+  grid-template-columns: 1fr;
+  gap: 34px;
+  align-items: start;
+}
+
+.specimen-downloads {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.specimen-downloads > a {
+  display: grid;
+  gap: 5px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  transition: border-color 0.15s ease;
+}
+
+.specimen-downloads > a:hover {
+  border-color: var(--violet);
+}
+
+.specimen-downloads > a strong {
+  color: var(--violet-text);
+  font-size: 0.9rem;
+}
+
+.specimen-downloads > a span {
+  color: var(--muted-small);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.specimen-downloads-note {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted-small);
+  font-size: 0.8rem;
+}
+
+.specimen-downloads-note a {
+  display: inline-block;
+  padding: 6px 0;
+  margin: -6px 0;
+  color: var(--violet-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .specimen-downloads {
+    grid-template-columns: 1fr;
+  }
+}
+
 .footer {
   padding: 74px 0 45px;
   background: #07162e;
