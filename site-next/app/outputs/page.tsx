@@ -37,13 +37,13 @@ export default function OutputsPage() {
               <strong>Compliance check</strong>
               <span>The file check on the same case, graded partial, with the reasons stated. Word, 73 KB</span>
             </a>
-            <a href="/specimens/specimen-bond-encashment-workings.xlsx">
+            <a href="/specimens/specimen-bond-encashment-workings.pdf">
               <strong>Bond encashment workings</strong>
-              <span>Options on £50,000 from an onshore bond, every figure shown with its source. Excel, 12 KB</span>
+              <span>Options on £50,000 from an onshore bond, every figure shown with its source. PDF, 256 KB</span>
             </a>
-            <a href="/specimens/specimen-cost-and-charges-workings.xlsx">
+            <a href="/specimens/specimen-cost-and-charges-workings.pdf">
               <strong>Cost and charges workings</strong>
-              <span>First-year costs on a single premium, input by input. Excel, 7 KB</span>
+              <span>First-year costs on a single premium, input by input. PDF, 223 KB</span>
             </a>
             <p className="specimen-downloads-note">
               Prefer to ask? <a href="mailto:hello@theadviceengine.ai?subject=Specimen%20pack%20request">Email for the full pack</a>.
