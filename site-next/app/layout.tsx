@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ConversionTracker } from "@/components/conversion-tracker";
+import { ChatWidget } from "@/components/chat-widget";
 
 const SITE_NAME = "The Advice Engine";
 const DEFAULT_TITLE = "The Advice Engine | Advice paperwork, built around the evidence";
@@ -72,6 +73,7 @@ export default function RootLayout({
         <a className="skip-link" href="#main-content">Skip to main content</a>
         <ConversionTracker />
         {children}
+        <ChatWidget />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

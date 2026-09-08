@@ -27,9 +27,11 @@ Use a development-only Azure Storage connection string in `.env.local`. Set
 
 | Setting | Purpose |
 | --- | --- |
-| `AZURE_STORAGE_CONNECTION_STRING` | Dedicated Table Storage for beta applications and events |
+| `AZURE_STORAGE_CONNECTION_STRING` | Dedicated Table Storage for beta applications, events and chat rate limits |
 | `FUNNEL_ADMIN_EMAIL` | Microsoft identity allowed to access `/funnel` |
 | `WEBSITE_NODE_DEFAULT_VERSION` | Set to `~22` |
+| `ANTHROPIC_API_KEY` | The public product chat widget. Optional: without it the widget reports itself unavailable |
+| `CHAT_MODEL` | Optional model override for the chat widget (defaults to `claude-haiku-4-5-20251001`) |
 
 The App Service startup command is `node server.js`. App Service Authentication
 must allow anonymous access to the public site while enabling Microsoft Entra ID;

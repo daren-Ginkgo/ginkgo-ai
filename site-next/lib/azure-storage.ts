@@ -4,6 +4,10 @@ import { ACTIVE_BETA_STATUSES, FOUNDING_PLACES, remainingPlaces } from "@/lib/be
 
 const APPLICATION_TABLE = "BetaApplications";
 const EVENT_TABLE = "ConversionEvents";
+// Counters for the public chat widget's rate limits: partitionKey is the time
+// window (e.g. "hour-2026-09-08T14"), rowKey is a hashed caller or "global".
+// No raw IP is ever stored - the privacy notice promises that.
+const CHAT_LIMIT_TABLE = "ChatRateLimits";
 const APPLICATION_PARTITION = "founding-beta";
 
 export type ApplicationStatus = "pending" | "contacted" | "approved" | "declined" | "withdrawn" | "waitlist";
@@ -52,6 +56,10 @@ function eventClient() {
   return TableClient.fromConnectionString(connectionString(), EVENT_TABLE);
 }
 
+function chatLimitClient() {
+  return TableClient.fromConnectionString(connectionString(), CHAT_LIMIT_TABLE);
+}
+
 async function ensureTables() {
   async function createIfMissing(client: TableClient) {
     try {
@@ -63,6 +71,7 @@ async function ensureTables() {
   tablesReady ??= Promise.all([
     createIfMissing(applicationClient()),
     createIfMissing(eventClient()),
+    createIfMissing(chatLimitClient()),
   ]).then(() => undefined);
   await tablesReady;
 }
@@ -187,6 +196,35 @@ export async function updateApplication(id: string, changes: { status?: Applicat
     ...(changes.isTest !== undefined ? { isTest: changes.isTest } : {}),
     updatedAt: new Date().toISOString(),
   }, "Replace");
+}
+
+type ChatLimitEntity = TableEntity & { count: number };
+
+// Increment a chat rate-limit counter and return the count AFTER this call.
+// Read-then-merge is not atomic; a concurrent burst can undercount by a call
+// or two, which for an abuse cap is fine - the ceiling still holds to within
+// the race window, and nothing user-facing depends on exactness.
+export async function bumpChatCounter(windowKey: string, who: string): Promise<number> {
+  await ensureTables();
+  const client = chatLimitClient();
+  async function increment(): Promise<number> {
+    const existing = await client.getEntity<ChatLimitEntity>(windowKey, who);
+    const next = (existing.count ?? 0) + 1;
+    await client.updateEntity({ partitionKey: windowKey, rowKey: who, count: next }, "Merge");
+    return next;
+  }
+  try {
+    return await increment();
+  } catch (error) {
+    if (statusCode(error) !== 404) throw error;
+  }
+  try {
+    await client.createEntity({ partitionKey: windowKey, rowKey: who, count: 1 });
+    return 1;
+  } catch (error) {
+    if (statusCode(error) !== 409) throw error;
+    return increment();
+  }
 }
 
 export async function recordConversion(eventName: string, path: string, context = "") {

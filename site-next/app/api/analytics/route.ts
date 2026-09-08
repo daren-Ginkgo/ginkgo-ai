@@ -10,6 +10,8 @@ const allowedEvents = new Set([
   "microsoft_page_click",
   "gap_scanner_click",
   "beta_form_started",
+  "chat_opened",
+  "chat_message_sent",
 ]);
 
 export async function POST(request: Request) {
