@@ -66,8 +66,8 @@ export default function OutputsPage() {
         <div className="shell start-card">
           <div>
             <span className="kicker light">The specimen pack</span>
-            <h2>Three specimens you can open now.</h2>
-            <p>Each one is engine output on a fictitious case, in a firm&apos;s own branding, and each arrives as a draft carrying the review markers an adviser signs off against. The adviser QA sheet that accompanies a report is available on request.</p>
+            <h2>Six specimens you can open now.</h2>
+            <p>Every one is engine output on a fictitious case, in a firm&apos;s own branding, and every one arrives as a draft carrying the review markers an adviser signs off against. The compliance check and QA sheet are the unedited results for the same case as the report, including the points they raised against it.</p>
           </div>
           <div className="specimen-downloads">
             <a href="/specimens/specimen-suitability-report-draft-investment.docx">
@@ -78,9 +78,21 @@ export default function OutputsPage() {
               <strong>Draft client email</strong>
               <span>The covering note for a lifetime cashflow plan, with no figure the model did not compute. Word, 50 KB</span>
             </a>
+            <a href="/specimens/specimen-adviser-qa-sheet-investment.docx">
+              <strong>Adviser QA sheet</strong>
+              <span>The checks run against that same report, with the outstanding items listed for the adviser. Word, 73 KB</span>
+            </a>
+            <a href="/specimens/specimen-compliance-check-investment.docx">
+              <strong>Compliance check</strong>
+              <span>The file check on the same case, graded partial, with the reasons stated. Word, 73 KB</span>
+            </a>
             <a href="/specimens/specimen-bond-encashment-workings.xlsx">
-              <strong>Calculation workings</strong>
-              <span>Bond encashment options on £50,000, every figure shown with its source. Excel, 12 KB</span>
+              <strong>Bond encashment workings</strong>
+              <span>Options on £50,000 from an onshore bond, every figure shown with its source. Excel, 12 KB</span>
+            </a>
+            <a href="/specimens/specimen-cost-and-charges-workings.xlsx">
+              <strong>Cost and charges workings</strong>
+              <span>First-year costs on a single premium, input by input. Excel, 7 KB</span>
             </a>
             <p className="specimen-downloads-note">
               Prefer to ask? <a href="mailto:hello@theadviceengine.ai?subject=Specimen%20pack%20request">Email for the full pack</a>.
