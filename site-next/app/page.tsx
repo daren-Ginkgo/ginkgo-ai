@@ -260,7 +260,7 @@ export default function Home() {
           <div>
             <BetaAvailability variant="kicker" />
             <h2>Help shape an engine built around real adviser work.</h2>
-            <p>Join free throughout beta, begin with a fictitious case and work directly with Daren. Standard pricing runs from £200 per adviser per month: <a href="/pricing">see the pricing page</a>.</p>
+            <p>Join free throughout beta, begin with a fictitious case and work directly with Daren. The beta runs until at least 1 November 2026, with no commitment to take a licence when it ends. Standard pricing runs from £200 per adviser per month: <a href="/pricing">see the pricing page</a>.</p>
           </div>
           <div className="start-actions">
             <ArrowButton href="/start">Apply for a founding place</ArrowButton>

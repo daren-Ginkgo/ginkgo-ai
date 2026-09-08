@@ -161,7 +161,7 @@ export function FinalCta() {
         <div>
           <BetaAvailability variant="kicker" />
           <h2>Help shape The Advice Engine before launch.</h2>
-          <p>Founding advisers receive free access throughout beta and 50% off their individual subscription for 12 months after launch.</p>
+          <p>Founding advisers receive free access throughout beta and 50% off their individual subscription for 12 months after launch. The beta runs until at least 1 November 2026, with no commitment to take a licence when it ends.</p>
         </div>
         <div className="start-actions">
           <ArrowButton href="/start">Apply for a founding place</ArrowButton>

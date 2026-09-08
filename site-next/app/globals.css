@@ -1338,20 +1338,26 @@ svg {
   gap: 15px;
 }
 
+/* These cards were built for a dark section and left behind when
+   .pricing-page became #eef0f4: a white-veil background, white borders and
+   light-on-dark text, which put the feature list at 1.19:1 and the tier name
+   at 1.51:1 against the light ground. Rebuilt for the ground they sit on. */
 .price-card {
   position: relative;
   min-height: 440px;
   display: flex;
   flex-direction: column;
   padding: 31px;
-  border: 1px solid rgba(255,255,255,0.14);
+  border: 1px solid var(--line);
   border-radius: 20px;
-  background: rgba(255,255,255,0.055);
+  background: var(--white);
+  box-shadow: 0 18px 50px rgba(11, 29, 58, 0.07);
 }
 
 .price-card.featured {
-  background: linear-gradient(160deg, rgba(107,92,246,0.38), rgba(255,255,255,0.08));
-  border-color: rgba(169,158,255,0.5);
+  background: linear-gradient(160deg, #f1eeff, var(--white));
+  border-color: #c3baff;
+  box-shadow: 0 22px 60px rgba(55, 45, 150, 0.12);
 }
 
 .price-tag {
@@ -1360,8 +1366,8 @@ svg {
   right: 22px;
   padding: 5px 9px;
   border-radius: 99px;
-  background: #a99eff;
-  color: var(--ink);
+  background: var(--violet-text);
+  color: var(--white);
   font-size: 0.56rem;
   font-weight: 850;
   text-transform: uppercase;
@@ -1369,7 +1375,7 @@ svg {
 
 .price-card > p {
   margin: 0;
-  color: #bdc7d8;
+  color: var(--muted-small);
   font-size: 0.75rem;
   font-weight: 800;
 }
@@ -1390,7 +1396,7 @@ svg {
 
 .price span {
   max-width: 150px;
-  color: #adb8ca;
+  color: var(--muted-small);
   font-size: 0.67rem;
   line-height: 1.45;
 }
@@ -1400,9 +1406,9 @@ svg {
   gap: 13px;
   margin: 0 0 32px;
   padding: 22px 0 0;
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid var(--line);
   list-style: none;
-  color: #d7ddea;
+  color: var(--ink);
   font-size: 0.72rem;
 }
 
@@ -1414,7 +1420,7 @@ svg {
 
 .price-card li svg {
   width: 15px;
-  color: #98dbc8;
+  color: var(--green);
 }
 
 .price-card > a,
@@ -2065,7 +2071,7 @@ svg {
 
 .founder-identity {
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 230px 1fr;
   gap: 26px;
   align-items: end;
   padding: 30px;
@@ -2104,7 +2110,7 @@ svg {
 @media (max-width: 620px) {
   .brand { gap: 8px; }.brand-mark { width: 38px; height: 38px; }.brand-words { font-size: .7rem; }.brand-words strong { font-size: .9rem; }
   .founder-promo-grid,.timeline-grid { grid-template-columns: 1fr; }.founder-promo blockquote { grid-column: auto; }.founder-monogram { max-width: 240px; }
-  .founder-hero { padding: 72px 0; }.founder-hero h1 { font-size: 3rem; }.founder-identity { grid-template-columns: 100px 1fr; padding: 20px; }
+  .founder-hero { padding: 72px 0; }.founder-hero h1 { font-size: 3rem; }.founder-identity { grid-template-columns: 140px 1fr; padding: 20px; }
   .timeline-grid article { min-height: auto; border-right: 0; border-bottom: 1px solid var(--line); }.timeline-grid article:last-child { border-bottom: 0; }.timeline-grid small { margin-top: 40px; }
 }
 
