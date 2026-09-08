@@ -192,7 +192,10 @@ export default function Home() {
               <li><Check aria-hidden="true" /> Source-attributed facts and calculations</li>
               <li><Check aria-hidden="true" /> Separate adviser QA and information-needed list</li>
             </ul>
-            <ArrowButton href="#start" light>Start with a fictitious case</ArrowButton>
+            <div className="specimen-copy-actions">
+              <ArrowButton href="#start" light>Start with a fictitious case</ArrowButton>
+              <a className="text-link" href="/outputs#specimen-pack">Open six real specimens <ArrowRight aria-hidden="true" /></a>
+            </div>
           </div>
           <div className="specimen-window">
             <div className="window-toolbar">

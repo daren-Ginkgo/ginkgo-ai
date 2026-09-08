@@ -62,7 +62,7 @@ export default function OutputsPage() {
       {/* SLOT: downloadable specimen pack. Daren is producing the files; when
           they exist, replace the mailto with the download links. Do not
           fabricate specimen documents. */}
-      <section className="section specimen-pack-slot">
+      <section className="section specimen-pack-slot" id="specimen-pack">
         <div className="shell start-card">
           <div>
             <span className="kicker light">The specimen pack</span>

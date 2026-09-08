@@ -51,6 +51,7 @@ export function SiteHeader() {
               six-page shape does not include /product. Product stays in the
               mobile menu and footer. */}
           <nav className="desktop-nav" aria-label="Main navigation">
+            <a href="/outputs">Outputs</a>
             <a href="/evidence">Evidence</a>
             <a href="/gap-scanner">Gap Scanner</a>
             <a href="/microsoft">Microsoft 365</a>

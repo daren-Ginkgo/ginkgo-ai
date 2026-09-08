@@ -754,6 +754,24 @@ svg {
   color: #a99eff;
 }
 
+/* The "Judge the output" section is ink-backed, so its link to the specimen
+   pack takes the light treatment, the same as .workflow-sale-action. Extra
+   vertical padding keeps the 24px tap target with the underline intact. */
+.specimen-copy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 30px;
+  margin-top: 34px;
+}
+
+.specimen-copy-actions .text-link {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.35);
+  padding-top: 5px;
+  padding-bottom: 6px;
+}
+
 .specimen-copy p,
 .gap-copy p,
 .pricing-head p {
