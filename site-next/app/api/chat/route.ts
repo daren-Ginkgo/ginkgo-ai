@@ -64,7 +64,7 @@ export async function POST(request: Request) {
     // The house no-em-dash rule is enforced at build time on our own source, but a
     // model reply is neither source nor deterministic, and it does emit them. The
     // spaced en dash is the house substitute.
-    return Response.json({ reply: reply.replace(/\s*—\s*/g, " – ") });
+    return Response.json({ reply: reply.replace(/\s*\u2014\s*/g, " \u2013 ") });
   } catch {
     return Response.json({ error: UNAVAILABLE }, { status: 500 });
   }
