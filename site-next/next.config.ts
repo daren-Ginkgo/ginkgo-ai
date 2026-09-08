@@ -27,6 +27,21 @@ const nextConfig: NextConfig = {
       { source: "/meetings.html", destination: "/outputs", permanent: true },
       { source: "/organise.html", destination: "/microsoft", permanent: true },
       { source: "/find.html", destination: "/gap-scanner", permanent: true },
+      // 8 Sep 2026: the two calculator specimens ship as PDF so the workbook
+      // itself is not handed over. Deleting them from public/ does NOT remove
+      // them from the live site, because the App Service deploy does not clean
+      // wwwroot, so both .xlsx URLs still served 200 after the change. These
+      // redirects run ahead of the filesystem and close them.
+      {
+        source: "/specimens/specimen-bond-encashment-workings.xlsx",
+        destination: "/specimens/specimen-bond-encashment-workings.pdf",
+        permanent: true,
+      },
+      {
+        source: "/specimens/specimen-cost-and-charges-workings.xlsx",
+        destination: "/specimens/specimen-cost-and-charges-workings.pdf",
+        permanent: true,
+      },
     ];
   },
 };
