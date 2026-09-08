@@ -42,7 +42,7 @@ export default function AboutPage() {
 
       <section className="section story-timeline">
         <div className="shell">
-          <div className="section-intro split-intro"><div><span className="kicker light">From frustration to working engine</span><h2>A product shaped one advice workflow at a time.</h2></div><p>No invented overnight-success story: just a practical sequence of problems, workflows, testing and improvement.</p></div>
+          <div className="section-intro split-intro"><div><span className="kicker">From frustration to working engine</span><h2>A product shaped one advice workflow at a time.</h2></div><p>No invented overnight-success story: just a practical sequence of problems, workflows, testing and improvement.</p></div>
           <div className="timeline-grid">{timeline.map(({ icon: Icon, label, title, copy }, index) => <article key={label}><div><Icon /><span>0{index + 1}</span></div><small>{label}</small><h3>{title}</h3><p>{copy}</p></article>)}</div>
         </div>
       </section>

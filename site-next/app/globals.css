@@ -4603,6 +4603,12 @@ svg {
   color: white;
 }
 
+/* Same as .two-gap-section: ink-backed and white, but .split-intro > p forced
+   the light-ground #5f6c80 into it at 3.15:1. */
+.microsoft-analysis-section .split-intro > p {
+  color: #c6cfdf;
+}
+
 .microsoft-analysis-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
