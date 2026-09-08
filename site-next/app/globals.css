@@ -4965,6 +4965,18 @@ svg {
   margin: -6px 0;
 }
 
+/* The remaining inline links, found by sweeping all thirteen routes rather
+   than just the homepage: the /evidence pointer in the rule block, the
+   mailto and privacy links in the legal pages' body copy, and the /demo
+   email alternative. Same padding-plus-negative-margin treatment. */
+.quilter-method-rule span a,
+.privacy-section p a,
+a.conversion-alt {
+  display: inline-block;
+  padding: 6px 0;
+  margin: -6px 0;
+}
+
 /* The two required consent checkboxes: 24px minimum target, label clickable. */
 .beta-form-checks label {
   grid-template-columns: 24px 1fr;
