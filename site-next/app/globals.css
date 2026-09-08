@@ -2075,7 +2075,12 @@ svg {
 
 .founder-identity {
   display: grid;
-  grid-template-columns: 230px 1fr;
+  /* The portrait was 150px. A flat 230px is right at 1280px and up, where
+     this card caps at 523px, but between the 980px stack and ~1200px the card
+     is only 424px and a fixed track squeezed the name column to 108px. The
+     percentage tracks the card, the floor keeps it larger than it was, and
+     the cap stops it dominating the full-width stacked card. */
+  grid-template-columns: clamp(150px, 48%, 230px) 1fr;
   gap: 26px;
   align-items: end;
   padding: 30px;
