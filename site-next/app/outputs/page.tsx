@@ -17,7 +17,7 @@ export default function OutputsPage() {
         <div className="shell start-card">
           <div>
             <span className="kicker light">Built on fictitious client data</span>
-            <h2>Six specimens you can open now.</h2>
+            <h2>Seven specimens you can open now.</h2>
             <p>Every one is real engine output built on fictitious client data: invented people, invented holdings, invented circumstances, with no real client involved. Each arrives in a firm&apos;s own branding as a draft carrying the review markers an adviser signs off against, and the compliance check and QA sheet are the unedited results for the same case as the report, including the points they raised against it.</p>
           </div>
           <div className="specimen-downloads">
@@ -28,6 +28,10 @@ export default function OutputsPage() {
             <a href="/specimens/specimen-draft-client-email-alex-and-sam.docx">
               <strong>Draft client email</strong>
               <span>The covering note for a lifetime cashflow plan, with no figure the model did not compute. Word, 50 KB</span>
+            </a>
+            <a href="/specimens/specimen-meeting-note-annual-review.docx">
+              <strong>Meeting note</strong>
+              <span>An annual review meeting written up from the recording: summary, action points, advice areas and fact find updates. Word, 74 KB</span>
             </a>
             <a href="/specimens/specimen-adviser-qa-sheet-investment.docx">
               <strong>Adviser QA sheet</strong>

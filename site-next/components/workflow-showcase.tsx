@@ -97,6 +97,7 @@ const workflows: Workflow[] = [
     },
     pack: [
       { icon: FileText, title: "Progress or outcome report", note: "The right document for the work completed" },
+      { icon: FileText, title: "Meeting note", note: "The file record of the meeting, written up from the recording" },
       { icon: Check, title: "Action list", note: "Owner, evidence and status made visible" },
       { icon: Mail, title: "Client follow-up", note: "Clear email draft based on the reviewed result" },
     ],
