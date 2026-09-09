@@ -12,7 +12,7 @@ export default function OutputsPage() {
   return (
     <main id="main-content">
       <SiteHeader />
-      <PageHero eyebrow="Outputs and workflow demonstrations" title="Judge the work, not the promise." copy="See how transcripts, client documents and household data become branded Word drafts, adviser QA sheets, cashflow reports and calculation workings." primary={{ href: "#workflow-demos", label: "See the workflows" }} />
+      <PageHero eyebrow="Outputs and workflow demonstrations" title="Judge the work, not the promise." copy="See how transcripts, client documents and household data become branded Word drafts, adviser QA sheets, cashflow reports and calculation workings. The engine covers every advice area, initial and ongoing, with the single exception of defined benefit transfer advice." primary={{ href: "#workflow-demos", label: "See the workflows" }} />
       <section className="section specimen-pack-slot" id="specimen-pack">
         <div className="shell start-card">
           <div>

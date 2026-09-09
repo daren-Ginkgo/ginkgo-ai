@@ -1423,6 +1423,19 @@ svg {
   line-height: 1.45;
 }
 
+/* Pricing effective date on the cards (9 Sep 2026). The pilot runs free until
+   at least 1 Nov 2026, so a cold visitor must not read these figures as the
+   price today. */
+.price-from {
+  display: block;
+  margin: -14px 0 20px;
+  color: var(--muted-small);
+  font-size: 0.63rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .price-card ul {
   display: grid;
   gap: 13px;
