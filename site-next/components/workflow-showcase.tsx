@@ -132,7 +132,7 @@ const workflows: Workflow[] = [
     pack: [
       { icon: FileText, title: "Cashflow report", note: "A client-ready narrative around the model" },
       { icon: Mail, title: "Client email draft", note: "The result explained without inventing figures" },
-      { icon: Calculator, title: "25 adviser calculators", note: "Charges, CGT, critical yield, withdrawals and more" },
+      { icon: Calculator, title: "Adviser calculators", note: "Charges, CGT, critical yield, withdrawals and more" },
     ],
   },
 ];
