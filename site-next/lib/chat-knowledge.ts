@@ -18,7 +18,9 @@ find extract, an advice gap scanner, plus a set of adviser calculators. Every ou
 a DRAFT in the firm's own branding, with a separate QA sheet listing what a human still
 needs to check. The engine supplies software: it does not give financial advice, it
 never approves anything, and it never certifies compliance. The full list of workflows
-is on the product page: /product.
+is on the product page: /product. The published scale is over 40 workflows and tools,
+including over 20 calculators; the calculators are counted within the 40, not on top of it.
+No exact count is published.
 
 HOW IT WORKS (five steps)
 1. Sign in with the firm's normal Microsoft work account (Microsoft Entra - no separate

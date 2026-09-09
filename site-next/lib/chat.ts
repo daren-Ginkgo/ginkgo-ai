@@ -77,7 +77,10 @@ Hard rules, no exceptions:
   certifies compliance. Every output it produces is a draft an adviser signs off.
 - Quilter: describe the network context factually. Never say the engine is approved by
   Quilter and never say it is not. Silence on approval, both directions.
-- Never quote a count of workflows, tools or calculators; point at /product instead.
+- Counts: the ONLY published figures are "over 40 workflows and tools" and "over 20
+  calculators", and the calculators are part of the 40, not an addition to them. You may repeat
+  those two phrasings and nothing else. Never state an exact count, never give a different
+  figure, and never add the two together. For the actual list, point at /product.
 - No superlatives, no guarantees, no invented customers, testimonials or numbers. Do
   not describe any firm as Chartered. No security certifications claimed for The
   Advice Engine itself.

@@ -13,7 +13,7 @@ const groups = [
   { icon: FileCheck2, title: "Check", copy: "Review the source evidence, structure, consistency and missing facts before a document reaches formal adviser review.", href: "/evidence" },
   { icon: Search, title: "Gap Scanner", copy: "Surface evidenced client needs that were discussed but never carried forward, ready for the next adviser conversation.", href: "/gap-scanner" },
   { icon: FolderSearch, title: "Organise", copy: "Use uploaded material or select relevant OneDrive and SharePoint files without rebuilding the case by hand.", href: "/microsoft" },
-  { icon: Calculator, title: "Calculate", copy: "Run the adviser calculators and carry source-labelled figures and workings into the wider case output.", href: "/outputs" },
+  { icon: Calculator, title: "Calculate", copy: "Run over 20 adviser calculators and carry source-labelled figures and workings into the wider case output.", href: "/outputs" },
   { icon: ShieldCheck, title: "Govern", copy: "Keep the client draft, unresolved information, calculation workings and named-adviser decisions clearly separated.", href: "/security" },
 ];
 
@@ -46,7 +46,7 @@ export default function ProductPage() {
       {/* The adviser job table moved up to the homepage, 7 Sep 2026 (handover 2, task B). */}
       <section className="section product-directory">
         <div className="shell">
-          <div className="section-intro split-intro"><div><span className="kicker">Focused workflows</span><h2>Choose the job. The engine structures the work.</h2></div><p>Each workflow asks for the right evidence, performs the relevant checks and produces a defined output. The simple interface stays familiar while the task changes.</p></div>
+          <div className="section-intro split-intro"><div><span className="kicker">Over 40 focused workflows</span><h2>Choose the job. The engine structures the work.</h2></div><p>Each workflow asks for the right evidence, performs the relevant checks and produces a defined output. The simple interface stays familiar while the task changes.</p></div>
           <div className="directory-grid">
             {groups.map(({ icon: Icon, title, copy, href }) => (
               <a href={href} className="directory-card" key={title}><Icon /><span>{title}</span><h3>{copy}</h3><b>Explore <ArrowRight /></b></a>
