@@ -6,6 +6,7 @@ import {
   callerKey,
   chatConfigured,
   chatPayloadSchema,
+  houseStyle,
   LIMITS,
   limitWindows,
 } from "@/lib/chat";
@@ -61,10 +62,9 @@ export async function POST(request: Request) {
 
     const system = buildSystem(await availabilityFact());
     const reply = await askAnthropic(system, parsed.data.messages.slice(-LIMITS.maxMessages));
-    // The house no-em-dash rule is enforced at build time on our own source, but a
-    // model reply is neither source nor deterministic, and it does emit them. The
-    // spaced en dash is the house substitute.
-    return Response.json({ reply: reply.replace(/\s*\u2014\s*/g, " \u2013 ") });
+    // Em dashes and markdown emphasis are stripped on the way out: the rules forbid
+    // both, but a model reply is neither our source nor deterministic.
+    return Response.json({ reply: houseStyle(reply) });
   } catch {
     return Response.json({ error: UNAVAILABLE }, { status: 500 });
   }
