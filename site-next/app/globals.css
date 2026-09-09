@@ -1429,11 +1429,9 @@ svg {
 .price-from {
   display: block;
   margin: -14px 0 20px;
-  color: var(--muted-small);
-  font-size: 0.63rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  color: var(--violet-text);
+  font-size: 0.75rem;
+  font-weight: 700;
 }
 
 .price-card ul {
