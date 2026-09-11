@@ -1,0 +1,3704 @@
+[
+ {
+  "id": "initial-follow-up-email",
+  "stage": "initial-meeting",
+  "title": "Follow-up email",
+  "subtitle": "Sent after the first meeting. No advice was given and the email says so.",
+  "blocks": [
+   {
+    "t": "p",
+    "text": "Subject: Thank you for coming in, and what happens next"
+   },
+   {
+    "t": "p",
+    "text": "Dear Avery,"
+   },
+   {
+    "t": "p",
+    "text": "Thank you for making the time to come and see us. It was good to talk through the £100,000 sitting in your savings account, and your feeling that it should be working harder than it is."
+   },
+   {
+    "t": "p",
+    "text": "Here is a short recap of what we covered."
+   },
+   {
+    "t": "li",
+    "text": "Why you got in touch: you want to know whether retiring at 67 is realistic, and you want a plan for the £100,000 rather than a one-off answer."
+   },
+   {
+    "t": "li",
+    "text": "What you told us you hold: a workplace pension of roughly £111,226, and cash savings of about £110,867 in total, of which you regard £10,867 as money you will not touch. These are the figures you gave us from memory, so we will verify them before anything else happens."
+   },
+   {
+    "t": "li",
+    "text": "Your time horizon: around 22 years."
+   },
+   {
+    "t": "li",
+    "text": "What you asked for: someone to keep an eye on the plan over time, not just a single recommendation."
+   },
+   {
+    "t": "li",
+    "text": "How we work: we explained our service, the difference between advice and information, and that no recommendation was given in the meeting. A recommendation only follows a full fact find and a risk assessment. You have the Terms of Business and our fee schedule, which set out our initial and ongoing charges."
+   },
+   {
+    "t": "p",
+    "text": "We also agreed the next steps."
+   },
+   {
+    "t": "li",
+    "text": "You: let me know if the fact find raises any questions when you read it through, and confirm you are happy for us to contact your pension provider."
+   },
+   {
+    "t": "li",
+    "text": "Me: send you the fact find and the attitude to risk questionnaire within the next two working days."
+   },
+   {
+    "t": "li",
+    "text": "You: complete and return both when you have a spare half hour. Please aim for two weeks if you can."
+   },
+   {
+    "t": "li",
+    "text": "Me: send you the authority form to approach your existing pension provider for full plan details, alongside the fact find."
+   },
+   {
+    "t": "li",
+    "text": "Me: request those plan details once the authority is signed, then confirm a date to report back to you with a written recommendation."
+   },
+   {
+    "t": "p",
+    "text": "The Groundwork Report is our entry service. It is an advised initial financial plan and sense check, covering your objectives and your existing arrangements. The fee is £2,000, and it is refunded or offset against initial advice if you take full regulated advice from us within 12 months. Our Terms of Business set out the full detail here: [TO CONFIRM: insert Terms of Business link]"
+   },
+   {
+    "t": "p",
+    "text": "I have also enclosed our Welcome Guide and our Financial Well-Being Checklist. The checklist is a simple way to spot anything we have not yet talked about."
+   },
+   {
+    "t": "p",
+    "text": "Nothing is committed at this stage, and you are under no obligation to proceed. If anything in the paperwork is unclear, please just ask."
+   },
+   {
+    "t": "p",
+    "text": "I look forward to hearing from you."
+   }
+  ],
+  "counts": {
+   "blocks": 19,
+   "words": 449,
+   "tables": 0
+  }
+ },
+ {
+  "id": "initial-meeting-record",
+  "stage": "initial-meeting",
+  "title": "Introduction Meeting Record",
+  "subtitle": "The written record of what was discussed, and what still has to be confirmed.",
+  "blocks": [
+   {
+    "t": "p",
+    "text": "Avery Drafter"
+   },
+   {
+    "t": "p",
+    "text": "*A record of our first meeting. This is not advice and contains no recommendation.*"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "****",
+      "****"
+     ],
+     [
+      "Prepared for",
+      "Avery Drafter"
+     ],
+     [
+      "Meeting date",
+      "[TO CONFIRM: exact meeting date. The file records only \"twelve months ago this month\"]"
+     ],
+     [
+      "Venue",
+      "Ginkgo Financial offices"
+     ],
+     [
+      "Present",
+      "Avery Drafter and [TO CONFIRM: name of the adviser who attended. The meeting notes do not name an attendee]"
+     ],
+     [
+      "Basis of meeting",
+      "No-obligation introduction. No fee was charged"
+     ],
+     [
+      "How you found us",
+      "Referral from an existing client"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "What we still need to confirm"
+   },
+   {
+    "t": "p",
+    "text": "A small number of points in this record need checking or completing before we take anything further. They are listed here so nothing gets lost."
+   },
+   {
+    "t": "li",
+    "text": "Your date of birth. You were recorded as age 44 at the meeting. We have no date of birth on file, so we cannot check the age against a document."
+   },
+   {
+    "t": "li",
+    "text": "Your mortgage. You told us your mortgage is being paid on schedule and that you have no other debts. We did not record the lender, the balance, the remaining term or the monthly payment."
+   },
+   {
+    "t": "li",
+    "text": "Your pension value of about £111,226. This is your own estimate and needs a provider statement to confirm it."
+   },
+   {
+    "t": "li",
+    "text": "Your household and dependants. Not recorded at the meeting."
+   },
+   {
+    "t": "li",
+    "text": "Your income and regular outgoings. Not recorded at the meeting."
+   },
+   {
+    "t": "li",
+    "text": "Whether the Groundwork Report was agreed on the day. The notes confirm our Terms of Business and fee schedule were handed to you, but do not record which service you agreed to."
+   },
+   {
+    "t": "li",
+    "text": "Which disclosures were made verbally. See \"Important information\" at the end of this record."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "Why you got in touch"
+   },
+   {
+    "t": "p",
+    "text": "You had £100,000 sitting in a savings account earning very little. In your words, it \"should be doing something\". You did not know where to start, and you did not want to take a risk you could not live with."
+   },
+   {
+    "t": "p",
+    "text": "Alongside that, you wanted a straight answer to a bigger question: are you on track to retire comfortably? You had built up a workplace pension over your working life but had never had anyone look at the whole picture with you."
+   },
+   {
+    "t": "p",
+    "text": "You were clear that you were not looking for a one-off tip. You wanted someone to keep an eye on things over time."
+   },
+   {
+    "t": "h3",
+    "text": "What you told us you hold"
+   },
+   {
+    "t": "p",
+    "text": "These are the figures you gave us in conversation. They are your own spoken estimates and are not yet verified against provider statements or bank records."
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "What you hold",
+      "Indicative value",
+      "Status"
+     ],
+     [
+      "Workplace pension",
+      "About £111,226",
+      "Your estimate. Provider statement required"
+     ],
+     [
+      "Cash savings, total",
+      "£110,867",
+      "Your figure. Bank evidence required"
+     ],
+     [
+      "Of which, money you will not touch",
+      "£10,867",
+      "Your emergency reserve"
+     ],
+     [
+      "Of which, available to put to work",
+      "£100,000",
+      "The sum we discussed"
+     ],
+     [
+      "Other investments",
+      "None disclosed",
+      ""
+     ],
+     [
+      "Debts",
+      "Mortgage only, paid on schedule",
+      "Details not recorded"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "We did not see any documents at this meeting, so nothing in this table has been checked."
+   },
+   {
+    "t": "h3",
+    "text": "What you want to achieve"
+   },
+   {
+    "t": "p",
+    "text": "You set out three things."
+   },
+   {
+    "t": "p",
+    "text": "A plan for the £100,000. Not a product, a plan. You wanted to understand what the money could realistically do over time and what it would feel like if markets fell."
+   },
+   {
+    "t": "p",
+    "text": "A view on retiring at 67. You wanted to know whether that is realistic given what you have already built up and what you can add."
+   },
+   {
+    "t": "p",
+    "text": "An ongoing relationship. You said you wanted someone keeping an eye on it, rather than a recommendation handed over once and then left alone."
+   },
+   {
+    "t": "p",
+    "text": "We did not put a number on the retirement income you want. That is a question for the next stage."
+   },
+   {
+    "t": "p",
+    "text": "*Information required: your target retirement income, and the age you would most like to stop or reduce work.*"
+   },
+   {
+    "t": "h3",
+    "text": "What we discussed"
+   },
+   {
+    "t": "p",
+    "text": "We talked about your timescale. You were comfortable thinking 22 years ahead, which matters because it shapes how much short-term movement in value is tolerable."
+   },
+   {
+    "t": "p",
+    "text": "We talked about risk in general terms. You understood that the value of investments can fall as well as rise and that you may get back less than you invest. You asked sensible, direct questions about charges. We did not assess your attitude to risk at this meeting, and no risk profile was agreed on the day."
+   },
+   {
+    "t": "p",
+    "text": "We explained the difference between advice and information. We were clear that any recommendation would follow a full fact find and a risk assessment, not this conversation. Nothing was recommended to you at this meeting."
+   },
+   {
+    "t": "p",
+    "text": "We handed you our Terms of Business and our fee schedule."
+   },
+   {
+    "t": "p",
+    "text": "No vulnerability indicators were identified or disclosed at the meeting, and you did not tell us about anything that would make dealing with us harder. If that changes, please tell us. We can adjust how we communicate with you."
+   },
+   {
+    "t": "h3",
+    "text": "How we work"
+   },
+   {
+    "t": "p",
+    "text": "Ginkgo Financial Ltd gives restricted advice. That means we advise on a limited range of products and providers rather than the whole market. It does not limit the quality of the advice, and we will explain the range we use before any recommendation is made."
+   },
+   {
+    "t": "p",
+    "text": "There are three things we do not do, and it is fairer to say so early:"
+   },
+   {
+    "t": "li",
+    "text": "We do not advise on defined-benefit, or final salary, pension transfers."
+   },
+   {
+    "t": "li",
+    "text": "We do not advise on equity release."
+   },
+   {
+    "t": "li",
+    "text": "We arrange mortgages for existing financial-planning clients only."
+   },
+   {
+    "t": "p",
+    "text": "Our planning is built around your goals rather than around products, and it is designed to run across your working life and into retirement. Our service is staged, our fees are set out in writing, and there is no obligation to proceed at any point."
+   },
+   {
+    "t": "p",
+    "text": "Our entry service is the Groundwork Report. It is an advised service. It produces an initial holistic financial plan and a sense check of what you already hold. The fee is £2,000. If you take full regulated advice from us within 12 months, that £2,000 is refunded or offset against the initial advice fee."
+   },
+   {
+    "t": "p",
+    "text": "[TO CONFIRM: whether the Groundwork Report was named and agreed at this meeting. The notes record only that the service and its cost were explained and that our Terms of Business and fee schedule were handed over.]"
+   },
+   {
+    "t": "h3",
+    "text": "What happens next"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Step",
+      "Who does it",
+      "When"
+     ],
+     [
+      "Complete the full fact find",
+      "Together, at the next meeting",
+      "[TO CONFIRM: agreed timeframe]"
+     ],
+     [
+      "Complete the attitude to risk questionnaire",
+      "You, with our support",
+      "Before any recommendation"
+     ],
+     [
+      "Sign authority for us to approach your pension provider",
+      "You",
+      "Before we can verify the £111,226"
+     ],
+     [
+      "Obtain plan details from the provider",
+      "Us",
+      "Allow four weeks from receiving authority"
+     ],
+     [
+      "Report back with a written recommendation",
+      "Us",
+      "After the provider information is in"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Nothing is committed until you have signed a client agreement and told us to proceed."
+   },
+   {
+    "t": "h3",
+    "text": "Important information"
+   },
+   {
+    "t": "p",
+    "text": "This meeting was a no-obligation introduction. No fee was charged for it and no recommendation was made."
+   },
+   {
+    "t": "p",
+    "text": "The following were recorded as covered at the meeting: our service and what it costs, the difference between advice and information, and the fact that any recommendation would follow a full fact find and risk assessment. Our Terms of Business and fee schedule were handed to you."
+   },
+   {
+    "t": "p",
+    "text": "The following are either to follow or need confirming, and we will complete them before any advice is given:"
+   },
+   {
+    "t": "li",
+    "text": "Our firm identity, our regulatory status and our firm reference number, in writing."
+   },
+   {
+    "t": "li",
+    "text": "Our services and costs disclosure document."
+   },
+   {
+    "t": "li",
+    "text": "The signed client agreement, Terms of Business v3.0 (June 2026)."
+   },
+   {
+    "t": "li",
+    "text": "Our privacy notice, and your explicit consent where we discuss health or other special-category information."
+   },
+   {
+    "t": "li",
+    "text": "How to complain, and the protection available to you from the Financial Ombudsman Service and the Financial Services Compensation Scheme. These are set out in the client agreement."
+   },
+   {
+    "t": "li",
+    "text": "Identity verification and source of funds checks. We need these before we can proceed."
+   },
+   {
+    "t": "p",
+    "text": "[TO CONFIRM: whether recording consent was sought. Meetings and calls may be recorded for training and accuracy, and consent is confirmed at the start of the meeting. The notes do not record whether this meeting was recorded.]"
+   },
+   {
+    "t": "p",
+    "text": "The value of investments can fall as well as rise and you may get back less than you invest. Past performance is not a reliable indicator of future results. Tax treatment depends on your individual circumstances and may change in future."
+   },
+   {
+    "t": "p",
+    "text": "Ginkgo Financial Ltd (FCA register number 912144) is an Appointed Representative of Quilter Financial Services Limited (FCA register number 440703) of Senator House, 85 Queen Victoria Street, London, EC4V 4AB, which is authorised and regulated by the Financial Conduct Authority."
+   }
+  ],
+  "counts": {
+   "blocks": 60,
+   "words": 1187,
+   "tables": 3
+  }
+ },
+ {
+  "id": "suitability-report",
+  "stage": "suitability",
+  "title": "Suitability report",
+  "subtitle": "The recommendation, its costs and the risks, in the firm's house section order.",
+  "blocks": [
+   {
+    "t": "p",
+    "text": "Prepared for: Avery Drafter"
+   },
+   {
+    "t": "p",
+    "text": "Prepared by: Alex Planner, Financial Adviser, Ginkgo Financial Ltd"
+   },
+   {
+    "t": "p",
+    "text": "Report date: [TO CONFIRM: report date]"
+   },
+   {
+    "t": "p",
+    "text": "This is a specimen document for a fictitious demonstration client. It does not constitute advice to any real person."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "Summary of advice"
+   },
+   {
+    "t": "h4",
+    "text": "What is being recommended?"
+   },
+   {
+    "t": "p",
+    "text": "I recommend you invest your £100,000 through the Quilter platform, in two wrappers held side by side:"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Wrapper",
+      "Amount",
+      "Why this wrapper"
+     ],
+     [
+      "Stocks and Shares ISA",
+      "£20,000",
+      "Uses your unused ISA allowance for the current tax year. Growth and income are free of UK income tax and capital gains tax."
+     ],
+     [
+      "General Investment Account (GIA)",
+      "£78,000",
+      "Holds the balance. No subscription limit. Your unused capital gains tax annual exempt amount applies."
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Both wrappers are invested in the same WealthSelect Managed Portfolio, matched to your Balanced attitude to risk. The £2,000 initial advice fee is taken from the £100,000 at outset, leaving £98,000 invested."
+   },
+   {
+    "t": "p",
+    "text": "[TO CONFIRM: the WealthSelect range, style and portfolio number, and the split of the 0.66% portfolio charge between the weighted fund charge and the managed portfolio service charge]"
+   },
+   {
+    "t": "h4",
+    "text": "What are the benefits?"
+   },
+   {
+    "t": "li",
+    "text": "Your money is invested for 22 years towards your retirement at 67, rather than losing buying power in cash."
+   },
+   {
+    "t": "li",
+    "text": "The portfolio is built to the Balanced risk level you agreed, so the expected level of ups and downs matches how you told me you feel about risk."
+   },
+   {
+    "t": "li",
+    "text": "£20,000 goes into an ISA, so that part produces no income tax, no capital gains tax and nothing to report on your tax return."
+   },
+   {
+    "t": "li",
+    "text": "Each future tax year we can move £20,000 from the GIA into your ISA, using your allowance and your capital gains tax exempt amount."
+   },
+   {
+    "t": "li",
+    "text": "Your £10,867 emergency fund stays in cash and untouched."
+   },
+   {
+    "t": "li",
+    "text": "The portfolio is rebalanced and monitored centrally by Quilter, so the asset mix does not drift away from your risk level."
+   },
+   {
+    "t": "h4",
+    "text": "Scope of advice"
+   },
+   {
+    "t": "p",
+    "text": "This advice covers the investment of your £100,000 lump sum only."
+   },
+   {
+    "t": "p",
+    "text": "Your existing pension of £111,226 is recorded in this report but is not being transferred, switched or altered. Your mortgage, protection needs and estate planning are not covered here. I have not produced a full retirement projection, so this report does not answer whether your total provision will deliver £28,500 a year from 67. The retirement position section sets out what that gap looks like today and what I need to complete the projection."
+   },
+   {
+    "t": "h4",
+    "text": "Costs of advice"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Fee",
+      "Rate",
+      "Amount"
+     ],
+     [
+      "Initial advice fee (one-off)",
+      "2.00% of £100,000",
+      "£2,000"
+     ],
+     [
+      "Ongoing advice fee",
+      "1.00% a year",
+      "£980 a year on £98,000"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Your signed fee authorisation is on file. Full charges, including the platform and portfolio charges, are in the costs section below."
+   },
+   {
+    "t": "h4",
+    "text": "Please be aware of the following possible disadvantages"
+   },
+   {
+    "t": "li",
+    "text": "The value of the portfolio can fall. You could get back less than the £98,000 invested."
+   },
+   {
+    "t": "li",
+    "text": "The £2,000 initial fee reduces the amount invested from £100,000 to £98,000. That £2,000 is not invested and does not grow."
+   },
+   {
+    "t": "li",
+    "text": "Total charges of 1.96% a year reduce your return. The illustration shows a reduction in yield of 2.0% a year."
+   },
+   {
+    "t": "li",
+    "text": "The £78,000 in the GIA can produce taxable gains and taxable income. You are responsible for reporting these on your own tax return."
+   },
+   {
+    "t": "li",
+    "text": "ISA, capital gains tax and income tax rules can change over a 22-year term."
+   },
+   {
+    "t": "li",
+    "text": "You are giving up the certainty of cash. Cash does not fall in value; this portfolio can."
+   },
+   {
+    "t": "li",
+    "text": "A pension contribution would attract tax relief that an ISA and GIA do not. See the alternatives appendix."
+   },
+   {
+    "t": "h4",
+    "text": "Next steps"
+   },
+   {
+    "t": "li",
+    "text": "Read the illustration, the key information documents and the ex-ante costs and charges disclosure issued with this report."
+   },
+   {
+    "t": "li",
+    "text": "Tell me if anything in this report does not match your understanding."
+   },
+   {
+    "t": "li",
+    "text": "Sign and return the application forms."
+   },
+   {
+    "t": "li",
+    "text": "Provide the outstanding items listed under \"What I still need\" below."
+   },
+   {
+    "t": "li",
+    "text": "We meet again at your annual review, when I will complete your retirement projection."
+   },
+   {
+    "t": "h4",
+    "text": "What I still need"
+   },
+   {
+    "t": "p",
+    "text": "These items are outstanding on your file. I need them to complete the picture and to keep the recommendation accurate."
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Item",
+      "From"
+     ],
+     [
+      "The exact date of the final illustration and of your pension valuation",
+      "Adviser file and pension provider"
+     ],
+     [
+      "Your pension provider, plan type, fund holdings and annual charges",
+      "You or the provider"
+     ],
+     [
+      "Whether you have a will, and whether you have a lasting power of attorney",
+      "You"
+     ],
+     [
+      "Your housing costs now, and whether your home will be owned outright at 67",
+      "You"
+     ],
+     [
+      "Confirmation of your agreed ongoing service tier and the reason the firm's £3,000 minimum initial fee has been waived",
+      "Ginkgo Financial"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "Your objectives"
+   },
+   {
+    "t": "p",
+    "text": "You told me you want to know whether you are on track to retire comfortably. That is the reason you came to me now, and it is the reason you want this £100,000 put to work rather than left in the bank."
+   },
+   {
+    "t": "p",
+    "text": "Your objectives, as you described them:"
+   },
+   {
+    "t": "li",
+    "text": "Invest £100,000 for the long term, towards retirement at 67. That is 22 years from now, and it sets the investment term."
+   },
+   {
+    "t": "li",
+    "text": "Reach a retirement income of £28,500 a year from age 67, which you described as about 60% of your current income."
+   },
+   {
+    "t": "li",
+    "text": "Keep your £10,867 emergency fund in cash, separate from anything invested. You did not want to invest money you might need at short notice."
+   },
+   {
+    "t": "li",
+    "text": "Use tax allowances you are not currently using, in particular your ISA allowance for this tax year."
+   },
+   {
+    "t": "li",
+    "text": "Keep the money accessible. You did not want all of it locked away until a set age."
+   },
+   {
+    "t": "p",
+    "text": "Your money comes from accumulated savings and a recent inheritance, both verified. You do not need access to the £100,000 for a specific planned purpose. You want it available if life changes, which is why accessibility matters to you and why it shapes the wrapper choice below."
+   },
+   {
+    "t": "p",
+    "text": "Repaying debt first. You disclosed no liabilities on your fact find. There is no debt to repay ahead of investing, so investing the full £100,000 is appropriate."
+   },
+   {
+    "t": "p",
+    "text": "Drivers for change. The money is currently sitting in cash. Over 22 years, cash interest has historically struggled to keep pace with inflation, so leaving it there risks a real fall in what it can buy. That is the driver for investing. No existing investment product is being replaced."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "Your retirement position today"
+   },
+   {
+    "t": "p",
+    "text": "You asked whether £28,500 a year will be comfortable. Here is where that target sits."
+   },
+   {
+    "t": "p",
+    "text": "The Retirement Living Standards, published by Pensions UK and researched by Loughborough University (updated 3 June 2026, retirementlivingstandards.org.uk), set out what different living standards cost in retirement. For a single person in London, a Moderate standard costs £34,000 a year and a Comfortable standard costs £47,200 a year."
+   },
+   {
+    "t": "p",
+    "text": "Those are figures for net spending, not gross income. Your £28,500 target is a gross income figure. Using current allowances and tax rates, and assuming they do not change, £28,500 gross is about £25,300 a year net. That figure is derived, not measured."
+   },
+   {
+    "t": "p",
+    "text": "Against the Moderate standard of £34,000, your target leaves a shortfall of about £8,700 a year. Your stated target is below a Moderate standard of living for a single person in London, not above it."
+   },
+   {
+    "t": "p",
+    "text": "Three caveats matter:"
+   },
+   {
+    "t": "li",
+    "text": "The standards exclude rent and mortgage payments. They assume the home is owned outright. Your housing costs at 67 are not yet on file."
+   },
+   {
+    "t": "li",
+    "text": "They exclude social care costs and financial support for dependants. You have one child."
+   },
+   {
+    "t": "li",
+    "text": "I have used the London figures as the firm's default comparison. If you expect to retire elsewhere, the comparison changes."
+   },
+   {
+    "t": "p",
+    "text": "This report does not tell you whether your provision will hit £28,500, because that needs a projection of your £111,226 pension, your State Pension entitlement and this new £100,000. I will complete that projection once the outstanding items are on file. Investing the £100,000 now is a step towards the target; it does not close a gap I have not yet measured."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "Your investor profile"
+   },
+   {
+    "t": "h4",
+    "text": "Attitude to risk"
+   },
+   {
+    "t": "p",
+    "text": "You completed the attitude to risk questionnaire and the result was Balanced. You confirmed that Balanced reflects how you feel about investment risk, so the risk level used for this recommendation is the same as the questionnaire result. No adjustment was made."
+   },
+   {
+    "t": "p",
+    "text": "A Balanced investor accepts that the value of their investment will rise and fall, and accepts periods of loss, in exchange for the prospect of a better long-term return than cash. A Balanced portfolio holds a spread of shares, bonds and other assets, usually with a meaningful share in shares. You should expect falls in some years, including falls of more than a few percent. Over a 22-year term, you should expect several negative years along the way."
+   },
+   {
+    "t": "h4",
+    "text": "Investment timeframe"
+   },
+   {
+    "t": "p",
+    "text": "Your timeframe is 22 years, to your retirement at 67. This is a long-term investment. That length of term is what makes a Balanced level of risk appropriate: there is time for the portfolio to recover from falls before you need the money."
+   },
+   {
+    "t": "h4",
+    "text": "Capacity for loss"
+   },
+   {
+    "t": "p",
+    "text": "I assessed your capacity for loss separately from your attitude to risk, because they are different questions. Attitude to risk is how you feel. Capacity for loss is what you could actually absorb."
+   },
+   {
+    "t": "p",
+    "text": "Your gross income is £47,500 a year and your regular outgoings are about £25,723 a year. You hold £10,867 in cash, about five months of outgoings, and that stays in cash. The £100,000 is surplus to that emergency fund and to your day-to-day needs. You confirmed you could tolerate short-term falls without changing your standard of living. A total loss would delay your retirement objective but would not derail it, because your pension of £111,226 and your State Pension entitlement sit outside this investment."
+   },
+   {
+    "t": "p",
+    "text": "Your capacity for loss therefore supports a Balanced level of risk. There is no discrepancy between your attitude to risk and your capacity for loss, so no compromise was needed."
+   },
+   {
+    "t": "h4",
+    "text": "Vulnerability and capacity considerations"
+   },
+   {
+    "t": "p",
+    "text": "Nothing in our meetings or in your fact find indicated that you need extra support to understand or manage this advice. You are not in receipt of means-tested benefits, so this investment does not affect any benefit entitlement. You answered questions about risk and about your objectives clearly and consistently."
+   },
+   {
+    "t": "p",
+    "text": "Tell me at any point if that changes, or if you would like this report in a different format, larger print, or explained again with someone you trust present. I am happy to do any of those."
+   },
+   {
+    "t": "h4",
+    "text": "Knowledge and experience, and responsible investing"
+   },
+   {
+    "t": "p",
+    "text": "You hold a workplace pension and have previously held a stocks and shares ISA. You understand that values fall as well as rise. You have no experience of complex or unregulated investments, and I have not recommended any. The recommendation uses a mainstream managed portfolio on a mainstream platform, which fits your level of experience."
+   },
+   {
+    "t": "p",
+    "text": "We discussed responsible and sustainable investing. You told me you have no specific responsible investment requirement and asked for the standard approach. I have therefore recommended from the standard managed range rather than the responsible or sustainable ranges."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "Your existing arrangements"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Holding",
+      "Provider",
+      "Value",
+      "Source and date",
+      "Annual charges",
+      "Guarantees, penalties or MVR",
+      "In scope of this advice"
+     ],
+     [
+      "Workplace or personal pension",
+      "[TO CONFIRM: pension provider and plan type]",
+      "£111,226",
+      "Provider valuation statement [TO CONFIRM: exact valuation date, and whether £111,226 is the provider's figure or your own estimate]",
+      "[TO CONFIRM: annual charges on the existing pension]",
+      "Not applicable: the plan is unchanged",
+      "No"
+     ],
+     [
+      "Emergency cash",
+      "[TO CONFIRM: deposit provider]",
+      "£10,867",
+      "Your fact find",
+      "Not applicable",
+      "None",
+      "No: retained in cash"
+     ],
+     [
+      "Cash available to invest",
+      "[TO CONFIRM: deposit provider]",
+      "£100,000",
+      "Your fact find",
+      "Not applicable",
+      "None",
+      "Yes"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "You disclosed no other investments and no liabilities."
+   },
+   {
+    "t": "p",
+    "text": "Nothing is being replaced, switched or transferred. This recommendation invests new money. Your pension stays exactly where it is, in the same plan and the same funds. That has three consequences worth stating plainly:"
+   },
+   {
+    "t": "li",
+    "text": "There are no exit penalties, no loss of guarantees, no loss of loyalty bonuses and no market value reduction, because no existing plan is being given up."
+   },
+   {
+    "t": "li",
+    "text": "There is no period out of the market while money transfers, because no transfer is taking place."
+   },
+   {
+    "t": "li",
+    "text": "I have not cited poor past performance of any existing plan as a reason for this advice, so no performance comparison arises."
+   },
+   {
+    "t": "p",
+    "text": "I did not consider switching funds inside your existing pension, because your pension is outside the scope of this advice and the £100,000 cannot be paid into it as an ISA or GIA investment. I will review the pension, its funds and its charges when I complete your retirement projection. That is why its provider details and charges appear in the outstanding items above."
+   },
+   {
+    "t": "p",
+    "text": "No encashment of any existing product is recommended, so there are no tax consequences of encashment to replay."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "My recommendation"
+   },
+   {
+    "t": "p",
+    "text": "I recommend you invest £98,000, after the initial advice fee, through the Quilter platform: £20,000 into a Stocks and Shares ISA and £78,000 into a General Investment Account. Both are invested in a WealthSelect Managed Portfolio matched to your Balanced profile."
+   },
+   {
+    "t": "h4",
+    "text": "Why the platform and wrappers are suitable for you"
+   },
+   {
+    "t": "p",
+    "text": "The ISA first. You have not used your ISA allowance this tax year. Inside an ISA there is no income tax and no capital gains tax on growth or income, and nothing to declare on your tax return. As a basic-rate taxpayer with a 22-year horizon, that is the most valuable allowance available to you for this money, so it is used first and in full."
+   },
+   {
+    "t": "p",
+    "text": "The GIA for the balance. The ISA limit is £20,000 a year, so £78,000 cannot go into an ISA now. A GIA has no limit and no lock-in. Your capital gains tax annual exempt amount is unused, and each year we can move £20,000 from the GIA into your ISA. Over time that shelters the whole amount. You are responsible for your own tax return, and you should report any GIA gains or income to HMRC. If you use an accountant, share the annual tax certificate the platform issues."
+   },
+   {
+    "t": "p",
+    "text": "Both on one platform. Holding the ISA and GIA together lets me move money between them each year, invest both in the same portfolio, and report on the whole £98,000 in one place."
+   },
+   {
+    "t": "p",
+    "text": "The portfolio. The WealthSelect Managed Portfolio recommended is aligned to your Balanced profile. It is diversified across asset classes and rebalanced centrally, so it stays at your risk level rather than drifting. It comes from the Quilter Investment Matrix, which Quilter researches and monitors centrally. That central research is the research behind this recommendation, so no separate fund research report is required."
+   },
+   {
+    "t": "p",
+    "text": "The term. The 22-year term matches your retirement at 67 and is what makes this level of risk appropriate. You are 45, so there is no life expectancy consideration that shortens the term."
+   },
+   {
+    "t": "p",
+    "text": "Scope. The recommendation uses regulated, mainstream, readily realisable investments only. It includes no unregulated or non-mainstream investments, no share dealing and no investment trusts."
+   },
+   {
+    "t": "p",
+    "text": "Affordability and good outcome. The £100,000 is surplus money. Your £10,867 emergency fund is untouched, your income of £47,500 covers your outgoings of £25,723, and you have no debt. Nothing here depends on you finding further money."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "Taking an income"
+   },
+   {
+    "t": "p",
+    "text": "This section is not relevant to your case. You are not taking an income or withdrawals from this investment, and you are not accessing pension benefits. There is therefore no income sustainability assessment, no tax-free cash calculation and no money purchase annual allowance consideration in this report."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "Investment fund recommendation"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Item",
+      "Detail"
+     ],
+     [
+      "Portfolio",
+      "WealthSelect Managed Portfolio, Balanced profile [TO CONFIRM: WealthSelect range, style and portfolio number]"
+     ],
+     [
+      "Amount invested",
+      "£98,000 (£20,000 ISA, £78,000 GIA)"
+     ],
+     [
+      "Portfolio ongoing charge",
+      "0.66% a year, per the final illustration [TO CONFIRM: illustration date]"
+     ],
+     [
+      "Charge basis",
+      "This covers the underlying fund charges and the WealthSelect managed portfolio service charge. It excludes the Quilter platform charge of 0.30% a year and my ongoing fee of 1.00% a year."
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Why this portfolio is suitable for you:"
+   },
+   {
+    "t": "li",
+    "text": "It is built and maintained to the Balanced risk level you agreed. The asset mix is not left to drift."
+   },
+   {
+    "t": "li",
+    "text": "It is diversified across asset classes and regions, so no single holding or market drives your outcome."
+   },
+   {
+    "t": "li",
+    "text": "It matches your stated preference for the standard approach rather than a responsible or sustainable mandate."
+   },
+   {
+    "t": "li",
+    "text": "It suits your level of investment experience: one professionally managed portfolio rather than a set of individual funds for you to monitor."
+   },
+   {
+    "t": "li",
+    "text": "Both wrappers hold the same portfolio, which keeps your overall risk level consistent as money moves from the GIA to the ISA each year."
+   },
+   {
+    "t": "p",
+    "text": "I have not quoted past performance figures for this portfolio in this report. Where you see them in the illustration or factsheet, note that past performance is not a reliable indicator of future results, and any published comparison index is a comparator, not a benchmark or a target."
+   },
+   {
+    "t": "p",
+    "text": "[TO CONFIRM: split of the 0.66% portfolio charge between the weighted fund charge and the managed portfolio service charge, once the portfolio number is confirmed]"
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "Other items to consider"
+   },
+   {
+    "t": "p",
+    "text": "Emergency fund. You hold £10,867 in cash, about five months of your £25,723 annual outgoings. That stays in cash and is not invested. I am satisfied that is an appropriate reserve for your circumstances. Review it if your outgoings rise."
+   },
+   {
+    "t": "p",
+    "text": "Wills and estate planning. You have not told me whether you have a will. If you die without one, the law decides who inherits, which may not match your wishes, and you have one child. I recommend you put a will in place or review an existing one. Will writing is not regulated by the Financial Conduct Authority."
+   },
+   {
+    "t": "p",
+    "text": "Lasting power of attorney. No lasting power of attorney is recorded on your file. Without one, if you lost the ability to make decisions, nobody could manage your ISA, GIA or pension on your behalf without applying to the Court of Protection. I recommend you consider both a property and financial affairs LPA and a health and welfare LPA. Lasting powers of attorney are not regulated by the Financial Conduct Authority."
+   },
+   {
+    "t": "p",
+    "text": "[TO CONFIRM: your will and lasting power of attorney status]"
+   },
+   {
+    "t": "p",
+    "text": "Protection. You are self-employed with one child. Your protection needs are not covered by this report. I can review them at your next meeting."
+   },
+   {
+    "t": "p",
+    "text": "Pension contributions. Investing this money in an ISA and GIA does not stop you making pension contributions from your income. I will look at that alongside your retirement projection."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "How costs will impact your money"
+   },
+   {
+    "t": "h4",
+    "text": "The charges on the recommended plan"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Charge",
+      "% a year",
+      "£ a year, on £98,000",
+      "Source"
+     ],
+     [
+      "Quilter platform charge",
+      "0.30%",
+      "£294",
+      "Final illustration [TO CONFIRM: illustration date]"
+     ],
+     [
+      "Portfolio ongoing charge (funds plus managed portfolio service)",
+      "0.66%",
+      "£647",
+      "Final illustration [TO CONFIRM: illustration date]"
+     ],
+     [
+      "Ginkgo ongoing advice fee",
+      "1.00%",
+      "£980",
+      "Terms of Business v3.0, June 2026, and the illustration"
+     ],
+     [
+      "Total ongoing",
+      "1.96%",
+      "£1,921",
+      ""
+     ],
+     [
+      "Ginkgo initial advice fee (one-off)",
+      "2.00% of £100,000",
+      "£2,000",
+      "Terms of Business v3.0, June 2026"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Charges are percentage based, so the pound amounts rise and fall with the value of your investment. The pound figures above are for the first year, on £98,000."
+   },
+   {
+    "t": "h4",
+    "text": "Existing charges compared with the recommended charges"
+   },
+   {
+    "t": "p",
+    "text": "Your £100,000 is currently held in cash, which carries no product or fund charges. That is the honest comparison here: this is new money, not a replacement of an existing investment product."
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Charge",
+      "Now: cash on deposit",
+      "Recommended: Quilter ISA and GIA",
+      "Difference"
+     ],
+     [
+      "Platform or product charge",
+      "0.00% / £0",
+      "0.30% / £294",
+      "+0.30% / +£294 a year"
+     ],
+     [
+      "Fund and portfolio charge",
+      "0.00% / £0",
+      "0.66% / £647",
+      "+0.66% / +£647 a year"
+     ],
+     [
+      "Ongoing advice",
+      "0.00% / £0",
+      "1.00% / £980",
+      "+1.00% / +£980 a year"
+     ],
+     [
+      "Total ongoing",
+      "0.00% / £0",
+      "1.96% / £1,921",
+      "+1.96% / +£1,921 a year"
+     ],
+     [
+      "One-off initial advice",
+      "£0",
+      "£2,000",
+      "+£2,000"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "In pounds and pence, moving from cash to the recommended plan costs you £2,000 once, and about £1,921 in the first year, so about £3,921 in year one. Your existing pension charges are unchanged, because that plan is untouched."
+   },
+   {
+    "t": "h4",
+    "text": "The initial fee and its effect"
+   },
+   {
+    "t": "p",
+    "text": "The £2,000 initial fee is deducted at outset. £98,000 is invested, not £100,000. That £2,000 is not invested and earns nothing for you. Over 22 years, the lost growth on £2,000 is a real cost, not just the fee itself."
+   },
+   {
+    "t": "p",
+    "text": "[TO CONFIRM: whether the initial fee is facilitated from the investment or paid by you directly]"
+   },
+   {
+    "t": "p",
+    "text": "The firm's Terms of Business v3.0 (June 2026) sets the initial rate for lump sum advice at 2% up to £300,000, with a minimum initial fee of £3,000. Your fee has been agreed at the 2% tiered rate with the minimum waived, which is £2,000 rather than £3,000. That is a non-standard rate, and it is in your favour. Your signed fee authorisation is on file."
+   },
+   {
+    "t": "p",
+    "text": "[TO CONFIRM: the reason the £3,000 minimum initial fee has been waived, for example the Terms of Business family discount]"
+   },
+   {
+    "t": "p",
+    "text": "No initial fee is contingent on a transfer, because no transfer is taking place."
+   },
+   {
+    "t": "h4",
+    "text": "Reduction in yield"
+   },
+   {
+    "t": "p",
+    "text": "The final illustration shows a reduction in yield of 2.0% a year. That means all charges, including both my fees, are expected to reduce your yearly investment return by about 2.0 percentage points. If the portfolio grew at 5.0% a year before charges, you would receive about 3.0% a year after them."
+   },
+   {
+    "t": "p",
+    "text": "In monetary terms for the first year, charges total about £1,921 plus the £2,000 initial fee."
+   },
+   {
+    "t": "p",
+    "text": "[TO CONFIRM: the monetary reduction in yield over the full 22-year term, taken from the final illustration]"
+   },
+   {
+    "t": "h4",
+    "text": "Ex-ante costs and charges, and the effect over time"
+   },
+   {
+    "t": "p",
+    "text": "The ex-ante costs and charges disclosure required under MiFID II has been prepared and is issued with your illustration. It shows the aggregated effect of all charges on your investment, in percentage and monetary terms, over the term."
+   },
+   {
+    "t": "p",
+    "text": "[TO CONFIRM: the aggregated effect of charges in £ over the 22-year term, from the illustration's ex-ante costs and charges disclosure]"
+   },
+   {
+    "t": "h4",
+    "text": "Ongoing service"
+   },
+   {
+    "t": "p",
+    "text": "Your ongoing fee of 1.00% a year, about £980 in year one, pays for an annual review of your objectives, risk profile and portfolio, fund switches where suitable, and access to me between reviews. I recommend ongoing advice here because you have a 22-year term, a GIA that needs yearly capital gains tax and ISA management, and an unresolved retirement income gap. The £980 is proportionate to that work and does not defeat the purpose of investing, because the portfolio is expected to grow ahead of total charges over the term. The firm's minimum ongoing fee for its entry service is £800 a year, so the percentage fee applies rather than a minimum."
+   },
+   {
+    "t": "p",
+    "text": "[TO CONFIRM: your agreed ongoing service tier]"
+   },
+   {
+    "t": "p",
+    "text": "Neither the initial nor the ongoing fee exceeds £20,000, so no additional fee fair value documentation is triggered."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "Appendix: alternative options discounted"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Option",
+      "Why I discounted it"
+     ],
+     [
+      "Leave the £100,000 on deposit",
+      "No product charges, and no risk of capital loss. But over 22 years cash interest has historically struggled to keep pace with inflation, so the real buying power of £100,000 would be at risk. It does not serve a retirement objective 22 years away."
+     ],
+     [
+      "NS&I products and fixed-term deposits",
+      "Same limitation as cash. Returns are capped and unlikely to beat inflation over 22 years. They suit your £10,867 emergency fund, which stays in cash, not your long-term money."
+     ],
+     [
+      "A further pension contribution instead of the ISA and GIA",
+      "A pension would attract tax relief that an ISA and GIA do not, and as a retirement objective it is a genuine contender. It was discounted because you asked to keep the money accessible, and pension money is locked until at least age 57. [TO CONFIRM: your reason for preferring accessible ISA and GIA funding over a further pension contribution] I will revisit pension funding alongside your retirement projection."
+     ],
+     [
+      "ISA only, £20,000 invested",
+      "Your allowance is £20,000, so this leaves £80,000 uninvested in cash. It does not meet your objective for the full amount."
+     ],
+     [
+      "Onshore or offshore investment bond",
+      "Bonds can suit higher-rate taxpayers with used allowances, or a trust need. You are a basic-rate taxpayer with an unused ISA allowance and an unused capital gains tax exempt amount, and no trust requirement was identified. A bond would add cost and complexity without a tax advantage for you. No bond is recommended, so no GIA ongoing tax comparison is required."
+     ],
+     [
+      "Repaying debt before investing",
+      "You disclosed no liabilities. There is nothing to repay."
+     ],
+     [
+      "A higher or lower risk portfolio",
+      "A lower risk portfolio would reduce expected return over 22 years without your capacity for loss requiring it. A higher risk portfolio would exceed the Balanced level you agreed."
+     ],
+     [
+      "Funds selected outside the Quilter Investment Matrix",
+      "These would need separate research and would not be centrally monitored. No advantage to you was identified over an on-matrix managed portfolio at your risk level."
+     ],
+     [
+      "Venture capital trusts, EIS, SEIS and business relief investments",
+      "These are high risk, illiquid and can fall to nil. They do not fit a Balanced profile and were not appropriate for your circumstances."
+     ],
+     [
+      "Discretionary fund management, share dealing and investment trusts",
+      "Outside the scope of the advice I provide and unnecessary for a £98,000 mainstream portfolio."
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "Appendix: existing investment details"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Item",
+      "Detail"
+     ],
+     [
+      "Plan type",
+      "Workplace or personal pension [TO CONFIRM: pension provider and plan type]"
+     ],
+     [
+      "Value",
+      "£111,226"
+     ],
+     [
+      "Source and date",
+      "Provider valuation statement [TO CONFIRM: exact valuation date, and whether this is the provider's figure or your own estimate]"
+     ],
+     [
+      "Funds held",
+      "[TO CONFIRM: fund holdings within the existing pension]"
+     ],
+     [
+      "Annual charges",
+      "[TO CONFIRM: annual charges on the existing pension]"
+     ],
+     [
+      "Guarantees, penalties, loyalty bonuses, MVR",
+      "Not applicable: the plan is not being transferred or altered"
+     ],
+     [
+      "Action recommended",
+      "None. The plan is unchanged and outside the scope of this advice."
+     ]
+    ]
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Item",
+      "Detail"
+     ],
+     [
+      "Holding",
+      "Emergency cash reserve"
+     ],
+     [
+      "Value",
+      "£10,867, about five months of your £25,723 annual outgoings"
+     ],
+     [
+      "Source and date",
+      "Your fact find"
+     ],
+     [
+      "Action recommended",
+      "Retain in cash. Not invested."
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Other disclosed positions: gross annual income £47,500; annual outgoings about £25,723; no other investments; no liabilities; basic-rate taxpayer; current tax year ISA allowance unused; capital gains tax annual exempt amount unused."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "Appendix: risk warnings and cancellation notice"
+   },
+   {
+    "t": "p",
+    "text": "These warnings relate to what I have recommended in this report: a WealthSelect Managed Portfolio held in a Quilter ISA and General Investment Account."
+   },
+   {
+    "t": "p",
+    "text": "The value of investments can fall as well as rise and you may get back less than you invest. Past performance is not a reliable indicator of future results. Tax treatment depends on your individual circumstances and may change in future."
+   },
+   {
+    "t": "p",
+    "text": "What that means for you specifically:"
+   },
+   {
+    "t": "li",
+    "text": "You could get back less than the £98,000 invested, including at the point you want to retire. A Balanced portfolio will have negative years over a 22-year term."
+   },
+   {
+    "t": "li",
+    "text": "The £2,000 initial fee is not invested. Your investment starts at £98,000, not £100,000, and has to grow before you are back to £100,000."
+   },
+   {
+    "t": "li",
+    "text": "Total charges of 1.96% a year, and a reduction in yield of 2.0% a year, reduce your return. If growth is low, charges take a larger share of it."
+   },
+   {
+    "t": "li",
+    "text": "Inflation may reduce what your investment can buy, even if its value rises in pounds."
+   },
+   {
+    "t": "li",
+    "text": "The £78,000 in the GIA can create capital gains tax on disposals, including on rebalancing and on each yearly move into your ISA, and can produce taxable dividends and interest. You are responsible for your own tax return and for reporting these to HMRC. Consider taking advice from an accountant."
+   },
+   {
+    "t": "li",
+    "text": "ISA allowances, the capital gains tax exempt amount and tax rates can all change over 22 years. The tax advantages I have described are based on today's rules."
+   },
+   {
+    "t": "li",
+    "text": "This investment is not guaranteed to deliver your £28,500 a year target. It is one part of your retirement provision."
+   },
+   {
+    "t": "p",
+    "text": "Why your eventual value could be lower than illustrated. The illustration uses assumed growth rates, not promises. Your outcome could be lower if you withdraw money earlier than age 67, if investment growth is lower than assumed, if charges rise, or if tax rules change to your disadvantage. Valuations are not guaranteed and will fluctuate."
+   },
+   {
+    "t": "p",
+    "text": "No switch, transfer or replacement. Nothing is being transferred, so there is no period out of the market, no exit penalty, no loss of guarantees and no charges comparison against a ceding plan that could later change."
+   },
+   {
+    "t": "p",
+    "text": "Documentation. The final illustration, the key information documents for the portfolio and wrappers, and the ex-ante costs and charges disclosure have been issued with this report. Please read them alongside this report and keep them safe. Tell me if anything in them does not match what I have written here."
+   },
+   {
+    "t": "p",
+    "text": "Cancellation notice. You have the right to cancel. You will receive a cancellation notice when your plans are set up, and you have 30 days from receiving it to change your mind. If you cancel within that period, your money will be returned to you. Because this is an investment, the amount returned could be less than the amount you invested, if markets have fallen in the meantime."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "Declaration"
+   },
+   {
+    "t": "p",
+    "text": "This report sets out my recommendation for you based on the information you have given me and the documents on your file. If anything in it is wrong, incomplete or out of date, tell me before you proceed, because it may change my advice."
+   },
+   {
+    "t": "p",
+    "text": "Meetings and calls may be recorded for training and accuracy; consent is confirmed at the start of the meeting. A privacy notice was issued at onboarding, and explicit consent is captured where special-category data, such as health information, is discussed. This advice is provided under Terms of Business v3.0 (June 2026)."
+   },
+   {
+    "t": "p",
+    "text": "Adviser: Alex Planner, Financial Adviser, Ginkgo Financial Ltd"
+   },
+   {
+    "t": "p",
+    "text": "Date: [TO CONFIRM: report date]"
+   },
+   {
+    "t": "p",
+    "text": "Client acknowledgement:"
+   },
+   {
+    "t": "p",
+    "text": "I confirm I have received and read this report, the illustration and the accompanying documents, and that the information recorded about my circumstances and objectives is correct."
+   },
+   {
+    "t": "p",
+    "text": "Signed: ................................................ Avery Drafter"
+   },
+   {
+    "t": "p",
+    "text": "Date: ................................................"
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "p",
+    "text": "Ginkgo Financial Ltd (FCA register number 912144) is an Appointed Representative of Quilter Financial Services Limited (FCA register number 440703) of Senator House, 85 Queen Victoria Street, London, EC4V 4AB, which is authorised and regulated by the Financial Conduct Authority."
+   }
+  ],
+  "counts": {
+   "blocks": 186,
+   "words": 3992,
+   "tables": 10
+  }
+ },
+ {
+  "id": "progress-check-report",
+  "stage": "progress-check",
+  "title": "Progress Check Report",
+  "subtitle": "Twelve months reported back: performance, net worth, projection and allowances.",
+  "blocks": [
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "1. Cover"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Item",
+      "Detail"
+     ],
+     [
+      "Prepared for",
+      "Avery Drafter"
+     ],
+     [
+      "Statement period",
+      "The twelve months to the current valuation date ([TO CONFIRM: valuation date])"
+     ],
+     [
+      "Previous review",
+      "Annual advice meeting held twelve months before the valuation date"
+     ],
+     [
+      "Plan references",
+      "[TO CONFIRM: plan reference numbers for the ISA, Collective Investment Account and Collective Retirement Account]"
+     ],
+     [
+      "Adviser",
+      "Alex Planner, Financial Adviser, Ginkgo Financial Ltd"
+     ],
+     [
+      "Report date",
+      "[TO CONFIRM: report date]"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "This is your consolidated annual report. It covers your plans, your objectives and your charges. Please read it in full before we meet."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "2. Your portfolio at a glance"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Measure",
+      "Amount",
+      "Source"
+     ],
+     [
+      "Invested portfolio (ISA and Collective Investment Account)",
+      "£101,444",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Pension (Collective Retirement Account)",
+      "£121,599",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Total portfolio under advice",
+      "£223,043",
+      "Derived from the two figures above"
+     ],
+     [
+      "Income being drawn",
+      "£0",
+      "Quilter valuation, valuation date: no withdrawals in the period"
+     ],
+     [
+      "Regular contribution",
+      "£275 a month into the Collective Retirement Account",
+      "Quilter valuation, valuation date"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Overall status: needs discussion. You are progressing, and there are topics to discuss."
+   },
+   {
+    "t": "p",
+    "text": "Your investments grew over the year and nothing was taken out. The £100,000 you invested twelve months ago is now worth £101,444, and your pension has risen to £121,599 with £3,300 of your own contributions added along the way. The topic for our meeting is your retirement target: on the assumptions set out in section 7, your current savings support an income of about £10,600 a year in today's money from age 67, against your target of £28,500 a year. That gap is the main thing we need to work on, and 22 years is a useful amount of time in which to do it."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "3. Key financial objectives"
+   },
+   {
+    "t": "p",
+    "text": "These are the objectives recorded on your file and confirmed at last year's meeting. We will reconfirm them when we meet, and the agreed position will be set out in your Outcome report."
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Your objective",
+      "Time horizon",
+      "Status",
+      "Why"
+     ],
+     [
+      "Know whether you are on track to retire comfortably",
+      "22 years, to age 67",
+      "To revisit",
+      "Projected sustainable income of about £10,600 a year in today's money against a target of £28,500 a year (section 7)"
+     ],
+     [
+      "Retirement income of £28,500 a year in today's money from age 67",
+      "From age 67",
+      "To revisit",
+      "Shortfall of about £17,900 a year on current assets and contributions, before any State Pension"
+     ],
+     [
+      "Invest the £100,000 lump sum, ISA allowance first, balance in the Collective Investment Account",
+      "Completed at outset",
+      "On track",
+      "ISA £20,289 and Collective Investment Account £81,156 on the Quilter valuation at the valuation date"
+     ],
+     [
+      "Keep the emergency fund in cash and outside the invested amount",
+      "Ongoing",
+      "On track",
+      "£10,867 still held in cash, about five months of your £25,723 annual outgoings (fact find)"
+     ],
+     [
+      "Continue £275 a month into the Collective Retirement Account",
+      "Ongoing",
+      "On track",
+      "No contributions missed in the period (Quilter activity summary, valuation date)"
+     ],
+     [
+      "Review the target retirement income against the Retirement Living Standards (action carried forward from last year)",
+      "This review",
+      "Completed",
+      "Comparison set out in section 7, with the shortfall flagged"
+     ],
+     [
+      "Decide whether the monthly contribution should rise with your earnings (action carried forward from last year)",
+      "This review",
+      "Outstanding",
+      "Not yet decided. This is agenda item one at our meeting"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "4. Progress check"
+   },
+   {
+    "t": "h4",
+    "text": "The service you are paying for"
+   },
+   {
+    "t": "li",
+    "text": "Annual Progress Check meeting to review my plans, current circumstances and objectives to help ensure that my financial planning remains on track."
+   },
+   {
+    "t": "li",
+    "text": "A consolidated annual report of my plans and investments within the scope of advice, so that I can see my current position and progress towards my objectives."
+   },
+   {
+    "t": "li",
+    "text": "Confirmation in writing of whether my plans and investments continue to be suitable based on my stated objectives and risk appetite."
+   },
+   {
+    "t": "li",
+    "text": "Recommendation of any switches to my investment funds where this is suitable and beneficial to me."
+   },
+   {
+    "t": "li",
+    "text": "Assistance with the administration of my plans and support with any third-party provider interaction, as required."
+   },
+   {
+    "t": "li",
+    "text": "Telephone and e-mail access to my adviser (and wider support team), allowing me to quickly address any questions or concerns that I might have between regular scheduled Progress Check meetings."
+   },
+   {
+    "t": "h4",
+    "text": "How your plans are progressing"
+   },
+   {
+    "t": "p",
+    "text": "Your plans did what they were set up to do this year. The lump sum was invested as agreed, in a WealthSelect Managed Portfolio aligned to your Balanced profile, and it has not been switched. Your pension contributions continued without a break. Your emergency fund stayed intact at £10,867, so nothing had to be sold to meet a bill."
+   },
+   {
+    "t": "p",
+    "text": "The part that is not yet on track is the retirement income target itself. Contributions of £275 a month, alongside your existing savings, do not currently reach £28,500 a year from age 67 on the assumptions in section 7. Your current tax year ISA allowance of £20,000 is also unused, which is an opportunity rather than a problem."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "5. Investment performance since the last review"
+   },
+   {
+    "t": "p",
+    "text": "You made no withdrawals and no new lump sum subscriptions during the period. The ISA subscription of £20,000 was paid at outset, twelve months ago, so it forms part of the opening position rather than money added during the year."
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Account",
+      "Value at last review",
+      "Value at valuation date",
+      "Change £",
+      "Change %",
+      "Source"
+     ],
+     [
+      "Quilter Stocks and Shares ISA",
+      "£20,000 (derived from the agreed £20,000 subscription at outset)",
+      "£20,289",
+      "+£289",
+      "+1.4%",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Quilter Collective Investment Account",
+      "£80,000 (derived as the balance of the £100,000 invested)",
+      "£81,156",
+      "+£1,156",
+      "+1.4%",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Invested portfolio total",
+      "£100,000",
+      "£101,444",
+      "+£1,444",
+      "+1.4%",
+      "Quilter valuation, valuation date"
+     ]
+    ]
+   },
+   {
+    "t": "h4",
+    "text": "Your pension: why there is no percentage here"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Account",
+      "Value at last review",
+      "Money in",
+      "Money out",
+      "Value at valuation date",
+      "Source"
+     ],
+     [
+      "Quilter Collective Retirement Account",
+      "£111,226",
+      "£3,300 (derived: £275 a month for twelve months)",
+      "£0",
+      "£121,599",
+      "Quilter valuation, valuation date"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "The account rose by £10,373 over the year. That figure is not a performance figure, because £3,300 of it is money you paid in. Growth after allowing for your contributions was about £7,073, and that is a derived figure rather than a measured one. A percentage calculated on the opening value would overstate what your investments actually earned, because it would credit the portfolio with your own savings. The money in and out for every account is set out in the appendix."
+   },
+   {
+    "t": "p",
+    "text": "The specific WealthSelect style and risk number on your plans is [TO CONFIRM: WealthSelect portfolio range, style and risk number]. Until that is confirmed we are not quoting published portfolio or comparator performance figures, because quoting the wrong portfolio would tell you nothing useful. The value of investments can fall as well as rise. Past performance is not a reliable indicator of future performance."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "6. Net worth breakdown"
+   },
+   {
+    "t": "h4",
+    "text": "Cash"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Item",
+      "Amount",
+      "Source"
+     ],
+     [
+      "Emergency fund",
+      "£10,867",
+      "Fact find, client stated, this month"
+     ]
+    ]
+   },
+   {
+    "t": "h4",
+    "text": "Investments"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Item",
+      "Amount",
+      "Source"
+     ],
+     [
+      "Quilter Stocks and Shares ISA",
+      "£20,289",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Quilter Collective Investment Account",
+      "£81,156",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Off-platform investments",
+      "None disclosed",
+      "Fact find"
+     ]
+    ]
+   },
+   {
+    "t": "h4",
+    "text": "Pensions"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Item",
+      "Amount",
+      "Source"
+     ],
+     [
+      "Quilter Collective Retirement Account",
+      "£121,599",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Other pension arrangements",
+      "None disclosed",
+      "Fact find"
+     ],
+     [
+      "State Pension forecast",
+      "[TO CONFIRM: State Pension forecast and number of qualifying years]",
+      "Not on file"
+     ]
+    ]
+   },
+   {
+    "t": "h4",
+    "text": "Lifestyle assets"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Item",
+      "Amount",
+      "Source"
+     ],
+     [
+      "Main residence and other lifestyle assets",
+      "TBC, not disclosed",
+      "Fact find"
+     ]
+    ]
+   },
+   {
+    "t": "h4",
+    "text": "Liabilities"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Item",
+      "Amount",
+      "Source"
+     ],
+     [
+      "Mortgage, loans, credit",
+      "None disclosed",
+      "Fact find"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Indicative household net worth: £233,910. This is derived by adding the cash, investment and pension figures above. It excludes any property or other lifestyle assets, which are still to be confirmed."
+   },
+   {
+    "t": "p",
+    "text": "Your estate is well below the £2,000,000 threshold at which the residence nil rate band begins to taper, so that taper is not a live issue on the figures we hold. Please bring your State Pension forecast to the meeting. It sits alongside your own savings in the retirement figures and it changes the shortfall in section 7 materially."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "7. Sustainability projection and your retirement income"
+   },
+   {
+    "t": "p",
+    "text": "You are not drawing an income yet. This projection therefore answers the question you actually asked: what income will your savings support from age 67, and how does that compare with your £28,500 target?"
+   },
+   {
+    "t": "h4",
+    "text": "Assumptions, in full"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Assumption",
+      "Basis"
+     ],
+     [
+      "Investment return",
+      "5.00% a year before charges, assumed for a Balanced profile"
+     ],
+     [
+      "Total charges",
+      "1.96% a year, measured from the illustration and fee record on file: 1.00% adviser, 0.30% platform, 0.66% portfolio ongoing charge"
+     ],
+     [
+      "Inflation",
+      "2.50% a year, assumed"
+     ],
+     [
+      "Resulting net real return",
+      "0.47% a year, derived from the three figures above"
+     ],
+     [
+      "Accumulation horizon",
+      "22 years, from age 45 to age 67, per your fact find"
+     ],
+     [
+      "Contributions",
+      "£275 a month continuing, level in today's money"
+     ],
+     [
+      "Income horizon in retirement",
+      "Age 67 to age 100, 33 years, assumed"
+     ],
+     [
+      "Tax",
+      "Income tax on withdrawals is ignored"
+     ]
+    ]
+   },
+   {
+    "t": "h4",
+    "text": "Projected values at age 67, in today's money"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Plan",
+      "Projected value",
+      "Basis"
+     ],
+     [
+      "Collective Retirement Account",
+      "About £211,100",
+      "Derived from £121,599 at the valuation date plus £275 a month, at the assumptions above"
+     ],
+     [
+      "ISA and Collective Investment Account",
+      "About £112,500",
+      "Derived from £101,444 at the valuation date, at the assumptions above"
+     ],
+     [
+      "Total",
+      "About £323,600",
+      "Derived"
+     ]
+    ]
+   },
+   {
+    "t": "h4",
+    "text": "Maximum sustainable income"
+   },
+   {
+    "t": "p",
+    "text": "About £10,600 a year in today's money, from age 67 to age 100. That is the level of income your projected savings support on the assumptions above, before any State Pension."
+   },
+   {
+    "t": "p",
+    "text": "Against your target of £28,500 a year, that is a shortfall of about £17,900 a year. Your State Pension will reduce it, and we cannot say by how much until we have your forecast. These projections are illustrative only. They assume a constant rate of growth, which real markets do not deliver, and they ignore income tax on withdrawals."
+   },
+   {
+    "t": "h4",
+    "text": "How this compares with the Retirement Living Standards"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Standard, London, single person",
+      "Annual net expenditure"
+     ],
+     [
+      "Moderate",
+      "£34,000"
+     ],
+     [
+      "Comfortable",
+      "£47,200"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Source: Pensions UK Retirement Living Standards, research by the Centre for Research in Social Policy at Loughborough University, updated 3 June 2026, retirementlivingstandards.org.uk. We use the London figures as our standard reference."
+   },
+   {
+    "t": "p",
+    "text": "This is a flagged shortfall, not a neutral placement. Your target of £28,500 a year sits below the Moderate standard of £34,000. Your projected sustainable income of about £10,600 a year sits a long way below it."
+   },
+   {
+    "t": "p",
+    "text": "Three caveats matter when you read that comparison:"
+   },
+   {
+    "t": "li",
+    "text": "The standards are net expenditure, not gross income. Your target and the projection above are before income tax, so the real gap is wider than the pound difference shown."
+   },
+   {
+    "t": "li",
+    "text": "The standards exclude rent and mortgage payments and assume the home is owned outright. Your housing position in retirement is [TO CONFIRM: housing status and any mortgage or rent expected in retirement], and housing costs must be met before this comparison holds."
+   },
+   {
+    "t": "li",
+    "text": "The standards exclude social care costs and support for dependants. You have one child recorded on your file."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "8. Your risk profile"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Item",
+      "Position",
+      "Source"
+     ],
+     [
+      "Agreed attitude to risk",
+      "Balanced, which is Level 4 in Quilter terminology",
+      "ATR profiler report on file, re-confirmed by you this year"
+     ],
+     [
+      "Investment solution",
+      "WealthSelect Managed Portfolio aligned to your Balanced profile, unchanged since the last review",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Portfolio style and risk number",
+      "[TO CONFIRM: WealthSelect portfolio range, style and risk number]",
+      "Not stated on the valuation summary"
+     ],
+     [
+      "Accounts held at this profile",
+      "ISA, Collective Investment Account and Collective Retirement Account",
+      "Quilter valuation, valuation date"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "We have assumed no change to your attitude to risk since your last review, unless you tell us otherwise. We will confirm this with you at the meeting."
+   },
+   {
+    "t": "p",
+    "text": "Capacity for loss. In plain words, this is how much of a fall you could absorb without it changing how you live. Your recorded position is that the invested money is surplus to your £10,867 emergency fund and to your day-to-day spending, that you could ride out short-term falls without affecting your standard of living, and that a total loss would delay your retirement plans rather than derail them. Your income of £47,500 against outgoings of £25,723 supports that reading."
+   },
+   {
+    "t": "p",
+    "text": "Specialist investments. You hold none. There are no Enterprise Investment Scheme, Venture Capital Trust, Investment Trust or Business Property Relief holdings outside your core risk profile."
+   },
+   {
+    "t": "p",
+    "text": "Responsible and sustainable investing. We discussed this. You told us you have no specific responsible investment requirement and asked for the standard approach. Your portfolio reflects that. Say the word if your view has changed and we will look at the Responsible and Sustainable ranges."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "9. Key reminders"
+   },
+   {
+    "t": "h4",
+    "text": "What you pay"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Charge",
+      "Percent a year",
+      "Amount a year on your current value",
+      "Source"
+     ],
+     [
+      "Ongoing adviser fee, invested portfolio (£101,444)",
+      "1.00%",
+      "£1,014",
+      "Fee record and illustration on file, unchanged since last review"
+     ],
+     [
+      "Quilter platform charge, invested portfolio",
+      "0.30%",
+      "£304",
+      "As above"
+     ],
+     [
+      "Portfolio ongoing charge (OCF), invested portfolio",
+      "0.66%",
+      "£670",
+      "As above"
+     ],
+     [
+      "Total, invested portfolio",
+      "1.96%",
+      "£1,988",
+      "Derived"
+     ],
+     [
+      "Charges on the Collective Retirement Account (£121,599)",
+      "[TO CONFIRM: adviser, platform and portfolio charges applying to the Collective Retirement Account]",
+      "[TO CONFIRM: annual cost in pounds on the Collective Retirement Account]",
+      "Not confirmed in the valuation summary"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "The portfolio ongoing charge is the cost of the investments themselves. The platform charge is the cost of the Quilter platform that holds them. The adviser fee is what you pay us. All three come out of your plans, so the total is what matters."
+   },
+   {
+    "t": "p",
+    "text": "Charges actually deducted during the statement period: [TO CONFIRM: adviser, platform and portfolio charges actually deducted during the statement period, per plan]."
+   },
+   {
+    "t": "p",
+    "text": "Provider statements. Quilter sends you statements for each plan directly. This report brings them together in one place, but it does not replace them. Please keep them."
+   },
+   {
+    "t": "h4",
+    "text": "Your allowances this tax year"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Allowance",
+      "Limit",
+      "Used",
+      "Remaining",
+      "Notes"
+     ],
+     [
+      "ISA",
+      "£20,000",
+      "£0",
+      "£20,000",
+      "Fully unused. Your £20,000 subscription was made in the previous tax year"
+     ],
+     [
+      "Pension Annual Allowance",
+      "£60,000 standard",
+      "£3,300 of personal contributions paid in the year (derived from £275 a month)",
+      "Balance unused",
+      "[TO CONFIRM: whether basic rate tax relief is added at source to your £275 a month]"
+     ],
+     [
+      "Capital Gains Tax annual exempt amount",
+      "[TO CONFIRM: capital gains tax annual exempt amount for the current tax year]",
+      "£0",
+      "Full amount",
+      "Unused. Relevant to your Collective Investment Account, which is not tax sheltered"
+     ],
+     [
+      "Dividend allowance",
+      "[TO CONFIRM: dividend allowance for the current tax year]",
+      "[TO CONFIRM: dividend income received in the Collective Investment Account]",
+      "To confirm",
+      "Relevant to the Collective Investment Account only"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "10. Risk warnings"
+   },
+   {
+    "t": "p",
+    "text": "The value of investments can fall as well as rise and you may get back less than you invest. Past performance is not a reliable indicator of future results. Tax treatment depends on your individual circumstances and may change in future."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "11. Summary and next steps"
+   },
+   {
+    "t": "p",
+    "text": "This report is based on the information we obtained from you in the last 12 months. If anything in it is out of date, tell me and I will correct it."
+   },
+   {
+    "t": "p",
+    "text": "What to do now"
+   },
+   {
+    "t": "li",
+    "text": "Read this report in full, including the projection in section 7."
+   },
+   {
+    "t": "li",
+    "text": "Write down your questions before we meet. The figures in section 7 usually prompt some."
+   },
+   {
+    "t": "li",
+    "text": "Bring your State Pension forecast if you can get it, and tell me your housing plans for retirement."
+   },
+   {
+    "t": "li",
+    "text": "Read your Outcome report when it arrives. It will confirm what we agreed and any recommendations that follow."
+   },
+   {
+    "t": "p",
+    "text": "Your meeting. Your annual Progress Check meeting is now due and no date is yet fixed. I will contact you to arrange it, and we will hold it within the next three months. After the meeting I will send you your Outcome report within 10 working days."
+   },
+   {
+    "t": "p",
+    "text": "Outstanding items I need from you or from your providers"
+   },
+   {
+    "t": "li",
+    "text": "Your State Pension forecast."
+   },
+   {
+    "t": "li",
+    "text": "Your housing position in retirement, including any mortgage or rent."
+   },
+   {
+    "t": "li",
+    "text": "Whether your £275 a month should rise with your earnings."
+   },
+   {
+    "t": "li",
+    "text": "The exact WealthSelect portfolio style and risk number, and the charges applying to your Collective Retirement Account, which I am confirming with Quilter."
+   },
+   {
+    "t": "p",
+    "text": "Ongoing advice service declaration"
+   },
+   {
+    "t": "p",
+    "text": "This report recommends no action at this stage, so your signature is best practice rather than a requirement. It confirms you have received your annual report and understand the service you are paying for."
+   },
+   {
+    "t": "p",
+    "text": "I confirm I have received my consolidated annual report and that my ongoing advice service with Ginkgo Financial Ltd comprises the Core Services set out in section 4 of this report, for an ongoing adviser fee of 1.00% a year."
+   },
+   {
+    "t": "p",
+    "text": "Signed: ............................................ Date: ......................"
+   },
+   {
+    "t": "p",
+    "text": "Avery Drafter"
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "Appendix: portfolio summary, money in and money out"
+   },
+   {
+    "t": "h4",
+    "text": "Portfolio summary at the valuation date"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Account",
+      "Investment solution",
+      "Value",
+      "Source"
+     ],
+     [
+      "Quilter Stocks and Shares ISA",
+      "WealthSelect Managed Portfolio, Balanced (Level 4 in Quilter terminology)",
+      "£20,289",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Quilter Collective Investment Account",
+      "WealthSelect Managed Portfolio, Balanced (Level 4 in Quilter terminology)",
+      "£81,156",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Quilter Collective Retirement Account",
+      "WealthSelect Managed Portfolio, Balanced (Level 4 in Quilter terminology)",
+      "£121,599",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Total under advice",
+      "",
+      "£223,043",
+      "Derived"
+     ]
+    ]
+   },
+   {
+    "t": "h4",
+    "text": "Money in and money out over the statement period"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Account",
+      "Opening value",
+      "Money in",
+      "Money out",
+      "Switches",
+      "Closing value"
+     ],
+     [
+      "Quilter Stocks and Shares ISA",
+      "£20,000 (derived)",
+      "£0",
+      "£0",
+      "None",
+      "£20,289"
+     ],
+     [
+      "Quilter Collective Investment Account",
+      "£80,000 (derived)",
+      "£0",
+      "£0",
+      "None",
+      "£81,156"
+     ],
+     [
+      "Quilter Collective Retirement Account",
+      "£111,226",
+      "£3,300 (derived: £275 a month)",
+      "£0",
+      "None",
+      "£121,599"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Source: Quilter valuation and activity summary at the valuation date. The ISA and Collective Investment Account opening values are derived from the agreed split of the £100,000 invested at outset: £20,000 to the ISA and the £80,000 balance to the Collective Investment Account. No switches were made and no withdrawals were taken from any account during the period."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "p",
+    "text": "Ginkgo Financial Ltd. [TO CONFIRM: firm regulatory footer, registered office and FCA registration number]"
+   }
+  ],
+  "counts": {
+   "blocks": 112,
+   "words": 1799,
+   "tables": 18
+  }
+ },
+ {
+  "id": "progress-check-covering-email",
+  "stage": "progress-check",
+  "title": "Covering email",
+  "subtitle": "The report in six sentences, with the two items for the meeting named.",
+  "blocks": [
+   {
+    "t": "p",
+    "text": "Subject: Your Progress Check Report, ahead of this year's meeting"
+   },
+   {
+    "t": "p",
+    "text": "Dear Avery,"
+   },
+   {
+    "t": "p",
+    "text": "Your Progress Check Report for the past twelve months is attached."
+   },
+   {
+    "t": "p",
+    "text": "The short answer is that you are progressing well, with a few topics to discuss. Your invested portfolio stood at £101,444 and your Collective Retirement Account at £121,599 on the Quilter valuation dated [TO CONFIRM: valuation date]. Two items need our attention at the meeting: your £28,500 a year retirement income target, and this tax year's ISA allowance, which is still unused."
+   },
+   {
+    "t": "p",
+    "text": "Your annual meeting is now due. Could you send me two or three dates that suit you? I will confirm one within the next three months, and sooner if we can."
+   },
+   {
+    "t": "p",
+    "text": "Please read the report in full before we meet. Jot down any questions as you go, including anything that has changed for you or your child this year, and we will work through them together."
+   }
+  ],
+  "counts": {
+   "blocks": 6,
+   "words": 151,
+   "tables": 0
+  }
+ },
+ {
+  "id": "meeting-agenda",
+  "stage": "progress-check",
+  "title": "Meeting agenda",
+  "subtitle": "The client's own questions first, then the standing topics, timed to the hour.",
+  "blocks": [
+   {
+    "t": "p",
+    "text": "Prepared for: Avery Drafter"
+   },
+   {
+    "t": "p",
+    "text": "Adviser: Alex Planner, Financial Adviser, Ginkgo Financial Ltd"
+   },
+   {
+    "t": "p",
+    "text": "Date and time: [TO CONFIRM: meeting date and time]"
+   },
+   {
+    "t": "p",
+    "text": "Format: [TO CONFIRM: meeting format]"
+   },
+   {
+    "t": "p",
+    "text": "Length: 60 minutes"
+   },
+   {
+    "t": "p",
+    "text": "Figures quoted below come from the Quilter valuation prepared for this meeting, dated [TO CONFIRM: valuation date], and from your fact find. Please note down any questions before we meet, and add anything I have missed."
+   },
+   {
+    "t": "h3",
+    "text": "Your items first"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "#",
+      "Item",
+      "Why it is here",
+      "Time"
+     ],
+     [
+      "1",
+      "Are you on track to retire comfortably?",
+      "This is your main objective. Your pension stood at £121,599 and your invested portfolio at £101,444 on the Quilter valuation prepared for this meeting. Your horizon is 22 years, to age 67.",
+      "8 mins"
+     ],
+     [
+      "2",
+      "Your £28,500 a year target income, measured against the Retirement Living Standards",
+      "Agreed at last year's meeting and carried forward as an action in your previous outcome report. I will show where £28,500 a year sits against the published London figures for a single person.",
+      "7 mins"
+     ],
+     [
+      "3",
+      "Should your £275 a month rise with earnings?",
+      "The second action carried forward from last year's outcome report. You currently pay £275 a month into your Collective Retirement Account from net pay, with no employer contribution.",
+      "5 mins"
+     ]
+    ]
+   },
+   {
+    "t": "h3",
+    "text": "Standing topics"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "#",
+      "Item",
+      "Why it is here",
+      "Time"
+     ],
+     [
+      "4",
+      "Your objectives: reconfirm, and anything that has changed",
+      "4 mins",
+      ""
+     ],
+     [
+      "5",
+      "Your current situation: income, spending and cash",
+      "Gross income of £47,500 a year, outgoings of about £25,723 a year, and an emergency fund of £10,867, roughly five months of spending.",
+      "4 mins"
+     ],
+     [
+      "6",
+      "Your risk profile, capacity for loss and sustainable investing preference",
+      "You are profiled as Balanced and re-confirmed that this year. You previously asked for the standard approach rather than a specific responsible investment requirement.",
+      "4 mins"
+     ],
+     [
+      "7",
+      "Annual allowances: ISA, capital gains and pension",
+      "Your £20,000 ISA allowance for the current tax year is unused, and so is your capital gains exempt amount.",
+      "5 mins"
+     ],
+     [
+      "8",
+      "Pension shortfall check",
+      "You are 22 years from your target retirement age, so we test the gap between your projected pension income and your £28,500 a year target.",
+      "3 mins"
+     ],
+     [
+      "9",
+      "Protection cover and any gaps",
+      "You are self-employed with one child, and no protection cover is recorded on your file.",
+      "3 mins"
+     ],
+     [
+      "10",
+      "Your Will and powers of attorney",
+      "Nothing is recorded on your file for either.",
+      "3 mins"
+     ],
+     [
+      "11",
+      "Your inheritance tax position",
+      "You are single with one child, and part of your invested money came from a recent inheritance.",
+      "2 mins"
+     ],
+     [
+      "12",
+      "New money to invest, or income you need, in the next 12 months",
+      "2 mins",
+      ""
+     ],
+     [
+      "13",
+      "Whether your current arrangements still suit your objectives",
+      "Your WealthSelect Managed Portfolio, matched to your Balanced profile, is unchanged since last year, with no switches and no withdrawals.",
+      "2 mins"
+     ],
+     [
+      "14",
+      "What we have done for you this year, and reducing the hassle",
+      "2 mins",
+      ""
+     ],
+     [
+      "15",
+      "Fees and service level: adviser fee 1.00% a year, portfolio charge 0.66% a year, platform charge 0.30% a year",
+      "All three are unchanged since your last review.",
+      "2 mins"
+     ],
+     [
+      "16",
+      "Your final questions",
+      "4 mins",
+      ""
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Not on the agenda this year: drawdown sustainability. You are not drawing an income from your pension, so that test does not yet apply."
+   },
+   {
+    "t": "h3",
+    "text": "After the meeting"
+   },
+   {
+    "t": "li",
+    "text": "I will send you an Outcome report within 10 working days. It sets out what we discussed, what we agreed and what happens next."
+   },
+   {
+    "t": "li",
+    "text": "The report comes with an e-signature request, confirming your understanding and your ongoing advice service."
+   },
+   {
+    "t": "li",
+    "text": "We will ask you for feedback on the meeting through our client survey. Your answers shape how we run these meetings."
+   },
+   {
+    "t": "p",
+    "text": "Ginkgo Financial Ltd. [TO CONFIRM: firm regulatory footer]"
+   }
+  ],
+  "counts": {
+   "blocks": 16,
+   "words": 165,
+   "tables": 2
+  }
+ },
+ {
+  "id": "outcome-report",
+  "stage": "outcome",
+  "title": "Outcome Report",
+  "subtitle": "What was agreed, and the contribution question answered with figures.",
+  "blocks": [
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "1. About this report and your details"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Item",
+      "Detail"
+     ],
+     [
+      "Prepared for",
+      "Avery Drafter"
+     ],
+     [
+      "Meeting date",
+      "[TO CONFIRM: annual advice meeting date]"
+     ],
+     [
+      "Meeting format",
+      "[TO CONFIRM: meeting format]"
+     ],
+     [
+      "Adviser",
+      "Alex Planner, Financial Adviser, Ginkgo Financial Ltd"
+     ],
+     [
+      "Report date",
+      "[TO CONFIRM: report date]"
+     ],
+     [
+      "Valuation date used throughout",
+      "[TO CONFIRM: valuation date]"
+     ],
+     [
+      "Plan references",
+      "[TO CONFIRM: plan reference numbers for the ISA, Collective Investment Account and Collective Retirement Account]"
+     ],
+     [
+      "Client agreement",
+      "Terms of Business v3.0 (June 2026)"
+     ],
+     [
+      "Next annual meeting due",
+      "[TO CONFIRM: next annual advice meeting due date]"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "This report follows your annual Progress Check meeting. It sets out what we confirmed, what we agreed, and the answer to the question you asked me to model: whether your £275 a month needs to rise."
+   },
+   {
+    "t": "p",
+    "text": "It is based on the information you gave me in the last 12 months, the Quilter valuation prepared for the meeting, and your fact find. If anything here is out of date, tell me and I will correct it."
+   },
+   {
+    "t": "p",
+    "text": "Read it alongside your Progress Check Report. Where a figure in this report differs from that one, this report carries the later position and says so."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "2. What we agreed at your meeting"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "#",
+      "Agreed",
+      "Detail"
+     ],
+     [
+      "1",
+      "No change to your investment solution",
+      "Your WealthSelect Managed Portfolio aligned to your Balanced profile stays as it is. No switches."
+     ],
+     [
+      "2",
+      "No change to your risk profile",
+      "Balanced, which is Level 4 in Quilter terminology. You re-confirmed this in the meeting."
+     ],
+     [
+      "3",
+      "Use your ISA allowance again at the next subscription date",
+      "Your current tax year allowance of £20,000 is wholly unused."
+     ],
+     [
+      "4",
+      "Model your retirement income target and report back on your contribution",
+      "Set out in Section 8 of this report. This was the action you asked me to complete in writing rather than decide in the meeting."
+     ],
+     [
+      "5",
+      "No withdrawals planned in the next twelve months",
+      "Confirmed by you at the meeting."
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "You also confirmed that nothing material has changed: the same self-employment, the same household, no new dependants and no new liabilities. Your emergency fund is intact at £10,867 and untouched, as recorded in your fact find."
+   },
+   {
+    "t": "p",
+    "text": "You told me the last twelve months felt reassuring and that you were not tempted to move to cash when values moved. That matters more than it sounds. It is direct evidence that your recorded capacity for loss and your actual behaviour agree."
+   },
+   {
+    "t": "p",
+    "text": "Two of the agreed actions above need your signature before they proceed: the ISA subscription and any change to your monthly pension contribution. The declaration is in Section 12."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "3. Your objectives"
+   },
+   {
+    "t": "p",
+    "text": "These are the objectives we confirmed at the meeting. They are the same objectives that appeared in your Progress Check Report, now carrying the position agreed with you."
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Your objective",
+      "Time horizon",
+      "Status after the meeting"
+     ],
+     [
+      "Know whether you are on track to retire comfortably",
+      "22 years, to age 67",
+      "Answered, and the answer is no on current contributions. Projected sustainable income of about £10,600 a year in today's money against a target of £28,500 a year (Section 8)"
+     ],
+     [
+      "Retirement income of £28,500 a year in today's money from age 67",
+      "From age 67",
+      "Confirmed as still your target. Shortfall of about £17,900 a year on current assets and contributions, before any State Pension"
+     ],
+     [
+      "Invest the £100,000 lump sum, ISA allowance first, balance in the Collective Investment Account",
+      "Completed at outset",
+      "Complete. ISA £20,289 and Collective Investment Account £81,156 on the Quilter valuation at the valuation date"
+     ],
+     [
+      "Keep the emergency fund in cash and outside the invested amount",
+      "Ongoing",
+      "On track. £10,867 held in cash, about five months of your £25,723 annual outgoings (fact find)"
+     ],
+     [
+      "Continue £275 a month into the Collective Retirement Account",
+      "Ongoing",
+      "On track. No contributions missed in the period (Quilter activity summary, valuation date)"
+     ],
+     [
+      "Review the target retirement income against the Retirement Living Standards (carried forward from last year)",
+      "This review",
+      "Complete. Section 8"
+     ],
+     [
+      "Decide whether the monthly contribution should rise (carried forward from last year)",
+      "This review",
+      "Modelled in Section 8. Your decision is now outstanding, not the modelling"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Your £28,500 a year target is unchanged. You said it still feels about right. Section 8 tests whether it is realistic."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "4. Your current position"
+   },
+   {
+    "t": "p",
+    "text": "All values below are measured from the Quilter valuation prepared for the meeting, dated [TO CONFIRM: valuation date], except where marked as derived from your fact find."
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Item",
+      "Amount",
+      "Source"
+     ],
+     [
+      "Quilter Stocks and Shares ISA",
+      "£20,289",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Quilter Collective Investment Account",
+      "£81,156",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Invested portfolio total",
+      "£101,444",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Quilter Collective Retirement Account",
+      "£121,599",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Total under advice",
+      "£223,043",
+      "Derived from the figures above"
+     ],
+     [
+      "Emergency fund held in cash",
+      "£10,867",
+      "Fact find, client stated"
+     ],
+     [
+      "Other pensions, investments or liabilities",
+      "None disclosed",
+      "Fact find"
+     ],
+     [
+      "Property and other lifestyle assets",
+      "Not disclosed",
+      "Fact find"
+     ],
+     [
+      "Indicative net worth",
+      "£233,911",
+      "Derived from the figures above"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "One correction to your Progress Check Report. That report gave your indicative net worth as £233,910. The correct sum of the four figures above is £233,911. The £233,910 figure is withdrawn. The cause was rounding in that report, and it changes nothing in your plan: the difference is £1."
+   },
+   {
+    "t": "p",
+    "text": "Your income is £47,500 a year gross from self-employment, against recorded outgoings of about £25,723 a year (fact find). That leaves about £21,777 a year before tax and National Insurance. Your tax and National Insurance on self-employed profit are not recorded, so I have not netted that figure down. It matters in Section 8, where it sets the ceiling on what you can afford to contribute."
+   },
+   {
+    "t": "p",
+    "text": "Your estate sits well below the £2,000,000 threshold at which the residence nil rate band begins to taper, so that taper is not a live issue on the figures I hold."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "5. Investment performance since the last review"
+   },
+   {
+    "t": "p",
+    "text": "You made no withdrawals and no new lump sum subscriptions during the period. Your £20,000 ISA subscription was paid at outset, twelve months ago, so it forms part of the opening position rather than money added during the year."
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Account",
+      "Value at last review",
+      "Value at valuation date",
+      "Change £",
+      "Change %",
+      "Source"
+     ],
+     [
+      "Quilter Stocks and Shares ISA",
+      "£20,000 (derived from the agreed £20,000 subscription at outset)",
+      "£20,289",
+      "+£289",
+      "+1.4%",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Quilter Collective Investment Account",
+      "£80,000 (derived as the balance of the £100,000 invested)",
+      "£81,156",
+      "+£1,156",
+      "+1.4%",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Invested portfolio total",
+      "£100,000",
+      "£101,444",
+      "+£1,444",
+      "+1.4%",
+      "Quilter valuation, valuation date"
+     ]
+    ]
+   },
+   {
+    "t": "h4",
+    "text": "Your pension, and why there is no percentage beside it"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Account",
+      "Value at last review",
+      "Money in",
+      "Money out",
+      "Value at valuation date",
+      "Source"
+     ],
+     [
+      "Quilter Collective Retirement Account",
+      "£111,226",
+      "£3,300 (derived: £275 a month for twelve months)",
+      "£0",
+      "£121,599",
+      "Quilter valuation, valuation date"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Your pension rose by £10,373 over the year. That is not a performance figure. £3,300 of it is money you paid in yourself. Growth after allowing for your contributions was about £7,073, and that is derived rather than measured, because the timing of each monthly payment is not recorded. A percentage struck on the opening value would credit your investments with your own savings."
+   },
+   {
+    "t": "p",
+    "text": "The exact WealthSelect style and risk number on your plans is [TO CONFIRM: WealthSelect portfolio range, style and risk number]. Until Quilter confirm that, I am not quoting published portfolio or comparator performance figures beside your return. Quoting the wrong portfolio would tell you nothing useful."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "6. Your attitude to risk and capacity for loss"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Item",
+      "Position",
+      "Source"
+     ],
+     [
+      "Agreed attitude to risk",
+      "Balanced, which is Level 4 in Quilter terminology",
+      "Attitude to risk profiler report on file, re-confirmed by you at the meeting"
+     ],
+     [
+      "Level invested at",
+      "Balanced, Level 4. Your portfolio matches your profile",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Change since last review",
+      "None",
+      "Meeting record"
+     ],
+     [
+      "Next full profiling exercise due",
+      "Within 36 months of your profiler report, which was completed at outset twelve months ago",
+      "Servicing minimum standards"
+     ],
+     [
+      "Responsible and sustainable investing",
+      "No specific requirement. Standard approach requested",
+      "Fact find, re-confirmed at the meeting"
+     ],
+     [
+      "Specialist investments",
+      "None held. No Enterprise Investment Scheme, Venture Capital Trust, Investment Trust or Business Property Relief holdings",
+      "Fact find"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "You are not drawing an income from your pension, so the annual re-profiling rule that applies to drawdown clients does not apply to you."
+   },
+   {
+    "t": "p",
+    "text": "Asked directly at the meeting, you said the Balanced description still sounds right and you would not want to take more risk. The level you are invested at matches the level you were profiled at, so no compliance rationale for a difference is needed."
+   },
+   {
+    "t": "p",
+    "text": "Capacity for loss. This is how large a fall you could absorb without it changing how you live. Your position is unchanged: the invested money is surplus to your £10,867 emergency fund and to your day-to-day spending, you could ride out short-term falls without affecting your standard of living, and a total loss would delay your retirement rather than derail it. Your recorded income of £47,500 against outgoings of £25,723 supports that. So does your behaviour this year: values moved and you did not sell."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "7. Your investment funds and their suitability"
+   },
+   {
+    "t": "p",
+    "text": "Your money is held in a WealthSelect Managed Portfolio aligned to your Balanced profile, across all three plans. It has not been switched since it was invested twelve months ago. No dealing costs were incurred and no capital gains were crystallised."
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Account",
+      "Investment solution",
+      "Value",
+      "Source"
+     ],
+     [
+      "Quilter Stocks and Shares ISA",
+      "WealthSelect Managed Portfolio, Balanced (Level 4 in Quilter terminology)",
+      "£20,289",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Quilter Collective Investment Account",
+      "WealthSelect Managed Portfolio, Balanced (Level 4 in Quilter terminology)",
+      "£81,156",
+      "Quilter valuation, valuation date"
+     ],
+     [
+      "Quilter Collective Retirement Account",
+      "WealthSelect Managed Portfolio, Balanced (Level 4 in Quilter terminology)",
+      "£121,599",
+      "Quilter valuation, valuation date"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "How these funds meet your risk profile: the WealthSelect Managed range is built to sit within defined volatility limits at each risk level, and the level 4 portfolio is the one that corresponds to a Balanced profile in Quilter terminology. That is the profile you were assessed at and re-confirmed at this meeting, so the portfolio and the profile are matched. It is a multi-asset solution rather than a single fund, which spreads your money across asset classes and managers. That suits your stated experience: a workplace pension and a previous stocks and shares ISA, and no experience of complex or unregulated investments."
+   },
+   {
+    "t": "p",
+    "text": "I have reassessed both your objectives and your investment funds and I can confirm that the current investment strategy meets your objectives so there is no reason to change any of my previous recommendations. Your current investment funds are still aligned to the risk profile for these objectives."
+   },
+   {
+    "t": "p",
+    "text": "The exact portfolio style and risk number recorded by Quilter is [TO CONFIRM: WealthSelect portfolio range, style and risk number]. I am confirming this with Quilter and will write to you if it shows anything other than the Balanced, level 4 position above."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "8. Your retirement income, and the answer on your contribution"
+   },
+   {
+    "t": "p",
+    "text": "You asked me to model whether your £275 a month needs to rise. This section is that answer. Every scenario below is reported on the same basis: your fund is projected to age 67, then paid out as income from age 67 to age 100. The end date is fixed and the income flexes."
+   },
+   {
+    "t": "h4",
+    "text": "Assumptions"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Assumption",
+      "Value",
+      "Basis"
+     ],
+     [
+      "Investment return",
+      "5.00% a year before charges",
+      "Assumed for a Balanced profile"
+     ],
+     [
+      "Total charges",
+      "1.96% a year",
+      "Measured, from the illustration and fee record on file"
+     ],
+     [
+      "Inflation",
+      "2.50% a year",
+      "Assumed"
+     ],
+     [
+      "Net real return after charges",
+      "0.47% a year",
+      "Derived from the three figures above"
+     ],
+     [
+      "Accumulation term",
+      "22 years, age 45 to 67",
+      "Fact find"
+     ],
+     [
+      "Income term",
+      "Age 67 to age 100, 33 years",
+      "Assumed"
+     ],
+     [
+      "Contributions",
+      "£275 a month, level in today's money",
+      "Quilter activity summary, valuation date"
+     ],
+     [
+      "Tax",
+      "Income tax on withdrawals is ignored",
+      "Assumption"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Your £275 a month is paid from net pay. Whether basic rate tax relief is added at source is [TO CONFIRM: whether basic rate tax relief is added at source to your £275 a month]. The projections below use the £275 you actually pay. If relief is added, every figure improves and I will re-issue the numbers."
+   },
+   {
+    "t": "h4",
+    "text": "What different contribution levels produce"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Monthly contribution",
+      "Projected total at age 67, today's money",
+      "Sustainable income, age 67 to 100",
+      "Basis"
+     ],
+     [
+      "£275 (current)",
+      "About £323,600",
+      "About £10,600 a year",
+      "Derived from £121,599 pension and £101,444 invested at the valuation date"
+     ],
+     [
+      "£500",
+      "About £386,100",
+      "About £12,700 a year",
+      "Derived on the same assumptions"
+     ],
+     [
+      "£1,000",
+      "About £524,800",
+      "About £17,200 a year",
+      "Derived on the same assumptions"
+     ],
+     [
+      "£2,240",
+      "About £869,000",
+      "About £28,500 a year",
+      "Derived on the same assumptions"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "These projections are illustrative. They assume a constant rate of growth, which real markets do not deliver, and they ignore income tax on withdrawals. They exclude your State Pension."
+   },
+   {
+    "t": "h4",
+    "text": "The answer"
+   },
+   {
+    "t": "p",
+    "text": "Reaching £28,500 a year from your own savings alone needs about £2,240 a month, an increase of about £1,965 on what you pay now. That is about £26,880 a year, against a recorded surplus of about £21,777 a year before tax and National Insurance. It is not affordable, so I am not recommending it."
+   },
+   {
+    "t": "p",
+    "text": "What is affordable is a phased increase. Every extra £225 a month adds roughly £2,050 a year of retirement income on these assumptions. Your relievable earnings of £47,500 a year leave a very large amount of unused pension Annual Allowance, so the allowance is not the constraint. Your cash flow is."
+   },
+   {
+    "t": "p",
+    "text": "Two numbers would change this picture materially, and I do not yet hold either: your State Pension forecast, and your housing position at retirement. A full new State Pension would close a substantial part of the gap on its own. Please request your forecast and the record of your qualifying years from GOV.UK. That matters more than usual for a self-employed client."
+   },
+   {
+    "t": "h4",
+    "text": "Your target measured against the Retirement Living Standards"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Standard, London, single person",
+      "Annual net expenditure"
+     ],
+     [
+      "Moderate",
+      "£34,000"
+     ],
+     [
+      "Comfortable",
+      "£47,200"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Source: Pensions UK Retirement Living Standards, research by the Centre for Research in Social Policy at Loughborough University, updated 3 June 2026, retirementlivingstandards.org.uk. We use the London figures as our standard reference."
+   },
+   {
+    "t": "p",
+    "text": "This is a flagged shortfall, not a neutral placement. Your projected income of about £10,600 a year sits about £23,400 a year below the Moderate standard. Your own target of £28,500 a year is itself about £5,500 a year below Moderate. So the target needs revisiting alongside the funding."
+   },
+   {
+    "t": "p",
+    "text": "Three caveats apply to that comparison. The standards are net expenditure, not gross income, so the real gap is wider than the pound difference shown. They exclude rent and mortgage and assume the home is owned outright, and your housing position in retirement is [TO CONFIRM: housing status and any mortgage or rent expected in retirement]. They exclude social care costs and support for dependants, and you have one child recorded on your file."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "9. Your annual allowances"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Allowance",
+      "Limit",
+      "Used this tax year",
+      "Remaining",
+      "Notes"
+     ],
+     [
+      "ISA",
+      "£20,000",
+      "£0",
+      "£20,000",
+      "Wholly unused. Your £20,000 subscription was made in the previous tax year. Agreed action 3 uses this allowance at the next subscription date"
+     ],
+     [
+      "Pension Annual Allowance",
+      "£60,000 standard",
+      "£3,300 personally paid (derived: £275 a month)",
+      "About £56,700",
+      "No taper or Money Purchase Annual Allowance is evidenced on your file. Tax relievable contributions are also capped by your relevant UK earnings of £47,500"
+     ],
+     [
+      "Capital Gains Tax annual exempt amount",
+      "[TO CONFIRM: capital gains tax annual exempt amount for the current tax year]",
+      "£0",
+      "Full amount",
+      "Unused. Relevant to your Collective Investment Account, which is not tax sheltered"
+     ],
+     [
+      "Dividend allowance",
+      "[TO CONFIRM: dividend allowance for the current tax year]",
+      "[TO CONFIRM: dividend income received in the Collective Investment Account]",
+      "To confirm",
+      "Relevant to the Collective Investment Account only"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "A note on agreed action 3. You have no new money earmarked for the ISA, so using the allowance would mean moving money from your Collective Investment Account into your ISA. That is a sale and a repurchase, and it can create a capital gain. Before anything moves I will calculate the gain on the units to be sold and check it against your unused annual exempt amount. I will write to you with that calculation. Nothing will be sold until you have seen it and agreed."
+   },
+   {
+    "t": "p",
+    "text": "Using the ISA allowance this way does not change what you are invested in. It changes only the tax treatment of the money."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "10. Continued suitability"
+   },
+   {
+    "t": "p",
+    "text": "Your circumstances are unchanged since last year's meeting. You confirmed the same self-employment, the same household, no new dependants and no new liabilities. Your objectives are the same: to retire at 67 on £28,500 a year in today's money, with your £10,867 emergency fund kept in cash and outside the invested amount. Your Balanced profile is unchanged and your capacity for loss is unchanged."
+   },
+   {
+    "t": "p",
+    "text": "Last year I recommended investing £100,000 through a WealthSelect Managed Portfolio matched to your Balanced profile, using the ISA allowance first and the Collective Investment Account for the balance, keeping the emergency fund in cash and continuing £275 a month to the pension. All four are in place and none has been disturbed. Nothing in your circumstances or in the portfolio's behaviour this year gives a reason to change any of them."
+   },
+   {
+    "t": "p",
+    "text": "I am happy to confirm that your plans continue to be suitable for your needs."
+   },
+   {
+    "t": "p",
+    "text": "Three things on your file are not yet recorded and I am flagging them rather than leaving them silent:"
+   },
+   {
+    "t": "li",
+    "text": "Will. [TO CONFIRM: Will status and date]. Nothing is recorded on your file."
+   },
+   {
+    "t": "li",
+    "text": "Lasting powers of attorney. [TO CONFIRM: lasting power of attorney status, property and financial affairs, and health and welfare]. Neither is recorded on your file. You are a single parent with an estate of about £233,911, so both matter."
+   },
+   {
+    "t": "li",
+    "text": "Protection cover. [TO CONFIRM: existing life cover and income protection]. No cover is recorded. You are self-employed with one child and no employer sick pay, so your income has nothing behind it if you cannot work."
+   },
+   {
+    "t": "p",
+    "text": "None of these changes the suitability of your investments. All three are worth a short separate conversation, and I will contact you to arrange one."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "11. Charges and the service you receive"
+   },
+   {
+    "t": "p",
+    "text": "These charges are unchanged since your last review. They are measured from the illustration and fee record on file."
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "Charge",
+      "Percent a year",
+      "Amount a year on your current value",
+      "Source"
+     ],
+     [
+      "Ongoing adviser fee, invested portfolio (£101,444)",
+      "1.00%",
+      "£1,014",
+      "Fee record and illustration on file, unchanged since last review"
+     ],
+     [
+      "Quilter platform charge, invested portfolio",
+      "0.30%",
+      "£304",
+      "As above"
+     ],
+     [
+      "Portfolio ongoing charge, invested portfolio",
+      "0.66%",
+      "£670",
+      "As above"
+     ],
+     [
+      "Total, invested portfolio",
+      "1.96%",
+      "£1,988",
+      "Derived"
+     ],
+     [
+      "Charges on the Collective Retirement Account (£121,599)",
+      "[TO CONFIRM: adviser, platform and portfolio charges applying to the Collective Retirement Account]",
+      "[TO CONFIRM: annual cost in pounds on the Collective Retirement Account]",
+      "Not confirmed in the valuation summary"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "The portfolio ongoing charge is the cost of the investments themselves. The platform charge is the cost of the Quilter platform that holds them. The adviser fee is what you pay Ginkgo Financial Ltd. All three are taken from your plans, so the total is the number that matters."
+   },
+   {
+    "t": "p",
+    "text": "Charges actually deducted during the statement period: [TO CONFIRM: adviser, platform and portfolio charges actually deducted during the statement period, per plan]."
+   },
+   {
+    "t": "p",
+    "text": "What your ongoing adviser fee buys:"
+   },
+   {
+    "t": "li",
+    "text": "Annual Progress Check meeting to review my plans, current circumstances and objectives to help ensure that my financial planning remains on track."
+   },
+   {
+    "t": "li",
+    "text": "A consolidated annual report of my plans and investments within the scope of advice, so that I can see my current position and progress towards my objectives."
+   },
+   {
+    "t": "li",
+    "text": "Confirmation in writing of whether my plans and investments continue to be suitable based on my stated objectives and risk appetite."
+   },
+   {
+    "t": "li",
+    "text": "Recommendation of any switches to my investment funds where this is suitable and beneficial to me."
+   },
+   {
+    "t": "li",
+    "text": "Assistance with the administration of my plans and support with any third-party provider interaction, as required."
+   },
+   {
+    "t": "li",
+    "text": "Telephone and e-mail access to my adviser (and wider support team), allowing me to quickly address any questions or concerns that I might have between regular scheduled Progress Check meetings."
+   },
+   {
+    "t": "p",
+    "text": "Your service tier is [TO CONFIRM: service tier name] under Terms of Business v3.0 (June 2026). Quilter sends you statements for each plan directly. This report brings them together, but it does not replace them."
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "h3",
+    "text": "12. Risk warnings, what I need from you, and what happens next"
+   },
+   {
+    "t": "h4",
+    "text": "Risk warnings"
+   },
+   {
+    "t": "p",
+    "text": "The value of investments can fall as well as rise and you may get back less than you invest. Past performance is not a reliable indicator of future results. Tax treatment depends on your individual circumstances and may change in future."
+   },
+   {
+    "t": "h4",
+    "text": "What I need from you"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "#",
+      "Item",
+      "Why it matters"
+     ],
+     [
+      "1",
+      "Your State Pension forecast and qualifying years record, from GOV.UK",
+      "The single largest missing number in Section 8"
+     ],
+     [
+      "2",
+      "Your housing position at retirement: owned outright, mortgaged or renting",
+      "The Retirement Living Standards figures exclude housing costs"
+     ],
+     [
+      "3",
+      "Your date of birth",
+      "Confirms your State Pension age and whether 67 is the right target date"
+     ],
+     [
+      "4",
+      "Your decision on the monthly contribution, using the scenarios in Section 8",
+      "Your call. I am not recommending the £2,240 a month level, because it is not affordable"
+     ],
+     [
+      "5",
+      "Your Will, lasting power of attorney and protection position",
+      "Section 10"
+     ]
+    ]
+   },
+   {
+    "t": "h4",
+    "text": "What I am doing"
+   },
+   {
+    "t": "table",
+    "rows": [
+     [
+      "#",
+      "Action",
+      "When"
+     ],
+     [
+      "1",
+      "Confirming your exact WealthSelect portfolio style and risk number with Quilter",
+      "Within 10 working days"
+     ],
+     [
+      "2",
+      "Confirming the charges applying to your Collective Retirement Account",
+      "Within 10 working days"
+     ],
+     [
+      "3",
+      "Confirming whether basic rate tax relief is added at source to your £275 a month, and re-issuing the Section 8 figures if it is",
+      "On confirmation"
+     ],
+     [
+      "4",
+      "Calculating the capital gain on any units to be moved into your ISA, before anything is sold",
+      "Before the next subscription date"
+     ],
+     [
+      "5",
+      "Contacting you to arrange a separate conversation on protection, Will and powers of attorney",
+      "Within four weeks"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "text": "Your next annual Progress Check meeting is due on [TO CONFIRM: next annual advice meeting due date]. I will contact you to arrange it. Between now and then, call or email me whenever you need to. That access is part of what you pay for."
+   },
+   {
+    "t": "p",
+    "text": "We will also ask you for feedback through our client survey. Your answers shape how we run these meetings."
+   },
+   {
+    "t": "h4",
+    "text": "Ongoing advice service declaration"
+   },
+   {
+    "t": "p",
+    "text": "Your investments are unchanged, but two agreed actions in this report involve action on your plans: using your ISA allowance at the next subscription date, and any change to your monthly pension contribution. Please sign and return this declaration before either proceeds."
+   },
+   {
+    "t": "p",
+    "text": "I confirm I have received and read my Outcome report. I confirm that my ongoing advice service with Ginkgo Financial Ltd comprises the Core Services set out in Section 11 of this report, for an ongoing adviser fee of 1.00% a year. I understand the charges set out in Section 11 and the risk warnings set out above."
+   },
+   {
+    "t": "p",
+    "text": "Signed: ............................................ Date: ......................"
+   },
+   {
+    "t": "p",
+    "text": "Avery Drafter"
+   },
+   {
+    "t": "p",
+    "text": "---"
+   },
+   {
+    "t": "p",
+    "text": "Ginkgo Financial Ltd. [TO CONFIRM: firm regulatory footer, registered office and FCA registration number]"
+   }
+  ],
+  "counts": {
+   "blocks": 109,
+   "words": 2445,
+   "tables": 15
+  }
+ },
+ {
+  "id": "outcome-covering-email",
+  "stage": "outcome",
+  "title": "Covering email",
+  "subtitle": "The outcome in plain language, with the charges in pounds as well as percentages.",
+  "blocks": [
+   {
+    "t": "p",
+    "text": "Subject: Your Outcome report from this year's Progress Check meeting"
+   },
+   {
+    "t": "p",
+    "text": "Dear Avery,"
+   },
+   {
+    "t": "p",
+    "text": "Thank you for your time at this year's Progress Check meeting. Your Outcome report is attached. It confirms what we agreed: no change to your investment solution, no change to your Balanced risk profile, and no withdrawals planned in the next twelve months. You also asked whether your £275 a month should rise. I said I would model it rather than answer in the room, and the report sets out those figures. On the assumptions in it, your savings currently support an income of about £10,600 a year in today's money from age 67, against your target of £28,500 a year. Closing that gap is the work for the year ahead, and 22 years is a useful amount of time in which to do it. Please read the report in full, then sign it electronically when the request reaches you."
+   },
+   {
+    "t": "p",
+    "text": "What you pay, and what it covers"
+   },
+   {
+    "t": "p",
+    "text": "Your charges are unchanged since last year. They come from the fee record and illustration on file, and the pound amounts are calculated on your invested portfolio of £101,444 on the Quilter valuation dated [TO CONFIRM: valuation date]."
+   },
+   {
+    "t": "li",
+    "text": "Ongoing adviser fee: 1.00% a year, which is £1,014 a year."
+   },
+   {
+    "t": "li",
+    "text": "Quilter platform charge: 0.30% a year, which is £304 a year."
+   },
+   {
+    "t": "li",
+    "text": "Portfolio ongoing charge on the investments themselves: 0.66% a year, which is £670 a year."
+   },
+   {
+    "t": "li",
+    "text": "Total: 1.96% a year, which is £1,988 a year on your invested portfolio."
+   },
+   {
+    "t": "li",
+    "text": "Charges applying to your Collective Retirement Account of £121,599 on the same valuation: [TO CONFIRM: adviser, platform and portfolio charges applying to the Collective Retirement Account]."
+   },
+   {
+    "t": "li",
+    "text": "Your plans sit together on one platform, and the platform charge is tiered by the total held: [TO CONFIRM: tiered platform charge and any saving against the standard rate on total platform assets of £223,043]."
+   },
+   {
+    "t": "p",
+    "text": "What your fee delivered this year"
+   },
+   {
+    "t": "li",
+    "text": "Your £100,000 was invested in the agreed wrapper order: the full £20,000 ISA allowance first, then £80,000 into the Collective Investment Account, so the tax-free wrapper was filled before the taxable one."
+   },
+   {
+    "t": "li",
+    "text": "Your WealthSelect Managed Portfolio was held throughout the period with no switches, so you paid no dealing costs and crystallised no capital gains."
+   },
+   {
+    "t": "li",
+    "text": "Your £275 a month into the Collective Retirement Account ran without a missed payment, and your emergency fund of £10,867 stayed intact, so nothing had to be sold to meet a bill."
+   },
+   {
+    "t": "li",
+    "text": "Continuous monitoring: I watch your portfolio, your risk profile and your charges between meetings, not only at review time."
+   },
+   {
+    "t": "li",
+    "text": "Proactive planning: your £20,000 ISA allowance for the current tax year is unused, and I will contact you at the next subscription date so it is not lost."
+   },
+   {
+    "t": "p",
+    "text": "What happens next"
+   },
+   {
+    "t": "li",
+    "text": "Read the Outcome report in full, including the retirement income projection and the Retirement Living Standards comparison, which places your target of £28,500 a year below the Moderate standard of £34,000 a year for a single person in London."
+   },
+   {
+    "t": "li",
+    "text": "An e-signature request follows this email. It confirms your understanding of the report and your ongoing advice service. Nothing needs signing at the meeting itself."
+   },
+   {
+    "t": "li",
+    "text": "Please send me your State Pension forecast and tell me your housing plans for retirement. Both change the shortfall figure materially."
+   },
+   {
+    "t": "li",
+    "text": "Your ongoing service level is [TO CONFIRM: service tier name], set out in our Terms of Business v3.0 (June 2026): [TO CONFIRM: insert live Terms of Business and ongoing advice service link]."
+   },
+   {
+    "t": "li",
+    "text": "Your next annual Progress Check meeting is due [TO CONFIRM: next annual advice due date]. I will be in touch to arrange it."
+   },
+   {
+    "t": "li",
+    "text": "Any questions before then, call or email me: [TO CONFIRM: adviser telephone number and email address]."
+   },
+   {
+    "t": "p",
+    "text": "Alex Planner"
+   },
+   {
+    "t": "p",
+    "text": "Financial Adviser, Ginkgo Financial Ltd"
+   }
+  ],
+  "counts": {
+   "blocks": 26,
+   "words": 614,
+   "tables": 0
+  }
+ }
+]

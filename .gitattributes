@@ -2,3 +2,14 @@
 CNAME text eol=lf
 *.png binary
 *.ico binary
+
+# `text=auto` above detects binaries by content, but an Office file that happens to
+# look textual must never have its line endings rewritten: it is a zip container and
+# any byte change corrupts it. No such file is committed today - the specimen
+# documents are served as extracted text, not as files - so this is a guard for
+# whoever adds the first one.
+*.docx binary
+*.xlsx binary
+*.zip binary
+*.webp binary
+*.pdf binary

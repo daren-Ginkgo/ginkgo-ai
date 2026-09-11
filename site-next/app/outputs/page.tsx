@@ -1,59 +1,37 @@
 import type { Metadata } from "next";
 import { Calculator, Check, FileCheck2, FileText, Mail, ShieldCheck } from "lucide-react";
 import { ArrowButton, FinalCta, PageHero, SiteFooter, SiteHeader } from "@/components/marketing";
+import { JourneySpecimen } from "@/components/journey-specimen";
 import { WorkflowShowcase } from "@/components/workflow-showcase";
 
 export const metadata: Metadata = {
   title: "Outputs",
-  description: "Specimen outputs from The Advice Engine: branded draft documents, adviser QA sheets and calculation workings. All specimens are fictitious and labelled as such.",
+  description: "Specimen outputs from The Advice Engine: read a complete fictitious client file across four stages, on screen and in full, alongside three workflow demonstrations. All specimens are built on fictitious client data and labelled as such.",
 };
 
 export default function OutputsPage() {
   return (
     <main id="main-content">
       <SiteHeader />
-      <PageHero eyebrow="Outputs and workflow demonstrations" title="Judge the work, not the promise." copy="See how transcripts, client documents and household data become branded Word drafts, adviser QA sheets, cashflow reports and calculation workings. The engine covers every advice area, initial and ongoing, with the single exception of defined benefit transfer advice." primary={{ href: "#workflow-demos", label: "See the workflows" }} />
-      <section className="section specimen-pack-slot" id="specimen-pack">
-        <div className="shell start-card">
-          <div>
-            <span className="kicker light">Built on fictitious client data</span>
-            <h2>Five specimens you can open now.</h2>
-            <p>Every one is real engine output built on fictitious client data: invented people, invented holdings, invented circumstances, with no real client involved. Each arrives in a firm&apos;s own branding as a draft carrying the review markers an adviser signs off against.</p>
+      <PageHero eyebrow="Outputs and workflow demonstrations" title="Judge the work, not the promise." copy="See how transcripts, client documents and household data become branded Word drafts, adviser QA sheets, cashflow reports and calculation workings. The engine covers every advice area, initial and ongoing, with the single exception of defined benefit transfer advice." primary={{ href: "#full-journey", label: "Read a complete client file" }} secondary={{ href: "#workflow-demos", label: "See the workflows" }} />
+      {/* The specimens sit at the top of this page, where the download list used to
+          be (the 8 September decision to lead with the work, not the promise). What
+          changed on 12 September is the form: they are READ ON SCREEN and there is
+          no file to take away. A .docx is a reusable template and a rendered page is
+          not, and a firm's report structure should not leave theadviceengine.ai as
+          an editable file. The three internal documents from the same run - the
+          adviser quality-check, the pre-meeting briefing and the fact find update -
+          are not published in any form; what the quality-check FOUND is quoted
+          instead. See the note at the top of components/journey-specimen.tsx before
+          changing any of this, and do not turn it back into a download. */}
+      <span id="specimen-pack" aria-hidden="true" />
+      <section className="section full-journey-section" id="full-journey">
+        <div className="shell">
+          <div className="section-intro split-intro">
+            <div><span className="kicker light">Built on fictitious client data</span><h2>One client.<br />Four stages.<br />A full year of the file.</h2></div>
+            <p>Real engine output on invented people, invented holdings and invented circumstances, with no real client involved. One client&apos;s file across a full year: four pipelines run back to back in a single sitting, then published unedited. Read them in order and the year reads as a year, because the outcome report answers the progress check and the progress check is measured against the report that opened the case.</p>
           </div>
-          {/* The adviser QA sheet and the compliance check were removed on
-              12 September 2026 and must not be re-added as files. Both reproduced
-              twenty-six Quilter investment-advice requirements verbatim, each
-              labelled "(Quilter investment-advice requirements (sourced))", plus
-              WealthSelect charge figures. Publishing a firm's own draft is one
-              thing; republishing a provider's requirement set as a downloadable
-              document is another. See /outputs#full-journey for how quality-check
-              behaviour is shown instead: its findings are quoted, never the
-              checklist it ran. Daren's call. */}
-          <div className="specimen-downloads">
-            <a href="/specimens/specimen-suitability-report-draft-investment.docx">
-              <strong>Suitability report (draft)</strong>
-              <span>A new ISA and collective investment account for a fictitious client. Word, 75 KB</span>
-            </a>
-            <a href="/specimens/specimen-draft-client-email-alex-and-sam.docx">
-              <strong>Draft client email</strong>
-              <span>The covering note for a lifetime cashflow plan, with no figure the model did not compute. Word, 50 KB</span>
-            </a>
-            <a href="/specimens/specimen-meeting-note-annual-review.docx">
-              <strong>Meeting note</strong>
-              <span>An annual review meeting written up from the recording: summary, action points, advice areas and fact find updates. Word, 74 KB</span>
-            </a>
-            <a href="/specimens/specimen-bond-encashment-workings.pdf">
-              <strong>Bond encashment workings</strong>
-              <span>Options on £50,000 from an onshore bond, every figure shown with its source. PDF, 256 KB</span>
-            </a>
-            <a href="/specimens/specimen-cost-and-charges-workings.pdf">
-              <strong>Cost and charges workings</strong>
-              <span>First-year costs on a single premium, input by input. PDF, 223 KB</span>
-            </a>
-            <p className="specimen-downloads-note">
-              Prefer to ask? <a href="mailto:hello@theadviceengine.ai?subject=Specimen%20pack%20request">Email for the full pack</a>.
-            </p>
-          </div>
+          <JourneySpecimen />
         </div>
       </section>
       <section className="section workflow-demo-section" id="workflow-demos">
@@ -102,9 +80,6 @@ export default function OutputsPage() {
           </div>
         </div>
       </section>
-      {/* SLOT: downloadable specimen pack. Daren is producing the files; when
-          they exist, replace the mailto with the download links. Do not
-          fabricate specimen documents. */}
       <section className="section specimen-note"><div className="shell"><Check /><p>All client names, values and circumstances shown on this page are fictitious specimens created to demonstrate the workflow.</p></div></section>
       <FinalCta />
       <SiteFooter />

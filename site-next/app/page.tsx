@@ -194,7 +194,7 @@ export default function Home() {
             </ul>
             <div className="specimen-copy-actions">
               <ArrowButton href="#start" light>Start with a fictitious case</ArrowButton>
-              <a className="text-link" href="/outputs#specimen-pack">Open six real specimens <ArrowRight aria-hidden="true" /></a>
+              <a className="text-link" href="/outputs#full-journey">Read a complete client file, end to end <ArrowRight aria-hidden="true" /></a>
             </div>
           </div>
           <div className="specimen-window">

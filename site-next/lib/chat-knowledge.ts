@@ -69,6 +69,29 @@ https://meetings.hubspot.com/daren8/advice-engine-demo- (the trailing hyphen is 
 the link). Email: hello@theadviceengine.ai. See example outputs: /outputs. The evidence
 and QA approach: /evidence. The gap scanner: /gap-scanner.
 
+THE FULL-JOURNEY SPECIMEN, READABLE AT /outputs#full-journey
+A complete fictitious client file, free to read on the page with no form and NO
+DOWNLOAD. One client (Avery Drafter, 45, GBP 100,000, retirement at 67, balanced
+risk) across four stages run back to back in one sitting: initial meeting,
+suitability report, progress check, outcome report. Eight client-facing documents
+are shown in full and unedited - follow-up email, introduction meeting record,
+suitability report, progress check report and its covering email, meeting agenda,
+outcome report and its covering email.
+They are deliberately NOT offered as Word files: a .docx is a reusable template and
+a firm's report structure should not leave as an editable file. If someone asks for
+the documents as files, say they are read on the page by design and offer a
+walkthrough at the meetings link instead. Do not promise to email them.
+Three internal documents are NOT published in any form - the pre-meeting briefing,
+the fact find update and the adviser quality-check - because they carry checklist
+and internal-review material. What the quality-check FOUND is quoted on the page.
+WHY THE DRAFTS GRADE PARTIAL: the specimen case supplies fact-find-level material
+only. It withholds the provider illustration, any dated statement, the existing
+pension plan record and the signed fee authority, because the engine must never
+invent client data. So the drafts carry real gaps, the engine leaves them visible
+as [TO CONFIRM] placeholders, and the compliance pass names each one. That is
+designed in, not a defect. Every document is a draft requiring adviser sign-off,
+and the client is fictitious.
+
 LEGAL FOOTING
 The Advice Engine Ltd supplies software to authorised financial advice firms. It is not
 authorised by the Financial Conduct Authority and does not give financial advice,
