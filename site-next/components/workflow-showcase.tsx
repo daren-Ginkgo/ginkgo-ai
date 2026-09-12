@@ -109,7 +109,11 @@ const REAL: Record<string, RealOutput> = {
     flag: meetingNote.flag,
   },
   cashflow: {
-    firm: cashflowEmail.firm,
+    // The document itself is branded Example Wealth, and specimen-showcase.json still
+    // records that. It is not shown: a firm name in this panel invites the reader to
+    // think the output arrives in someone else's styling, when a live run renders into
+    // the subscribing firm's own (Daren, 12 Sep 2026).
+    firm: "Your firm",
     title: cashflowEmail.title,
     client: `${cashflowEmail.client}, fictitious specimen`,
     sections: [],
