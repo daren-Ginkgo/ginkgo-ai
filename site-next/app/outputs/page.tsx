@@ -32,6 +32,34 @@ export default function OutputsPage() {
             <p>Real engine output on invented people, invented holdings and invented circumstances, with no real client involved. One client&apos;s file across a full year: four pipelines run back to back in a single sitting, then published unedited. Read them in order and the year reads as a year, because the outcome report answers the progress check and the progress check is measured against the report that opened the case.</p>
           </div>
           <JourneySpecimen />
+          {/* The calculator workings stay as files, and that is not a contradiction of
+              the reader above. What the reader protects is a firm's REPORT STRUCTURE:
+              a .docx suitability report is a template someone can fill in. A PDF of
+              arithmetic with its sources named is not a template, cannot be edited
+              into a house style, and the workings are only useful if the reader can
+              follow the numbers down the page. Both files have been public since
+              8 September 2026, so linking them changes discoverability, not exposure.
+              Checked 12 Sep 2026: the bond encashment workings carry no provider
+              material at all; the cost and charges workings cite "Quilter RAP-1080
+              formula" as the source of each figure, which is source-labelling rather
+              than a reproduced requirement set. */}
+          <div className="spec-calcs">
+            <div>
+              <span className="kicker">Calculation workings</span>
+              <h3>The arithmetic, with every figure showing where it came from.</h3>
+              <p>These two stay as files, because a page of workings is meant to be followed line by line and a PDF of arithmetic is not a template anyone can fill in. Same fictitious basis as everything else here.</p>
+            </div>
+            <div className="spec-calc-links">
+              <a href="/specimens/specimen-bond-encashment-workings.pdf">
+                <strong>Bond encashment workings</strong>
+                <span>Options on &pound;50,000 from an onshore bond, every figure shown with its source. PDF, 256 KB</span>
+              </a>
+              <a href="/specimens/specimen-cost-and-charges-workings.pdf">
+                <strong>Cost and charges workings</strong>
+                <span>First-year costs on a single premium, input by input. PDF, 223 KB</span>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
       <section className="section workflow-demo-section" id="workflow-demos">

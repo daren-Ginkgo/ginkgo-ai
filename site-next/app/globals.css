@@ -5976,3 +5976,76 @@ a.conversion-alt {
     padding: 20px 20px;
   }
 }
+
+
+/* The calculation workings under the full-journey reader. Deliberately quieter
+   than the reader: it is a footnote to the specimen, not a second exhibit. */
+
+.spec-calcs {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 40px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 28px 32px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+}
+
+.spec-calcs h3 {
+  margin: 0 0 10px;
+  font-size: 1.18rem;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.spec-calcs > div > p {
+  margin: 0;
+  color: #5f6c80;
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.spec-calc-links {
+  display: grid;
+  gap: 11px;
+}
+
+.spec-calc-links a {
+  display: block;
+  min-height: 44px;
+  padding: 15px 18px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: white;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.spec-calc-links a:hover,
+.spec-calc-links a:focus-visible {
+  border-color: var(--violet);
+  transform: translateY(-1px);
+}
+
+.spec-calc-links strong {
+  display: block;
+  font-size: 0.9rem;
+  letter-spacing: -0.015em;
+}
+
+.spec-calc-links span {
+  display: block;
+  margin-top: 5px;
+  color: #5f6c80;
+  font-size: 0.76rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .spec-calcs {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 24px 22px;
+  }
+}
