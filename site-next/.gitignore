@@ -36,6 +36,10 @@ yarn-error.log*
 
 # typescript
 next-env.d.ts
+# Incremental build cache, written by `tsc --noEmit` and `next build`. It only
+# showed up once a build was run locally (12 September 2026); CI builds in a
+# throwaway checkout and never noticed.
+*.tsbuildinfo
 /dist/
 /.wrangler/
 /.sites-runtime/

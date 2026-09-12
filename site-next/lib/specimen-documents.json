@@ -136,10 +136,6 @@
     ]
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "What we still need to confirm"
    },
@@ -174,10 +170,6 @@
    {
     "t": "li",
     "text": "Which disclosures were made verbally. See \"Important information\" at the end of this record."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -432,8 +424,8 @@
    }
   ],
   "counts": {
-   "blocks": 60,
-   "words": 1187,
+   "blocks": 58,
+   "words": 1185,
    "tables": 3
   }
  },
@@ -458,10 +450,6 @@
    {
     "t": "p",
     "text": "This is a specimen document for a fictitious demonstration client. It does not constitute advice to any real person."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -665,10 +653,6 @@
     ]
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "Your objectives"
    },
@@ -713,10 +697,6 @@
     "text": "Drivers for change. The money is currently sitting in cash. Over 22 years, cash interest has historically struggled to keep pace with inflation, so leaving it there risks a real fall in what it can buy. That is the driver for investing. No existing investment product is being replaced."
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "Your retirement position today"
    },
@@ -755,10 +735,6 @@
    {
     "t": "p",
     "text": "This report does not tell you whether your provision will hit £28,500, because that needs a projection of your £111,226 pension, your State Pension entitlement and this new £100,000. I will complete that projection once the outstanding items are on file. Investing the £100,000 now is a step towards the target; it does not close a gap I have not yet measured."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -823,10 +799,6 @@
    {
     "t": "p",
     "text": "We discussed responsible and sustainable investing. You told me you have no specific responsible investment requirement and asked for the standard approach. I have therefore recommended from the standard managed range rather than the responsible or sustainable ranges."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -902,10 +874,6 @@
     "text": "No encashment of any existing product is recommended, so there are no tax consequences of encashment to replay."
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "My recommendation"
    },
@@ -946,20 +914,12 @@
     "text": "Affordability and good outcome. The £100,000 is surplus money. Your £10,867 emergency fund is untouched, your income of £47,500 covers your outgoings of £25,723, and you have no debt. Nothing here depends on you finding further money."
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "Taking an income"
    },
    {
     "t": "p",
     "text": "This section is not relevant to your case. You are not taking an income or withdrawals from this investment, and you are not accessing pension benefits. There is therefore no income sustainability assessment, no tax-free cash calculation and no money purchase annual allowance consideration in this report."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -1023,10 +983,6 @@
     "text": "[TO CONFIRM: split of the 0.66% portfolio charge between the weighted fund charge and the managed portfolio service charge, once the portfolio number is confirmed]"
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "Other items to consider"
    },
@@ -1053,10 +1009,6 @@
    {
     "t": "p",
     "text": "Pension contributions. Investing this money in an ISA and GIA does not stop you making pension contributions from your income. I will look at that alongside your retirement projection."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -1233,10 +1185,6 @@
     "text": "Neither the initial nor the ongoing fee exceeds £20,000, so no additional fee fair value documentation is triggered."
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "Appendix: alternative options discounted"
    },
@@ -1288,10 +1236,6 @@
       "Outside the scope of the advice I provide and unnecessary for a £98,000 mainstream portfolio."
      ]
     ]
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -1364,10 +1308,6 @@
     "text": "Other disclosed positions: gross annual income £47,500; annual outgoings about £25,723; no other investments; no liabilities; basic-rate taxpayer; current tax year ISA allowance unused; capital gains tax annual exempt amount unused."
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "Appendix: risk warnings and cancellation notice"
    },
@@ -1428,10 +1368,6 @@
     "text": "Cancellation notice. You have the right to cancel. You will receive a cancellation notice when your plans are set up, and you have 30 days from receiving it to change your mind. If you cancel within that period, your money will be returned to you. Because this is an investment, the amount returned could be less than the amount you invested, if markets have fallen in the meantime."
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "Declaration"
    },
@@ -1469,16 +1405,12 @@
    },
    {
     "t": "p",
-    "text": "---"
-   },
-   {
-    "t": "p",
     "text": "Ginkgo Financial Ltd (FCA register number 912144) is an Appointed Representative of Quilter Financial Services Limited (FCA register number 440703) of Senator House, 85 Queen Victoria Street, London, EC4V 4AB, which is authorised and regulated by the Financial Conduct Authority."
    }
   ],
   "counts": {
-   "blocks": 186,
-   "words": 3992,
+   "blocks": 171,
+   "words": 3977,
    "tables": 10
   }
  },
@@ -1488,10 +1420,6 @@
   "title": "Progress Check Report",
   "subtitle": "Twelve months reported back: performance, net worth, projection and allowances.",
   "blocks": [
-   {
-    "t": "p",
-    "text": "---"
-   },
    {
     "t": "h3",
     "text": "1. Cover"
@@ -1532,10 +1460,6 @@
    {
     "t": "p",
     "text": "This is your consolidated annual report. It covers your plans, your objectives and your charges. Please read it in full before we meet."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -1583,10 +1507,6 @@
    {
     "t": "p",
     "text": "Your investments grew over the year and nothing was taken out. The £100,000 you invested twelve months ago is now worth £101,444, and your pension has risen to £121,599 with £3,300 of your own contributions added along the way. The topic for our meeting is your retirement target: on the assumptions set out in section 7, your current savings support an income of about £10,600 a year in today's money from age 67, against your target of £28,500 a year. That gap is the main thing we need to work on, and 22 years is a useful amount of time in which to do it."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -1650,10 +1570,6 @@
     ]
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "4. Progress check"
    },
@@ -1696,10 +1612,6 @@
    {
     "t": "p",
     "text": "The part that is not yet on track is the retirement income target itself. Contributions of £275 a month, alongside your existing savings, do not currently reach £28,500 a year from age 67 on the assumptions in section 7. Your current tax year ISA allowance of £20,000 is also unused, which is an opportunity rather than a problem."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -1778,10 +1690,6 @@
    {
     "t": "p",
     "text": "The specific WealthSelect style and risk number on your plans is [TO CONFIRM: WealthSelect portfolio range, style and risk number]. Until that is confirmed we are not quoting published portfolio or comparator performance figures, because quoting the wrong portfolio would tell you nothing useful. The value of investments can fall as well as rise. Past performance is not a reliable indicator of future performance."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -1909,10 +1817,6 @@
    {
     "t": "p",
     "text": "Your estate is well below the £2,000,000 threshold at which the residence nil rate band begins to taper, so that taper is not a live issue on the figures we hold. Please bring your State Pension forecast to the meeting. It sits alongside your own savings in the retirement figures and it changes the shortfall in section 7 materially."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -2054,10 +1958,6 @@
     "text": "The standards exclude social care costs and support for dependants. You have one child recorded on your file."
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "8. Your risk profile"
    },
@@ -2106,10 +2006,6 @@
    {
     "t": "p",
     "text": "Responsible and sustainable investing. We discussed this. You told us you have no specific responsible investment requirement and asked for the standard approach. Your portfolio reflects that. Say the word if your view has changed and we will look at the Responsible and Sustainable ranges."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -2217,20 +2113,12 @@
     ]
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "10. Risk warnings"
    },
    {
     "t": "p",
     "text": "The value of investments can fall as well as rise and you may get back less than you invest. Past performance is not a reliable indicator of future results. Tax treatment depends on your individual circumstances and may change in future."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -2303,10 +2191,6 @@
    {
     "t": "p",
     "text": "Avery Drafter"
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -2398,16 +2282,12 @@
    },
    {
     "t": "p",
-    "text": "---"
-   },
-   {
-    "t": "p",
     "text": "Ginkgo Financial Ltd. [TO CONFIRM: firm regulatory footer, registered office and FCA registration number]"
    }
   ],
   "counts": {
-   "blocks": 112,
-   "words": 1799,
+   "blocks": 99,
+   "words": 1786,
    "tables": 18
   }
  },
@@ -2642,10 +2522,6 @@
   "subtitle": "What was agreed, and the contribution question answered with figures.",
   "blocks": [
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "1. About this report and your details"
    },
@@ -2707,10 +2583,6 @@
     "text": "Read it alongside your Progress Check Report. Where a figure in this report differs from that one, this report carries the later position and says so."
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "2. What we agreed at your meeting"
    },
@@ -2760,10 +2632,6 @@
    {
     "t": "p",
     "text": "Two of the agreed actions above need your signature before they proceed: the ISA subscription and any change to your monthly pension contribution. The declaration is in Section 12."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -2821,10 +2689,6 @@
    {
     "t": "p",
     "text": "Your £28,500 a year target is unchanged. You said it still feels about right. Section 8 tests whether it is realistic."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -2900,10 +2764,6 @@
    {
     "t": "p",
     "text": "Your estate sits well below the £2,000,000 threshold at which the residence nil rate band begins to taper, so that taper is not a live issue on the figures I hold."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -2984,10 +2844,6 @@
     "text": "The exact WealthSelect style and risk number on your plans is [TO CONFIRM: WealthSelect portfolio range, style and risk number]. Until Quilter confirm that, I am not quoting published portfolio or comparator performance figures beside your return. Quoting the wrong portfolio would tell you nothing useful."
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "6. Your attitude to risk and capacity for loss"
    },
@@ -3044,10 +2900,6 @@
     "text": "Capacity for loss. This is how large a fall you could absorb without it changing how you live. Your position is unchanged: the invested money is surplus to your £10,867 emergency fund and to your day-to-day spending, you could ride out short-term falls without affecting your standard of living, and a total loss would delay your retirement rather than derail it. Your recorded income of £47,500 against outgoings of £25,723 supports that. So does your behaviour this year: values moved and you did not sell."
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "7. Your investment funds and their suitability"
    },
@@ -3095,10 +2947,6 @@
    {
     "t": "p",
     "text": "The exact portfolio style and risk number recorded by Quilter is [TO CONFIRM: WealthSelect portfolio range, style and risk number]. I am confirming this with Quilter and will write to you if it shows anything other than the Balanced, level 4 position above."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -3259,10 +3107,6 @@
     "text": "Three caveats apply to that comparison. The standards are net expenditure, not gross income, so the real gap is wider than the pound difference shown. They exclude rent and mortgage and assume the home is owned outright, and your housing position in retirement is [TO CONFIRM: housing status and any mortgage or rent expected in retirement]. They exclude social care costs and support for dependants, and you have one child recorded on your file."
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "9. Your annual allowances"
    },
@@ -3315,10 +3159,6 @@
     "text": "Using the ISA allowance this way does not change what you are invested in. It changes only the tax treatment of the money."
    },
    {
-    "t": "p",
-    "text": "---"
-   },
-   {
     "t": "h3",
     "text": "10. Continued suitability"
    },
@@ -3353,10 +3193,6 @@
    {
     "t": "p",
     "text": "None of these changes the suitability of your investments. All three are worth a short separate conversation, and I will contact you to arrange one."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -3446,10 +3282,6 @@
    {
     "t": "p",
     "text": "Your service tier is [TO CONFIRM: service tier name] under Terms of Business v3.0 (June 2026). Quilter sends you statements for each plan directly. This report brings them together, but it does not replace them."
-   },
-   {
-    "t": "p",
-    "text": "---"
    },
    {
     "t": "h3",
@@ -3571,16 +3403,12 @@
    },
    {
     "t": "p",
-    "text": "---"
-   },
-   {
-    "t": "p",
     "text": "Ginkgo Financial Ltd. [TO CONFIRM: firm regulatory footer, registered office and FCA registration number]"
    }
   ],
   "counts": {
-   "blocks": 109,
-   "words": 2445,
+   "blocks": 96,
+   "words": 2432,
    "tables": 15
   }
  },

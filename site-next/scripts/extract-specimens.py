@@ -169,6 +169,11 @@ def strip_boilerplate(blocks):
         r"^SPECIMEN - fictitious client\. This is a demonstration",
         r"^Automated pre-issue checks",
         r"^Status: SPECIMEN\.",
+        # Horizontal rules. The renderer writes these as "---" paragraphs, which in a
+        # .docx read as section breaks and on the page read as stray text. The viewer
+        # separates sections with a rule under each heading instead (43 of these were
+        # rendering as literal dashes on /outputs, 12 September 2026).
+        r"^[-_*–—\s]{3,}$",
     )
     # The banners are laid out as one-cell tables in the renderer's output, and the
     # .docx title line repeats what the viewer already puts in its own chrome, so

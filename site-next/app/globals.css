@@ -5488,6 +5488,8 @@ a.conversion-alt {
   font-size: 1.55rem;
   font-weight: 800;
   letter-spacing: -0.03em;
+  /* "21 min" broke across two lines in the narrow third column. */
+  white-space: nowrap;
 }
 
 /* ---- the reader: document rail beside the rendered document ---- */
