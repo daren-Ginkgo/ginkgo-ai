@@ -16,6 +16,110 @@ import {
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+import journeyDocuments from "@/lib/specimen-documents.json";
+import showcaseDocuments from "@/lib/specimen-showcase.json";
+
+/**
+ * The "What comes out" panels are REAL OUTPUT, not illustrations. Every title,
+ * client, section heading, figure and information-needed line below is lifted from a
+ * document the engine produced, via scripts/extract-specimens.py. Nothing in the
+ * output column is written by hand (Daren, 12 September 2026).
+ *
+ * If you change a string here, check it still matches the document. The extractor
+ * refuses to write its JSON if the quoted gap line is not in the source verbatim, so
+ * that much cannot drift silently; the section headings are read straight from the
+ * document at render time and cannot drift at all.
+ */
+
+type JourneyBlock = { t: string; text?: string };
+type JourneyDoc = { id: string; title: string; blocks: JourneyBlock[] };
+type ShowcaseDoc = {
+  id: string;
+  workflow: string;
+  title: string;
+  firm: string;
+  client: string;
+  headings: string[];
+  gaps: string[];
+  excerpt: string[];
+  flag: string;
+};
+
+const journey = journeyDocuments as unknown as JourneyDoc[];
+const showcase = showcaseDocuments as unknown as ShowcaseDoc[];
+
+/** Real output for one demonstration: what the panel renders instead of a mock-up. */
+type RealOutput = {
+  firm: string;
+  title: string;
+  client: string;
+  sections: string[];
+  excerpt?: string[];
+  metric?: { value: string; note: string };
+  flag: string;
+  readMore?: { href: string; label: string };
+};
+
+function fromJourney(id: string): JourneyDoc {
+  const doc = journey.find((d) => d.id === id);
+  if (!doc) throw new Error(`specimen-documents.json has no document "${id}"`);
+  return doc;
+}
+
+function fromShowcase(id: string): ShowcaseDoc {
+  const doc = showcase.find((d) => d.id === id);
+  if (!doc) throw new Error(`specimen-showcase.json has no document "${id}"`);
+  return doc;
+}
+
+const suitability = fromJourney("suitability-report");
+const meetingNote = fromShowcase("annual-review-meeting-note");
+const cashflowEmail = fromShowcase("cashflow-client-email");
+
+/** The document's own top-level headings, in document order. */
+function headingsOf(doc: JourneyDoc, level: string, take: number) {
+  return doc.blocks.filter((b) => b.t === level).map((b) => b.text ?? "").slice(0, take);
+}
+
+/** The first gap the engine could not close, quoted. */
+function firstGap(doc: JourneyDoc, contains: string) {
+  const hit = doc.blocks.find(
+    (b) => b.t !== "table" && (b.text ?? "").includes(contains) && (b.text ?? "").length > 60,
+  );
+  if (!hit) throw new Error("no gap line found; the specimen data has changed");
+  return hit.text ?? "";
+}
+
+const REAL: Record<string, RealOutput> = {
+  suitability: {
+    firm: "Ginkgo Financial",
+    title: suitability.title,
+    client: "Avery Drafter, fictitious specimen",
+    sections: headingsOf(suitability, "h3", 4),
+    flag: firstGap(suitability, "[TO CONFIRM"),
+    readMore: { href: "#full-journey", label: "Read this report in full" },
+  },
+  "annual-review": {
+    firm: meetingNote.firm,
+    title: meetingNote.title,
+    client: `${meetingNote.client}, fictitious specimen`,
+    sections: meetingNote.headings.slice(0, 4),
+    flag: meetingNote.flag,
+  },
+  cashflow: {
+    firm: cashflowEmail.firm,
+    title: cashflowEmail.title,
+    client: `${cashflowEmail.client}, fictitious specimen`,
+    sections: [],
+    excerpt: [
+      "Alex and Sam: your lifetime cash flow plan",
+      "On the central basis the money lasts to age 100 with about £1,176,950 left in today's money. Even on the cautious basis it holds.",
+    ],
+    metric: { value: "£1,176,950", note: "Left at age 100 on the central basis, in today's money" },
+    flag: cashflowEmail.flag,
+  },
+};
+
 type Workflow = {
   id: string;
   tab: string;
@@ -24,15 +128,6 @@ type Workflow = {
   promise: string;
   inputs: { icon: typeof FileText; title: string; note: string }[];
   processing: string[];
-  output: {
-    label: string;
-    title: string;
-    client: string;
-    metric?: string;
-    metricNote?: string;
-    sections: string[];
-    flag: string;
-  };
   pack: { icon: typeof FileText; title: string; note: string }[];
 };
 
@@ -56,13 +151,6 @@ const workflows: Workflow[] = [
       "Run the pre-review file check",
       "Fill supportable gaps, then redraft and flag the rest",
     ],
-    output: {
-      label: "Your firm · Draft for adviser review",
-      title: "Suitability Report",
-      client: "Alex and Sam Taylor · Fictitious specimen",
-      sections: ["Your circumstances and objectives", "Risk and capacity for loss", "Recommendation and why it is suitable", "Costs, charges and key risks"],
-      flag: "Confirm the final provider illustration and cancellation wording before issue.",
-    },
     pack: [
       { icon: FileText, title: "Branded Word draft", note: "Editable and ready for adviser review" },
       { icon: FileCheck2, title: "Adviser QA sheet", note: "Evidence, omissions and judgement points" },
@@ -88,13 +176,6 @@ const workflows: Workflow[] = [
       "Run the pre-review file check and recover evidence",
       "Redraft the report and separate work still needed",
     ],
-    output: {
-      label: "Your firm · Draft for adviser review",
-      title: "Annual Review Outcome",
-      client: "Alex and Sam Taylor · Fictitious specimen",
-      sections: ["What has changed", "Objectives and progress", "Risk and current arrangements", "Agreed actions and next steps"],
-      flag: "Obtain the latest legacy pension value before confirming the final outcome.",
-    },
     pack: [
       { icon: FileText, title: "Progress or outcome report", note: "The right document for the work completed" },
       { icon: FileText, title: "Meeting note", note: "The file record of the meeting, written up from the recording" },
@@ -121,15 +202,6 @@ const workflows: Workflow[] = [
       "Check the workings against the applicable template logic",
       "Run the pre-review file check, redraft and show gaps",
     ],
-    output: {
-      label: "Your firm · Lifetime cashflow",
-      title: "Your cashflow plan",
-      client: "Alex and Sam Taylor · Fictitious specimen",
-      metric: "£48,000 a year",
-      metricNote: "Illustrative target spending in today’s money",
-      sections: ["The answer in plain English", "What moved and why", "Your two-phase spending plan", "Assumptions, ranges and points to confirm"],
-      flag: "Confirm both State Pension forecasts before the final adviser review.",
-    },
     pack: [
       { icon: FileText, title: "Cashflow report", note: "A client-ready narrative around the model" },
       { icon: Mail, title: "Client email draft", note: "The result explained without inventing figures" },
@@ -139,6 +211,8 @@ const workflows: Workflow[] = [
 ];
 
 function WorkflowPanel({ workflow }: { workflow: Workflow }) {
+  const out = REAL[workflow.id];
+  if (!out) throw new Error(`no real output wired for workflow "${workflow.id}"`);
   return (
     <div className="showcase-panel">
       <div className="showcase-heading">
@@ -170,17 +244,25 @@ function WorkflowPanel({ workflow }: { workflow: Workflow }) {
           <div className="engine-control"><ShieldCheck /><span><strong>Compliance challenged before first draft</strong><small>Supportable gaps are filled from confirmed evidence; unresolved points remain visible for adviser review.</small></span></div>
         </section>
 
-        <section className="showcase-output" aria-label="Example workflow output">
+        <section className="showcase-output" aria-label="Real workflow output">
           <div className="showcase-column-label"><FileCheck2 /> What comes out</div>
           <div className="showcase-document">
-            <div className="showcase-document-top"><span className="mini-mark" /><b>{workflow.output.label}</b><em>Draft</em></div>
-            <h4>{workflow.output.title}</h4>
-            <p>{workflow.output.client}</p>
-            {workflow.output.metric ? <div className="showcase-metric"><strong>{workflow.output.metric}</strong><span>{workflow.output.metricNote}</span></div> : null}
-            <div className="showcase-section-list">
-              {workflow.output.sections.map((section, index) => <div key={section}><span>0{index + 1}</span><strong>{section}</strong></div>)}
-            </div>
-            <div className="showcase-flag"><strong>Information needed</strong><span>{workflow.output.flag}</span></div>
+            <div className="showcase-document-top"><span className="mini-mark" /><b>{out.firm} &middot; draft for adviser review</b><em>Real output</em></div>
+            <h4>{out.title}</h4>
+            <p>{out.client}</p>
+            {out.metric ? <div className="showcase-metric"><strong>{out.metric.value}</strong><span>{out.metric.note}</span></div> : null}
+            {out.sections.length ? (
+              <div className="showcase-section-list">
+                {out.sections.map((section, index) => <div key={section}><span>0{index + 1}</span><strong>{section}</strong></div>)}
+              </div>
+            ) : null}
+            {out.excerpt ? (
+              <div className="showcase-excerpt">
+                {out.excerpt.map((line, index) => <p key={index}>{line}</p>)}
+              </div>
+            ) : null}
+            <div className="showcase-flag"><strong>Information needed</strong><span>{out.flag}</span></div>
+            {out.readMore ? <a className="showcase-readmore" href={out.readMore.href}>{out.readMore.label}</a> : null}
           </div>
         </section>
       </div>

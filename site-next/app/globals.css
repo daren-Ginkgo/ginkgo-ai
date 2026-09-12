@@ -6049,3 +6049,44 @@ a.conversion-alt {
     padding: 24px 22px;
   }
 }
+
+/* The showcase output panel gained two elements when it stopped showing invented
+   text: a short verbatim excerpt (used where the output is a letter rather than a
+   sectioned report) and a link through to the full document where one is published. */
+
+.showcase-excerpt {
+  margin: 14px 0 0;
+  padding: 14px 16px;
+  border-left: 3px solid var(--violet);
+  border-radius: 0 10px 10px 0;
+  background: var(--paper);
+}
+
+.showcase-excerpt p {
+  margin: 0 0 8px;
+  color: #3f4a5c;
+  font-size: 0.79rem;
+  line-height: 1.65;
+}
+
+.showcase-excerpt p:first-child {
+  font-weight: 750;
+  color: var(--ink);
+}
+
+.showcase-excerpt p:last-child {
+  margin-bottom: 0;
+}
+
+.showcase-readmore {
+  display: inline-block;
+  min-height: 44px;
+  margin-top: 14px;
+  padding: 13px 0 0;
+  color: var(--violet-text);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

@@ -33,7 +33,12 @@ W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 FORBIDDEN = {
     "Quilter checklist item numbering": r"Item \d+ \[",
     "'requirements (sourced)'": r"requirements \(sourced\)",
-    "WealthSelect charge table": r"0\.54%|0\.15%|Active 4|Blend 4|Passive 4",
+    # The CHARGE TABLE, not portfolio names. "Managed Passive 4" is the name of the
+    # fund a client holds and appears in their own meeting note and suitability
+    # report as a matter of course; it is not confidential and matching on it made
+    # this refuse perfectly publishable documents (12 Sep 2026). What must never
+    # appear is the level-by-level charge breakdown.
+    "WealthSelect charge table": r"0\.54%|0\.15%",
     "checklist or QA scaffolding": r"checklist applied|quality-check result|Graded checklist",
 }
 
@@ -73,6 +78,77 @@ ONLY_CLIENT_FACING = [
      "The outcome in plain language, with the charges in pounds as well as percentages.",
      None, None),
 ]
+
+
+# The three workflow demonstrations on /outputs used to show INVENTED output panels:
+# made-up section lists and a made-up headline figure, on a page whose whole claim is
+# "judge the work, not the promise". These two documents replace the invented panels
+# with real extracted text (Daren, 12 September 2026).
+#
+# They are a different fictitious case from the four-stage journey, which is why they
+# are not in the journey reader: that reader is deliberately ONE client across ONE
+# year. The suitability panel needs nothing here - it reads the journey's own
+# suitability report.
+#
+# The meeting note is sliced to its client-facing sections. The rest of that .docx is
+# an adviser-only quality-check reproducing an eleven-item checklist, which is exactly
+# the material FORBIDDEN above refuses.
+SHOWCASE = [
+    {
+        "id": "annual-review-meeting-note",
+        "workflow": "annual-review",
+        "file": "specimen-meeting-note-annual-review.docx",
+        "title": "Meeting note: annual advice meeting",
+        "firm": "Ginkgo Financial",
+        "client": "Ashworth household",
+        "slice": ("Annual Advice Meeting Note - Ashworth Household",
+                  "Quality-check result (adviser only)"),
+        # Must appear verbatim in the sliced document, or the build fails.
+        "flag": ("Capacity for loss: Information required: whether capacity for loss was "
+                 "revisited. The transcript does not record it."),
+    },
+    {
+        "id": "cashflow-client-email",
+        "workflow": "cashflow",
+        "file": "specimen-draft-client-email-alex-and-sam.docx",
+        "title": "Draft client email: the cash flow plan",
+        # A different firm on purpose: this one specimen is the only thing on the site
+        # that shows the white-label switch, the same engine writing as another firm.
+        "firm": "Example Wealth",
+        "client": "Alex and Sam",
+        "slice": (None, None),
+        "flag": ("The State Pension for Alex and Sam is included from the gov.uk timetable. "
+                 "Please check your own forecast at gov.uk/check-state-pension and send it "
+                 "over, so the plan rests on your figure rather than the standard one."),
+    },
+]
+
+
+def build_showcase(src):
+    """Headings, gap lines and an opening excerpt for each showcase document."""
+    out = []
+    for spec in SHOWCASE:
+        blocks = strip_boilerplate(
+            slice_blocks(read_blocks(os.path.join(src, spec["file"])), *spec["slice"]))
+        headings = [b["text"] for b in blocks if b["t"].startswith("h")]
+        gaps = [b["text"] for b in blocks if b["t"] != "table"
+                and ("Information required" in b["text"] or "[TO CONFIRM" in b["text"])]
+        body = [b["text"] for b in blocks if b["t"] in ("p", "li")]
+        flat = " ".join(b.get("text", "") for b in blocks)
+        if spec["flag"] not in flat:
+            raise SystemExit(f"{spec['id']}: the configured flag is not in the document "
+                             "verbatim, so it would be a claim rather than a quotation")
+        out.append({
+            "id": spec["id"], "workflow": spec["workflow"], "title": spec["title"],
+            "firm": spec["firm"], "client": spec["client"],
+            "headings": headings, "gaps": gaps, "excerpt": body[:6],
+            "counts": {"words": sum(len(t.split()) for t in body), "headings": len(headings),
+                       "gaps": len(gaps)},
+            "flag": spec["flag"],
+        })
+        print(f"  {spec['id']:28} {len(headings):3} headings, {len(gaps):3} gap lines, "
+              f"{out[-1]['counts']['words']:5} words")
+    return out
 
 
 def para_text(p):
@@ -226,6 +302,22 @@ def main():
         f.write(payload + "\n")
     print(f"\n{len(docs)} client-facing documents -> {dest} ({len(payload):,} bytes)")
     print("none of the QA, briefing or compliance-check material is included")
+
+    # The workflow-demonstration panels, written beside the journey reader's data.
+    print("\nworkflow showcase:")
+    show = build_showcase(src)
+    show_payload = json.dumps(show, ensure_ascii=False, indent=1)
+    bad = {k: len(re.findall(v, show_payload, re.I)) for k, v in FORBIDDEN.items()}
+    bad = {k: n for k, n in bad.items() if n}
+    if bad:
+        raise SystemExit("REFUSING TO WRITE showcase - material that must not be published: "
+                         + "; ".join(f"{k} x{n}" for k, n in bad.items()))
+    if "\ufffd" in show_payload:
+        raise SystemExit("REFUSING TO WRITE showcase - replacement characters in the text")
+    show_dest = os.path.join(os.path.dirname(dest), "specimen-showcase.json")
+    with open(show_dest, "w", encoding="utf-8", newline="\n") as f:
+        f.write(show_payload + "\n")
+    print(f"{len(show)} showcase documents -> {show_dest} ({len(show_payload):,} bytes)")
 
 
 if __name__ == "__main__":
