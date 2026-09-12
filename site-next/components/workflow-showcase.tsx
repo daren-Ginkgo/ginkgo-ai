@@ -92,7 +92,9 @@ function firstGap(doc: JourneyDoc, contains: string) {
 
 const REAL: Record<string, RealOutput> = {
   suitability: {
-    firm: "Ginkgo Financial",
+    // Not a firm name: these came out of the test window unbranded, and a live
+    // run renders into the subscribing firm's own styling (Daren, 12 Sep 2026).
+    firm: "Your firm",
     title: suitability.title,
     client: "Avery Drafter, fictitious specimen",
     sections: headingsOf(suitability, "h3", 4),
@@ -100,7 +102,7 @@ const REAL: Record<string, RealOutput> = {
     readMore: { href: "#full-journey", label: "Read this report in full" },
   },
   "annual-review": {
-    firm: meetingNote.firm,
+    firm: "Your firm",
     title: meetingNote.title,
     client: `${meetingNote.client}, fictitious specimen`,
     sections: meetingNote.headings.slice(0, 4),

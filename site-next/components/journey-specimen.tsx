@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CircleCheck, FileCheck2, FileText, FolderOpen, Search, TriangleAlertIcon } from "lucide-react";
+import { CircleCheck, FileText, FolderOpen } from "lucide-react";
 
 import documents from "@/lib/specimen-documents.json";
 
@@ -67,57 +67,6 @@ const STAGES: { id: string; n: string; name: string; when: string; inputs: strin
     name: "Outcome report",
     when: "09:10",
     inputs: "All of the above, the meeting notes, and the progress check just written",
-  },
-];
-
-/**
- * Why the drafts grade partial. The specimen case is written the way a real adviser's
- * file note is written: it says the paperwork is on file and quotes the percentages,
- * without reproducing the provider figures underneath. Checked against a freshly
- * generated pack, not asserted - see scripts in the engine repo.
- */
-const WITHHELD = [
-  "The illustration is referenced as on file, but its numbers are not. No reduction in yield in pounds, and no ex-ante costs and charges figures.",
-  "Charges arrive as annual percentages only. The portfolio charge is never split into its fund and managed-portfolio service components, nor aggregated into pounds over the term.",
-  "The existing pension has a value and a statement said to be on file. It has no provider, plan type, funds held or annual charges.",
-  "Every date is relative: this month, twelve months ago, at outset. So no figure in any draft can carry a date.",
-  "A signed fee authority is on file, but nothing explains why the minimum initial fee was waived.",
-];
-
-/**
- * Quoted from the adviser quality-check the same run produced. Each one is the engine
- * catching its own drafts, so none of it is anyone else's compliance material.
- */
-const CAUGHT = [
-  {
-    what: "Two different answers to the same question",
-    detail:
-      "The report projects a maximum sustainable income of about £10,600 a year; the internal briefing projects about £12,100. The two runs differ on contributions, net real return and income basis. Fix one basis, rerun both documents, and report on the same basis throughout.",
-  },
-  {
-    what: "A £1 error, found by re-adding the column",
-    detail:
-      "The report states net worth of £233,910. The components sum to £233,911. Correct the report.",
-  },
-  {
-    what: "A document contradicting its own fee table",
-    detail:
-      "The report leaves the pension charges as a placeholder, then applies 1.96% a year of charges to the pension in its projection. Resolve before issue and make the fee table, the projection assumptions and the declaration agree.",
-  },
-  {
-    what: "An email whose tone does not match the report",
-    detail:
-      "The report's overall status is needs discussion, with a shortfall of about £17,900 a year as the headline finding. The email says progressing well, with a few topics to discuss. Align the email's one-line answer with the report status.",
-  },
-  {
-    what: "A table whose rows do not line up",
-    detail:
-      "In the agenda's standing topics, four rows carry three cells against a four-column header, so the time allocation renders in the wrong column. The allocations themselves are correct and sum to 60 minutes. Fix the rows.",
-  },
-  {
-    what: "Sources that point at nothing",
-    detail:
-      "Sources are named throughout, which is good, but almost nothing is dated: around twenty source cells cite a valuation whose date is still a placeholder. Insert the valuation date and the report date.",
   },
 ];
 
@@ -189,8 +138,9 @@ export function JourneySpecimen() {
             Avery Drafter, a fictitious client: age 45, £100,000 to invest, retirement at 67, a
             balanced attitude to risk. One generated case pack ran through four pipelines in the
             order a real client meets them, so the documents answer one another rather than
-            standing alone. Produced in Ginkgo Financial&rsquo;s branding, because that is the
-            firm view the run used.
+            standing alone. Shown here as text, because these came out of the test window. A
+            live run hands the adviser branded Word documents in the firm&rsquo;s own styling,
+            ready for final editing.
           </p>
         </div>
         <dl>
@@ -264,70 +214,21 @@ export function JourneySpecimen() {
         </article>
       </div>
 
-      <div className="spec-why">
-        <div className="spec-why-col">
-          <span className="kicker">Why the drafts grade partial</span>
-          <h3>The case says the paperwork is on file. It never supplies the figures.</h3>
-          <p>
-            That is deliberate, and it is how most real files actually arrive. The specimen case
-            is written like an adviser&rsquo;s file note: the illustration is on file, the fee
-            authority is signed, the charges are quoted as annual percentages. What it never does
-            is reproduce the numbers underneath. The engine will not promote
-            &ldquo;on file&rdquo; into a figure it has not seen, so it writes the percentage it
-            was given, leaves the monetary figure as a placeholder, and the compliance pass names
-            every one of them instead of waving it through.
-          </p>
-          <ul className="spec-withheld">
-            {WITHHELD.map((w) => (
-              <li key={w}>
-                <TriangleAlertIcon aria-hidden="true" />
-                {w}
-              </li>
-            ))}
-          </ul>
-          <p className="spec-why-note">
-            Six such items were named on the suitability report alone. A specimen pack of clean
-            passes would only show you that a generated case can be made to agree with itself.
-          </p>
-        </div>
-
-        <div className="spec-why-col">
-          <span className="kicker">What the quality-check caught</span>
-          <h3>The engine argues with its own drafts.</h3>
-          <p>
-            Every run ends with an adviser quality-check that reconciles the documents against
-            each other before a human sees them. These are its findings on this run, quoted. The
-            fifth is visible on screen in the agenda above.
-          </p>
-          <ol className="spec-caught">
-            {CAUGHT.map((c) => (
-              <li key={c.what}>
-                <Search aria-hidden="true" />
-                <span>
-                  <strong>{c.what}</strong>
-                  <small>{c.detail}</small>
-                </span>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </div>
-
       <div className="spec-note">
         <div>
-          <FileCheck2 aria-hidden="true" />
+          <FileText aria-hidden="true" />
           <span>
-            <strong>Read here, not downloaded.</strong> These are shown on screen rather than
-            offered as Word files, so a firm&rsquo;s report structure does not leave as an
-            editable template.
+            <strong>Live outputs are branded Word documents.</strong> These specimens came out
+            of the test window, so they are shown here as text. A real run hands the adviser a
+            Word document in the firm&rsquo;s own styling, ready for final editing.
           </span>
         </div>
         <div>
           <CircleCheck aria-hidden="true" />
           <span>
-            <strong>Three documents are not shown.</strong> The pre-meeting briefing, the fact
-            find update and the adviser quality-check are internal records that no client
-            receives. What the quality-check found is quoted above.
+            <strong>Some facts are missing from this case on purpose.</strong> Watch what the
+            drafts do with them: anything the engine could not confirm stays marked in the text
+            rather than quietly filled in, so it cannot slip past the adviser.
           </span>
         </div>
       </div>
