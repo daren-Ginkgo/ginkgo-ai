@@ -42,6 +42,24 @@ const nextConfig: NextConfig = {
         destination: "/specimens/specimen-cost-and-charges-workings.pdf",
         permanent: true,
       },
+      // 12 Sep 2026: the adviser QA sheet and the compliance check are withdrawn.
+      // Both reproduced twenty-six Quilter investment-advice requirements verbatim
+      // and carried WealthSelect charge figures. Removing them from public/ and
+      // unlinking them was NOT enough - the same trap as the .xlsx URLs above: the
+      // App Service deploy does not clean wwwroot, and both files still answered
+      // 200 after a successful deploy. These redirects run ahead of the filesystem
+      // and close them for good. There is no replacement document by design; the
+      // quality-check is represented on /outputs by quoting what it found.
+      {
+        source: "/specimens/specimen-adviser-qa-sheet-investment.docx",
+        destination: "/outputs",
+        permanent: true,
+      },
+      {
+        source: "/specimens/specimen-compliance-check-investment.docx",
+        destination: "/outputs",
+        permanent: true,
+      },
     ];
   },
 };
