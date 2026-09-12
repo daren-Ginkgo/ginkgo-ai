@@ -42,3 +42,7 @@ next-env.d.ts
 /outputs/
 /work/
 /deploy-package/
+
+# Incremental build cache from `tsc --noEmit` / `next build`. Only appears once
+# a build is run locally; CI uses a throwaway checkout and never saw it.
+*.tsbuildinfo
