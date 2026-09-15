@@ -3,8 +3,7 @@
 # HARD terms fail the run: they may never appear in site copy.
 #   "fully compliant", "compliant report(s)", a firm described as Chartered,
 #   Q Connect in any spelling, and competitor names (Augora, Marloo, Saturn,
-#   Aveni, Otter). The only exception: Marloo, Fireflies and Saturn on
-#   app/roadmap/page.tsx, where they describe notetaker compatibility.
+#   Aveni, Otter). No exceptions.
 # REVIEW terms are printed for a human to judge and do not fail the run:
 #   "Chartered" (allowed for Daren personally, never for a firm), "API",
 #   "integrat" (allowed for Microsoft 365, never for Quilter systems),
@@ -26,10 +25,6 @@ while IFS= read -r line; do
   [ -z "$line" ] && continue
   file=${line%%:*}
   text=${line#*:*:}
-  # Roadmap notetaker line: compatibility, not comparison.
-  if [ "$file" = "$SITE/app/roadmap/page.tsx" ] && echo "$text" | grep -qiE 'marloo|fireflies|saturn' && ! echo "$text" | grep -qiE 'augora|aveni|otter'; then
-    continue
-  fi
   echo "  $line"; hard=$((hard + 1))
 done < <(grep -rniE "${EXCL[@]}" --include='*.tsx' --include='*.ts' --include='*.json' --include='*.md' \
   -e 'fully compliant' -e 'compliant reports?' -e 'chartered (firm|practice|business|company|planning firm)' \

@@ -5981,31 +5981,11 @@ a.conversion-alt {
 }
 
 /* ------------------------------------------------------------------ */
-/* 15 Sep 2026 build plan: /roadmap, /quilter-data, /compliance,       */
-/* /firm-view, and the homepage Quilter and stateless sections.        */
+/* 15 Sep 2026 build plan: /quilter-data, /compliance, /firm-view,     */
+/* and the homepage Quilter and stateless sections.                    */
 /* Tokens only: no new hex for body text.                              */
 /* ------------------------------------------------------------------ */
 
-.roadmap-section { background: white; }
-.roadmap-updated { margin: 0 0 34px; color: var(--muted); font-size: 0.85rem; font-weight: 700; }
-.roadmap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.roadmap-column { padding: 30px 28px 18px; border: 1px solid var(--line); border-radius: 22px; background: var(--paper); }
-.roadmap-column header { padding-bottom: 20px; border-bottom: 1px solid var(--line); }
-.roadmap-column header svg { width: 24px; color: var(--violet); }
-.roadmap-column header h2 { margin: 12px 0 6px; font-size: 1.9rem; letter-spacing: -0.04em; }
-.roadmap-column header p { margin: 0; color: var(--muted); font-size: 0.85rem; font-weight: 700; }
-.roadmap-column ul { margin: 0; padding: 0; list-style: none; }
-.roadmap-column li { padding: 20px 0; border-bottom: 1px solid var(--line); }
-.roadmap-column li:last-child { border-bottom: 0; }
-.roadmap-column li h3 { margin: 0 0 7px; font-size: 1.02rem; line-height: 1.35; }
-.roadmap-column li h3 a { color: var(--violet-text); text-decoration: underline; text-underline-offset: 3px; }
-.roadmap-column li p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.7; }
-.roadmap-now header svg { color: var(--green); }
-.roadmap-next { background: #f4f1ff; border-color: #dcd8ff; }
-.roadmap-later header svg { color: var(--muted); }
-.roadmap-not { display: grid; grid-template-columns: 220px 1fr; gap: 25px; align-items: center; margin-top: 34px; padding: 26px 30px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); color: var(--ink); }
-.roadmap-not strong { font-size: 1.05rem; }
-.roadmap-not span { color: var(--muted); line-height: 1.7; }
 
 .dev-banner { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 14px 24px; background: #fff6e8; border-bottom: 1px solid #f1d9b0; color: #715a3d; font-size: 0.88rem; line-height: 1.5; }
 .dev-banner svg { flex: none; width: 20px; color: var(--amber); }
@@ -6097,7 +6077,6 @@ a.conversion-alt {
 @media (max-width: 900px) { .first-case { grid-template-columns: 1fr; gap: 22px; } }
 
 @media (max-width: 980px) {
-  .roadmap-grid { grid-template-columns: 1fr; }
   .firm-view-points { grid-template-columns: 1fr 1fr; }
   .firm-view-points article:nth-child(2) { border-right: 0; }
   .firm-view-points article:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
@@ -6107,7 +6086,6 @@ a.conversion-alt {
 }
 
 @media (max-width: 700px) {
-  .roadmap-not { grid-template-columns: 1fr; gap: 10px; }
   .firm-view-points { grid-template-columns: 1fr; }
   .firm-view-points article { border-right: 0; border-bottom: 1px solid var(--line); }
   .firm-view-points article:last-child { border-bottom: 0; }

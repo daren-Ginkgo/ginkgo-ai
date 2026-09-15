@@ -109,20 +109,6 @@ and access model above; adviser accountability; and the distinction "firm memory
 client memory": templates, house style, ATR wording and fee structure are remembered,
 client data never is. It ends with an FAQ. Point compliance and file-check questions there.
 
-ROADMAP (from /roadmap, last updated 15 September 2026)
-NOW (live for every beta firm): suitability report drafts, annual review drafts, cashflow
-reports, calculators with workings, Gap Scanner, Quilter data built in, forms from case
-data, outputs formatted for Quilter submission, Microsoft 365 native, nothing kept after
-the session. NEXT (being built, target
-October to December 2026, not a commitment): a pre-meeting brief; meeting summaries from
-notetaker tools accepted as input; a firm view for principals and compliance leads (cases
-drafted, QA grades, items outstanding, exportable), described at /firm-view and labelled
-in development; a founding firm feedback loop.
-LATER (under consideration, no dates): additional report types (protection, pension
-switch, mortgage), network-level MI, a targeted support evidence layer. Never present a
-Next or Later item as available today. The engine will not become a CRM, a back-office
-system or a chat box.
-
 LEGAL FOOTING
 The Advice Engine Ltd supplies software to authorised financial advice firms. It is not
 authorised by the Financial Conduct Authority and does not give financial advice,

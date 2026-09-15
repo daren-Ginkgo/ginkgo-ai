@@ -5,8 +5,8 @@ import { SiteFooter, SiteHeader } from "@/components/marketing";
 export const metadata: Metadata = {
   title: "Firm view (in development)",
   description: "The principal's view of The Advice Engine, in development for Q4 2026: cases drafted, QA grades by adviser, items outstanding and exportable MI, without exposing client content.",
-  // A placeholder for a screen that does not exist yet. Linked only from the
-  // roadmap, kept out of the sitemap and out of search until it is live.
+  // A placeholder for a screen that does not exist yet. Not linked from the
+  // site, kept out of the sitemap and out of search until it is live.
   robots: { index: false, follow: true },
 };
 
@@ -32,7 +32,7 @@ export default function FirmViewPage() {
             <span className="kicker">Firm view</span>
             <h1>The principal&apos;s picture of the work, without the client content.</h1>
             <p>For principals, compliance leads and network supervision teams: how many cases have been drafted, how the adviser QA grades are distributed by adviser, what is still outstanding, and an export for your own MI. Designed so a supervision team can see the same picture as the firm without opening a single client file.</p>
-            <div className="hero-actions"><a className="text-link" href="/roadmap">Back to the roadmap</a></div>
+            <div className="hero-actions"><a className="text-link" href="/compliance">For compliance officers and file-check teams</a></div>
           </div>
         </div>
       </section>

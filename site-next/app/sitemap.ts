@@ -4,7 +4,7 @@ const BASE = "https://theadviceengine.ai";
 
 // Every public route, once. /funnel and /api are deliberately absent:
 // /funnel is owner-only behind Easy Auth and must not be advertised, and
-// /firm-view is an in-development placeholder linked only from the roadmap
+// /firm-view is an in-development placeholder, not linked from the site
 // (it also carries robots noindex) until the screen exists.
 const publicRoutes = [
   "/",
@@ -12,7 +12,6 @@ const publicRoutes = [
   "/evidence",
   "/compliance",
   "/quilter-data",
-  "/roadmap",
   "/security",
   "/pricing",
   "/about",
