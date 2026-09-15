@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import {
   ArrowRight,
+  BookOpenCheck,
   Check,
   CircleCheck,
   Database,
   FileText,
+  Landmark,
+  LineChart,
   LockKeyhole,
   ShieldCheck,
   Sparkles,
@@ -56,6 +59,18 @@ const jobs = [
   ["Annual review", "Meeting record + previous report + current values", "Progress-check or outcome report + action list"],
   ["Cashflow", "Household data + objectives + agreed assumptions", "Professional cashflow report + client email draft"],
   ["Calculators", "Case figures + source documents", "Workings for charges, CGT, withdrawals, critical yield and more"],
+  // Forms row (build plan 15 Sep 2026, 3.1): live, on the verified-facts list.
+  ["Forms", "Case pack + fee agreement", "Advice Fee Authority Forms and Quilter letters of authority, filled from case data"],
+];
+
+// The Quilter data USP (build plan 15 Sep 2026, 3.1): three lines, all on the
+// verified-facts list, linking to /quilter-data. No integration with Quilter
+// systems is described; the only permitted wording on that subject is the
+// "Outputs formatted for Quilter submission" line under the job table.
+const quilterLines = [
+  [LineChart, "WealthSelect and Cirilium, from the factsheets", "Portfolio charges and performance pulled automatically and cited to the factsheet date."],
+  [Landmark, "Platform valuations, cross-checked", "Quilter Investment Platform values checked against the case pack; discrepancies flagged on the QA sheet."],
+  [BookOpenCheck, "Quilter language throughout", "Attitude-to-risk terminology and report structure matched to what the file-check team expects."],
 ];
 
 // Retention wording approved by Daren on 6 Sep 2026. Do not reintroduce
@@ -65,6 +80,12 @@ const securityItems = [
   [ShieldCheck, "Never used to train AI models", "A binding term of our agreement with our AI provider, not a setting we switch on."],
   [Database, "Nothing kept in the app after your session", "The audit log records who ran what and when, never client content."],
 ];
+
+// Testimonial (build plan 15 Sep 2026, 3.1): one attributable quote, name,
+// firm and role. Nothing renders until Daren supplies a real one; a fictitious
+// or anonymous quote is worse than none, so the block stays null, not a
+// placeholder sentence.
+const testimonial: { quote: string; name: string; role: string; firm: string } | null = null;
 
 export default function Home() {
   return (
@@ -145,6 +166,7 @@ export default function Home() {
             <div className="job-map-head"><span>Adviser job</span><span>What goes in</span><span>What comes out</span></div>
             {jobs.map(([job, input, output]) => <div className="job-map-row" key={job}><strong>{job}</strong><span>{input}</span><span>{output}</span></div>)}
           </div>
+          <p className="outputs-quilter-line"><Check aria-hidden="true" />Outputs formatted for Quilter submission.</p>
         </div>
       </section>
 
@@ -174,6 +196,48 @@ export default function Home() {
           <div className="workflow-sale-action">
             <p><strong>One source pack can support several pieces of work.</strong> Reuse verified client facts rather than finding and typing them again for every document.</p>
             <a className="text-link" href="/outputs#workflow-demos">See three complete workflow demonstrations <ArrowRight /></a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section quilter-usp" id="quilter-data">
+        <div className="shell quilter-usp-grid">
+          <div>
+            <span className="kicker">Quilter data, built in</span>
+            <h2>Knows Quilter&apos;s platform, portfolios and charges out of the box.</h2>
+            <a className="text-link" href="/quilter-data">See how a factsheet figure reaches the report <ArrowRight aria-hidden="true" /></a>
+          </div>
+          <ul className="quilter-usp-lines">
+            {quilterLines.map(([Icon, title, copy]) => {
+              const LineIcon = Icon as typeof LineChart;
+              return <li key={title as string}><LineIcon aria-hidden="true" /><span><strong>{title as string}</strong>{copy as string}</span></li>;
+            })}
+          </ul>
+        </div>
+      </section>
+
+      {/* Moved up from below the evidence teaser (build plan 15 Sep 2026, 3.1):
+          the stateless design is its own section, with the headline the plan
+          specifies, linking to /compliance. Card wording unchanged. */}
+      <section className="section security stateless" id="security">
+        <div className="shell security-grid">
+          <div className="security-copy">
+            <span className="kicker">Stateless by design</span>
+            <h2>Nothing is kept.{" "}<br />Not the case pack, not the draft.</h2>
+            <p>
+              No client content is stored in the app after the session. The audit log records who ran what and
+              when, never client data. Your team keeps its existing Microsoft identity controls and every output
+              preserves a clear line of adviser responsibility.
+            </p>
+            <a className="text-link" href="/compliance">
+              Read the page for compliance officers <ArrowRight />
+            </a>
+          </div>
+          <div className="security-list">
+            {securityItems.map(([Icon, title, copy]) => {
+              const SecurityIcon = Icon as typeof ShieldCheck;
+              return <article key={title as string}><SecurityIcon /><div><h3>{title as string}</h3><p>{copy as string}</p></div></article>;
+            })}
           </div>
         </div>
       </section>
@@ -236,27 +300,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section security" id="security">
-        <div className="shell security-grid">
-          <div className="security-copy">
-            <span className="kicker">Security and governance</span>
-            <h2>Built for firms that have to answer sensible questions.</h2>
-            <p>
-              The safeguards are part of the workflow, not an appendix. Your team keeps its existing
-              Microsoft identity controls and every output preserves a clear line of adviser responsibility.
-            </p>
-            <a className="text-link" href="/security">
-              Read the security page <ArrowRight />
-            </a>
+      {testimonial ? (
+        <section className="section testimonial-section" id="testimonial">
+          <div className="shell">
+            <figure className="testimonial-card">
+              <blockquote>&ldquo;{testimonial.quote}&rdquo;</blockquote>
+              <figcaption><cite>{testimonial.name}, {testimonial.role}, {testimonial.firm}</cite></figcaption>
+            </figure>
           </div>
-          <div className="security-list">
-            {securityItems.map(([Icon, title, copy]) => {
-              const SecurityIcon = Icon as typeof ShieldCheck;
-              return <article key={title as string}><SecurityIcon /><div><h3>{title as string}</h3><p>{copy as string}</p></div></article>;
-            })}
-          </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       <section className="section start-section" id="start">
         <div className="shell start-card">

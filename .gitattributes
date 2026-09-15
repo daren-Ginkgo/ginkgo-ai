@@ -13,3 +13,6 @@ CNAME text eol=lf
 *.zip binary
 *.webp binary
 *.pdf binary
+
+# The preflight scripts run under bash on Windows and Linux: keep LF.
+*.sh text eol=lf

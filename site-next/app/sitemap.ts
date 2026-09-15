@@ -3,11 +3,16 @@ import type { MetadataRoute } from "next";
 const BASE = "https://theadviceengine.ai";
 
 // Every public route, once. /funnel and /api are deliberately absent:
-// /funnel is owner-only behind Easy Auth and must not be advertised.
+// /funnel is owner-only behind Easy Auth and must not be advertised, and
+// /firm-view is an in-development placeholder linked only from the roadmap
+// (it also carries robots noindex) until the screen exists.
 const publicRoutes = [
   "/",
   "/outputs",
   "/evidence",
+  "/compliance",
+  "/quilter-data",
+  "/roadmap",
   "/security",
   "/pricing",
   "/about",
