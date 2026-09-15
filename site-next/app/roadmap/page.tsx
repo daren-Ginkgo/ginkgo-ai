@@ -24,6 +24,7 @@ const now: Item[] = [
   { title: "Gap Scanner", copy: "Checks a case pack for missing evidence, unevidenced risk ratings and drift between objectives and recommendation before anyone drafts.", href: "/gap-scanner" },
   { title: "Quilter data built in", copy: "WealthSelect and Cirilium portfolio charges and performance drawn from the current factsheets. Platform valuations cross-checked against the case pack. Quilter attitude-to-risk language used throughout.", href: "/quilter-data" },
   { title: "Forms from case data", copy: "Advice Fee Authority Forms and Quilter letters of authority generated from the case pack." },
+  { title: "Outputs formatted for Quilter submission", copy: "Drafts and QA sheets are packaged in the form Quilter's processes expect, so nothing is re-keyed." },
   { title: "Microsoft 365 native", copy: "Sign in with your firm's Entra account and MFA. Select case files directly from SharePoint and OneDrive.", href: "/microsoft" },
   { title: "Nothing kept after the session", copy: "No case content is stored in the app. The audit log records who ran what and when, never client data.", href: "/compliance" },
 ];
@@ -32,7 +33,6 @@ const next: Item[] = [
   { title: "Pre-meeting brief", copy: "Previous report, current values and diary in. One-page brief and question list out, ready before the client arrives." },
   { title: "Works with your notetaker", copy: "Meeting summaries from Marloo, Fireflies or Saturn accepted as input alongside the case pack." },
   { title: "Firm view", copy: "For principals and compliance leads: cases drafted, QA grades, items outstanding, exportable. Designed so a network supervision team can see the same picture without seeing client content.", href: "/firm-view" },
-  { title: "Outputs formatted for Quilter submission", copy: "Drafts and QA sheets packaged in the form Quilter's processes expect, so nothing is re-keyed." },
   { title: "Founding firm feedback loop", copy: "Every beta firm's corrections feed back into the templates and checks. Faster than a release cycle." },
 ];
 
