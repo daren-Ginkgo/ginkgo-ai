@@ -48,16 +48,16 @@ export function SiteHeader() {
           <Brand />
           {/* Seven items is the ceiling: an eighth wraps the header at 1280px
               (handover 2, task C). The 15 Sep 2026 build plan puts Compliance
-              and Roadmap in the header for the Quilter compliance audience, so
-              Gap Scanner and Microsoft 365 move to the mobile menu and the
-              footer's Explore row, alongside Product. */}
+              in the header for the Quilter compliance audience. Daren kept Gap
+              Scanner in the header (15 Sep 2026); Roadmap and Microsoft 365
+              sit in the mobile menu and the footer. */}
           <nav className="desktop-nav" aria-label="Main navigation">
             <a href="/outputs">Outputs</a>
             <a href="/evidence">Evidence</a>
             <a href="/compliance">Compliance</a>
             <a href="/security">Security</a>
             <a href="/pricing">Pricing</a>
-            <a href="/roadmap">Roadmap</a>
+            <a href="/gap-scanner">Gap Scanner</a>
             <a href="/about">Daren &amp; Ginkgo</a>
           </nav>
           <div className="nav-actions">
