@@ -92,6 +92,36 @@ as [TO CONFIRM] placeholders, and the compliance pass names each one. That is
 designed in, not a defect. Every document is a draft requiring adviser sign-off,
 and the client is fictitious.
 
+QUILTER DATA, BUILT IN (from /quilter-data)
+The engine's own data layer knows Quilter's platform, portfolios and charges: WealthSelect
+and Cirilium portfolio charges and performance are drawn from the current factsheets and
+cited to the factsheet date; Quilter Investment Platform valuations are cross-checked
+against the case pack, with discrepancies flagged on the adviser QA sheet; Quilter
+attitude-to-risk terminology is used throughout. Forms: Advice Fee Authority Forms and
+Quilter letters of authority are generated from case data. No integration with Quilter
+systems is claimed: if asked, say only "outputs formatted for Quilter submission".
+
+FOR COMPLIANCE OFFICERS (from /compliance)
+A page written for the person who approves the tool: what the engine does (drafts, checks,
+calculates) and does not do (advise, decide, sign); the evidence trail (every figure
+traced to its source, the adviser QA sheet, the information-needed list); the data-handling
+and access model above; adviser accountability; and the distinction "firm memory, not
+client memory": templates, house style, ATR wording and fee structure are remembered,
+client data never is. It ends with an FAQ. Point compliance and file-check questions there.
+
+ROADMAP (from /roadmap, last updated 15 September 2026)
+NOW (live for every beta firm): suitability report drafts, annual review drafts, cashflow
+reports, calculators with workings, Gap Scanner, Quilter data built in, forms from case
+data, Microsoft 365 native, nothing kept after the session. NEXT (being built, target
+October to December 2026, not a commitment): a pre-meeting brief; meeting summaries from
+notetaker tools accepted as input; a firm view for principals and compliance leads (cases
+drafted, QA grades, items outstanding, exportable), described at /firm-view and labelled
+in development; outputs formatted for Quilter submission; a founding firm feedback loop.
+LATER (under consideration, no dates): additional report types (protection, pension
+switch, mortgage), network-level MI, a targeted support evidence layer. Never present a
+Next or Later item as available today. The engine will not become a CRM, a back-office
+system or a chat box.
+
 LEGAL FOOTING
 The Advice Engine Ltd supplies software to authorised financial advice firms. It is not
 authorised by the Financial Conduct Authority and does not give financial advice,

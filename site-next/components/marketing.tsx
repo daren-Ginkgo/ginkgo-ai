@@ -46,17 +46,18 @@ export function SiteHeader() {
       <header className="site-header">
         <div className="shell nav-shell">
           <Brand />
-          {/* Evidence replaced Product in the desktop nav (handover 2, task C):
-              a seventh item wraps the header at 1280px, and the restructure's
-              six-page shape does not include /product. Product stays in the
-              mobile menu and footer. */}
+          {/* Seven items is the ceiling: an eighth wraps the header at 1280px
+              (handover 2, task C). The 15 Sep 2026 build plan puts Compliance
+              and Roadmap in the header for the Quilter compliance audience, so
+              Gap Scanner and Microsoft 365 move to the mobile menu and the
+              footer's Explore row, alongside Product. */}
           <nav className="desktop-nav" aria-label="Main navigation">
             <a href="/outputs">Outputs</a>
             <a href="/evidence">Evidence</a>
-            <a href="/gap-scanner">Gap Scanner</a>
-            <a href="/microsoft">Microsoft 365</a>
+            <a href="/compliance">Compliance</a>
             <a href="/security">Security</a>
             <a href="/pricing">Pricing</a>
+            <a href="/roadmap">Roadmap</a>
             <a href="/about">Daren &amp; Ginkgo</a>
           </nav>
           <div className="nav-actions">
@@ -70,11 +71,14 @@ export function SiteHeader() {
             <div>
               <a href="/outputs">Outputs</a>
               <a href="/evidence">Evidence</a>
+              <a href="/compliance">Compliance</a>
+              <a href="/quilter-data">Quilter data</a>
               <a href="/product">Product</a>
               <a href="/gap-scanner">Gap Scanner</a>
               <a href="/microsoft">Microsoft 365</a>
               <a href="/security">Security</a>
               <a href="/pricing">Pricing</a>
+              <a href="/roadmap">Roadmap</a>
               <a href="/about">Daren &amp; Ginkgo</a>
               <a href="/start">Apply for a founding place</a>
               <a href="/demo">Book a demonstration</a>
@@ -93,7 +97,8 @@ export function SiteFooter() {
         <div><Brand reversed /><p>Advice paperwork, built around the evidence.</p></div>
         <div className="footer-links">
           <a href="/outputs">Outputs</a><a href="/evidence">Evidence</a>
-          <a href="/security">Security</a><a href="/pricing">Pricing</a>
+          <a href="/compliance">Compliance</a><a href="/security">Security</a>
+          <a href="/pricing">Pricing</a><a href="/roadmap">Roadmap</a>
           <a href="/about">Daren &amp; Ginkgo</a><a href="/demo">Book a demonstration</a>
           <a href="mailto:hello@theadviceengine.ai">Contact</a>
           <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
@@ -102,6 +107,7 @@ export function SiteFooter() {
       <div className="shell footer-product-links">
         <span>Explore</span>
         <a href="/product">Product</a>
+        <a href="/quilter-data">Quilter data</a>
         <a href="/gap-scanner">Gap Scanner</a>
         <a href="/microsoft">Microsoft 365</a>
         <a href="/finprom.html">Financial promotions</a>
