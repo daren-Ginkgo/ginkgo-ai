@@ -6091,6 +6091,10 @@ a.conversion-alt {
 .testimonial-card { display: grid; gap: 18px; max-width: 860px; margin: 0 auto; padding: clamp(30px, 5vw, 56px); border: 1px solid var(--line); border-radius: 24px; background: var(--paper); }
 .testimonial-card blockquote { margin: 0; font-size: clamp(1.3rem, 2.4vw, 1.9rem); line-height: 1.4; letter-spacing: -0.02em; }
 .testimonial-card cite { color: var(--muted); font-size: 0.9rem; font-style: normal; font-weight: 700; }
+.first-case { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; margin-top: 22px; padding: clamp(28px, 4vw, 44px); border: 1px solid #dcd8ff; border-radius: 24px; background: linear-gradient(135deg, #f4f1ff, #faf9f5); }
+.first-case h2 { margin: 12px 0 10px; font-size: clamp(1.5rem, 2.6vw, 2.2rem); letter-spacing: -0.035em; line-height: 1.15; }
+.first-case p { max-width: 640px; margin: 0; color: var(--muted); line-height: 1.7; }
+@media (max-width: 900px) { .first-case { grid-template-columns: 1fr; gap: 22px; } }
 
 @media (max-width: 980px) {
   .roadmap-grid { grid-template-columns: 1fr; }
