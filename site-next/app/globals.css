@@ -6069,8 +6069,13 @@ a.conversion-alt {
 .outputs-quilter-line svg { width: 17px; color: var(--green); }
 .testimonial-section { background: white; }
 .testimonial-card { display: grid; gap: 18px; max-width: 860px; margin: 0 auto; padding: clamp(30px, 5vw, 56px); border: 1px solid var(--line); border-radius: 24px; background: var(--paper); }
-.testimonial-card blockquote { margin: 0; font-size: clamp(1.3rem, 2.4vw, 1.9rem); line-height: 1.4; letter-spacing: -0.02em; }
+/* Sized for the real quote (22 Sep 2026): Eddie's runs to two paragraphs, so
+   the display size that suited a one-liner would have made a wall of text. */
+.testimonial-card blockquote { display: grid; gap: 16px; margin: 0; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.55; letter-spacing: -0.01em; }
+.testimonial-card blockquote p { margin: 0; }
+.testimonial-card figcaption { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
 .testimonial-card cite { color: var(--muted); font-size: 0.9rem; font-style: normal; font-weight: 700; }
+.testimonial-logo { width: auto; height: 30px; opacity: 0.85; }
 .first-case { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; margin-top: 22px; padding: clamp(28px, 4vw, 44px); border: 1px solid #dcd8ff; border-radius: 24px; background: linear-gradient(135deg, #f4f1ff, #faf9f5); }
 .first-case h2 { margin: 12px 0 10px; font-size: clamp(1.5rem, 2.6vw, 2.2rem); letter-spacing: -0.035em; line-height: 1.15; }
 .first-case p { max-width: 640px; margin: 0; color: var(--muted); line-height: 1.7; }

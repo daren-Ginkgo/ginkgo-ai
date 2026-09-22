@@ -85,7 +85,35 @@ const securityItems = [
 // firm and role. Nothing renders until Daren supplies a real one; a fictitious
 // or anonymous quote is worse than none, so the block stays null, not a
 // placeholder sentence.
-const testimonial: { quote: string; name: string; role: string; firm: string } | null = null;
+//
+// Eddie Newland sent this unprompted on 22 Sep 2026, in reply to Daren's ask of
+// 18 Sep. His words, verbatim, both paragraphs, nothing reworded: he offered to
+// let us cut it and we have not, so the sign-off he gives is the sign-off for
+// what is on the page. Daren promised him the exact wording in place before it
+// goes live, so this ships to STAGING only until Eddie has said yes.
+//
+// "Chartered Financial Adviser" is Eddie's own designation and passes the claim
+// audit, which bans Chartered only for a firm. Do not restate it as the firm's.
+//
+// logo stays null until Stonebridge Wealth LLP give permission as a firm.
+// Eddie's personal testimonial is not that permission, and their mark on our
+// homepage would read as a firm endorsement, which nobody there has given.
+const testimonial: {
+  paragraphs: string[];
+  name: string;
+  role: string;
+  firm: string;
+  logo: { src: string; alt: string; width: number; height: number } | null;
+} | null = {
+  paragraphs: [
+    "The least enjoyable part of being a financial adviser is often the compliance work, particularly writing lengthy suitability reports for pension switches and consolidations. Before using The Advice Engine, a pension consolidation involving multiple plans could easily take me more than a day to complete from a compliance perspective. The Advice Engine has significantly reduced that burden, giving me more time to spend with clients and focus on the human side of financial planning. As a result, I can gather more meaningful information, both hard facts and softer insights, which ultimately leads to more comprehensive advice and better quality compliance documentation.",
+    "What has impressed me just as much is the speed at which feedback is acted upon. On the rare occasion I've identified something that needed adding, changing or refining, Daren and his team have been incredibly responsive, often implementing improvements far quicker than I would have expected. It genuinely feels like a system that has been built by advisers, for advisers.",
+  ],
+  name: "Eddie Newland",
+  role: "Chartered Financial Adviser",
+  firm: "Stonebridge Wealth",
+  logo: null,
+};
 
 export default function Home() {
   return (
@@ -304,8 +332,26 @@ export default function Home() {
         <section className="section testimonial-section" id="testimonial">
           <div className="shell">
             <figure className="testimonial-card">
-              <blockquote>&ldquo;{testimonial.quote}&rdquo;</blockquote>
-              <figcaption><cite>{testimonial.name}, {testimonial.role}, {testimonial.firm}</cite></figcaption>
+              <blockquote>
+                {testimonial.paragraphs.map((paragraph, index) => (
+                  <p key={index}>
+                    {index === 0 ? <>&ldquo;{paragraph}</> : paragraph}
+                    {index === testimonial.paragraphs.length - 1 ? <>&rdquo;</> : null}
+                  </p>
+                ))}
+              </blockquote>
+              <figcaption>
+                <cite>{testimonial.name}, {testimonial.role}, {testimonial.firm}</cite>
+                {testimonial.logo ? (
+                  <img
+                    className="testimonial-logo"
+                    src={testimonial.logo.src}
+                    alt={testimonial.logo.alt}
+                    width={testimonial.logo.width}
+                    height={testimonial.logo.height}
+                  />
+                ) : null}
+              </figcaption>
             </figure>
           </div>
         </section>
