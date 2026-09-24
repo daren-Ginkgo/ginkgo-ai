@@ -30,6 +30,9 @@ export type StoredApplication = {
   isTest: boolean;
   createdAt: string;
   updatedAt: string;
+  // When the approval email went to the adviser. "" means never - either the row
+  // predates the email (24 Sep 2026 onwards) or it has not been approved yet.
+  approvalEmailedAt: string;
 };
 
 type ApplicationEntity = TableEntity & Omit<StoredApplication, "id">;
@@ -102,6 +105,7 @@ function fromApplicationEntity(entity: ApplicationEntity): StoredApplication {
     isTest: entity.isTest ?? false,
     createdAt: entity.createdAt,
     updatedAt: entity.updatedAt,
+    approvalEmailedAt: entity.approvalEmailedAt ?? "",
   };
 }
 
@@ -162,6 +166,7 @@ export async function submitBetaApplication(input: {
     isTest: false,
     createdAt: now,
     updatedAt: now,
+    approvalEmailedAt: "",
   };
 
   try {
@@ -186,7 +191,13 @@ export async function getApplication(id: string): Promise<StoredApplication | nu
   }
 }
 
-export async function updateApplication(id: string, changes: { status?: ApplicationStatus; isTest?: boolean }) {
+// Returns the row as it was BEFORE the change, so the caller can tell a real
+// transition (pending -> approved, which owes the adviser an email) from a no-op
+// re-save of a row that was already approved.
+export async function updateApplication(
+  id: string,
+  changes: { status?: ApplicationStatus; isTest?: boolean },
+): Promise<StoredApplication> {
   await ensureTables();
   const client = applicationClient();
   const existing = await client.getEntity<ApplicationEntity>(APPLICATION_PARTITION, id);
@@ -196,6 +207,19 @@ export async function updateApplication(id: string, changes: { status?: Applicat
     ...(changes.isTest !== undefined ? { isTest: changes.isTest } : {}),
     updatedAt: new Date().toISOString(),
   }, "Replace");
+  return fromApplicationEntity(existing);
+}
+
+// Stamp the row once the approval email has gone, so the adviser is never mailed
+// twice if the status is set back and forth. Merge, not Replace: it touches this
+// one field and cannot clobber a concurrent status change.
+export async function markApprovalEmailed(id: string) {
+  await ensureTables();
+  await applicationClient().updateEntity({
+    partitionKey: APPLICATION_PARTITION,
+    rowKey: id,
+    approvalEmailedAt: new Date().toISOString(),
+  }, "Merge");
 }
 
 type ChatLimitEntity = TableEntity & { count: number };

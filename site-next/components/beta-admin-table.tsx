@@ -32,6 +32,15 @@ type FcaCheck = {
 
 const statuses = ["pending", "contacted", "approved", "declined", "withdrawn", "waitlist"];
 
+// What became of the welcome email that approving an application sends.
+type MailOutcome = "sent" | "failed" | "not-configured";
+
+const MAIL_LINE: Record<MailOutcome, string> = {
+  sent: "✓ welcome email sent",
+  failed: "✗ welcome email did NOT send - email them by hand",
+  "not-configured": "! mail is not configured on this site - email them by hand",
+};
+
 function FcaVerdict({ check }: { check: FcaCheck }) {
   if (check.error) return <span className="fca-line fca-warn">? {check.error}</span>;
   const nameLine =
@@ -61,6 +70,7 @@ export function BetaAdminTable({ initialApplications }: { initialApplications: B
   const [applications, setApplications] = useState(initialApplications);
   const [saving, setSaving] = useState<string | null>(null);
   const [checks, setChecks] = useState<Record<string, FcaCheck | "loading">>({});
+  const [mail, setMail] = useState<Record<string, MailOutcome>>({});
 
   async function updateStatus(id: string, status: string) {
     setSaving(id);
@@ -71,7 +81,11 @@ export function BetaAdminTable({ initialApplications }: { initialApplications: B
         body: JSON.stringify({ status }),
       });
       if (!response.ok) throw new Error("Update failed");
+      // Approving sends the adviser their welcome email. Say which happened: a
+      // silent failure would leave someone approved and waiting to be told.
+      const result = await response.json() as { email?: "sent" | "failed" | "not-configured" | null };
       setApplications((rows) => rows.map((row) => row.id === id ? { ...row, status } : row));
+      if (result.email) setMail((current) => ({ ...current, [id]: result.email as MailOutcome }));
     } finally {
       setSaving(null);
     }
@@ -148,6 +162,11 @@ export function BetaAdminTable({ initialApplications }: { initialApplications: B
                 <td>{new Date(application.createdAt).toLocaleDateString("en-GB")}</td>
                 <td>
                   <select value={application.status} disabled={saving === application.id} onChange={(event) => updateStatus(application.id, event.target.value)}>{statuses.map((status) => <option value={status} key={status}>{status}</option>)}</select>
+                  {mail[application.id] ? (
+                    <span className={`fca-line ${mail[application.id] === "sent" ? "fca-ok" : "fca-bad"}`}>
+                      {MAIL_LINE[mail[application.id]]}
+                    </span>
+                  ) : null}
                   <label className="funnel-test-toggle">
                     <input
                       type="checkbox"
