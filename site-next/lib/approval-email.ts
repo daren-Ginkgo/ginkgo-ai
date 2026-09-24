@@ -11,14 +11,14 @@
 //    is by email domain - beta_grants.py in the engine matches on it)
 //  - the 31 days start at her FIRST sign-in, not at approval, so nothing is burning
 //  - every output is a draft a qualified adviser must review: never imply otherwise
-//
-// BOOKING_URL (app setting) is Daren's diary link. Unset = the whole paragraph is left
-// out rather than shipping a dead link.
 
 import type { StoredApplication } from "@/lib/azure-storage";
 
 const SIGN_IN_URL = "https://app.theadviceengine.ai";
 const CONTACT_EMAIL = "hello@theadviceengine.ai";
+// The same booking link the site's /demo page and the chat widget use. The TRAILING
+// HYPHEN is part of the slug, not a typo - do not tidy it away.
+const BOOKING_URL = "https://meetings.hubspot.com/daren8/advice-engine-demo-";
 
 function firstName(fullName: string) {
   const first = (fullName ?? "").trim().split(/\s+/)[0] ?? "";
@@ -42,22 +42,15 @@ export function buildApprovalEmail(application: StoredApplication) {
   const name = escapeHtml(firstName(application.fullName));
   const firm = escapeHtml((application.firmName ?? "").trim());
   const domain = escapeHtml(domainOf(application.workEmail));
-  const booking = (process.env.BOOKING_URL ?? "").trim();
 
   const subject = "Your Advice Engine access is open";
 
-  const diaryParagraph = booking
-    ? `<p style="margin:0 0 16px">Before you start, put 30 minutes in my diary:
-         <a href="${escapeHtml(booking)}">${escapeHtml(booking)}</a>. I would rather walk you
-         through your first real job than have you work it out alone. <strong>Bring a case you
-         are going to have to draft a report for anyway</strong> - a live suitability, a review,
-         a switch or a transfer. We run that one, and you get a usable draft out of the call
-         instead of a demonstration.</p>`
-    : `<p style="margin:0 0 16px">Before you start, let me know when suits for 30 minutes. I
-         would rather walk you through your first real job than have you work it out alone.
-         <strong>Bring a case you are going to have to draft a report for anyway</strong> - a
-         live suitability, a review, a switch or a transfer. We run that one, and you get a
-         usable draft out of the call instead of a demonstration.</p>`;
+  const diaryParagraph = `<p style="margin:0 0 16px">Before you start, put 30 minutes in my
+         diary: <a href="${BOOKING_URL}">choose a time here</a>. I would rather walk you through
+         your first real job than have you work it out alone. <strong>Bring a case you are going
+         to have to draft a report for anyway</strong> - a live suitability, a review, a switch
+         or a transfer. We run that one, and you get a usable draft out of the call instead of a
+         demonstration.</p>`;
 
   const html = `<!DOCTYPE html>
 <html lang="en-GB"><body style="margin:0;padding:0;background:#ffffff">
