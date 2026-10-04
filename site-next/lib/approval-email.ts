@@ -17,8 +17,9 @@ import type { StoredApplication } from "@/lib/azure-storage";
 const SIGN_IN_URL = "https://app.theadviceengine.ai";
 const CONTACT_EMAIL = "hello@theadviceengine.ai";
 // The same booking link the site's /demo page and the chat widget use. The TRAILING
-// HYPHEN is part of the slug, not a typo - do not tidy it away.
-const BOOKING_URL = "https://meetings.hubspot.com/daren8/advice-engine-demo-";
+// HYPHEN is part of the slug, not a typo - do not tidy it away. Also used by the
+// acknowledgement email, so this stays its one home.
+export const BOOKING_URL = "https://meetings.hubspot.com/daren8/advice-engine-demo-";
 
 function firstName(fullName: string) {
   const first = (fullName ?? "").trim().split(/\s+/)[0] ?? "";

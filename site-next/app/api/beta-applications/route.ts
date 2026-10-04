@@ -1,4 +1,6 @@
+import { acknowledgeApplication } from "@/lib/acknowledgement-email";
 import { notifyNewApplication } from "@/lib/application-notification";
+import { BOOKING_URL } from "@/lib/approval-email";
 import { recordConversion, submitBetaApplication } from "@/lib/azure-storage";
 import { betaApplicationSchema } from "@/lib/beta";
 import { sendMail } from "@/lib/graph-mail";
@@ -41,10 +43,15 @@ export async function POST(request: Request) {
       );
     }
 
-    // Saved first; the email to Daren is a courtesy on top and never fails the
-    // application. The log line carries no applicant details.
-    const notified = await notifyNewApplication(result, process.env.FUNNEL_ADMIN_EMAIL ?? "", sendMail);
+    // Saved first; the email to Daren and the applicant's acknowledgement are a
+    // courtesy on top and never fail the application. Log lines carry no
+    // applicant details.
+    const [notified, acknowledged] = await Promise.all([
+      notifyNewApplication(result, process.env.FUNNEL_ADMIN_EMAIL ?? "", sendMail),
+      acknowledgeApplication(result, BOOKING_URL, sendMail),
+    ]);
     if (notified === "failed") console.error("New-application notification email was not sent.");
+    if (acknowledged === "failed") console.error("Applicant acknowledgement email was not sent.");
 
     return Response.json({
       received: true,
