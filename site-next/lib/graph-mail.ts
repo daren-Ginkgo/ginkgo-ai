@@ -51,7 +51,8 @@ async function token() {
 // Graph's sendMail carries ONE body with one contentType - there is no multipart
 // text alternative - so the body is HTML and the copy is written plainly enough to
 // read as text if a client strips it.
-export type Mail = { to: string; subject: string; html: string };
+// bcc: false leaves out NOTIFY_BCC_EMAIL, for mail that already goes to the owner.
+export type Mail = { to: string; subject: string; html: string; bcc?: boolean };
 
 /**
  * Send one message. Returns true on success, false otherwise, and NEVER throws:
@@ -59,11 +60,11 @@ export type Mail = { to: string; subject: string; html: string };
  * mail failure must not fail the approval or lose it. The caller reports the
  * outcome to the admin screen so a silent failure is still visible to a human.
  */
-export async function sendMail({ to, subject, html }: Mail): Promise<boolean> {
+export async function sendMail({ to, subject, html, bcc: withBcc = true }: Mail): Promise<boolean> {
   if (!mailConfigured()) return false;
   try {
     const from = process.env.NOTIFY_FROM_EMAIL as string;
-    const bcc = (process.env.NOTIFY_BCC_EMAIL ?? "").trim();
+    const bcc = withBcc ? (process.env.NOTIFY_BCC_EMAIL ?? "").trim() : "";
     const response = await fetch(
       `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(from)}/sendMail`,
       {

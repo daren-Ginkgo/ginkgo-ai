@@ -1,0 +1,52 @@
+name: Check marketing site pull request
+
+# The same checks the deploys run (preflight, unit tests, a full build with its
+# type check) on every pull request into new-marketing-site,
+# so a change is compiled once before it is merged. Nothing is deployed: merging
+# still triggers the staging deploy, and production stays manual.
+on:
+  pull_request:
+    branches:
+      - new-marketing-site
+    paths:
+      - "site-next/**"
+      - ".github/workflows/**"
+
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: "22.x"
+  APP_DIRECTORY: site-next
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Preflight checks (em dashes, header and footer, claims)
+        run: bash scripts/preflight.sh
+        env:
+          PREFLIGHT_SKIP_LINT: "1"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: ${{ env.APP_DIRECTORY }}/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ${{ env.APP_DIRECTORY }}
+        run: npm ci
+
+      - name: Unit tests
+        working-directory: ${{ env.APP_DIRECTORY }}
+        run: npm run test:unit
+
+      - name: Build
+        working-directory: ${{ env.APP_DIRECTORY }}
+        run: npm run build

@@ -28,6 +28,12 @@ export type StoredApplication = {
   // Test submissions are kept (never deleted) but excluded from the public
   // founding-places count. Rows created before the flag existed read as false.
   isTest: boolean;
+  // The hidden trap field on /start was filled. Usually a bot, but browser
+  // autofill can fill it too, which silently dropped a real test application on
+  // 4 Oct 2026. So these rows are kept and shown in /funnel, saved as test rows
+  // (no place held, no approval email) until Daren unticks "Test". Rows created
+  // before the flag existed read as false.
+  suspectedSpam: boolean;
   createdAt: string;
   updatedAt: string;
   // When the approval email went to the adviser. "" means never - either the row
@@ -103,6 +109,7 @@ function fromApplicationEntity(entity: ApplicationEntity): StoredApplication {
     bottleneck: entity.bottleneck ?? "",
     status: entity.status,
     isTest: entity.isTest ?? false,
+    suspectedSpam: entity.suspectedSpam ?? false,
     createdAt: entity.createdAt,
     updatedAt: entity.updatedAt,
     approvalEmailedAt: entity.approvalEmailedAt ?? "",
@@ -137,10 +144,13 @@ export async function submitBetaApplication(input: {
   adviserCount: string;
   microsoft365: string;
   bottleneck: string;
-}) {
+}, options: { suspectedSpam?: boolean } = {}) {
   await ensureTables();
   const client = applicationClient();
-  const rowKey = emailKey(input.workEmail);
+  const suspectedSpam = options.suspectedSpam ?? false;
+  // A suspected-spam row gets its own key, so it can never make a real
+  // application from the same address look like a duplicate.
+  const rowKey = emailKey(suspectedSpam ? `suspected-spam:${input.workEmail}` : input.workEmail);
 
   try {
     const existing = await client.getEntity<ApplicationEntity>(APPLICATION_PARTITION, rowKey);
@@ -163,7 +173,8 @@ export async function submitBetaApplication(input: {
     microsoft365: input.microsoft365,
     bottleneck: input.bottleneck,
     status: before.remaining > 0 ? "pending" : "waitlist",
-    isTest: false,
+    isTest: suspectedSpam,
+    suspectedSpam,
     createdAt: now,
     updatedAt: now,
     approvalEmailedAt: "",
