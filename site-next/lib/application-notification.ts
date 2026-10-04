@@ -57,7 +57,10 @@ export function shouldNotify(result: { duplicate: boolean; application: Pick<Sto
 export function buildApplicationNotification(application: StoredApplication) {
   const waitlist = application.status === "waitlist";
   const who = `${oneLine(application.fullName)}, ${oneLine(application.firmName)}`;
-  const subject = waitlist ? `New waiting-list request: ${who}` : `New founding application: ${who}`;
+  // Only a TEST_APPLICANT_EMAILS row is a test at this point (spam-trap rows send
+  // nothing), so the tag tells Daren this one is his own rehearsal.
+  const tag = application.isTest ? "[Test] " : "";
+  const subject = `${tag}${waitlist ? "New waiting-list request" : "New founding application"}: ${who}`;
 
   const supplied = (value: string) => escapeHtml((value ?? "").trim()) || "<em>not supplied</em>";
   const rows: [string, string][] = [

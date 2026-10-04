@@ -1,7 +1,7 @@
 import { acknowledgeApplication } from "@/lib/acknowledgement-email";
 import { notifyNewApplication } from "@/lib/application-notification";
 import { BOOKING_URL } from "@/lib/approval-email";
-import { recordConversion, submitBetaApplication } from "@/lib/azure-storage";
+import { purgeExpiredApplications, recordConversion, submitBetaApplication } from "@/lib/azure-storage";
 import { betaApplicationSchema } from "@/lib/beta";
 import { sendMail } from "@/lib/graph-mail";
 
@@ -25,6 +25,8 @@ export async function POST(request: Request) {
     }
 
     const input = parsed.data;
+    // Expired test rows go first, so they never sit in the founding-places count.
+    await purgeExpiredApplications().catch(() => undefined);
     const result = await submitBetaApplication({
       fullName: input.fullName,
       workEmail: input.workEmail,

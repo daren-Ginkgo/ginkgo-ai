@@ -1,6 +1,7 @@
 import { createHash, randomUUID } from "node:crypto";
 import { TableClient, type TableEntity } from "@azure/data-tables";
 import { ACTIVE_BETA_STATUSES, FOUNDING_PLACES, remainingPlaces } from "@/lib/beta";
+import { expiryFrom, isExpired, isTestApplicant } from "@/lib/test-applicants";
 
 const APPLICATION_TABLE = "BetaApplications";
 const EVENT_TABLE = "ConversionEvents";
@@ -39,6 +40,9 @@ export type StoredApplication = {
   // When the approval email went to the adviser. "" means never - either the row
   // predates the email (24 Sep 2026 onwards) or it has not been approved yet.
   approvalEmailedAt: string;
+  // When the row deletes itself (lib/test-applicants.ts). "" means never, which
+  // is every row unless Daren sets it in /funnel or it came from a test address.
+  expiresAt: string;
 };
 
 type ApplicationEntity = TableEntity & Omit<StoredApplication, "id">;
@@ -113,7 +117,21 @@ function fromApplicationEntity(entity: ApplicationEntity): StoredApplication {
     createdAt: entity.createdAt,
     updatedAt: entity.updatedAt,
     approvalEmailedAt: entity.approvalEmailedAt ?? "",
+    expiresAt: entity.expiresAt ?? "",
   };
+}
+
+// Delete every row whose expiry has passed. Only rows Daren set to expire, or that
+// came from a test address, ever have one. Best effort: the caller never fails on it.
+export async function purgeExpiredApplications() {
+  await ensureTables();
+  const client = applicationClient();
+  const now = new Date().toISOString();
+  for await (const entity of client.listEntities<ApplicationEntity>({
+    queryOptions: { filter: `PartitionKey eq '${APPLICATION_PARTITION}' and expiresAt gt ''` },
+  })) {
+    if (isExpired(entity.expiresAt ?? "", now)) await client.deleteEntity(APPLICATION_PARTITION, entity.rowKey);
+  }
 }
 
 export async function listApplications(): Promise<StoredApplication[]> {
@@ -148,19 +166,27 @@ export async function submitBetaApplication(input: {
   await ensureTables();
   const client = applicationClient();
   const suspectedSpam = options.suspectedSpam ?? false;
+  const testApplicant = !suspectedSpam && isTestApplicant(input.workEmail);
+  const now = new Date().toISOString();
   // A suspected-spam row gets its own key, so it can never make a real
-  // application from the same address look like a duplicate.
-  const rowKey = emailKey(suspectedSpam ? `suspected-spam:${input.workEmail}` : input.workEmail);
+  // application from the same address look like a duplicate. A test address
+  // gets a fresh key every time, so it is never a duplicate at all.
+  const rowKey = emailKey(
+    suspectedSpam ? `suspected-spam:${input.workEmail}`
+      : testApplicant ? `test:${input.workEmail}:${now}`
+      : input.workEmail,
+  );
 
-  try {
-    const existing = await client.getEntity<ApplicationEntity>(APPLICATION_PARTITION, rowKey);
-    return { duplicate: true, application: fromApplicationEntity(existing), availability: await betaAvailability() };
-  } catch (error) {
-    if (statusCode(error) !== 404) throw error;
+  if (!testApplicant) {
+    try {
+      const existing = await client.getEntity<ApplicationEntity>(APPLICATION_PARTITION, rowKey);
+      return { duplicate: true, application: fromApplicationEntity(existing), availability: await betaAvailability() };
+    } catch (error) {
+      if (statusCode(error) !== 404) throw error;
+    }
   }
 
   const before = await betaAvailability();
-  const now = new Date().toISOString();
   const entity: ApplicationEntity = {
     partitionKey: APPLICATION_PARTITION,
     rowKey,
@@ -173,11 +199,12 @@ export async function submitBetaApplication(input: {
     microsoft365: input.microsoft365,
     bottleneck: input.bottleneck,
     status: before.remaining > 0 ? "pending" : "waitlist",
-    isTest: suspectedSpam,
+    isTest: suspectedSpam || testApplicant,
     suspectedSpam,
     createdAt: now,
     updatedAt: now,
     approvalEmailedAt: "",
+    expiresAt: testApplicant ? expiryFrom(now) : "",
   };
 
   try {
@@ -207,7 +234,7 @@ export async function getApplication(id: string): Promise<StoredApplication | nu
 // re-save of a row that was already approved.
 export async function updateApplication(
   id: string,
-  changes: { status?: ApplicationStatus; isTest?: boolean },
+  changes: { status?: ApplicationStatus; isTest?: boolean; expiresAt?: string },
 ): Promise<StoredApplication> {
   await ensureTables();
   const client = applicationClient();
@@ -216,6 +243,7 @@ export async function updateApplication(
     ...existing,
     ...(changes.status !== undefined ? { status: changes.status } : {}),
     ...(changes.isTest !== undefined ? { isTest: changes.isTest } : {}),
+    ...(changes.expiresAt !== undefined ? { expiresAt: changes.expiresAt } : {}),
     updatedAt: new Date().toISOString(),
   }, "Replace");
   return fromApplicationEntity(existing);
