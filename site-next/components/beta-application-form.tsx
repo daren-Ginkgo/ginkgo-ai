@@ -49,7 +49,7 @@ export function BetaApplicationForm() {
       bottleneck: data.get("bottleneck"),
       isQuilterAdviser: data.get("isQuilterAdviser") === "on",
       contactConsent: data.get("contactConsent") === "on",
-      website: data.get("website"),
+      website: data.get("ae_trap"),
     };
 
     try {
@@ -98,7 +98,10 @@ export function BetaApplicationForm() {
         <label><span>Number of advisers in the firm (optional)</span><select name="adviserCount" defaultValue=""><option value="">Select one</option><option value="1">1 adviser</option><option value="2-4">2–4 advisers</option><option value="5-10">5–10 advisers</option><option value="11+">11+ advisers</option></select></label>
         <label><span>Microsoft 365 work account (optional)</span><select name="microsoft365" defaultValue=""><option value="">Select one</option><option value="yes">Yes</option><option value="not-sure">Not sure</option><option value="no">No</option></select></label>
         <label className="beta-form-wide"><span>What is the paperwork job you most want to fix? (optional)</span><input name="bottleneck" maxLength={1800} placeholder="Tell Daren where adviser time is being lost or where files tend to come back for rework." /></label>
-        <label className="beta-honeypot" aria-hidden="true"><span>Website</span><input name="website" tabIndex={-1} autoComplete="off" /></label>
+        {/* Trap for bots. Deliberately not called "website" or labelled like a real
+            field: browser autofill filled that one on 4 Oct 2026. The ignore
+            attributes keep 1Password, LastPass and Bitwarden out of it too. */}
+        <label className="beta-honeypot" aria-hidden="true"><span>Leave this empty</span><input name="ae_trap" type="text" tabIndex={-1} autoComplete="off" data-1p-ignore="true" data-lpignore="true" data-bwignore="true" data-form-type="other" /></label>
       </div>
 
       <div className="beta-form-checks">

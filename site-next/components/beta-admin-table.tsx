@@ -14,6 +14,7 @@ export type BetaApplicationRow = {
   bottleneck: string;
   status: string;
   isTest?: boolean;
+  suspectedSpam?: boolean;
   createdAt: string;
 };
 
@@ -176,6 +177,11 @@ export function BetaAdminTable({ initialApplications }: { initialApplications: B
                     />
                     <span>Test row, excluded from the public count</span>
                   </label>
+                  {application.suspectedSpam ? (
+                    <span className="fca-line fca-bad">
+                      Caught by the spam trap, so saved as a test row with no email to you. Browser autofill can trip it: if this is a real adviser, untick Test.
+                    </span>
+                  ) : null}
                 </td>
               </tr>
             );

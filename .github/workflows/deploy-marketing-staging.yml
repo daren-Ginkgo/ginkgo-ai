@@ -50,6 +50,10 @@ jobs:
         working-directory: ${{ env.APP_DIRECTORY }}
         run: npm ci
 
+      - name: Unit tests
+        working-directory: ${{ env.APP_DIRECTORY }}
+        run: npm run test:unit
+
       - name: Build standalone application
         working-directory: ${{ env.APP_DIRECTORY }}
         run: npm run build
