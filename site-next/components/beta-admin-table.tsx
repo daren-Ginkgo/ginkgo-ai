@@ -154,6 +154,11 @@ export function BetaAdminTable({ initialApplications }: { initialApplications: B
               <tr key={application.id} className={application.isTest ? "funnel-row-test" : undefined}>
                 <td>
                   <strong>{application.fullName}</strong>
+                  {application.isTest ? (
+                    <span className="funnel-test-badge">
+                      TEST{application.expiresAt ? ` · deletes itself ${new Date(application.expiresAt).toLocaleDateString("en-GB")}` : ""}
+                    </span>
+                  ) : null}
                   <a href={`mailto:${application.workEmail}`}>{application.workEmail}</a>
                   {application.phone ? (
                     <span>
