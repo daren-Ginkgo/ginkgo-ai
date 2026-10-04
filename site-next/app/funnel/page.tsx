@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BarChart3, CheckCircle2, ClipboardList, LogIn, MousePointerClick, Users } from "lucide-react";
 import { requireFunnelAdmin } from "../azure-auth";
-import { conversionSummary, holdsPlace, listApplications } from "@/lib/azure-storage";
+import { conversionSummary, holdsPlace, listApplications, purgeExpiredApplications } from "@/lib/azure-storage";
 import { BetaAdminTable } from "@/components/beta-admin-table";
 import { FOUNDING_PLACES, remainingPlaces } from "@/lib/beta";
 
@@ -9,6 +9,8 @@ export const dynamic = "force-dynamic";
 
 export default async function FunnelPage() {
   await requireFunnelAdmin("/funnel");
+  // Expired test rows go before the list is read. Best effort: never block the page.
+  await purgeExpiredApplications().catch(() => undefined);
   const [applications, analytics] = await Promise.all([listApplications(), conversionSummary()]);
   const eventCounts = new Map(analytics.events.map((row) => [row.eventName, row.count]));
   const active = applications.filter(holdsPlace).length;

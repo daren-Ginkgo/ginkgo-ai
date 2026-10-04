@@ -15,6 +15,7 @@ export type BetaApplicationRow = {
   status: string;
   isTest?: boolean;
   suspectedSpam?: boolean;
+  expiresAt?: string;
   createdAt: string;
 };
 
@@ -107,6 +108,22 @@ export function BetaAdminTable({ initialApplications }: { initialApplications: B
     }
   }
 
+  async function updateExpiry(id: string, expiring: boolean) {
+    setSaving(id);
+    try {
+      const response = await fetch(`/api/beta-applications/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ expiring }),
+      });
+      if (!response.ok) throw new Error("Update failed");
+      const result = await response.json() as { expiresAt?: string };
+      setApplications((rows) => rows.map((row) => row.id === id ? { ...row, expiresAt: result.expiresAt ?? "" } : row));
+    } finally {
+      setSaving(null);
+    }
+  }
+
   async function runCheck(id: string) {
     setChecks((current) => ({ ...current, [id]: "loading" }));
     try {
@@ -176,6 +193,19 @@ export function BetaAdminTable({ initialApplications }: { initialApplications: B
                       onChange={(event) => updateTestFlag(application.id, event.target.checked)}
                     />
                     <span>Test row, excluded from the public count</span>
+                  </label>
+                  <label className="funnel-test-toggle">
+                    <input
+                      type="checkbox"
+                      checked={Boolean(application.expiresAt)}
+                      disabled={saving === application.id}
+                      onChange={(event) => updateExpiry(application.id, event.target.checked)}
+                    />
+                    <span>
+                      {application.expiresAt
+                        ? `Deletes itself on ${new Date(application.expiresAt).toLocaleDateString("en-GB")}`
+                        : "Delete automatically in 10 days"}
+                    </span>
                   </label>
                   {application.suspectedSpam ? (
                     <span className="fca-line fca-bad">

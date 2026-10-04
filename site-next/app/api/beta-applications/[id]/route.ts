@@ -3,6 +3,7 @@ import { buildApprovalEmail } from "@/lib/approval-email";
 import { markApprovalEmailed, recordConversion, updateApplication, type ApplicationStatus, type StoredApplication } from "@/lib/azure-storage";
 import { BETA_STATUSES } from "@/lib/beta";
 import { mailConfigured, sendMail } from "@/lib/graph-mail";
+import { expiryFrom, isTestApplicant } from "@/lib/test-applicants";
 
 export const dynamic = "force-dynamic";
 
@@ -27,7 +28,9 @@ async function emailOnApproval(
   nextStatus: ApplicationStatus | undefined,
 ): Promise<"sent" | "failed" | "not-configured" | null> {
   if (nextStatus !== "approved" || before.status === "approved") return null;
-  if (before.isTest) return null;
+  // A test row is never mailed, except one from a TEST_APPLICANT_EMAILS address,
+  // which exists so Daren can rehearse the whole journey including this email.
+  if (before.isTest && !isTestApplicant(before.workEmail)) return null;
   if (before.approvalEmailedAt) return null;
   if (!mailConfigured()) return "not-configured";
 
@@ -55,21 +58,27 @@ export async function PATCH(request: Request, context: { params: Promise<{ id: s
   }
 
   const { id } = await context.params;
-  const payload = await request.json() as { status?: string; isTest?: boolean };
+  // expiring: true sets the row to delete itself TEST_ROW_DAYS from now; false clears it.
+  const payload = await request.json() as { status?: string; isTest?: boolean; expiring?: boolean };
   const statusValid = payload.status === undefined || BETA_STATUSES.includes(payload.status as typeof BETA_STATUSES[number]);
   const isTestValid = payload.isTest === undefined || typeof payload.isTest === "boolean";
-  const hasChange = payload.status !== undefined || payload.isTest !== undefined;
-  if (!/^[a-f0-9]{64}$/.test(id) || !statusValid || !isTestValid || !hasChange) {
+  const expiringValid = payload.expiring === undefined || typeof payload.expiring === "boolean";
+  const hasChange = payload.status !== undefined || payload.isTest !== undefined || payload.expiring !== undefined;
+  if (!/^[a-f0-9]{64}$/.test(id) || !statusValid || !isTestValid || !expiringValid || !hasChange) {
     return Response.json({ error: "Invalid application update" }, { status: 400 });
   }
+  const expiresAt = payload.expiring === undefined ? undefined
+    : payload.expiring ? expiryFrom(new Date().toISOString())
+    : "";
 
   try {
     const before = await updateApplication(id, {
       status: payload.status as ApplicationStatus | undefined,
       isTest: payload.isTest,
+      expiresAt,
     });
     const email = await emailOnApproval(before, payload.status as ApplicationStatus | undefined);
-    return Response.json({ updated: true, status: payload.status, isTest: payload.isTest, email });
+    return Response.json({ updated: true, status: payload.status, isTest: payload.isTest, expiresAt, email });
   } catch (error) {
     const statusCode = error && typeof error === "object" && "statusCode" in error
       ? (error as { statusCode?: unknown }).statusCode
