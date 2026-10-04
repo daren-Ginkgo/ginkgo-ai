@@ -77,6 +77,11 @@ export function BetaApplicationForm() {
         <span>{result.waitlist ? "Waiting list request received" : result.duplicate ? "Your application is already recorded" : "Application received"}</span>
         <h2>{result.waitlist ? "You are on the founding-adviser waiting list." : "Thank you. Daren will contact you personally."}</h2>
         <p>{result.waitlist ? "The 15 provisional places are currently allocated. If a place is released, Daren will contact applicants in order." : "There is no checkout and no payment is required. Daren will review your application, arrange a practical demonstration and confirm the Microsoft 365 onboarding route for your firm."}</p>
+        {/* A duplicate gets no email, so no note. New domains often land in junk
+            (Hotmail did on 4 Oct 2026), so say so before the applicant wonders. */}
+        {!result.duplicate ? (
+          <p className="beta-form-junk-note">We have emailed you a confirmation from hello@theadviceengine.ai. If it is not in your inbox within a few minutes, please check your junk folder and add theadviceengine.ai as a safe sender, so Daren&apos;s emails reach you.</p>
+        ) : null}
         <div><a className="button button-primary" href="/thank-you">See what happens next <ArrowRight /></a><a href="/microsoft">Explore the Microsoft workflow</a></div>
       </div>
     );
