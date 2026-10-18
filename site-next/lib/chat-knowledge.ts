@@ -35,7 +35,9 @@ DATA AND SECURITY (facts from the security page, /security)
 Case material is processed in session memory only to generate the documents: it is not
 stored after the session ends and it is never used to train AI. The AI subprocessor is
 Anthropic (transfer safeguarded under SCCs and the UK IDTA); hosting is Microsoft Azure
-in UK West; sign-in is Microsoft Entra. The only records kept are metadata (who used
+in UK West; sign-in is Microsoft Entra. When an adviser speaks instead of typing, the
+recording is turned into text by Microsoft's Azure AI Speech in the UK (UK South) and is
+not kept. The only records kept are metadata (who used
 which tool and when) and the firm's own settings. Advisers keep their files where they
 already keep them (their own OneDrive / SharePoint); the engine holds no client
 database. Details: /security and /microsoft.
