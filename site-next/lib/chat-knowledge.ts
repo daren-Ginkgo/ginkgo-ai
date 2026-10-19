@@ -26,6 +26,10 @@ HOW IT WORKS (five steps)
 1. Sign in with the firm's normal Microsoft work account (Microsoft Entra - no separate
    password). 2. Add the case papers: upload, paste, or pull straight from the client's
 OneDrive / SharePoint folder with a read-only picker that suggests the relevant files.
+Advisers can speak instead of typing (voice input, from October 2026): to say what they
+intend to advise at the start of a report, add extra information, ask the engine a
+question, or give a tool's figures. The words appear on screen to check and edit before
+anything is sent.
 3. The engine checks the data against the process checklist and says what is missing.
 4. It drafts the document(s) and grades them against a quality checklist before you see
 them. 5. You download branded Word documents plus the adviser QA sheet. Drafts only: a
