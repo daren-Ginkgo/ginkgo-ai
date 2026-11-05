@@ -1,30 +1,20 @@
 "use client";
 
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { ArrowRight, CheckCircle2, LoaderCircle, LockKeyhole } from "lucide-react";
-import { AvailabilityBadge, type Availability } from "@/components/availability-badge";
+import { AvailabilityBadge } from "@/components/availability-badge";
 import { trackConversion } from "@/components/conversion-tracker";
 
 type SubmissionResult = {
   received?: boolean;
   duplicate?: boolean;
-  waitlist?: boolean;
   error?: string;
 };
 
 export function BetaApplicationForm() {
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState<SubmissionResult | null>(null);
-  const [availability, setAvailability] = useState<Availability | null>(null);
-  const remaining = availability?.remaining ?? 15;
   const started = useRef(false);
-
-  useEffect(() => {
-    fetch("/api/beta-availability", { cache: "no-store" })
-      .then((response) => response.ok ? response.json() : null)
-      .then((data) => { if (data) setAvailability(data); })
-      .catch(() => undefined);
-  }, []);
 
   function markStarted() {
     if (started.current) return;
@@ -58,10 +48,9 @@ export function BetaApplicationForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      const body = await response.json() as SubmissionResult & { availability?: Availability };
+      const body = await response.json() as SubmissionResult;
       if (!response.ok) throw new Error(body.error ?? "Please check the form and try again.");
       setResult(body);
-      if (body.availability) setAvailability(body.availability);
       form.reset();
     } catch (error) {
       setResult({ error: error instanceof Error ? error.message : "Please try again." });
@@ -74,13 +63,13 @@ export function BetaApplicationForm() {
     return (
       <div className="beta-form-success" role="status">
         <CheckCircle2 />
-        <span>{result.waitlist ? "Waiting list request received" : result.duplicate ? "Your application is already recorded" : "Application received"}</span>
-        <h2>{result.waitlist ? "You are on the founding-adviser waiting list." : "Thank you. Daren will contact you personally."}</h2>
-        <p>{result.waitlist ? "The 15 provisional places are currently allocated. If a place is released, Daren will contact applicants in order." : "There is no checkout and no payment is required. Daren will review your application, arrange a practical demonstration and confirm the Microsoft 365 onboarding route for your firm."}</p>
+        <span>{result.duplicate ? "Your application is already recorded" : "Application received"}</span>
+        <h2>Thank you. Your application is in.</h2>
+        <p>There is no checkout and no payment is required. We check your firm on the FCA register, then email you everything you need to sign in. Your 30 free days start at your first sign-in.</p>
         {/* A duplicate gets no email, so no note. New domains often land in junk
             (Hotmail did on 4 Oct 2026), so say so before the applicant wonders. */}
         {!result.duplicate ? (
-          <p className="beta-form-junk-note">We have emailed you a confirmation from hello@theadviceengine.ai. If it is not in your inbox within a few minutes, please check your junk folder and add theadviceengine.ai as a safe sender, so Daren&apos;s emails reach you.</p>
+          <p className="beta-form-junk-note">We have emailed you a confirmation from hello@theadviceengine.ai. If it is not in your inbox within a few minutes, please check your junk folder and add theadviceengine.ai as a safe sender, so our emails reach you.</p>
         ) : null}
         <div><a className="button button-primary" href="/thank-you">See what happens next <ArrowRight /></a><a href="/microsoft">Explore the Microsoft workflow</a></div>
       </div>
@@ -90,19 +79,19 @@ export function BetaApplicationForm() {
   return (
     <form className="beta-application-form" onSubmit={submitApplication} onFocus={markStarted}>
       <div className="beta-form-head">
-        <div><span>FOUNDING ADVISER BETA</span><h2>{remaining > 0 ? "Apply for a founding place" : "Join the waiting list"}</h2></div>
-        <AvailabilityBadge availability={availability} />
+        <div><span>30-DAY FREE TRIAL</span><h2>Apply for access</h2></div>
+        <AvailabilityBadge />
       </div>
 
       <div className="beta-form-grid">
         <label><span>Full name *</span><input name="fullName" autoComplete="name" required minLength={2} maxLength={100} placeholder="Your full name" /></label>
         <label><span>Work email *</span><input name="workEmail" type="email" autoComplete="email" required maxLength={180} placeholder="you@yourfirm.co.uk" /></label>
-        <label><span>Best number for Daren&apos;s call (optional)</span><input name="phone" type="tel" autoComplete="tel" maxLength={30} placeholder="Your direct number" /><small>Daren calls every founding adviser personally to set up your first sign-in.</small></label>
+        <label><span>Phone number (optional)</span><input name="phone" type="tel" autoComplete="tel" maxLength={30} placeholder="Your direct number" /><small>Only used if we need to check something about your application.</small></label>
         <label><span>Firm name *</span><input name="firmName" autoComplete="organization" required minLength={2} maxLength={160} placeholder="Your advice firm" /></label>
-        <label><span>Firm FCA reference (optional, or tell us on the call)</span><input name="firmReference" maxLength={80} placeholder="Firm reference number" /></label>
+        <label><span>Firm FCA reference (optional)</span><input name="firmReference" maxLength={80} placeholder="Firm reference number" /></label>
         <label><span>Number of advisers in the firm (optional)</span><select name="adviserCount" defaultValue=""><option value="">Select one</option><option value="1">1 adviser</option><option value="2-4">2–4 advisers</option><option value="5-10">5–10 advisers</option><option value="11+">11+ advisers</option></select></label>
         <label><span>Microsoft 365 work account (optional)</span><select name="microsoft365" defaultValue=""><option value="">Select one</option><option value="yes">Yes</option><option value="not-sure">Not sure</option><option value="no">No</option></select></label>
-        <label className="beta-form-wide"><span>What is the paperwork job you most want to fix? (optional)</span><input name="bottleneck" maxLength={1800} placeholder="Tell Daren where adviser time is being lost or where files tend to come back for rework." /></label>
+        <label className="beta-form-wide"><span>What is the paperwork job you most want to fix? (optional)</span><input name="bottleneck" maxLength={1800} placeholder="Tell us where adviser time is being lost or where files tend to come back for rework." /></label>
         {/* Trap for bots. Deliberately not called "website" or labelled like a real
             field: browser autofill filled that one on 4 Oct 2026. The ignore
             attributes keep 1Password, LastPass and Bitwarden out of it too. */}
@@ -110,8 +99,8 @@ export function BetaApplicationForm() {
       </div>
 
       <div className="beta-form-checks">
-        <label><input name="isQuilterAdviser" type="checkbox" required /><span><strong>I confirm that I am an individual Quilter adviser.</strong>The founding offer is currently limited to individual advisers in the Quilter network.</span></label>
-        <label><input name="contactConsent" type="checkbox" required /><span><strong>I agree to be contacted about The Advice Engine beta.</strong>Your application details will be used only to assess and manage the beta relationship. See the <a href="/privacy">privacy notice</a>.</span></label>
+        <label><input name="isQuilterAdviser" type="checkbox" required /><span><strong>I confirm that I am an individual Quilter adviser.</strong>Access is currently open to individual advisers in the Quilter network.</span></label>
+        <label><input name="contactConsent" type="checkbox" required /><span><strong>I agree to be contacted about my application and access to The Advice Engine.</strong>Your application details will be used only to assess your application and manage your access. See the <a href="/privacy">privacy notice</a>.</span></label>
       </div>
 
       {/* Persistent polite live region: present in the DOM before any error
@@ -121,7 +110,7 @@ export function BetaApplicationForm() {
       </div>
       <p className="beta-network-note">Check your network&apos;s position on third party AI tools before you run live client material. We will support your notification, and the Test Drive uses a fictitious case so you can assess the work before that conversation.</p>
       <div className="beta-form-submit">
-        <button className="button button-primary" type="submit" disabled={submitting}>{submitting ? <><LoaderCircle className="spin" />Submitting application</> : <>{remaining > 0 ? "Submit application" : "Join the waiting list"}<ArrowRight /></>}</button>
+        <button className="button button-primary" type="submit" disabled={submitting}>{submitting ? <><LoaderCircle className="spin" />Submitting application</> : <>Submit application<ArrowRight /></>}</button>
         <span><LockKeyhole />Application only: no client data, passwords or payment details.</span>
       </div>
     </form>

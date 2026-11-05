@@ -1,7 +1,6 @@
-import { betaAvailability, bumpChatCounter } from "@/lib/azure-storage";
+import { bumpChatCounter } from "@/lib/azure-storage";
 import {
   askAnthropic,
-  availabilityLine,
   buildSystem,
   callerKey,
   chatConfigured,
@@ -15,21 +14,6 @@ export const dynamic = "force-dynamic";
 
 const UNAVAILABLE = "The assistant is unavailable right now. Email hello@theadviceengine.ai and a human will answer instead.";
 const SLOW_DOWN = "You have reached the conversation limit for now. For anything more, email hello@theadviceengine.ai or book a walkthrough at /demo.";
-const AVAILABILITY_TIMEOUT_MS = 2000;
-
-// The founding-places lookup mirrors the availability badge's discipline: two
-// seconds, then answer without a number rather than with a wrong one.
-async function availabilityFact() {
-  try {
-    const result = await Promise.race([
-      betaAvailability(),
-      new Promise<null>((resolve) => setTimeout(() => resolve(null), AVAILABILITY_TIMEOUT_MS)),
-    ]);
-    return availabilityLine(result);
-  } catch {
-    return availabilityLine(null);
-  }
-}
 
 export async function POST(request: Request) {
   try {
@@ -60,7 +44,7 @@ export async function POST(request: Request) {
       return Response.json({ error: SLOW_DOWN }, { status: 429 });
     }
 
-    const system = buildSystem(await availabilityFact());
+    const system = buildSystem();
     const reply = await askAnthropic(system, parsed.data.messages.slice(-LIMITS.maxMessages));
     // Em dashes and markdown emphasis are stripped on the way out: the rules forbid
     // both, but a model reply is neither our source nor deterministic.

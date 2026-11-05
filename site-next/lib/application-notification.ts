@@ -60,7 +60,7 @@ export function buildApplicationNotification(application: StoredApplication) {
   // Only a TEST_APPLICANT_EMAILS row is a test at this point (spam-trap rows send
   // nothing), so the tag tells Daren this one is his own rehearsal.
   const tag = application.isTest ? "[Test] " : "";
-  const subject = `${tag}${waitlist ? "New waiting-list request" : "New founding application"}: ${who}`;
+  const subject = `${tag}${waitlist ? "New waiting-list request" : "New application"}: ${who}`;
 
   const supplied = (value: string) => escapeHtml((value ?? "").trim()) || "<em>not supplied</em>";
   const rows: [string, string][] = [
@@ -73,14 +73,14 @@ export function buildApplicationNotification(application: StoredApplication) {
     ["Microsoft 365", supplied(MICROSOFT_365[application.microsoft365] ?? application.microsoft365)],
     ["Paperwork bottleneck", supplied(application.bottleneck).replace(/\n/g, "<br>")],
     ["Submitted", escapeHtml(londonTime(application.createdAt))],
-    ["Place", waitlist ? "Waiting list (all founding places are allocated)" : "Founding place (pending your review)"],
+    ["Status", waitlist ? "Waiting list" : "Pending your review"],
   ];
 
   const html = `<!DOCTYPE html>
 <html lang="en-GB"><body style="margin:0;padding:0;background:#ffffff">
 <div style="max-width:600px;margin:0 auto;padding:24px;font-family:Segoe UI,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.55;color:#1f2933">
-  <p style="margin:0 0 16px">${waitlist ? "A new waiting-list request" : "A new founding application"} has come in on theadviceengine.ai/start.
-    The applicant has been told you will contact them personally.</p>
+  <p style="margin:0 0 16px">${waitlist ? "A new waiting-list request" : "A new application"} has come in on theadviceengine.ai/start.
+    The applicant has been told their firm will be checked on the FCA register and they will then get a sign-in email.</p>
   <table style="border-collapse:collapse;width:100%;margin:0 0 16px">
 ${rows.map(([label, value]) => `    <tr><td style="padding:6px 12px 6px 0;vertical-align:top;color:#52606d;white-space:nowrap">${label}</td><td style="padding:6px 0;vertical-align:top">${value}</td></tr>`).join("\n")}
   </table>

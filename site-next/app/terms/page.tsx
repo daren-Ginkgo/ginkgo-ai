@@ -38,7 +38,7 @@ export default function TermsPage() {
         <li>Do not attempt to reverse engineer the service, resell access, or use it to build a competing product.</li>
       </ul>
       <h2>6. Free trial</h2>
-      <p>Where we offer a free month, no payment details are taken and the trial simply stops at the end of the month unless your firm chooses to subscribe. Trials carry a fair-use daily allowance. We may withdraw a trial where these terms are broken.</p>
+      <p>New firms get 30 days free from their first sign-in. No payment details are taken, and the trial simply stops at the end of the 30 days unless your firm chooses to subscribe. Subscriptions are paid monthly with no minimum term. Trials carry a fair-use daily allowance. We may withdraw a trial where these terms are broken.</p>
       <h2>7. Data</h2>
       <p>How we handle personal data, including the fact that your case material is not used to train AI models, is set out in our <a href="/privacy">privacy notice</a>, which forms part of these terms. In short: for your clients&rsquo; data your firm is the controller and we act as your processor.</p>
       <h2>8. Who owns what</h2>

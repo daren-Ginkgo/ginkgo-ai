@@ -30,7 +30,7 @@ export default function MicrosoftPage() {
         eyebrow="Microsoft 365 and OneDrive"
         title="Your client folder becomes the starting point – not another database to maintain."
         copy="Sign in with the Microsoft 365 work account your firm already uses. The Advice Engine can then help locate the relevant evidence in an approved OneDrive or SharePoint client folder, run gap analysis and build the selected adviser output."
-        primary={{ href: "/start", label: "Apply for a founding place" }}
+        primary={{ href: "/start", label: "Apply for access" }}
         secondary={{ href: "https://app.theadviceengine.ai/", label: "Approved adviser sign in" }}
       />
 
@@ -44,7 +44,7 @@ export default function MicrosoftPage() {
         <div className="shell">
           <div className="section-intro split-intro">
             <div><span className="kicker">The connected workflow</span><h2>From Microsoft sign-in to a review-ready output.</h2></div>
-            <p>For founding advisers whose firm connection is enabled, the familiar sign-in becomes the front door to the client evidence they already hold. Upload remains available when folder access is not enabled.</p>
+            <p>For advisers whose firm connection is enabled, the familiar sign-in becomes the front door to the client evidence they already hold. Upload remains available when folder access is not enabled.</p>
           </div>
           <div className="microsoft-flow-grid">
             <div className="microsoft-steps">
@@ -90,8 +90,8 @@ export default function MicrosoftPage() {
 
       <section className="section founding-login-section">
         <div className="shell founding-login-card">
-          <div><span className="kicker light">Founding adviser access</span><h2>Apply once. Then use the same Microsoft sign-in every time.</h2><p>After Daren confirms your place and enables your firm’s access, the existing Advice Engine sign-in takes you straight to the product with your normal work identity and MFA.</p></div>
-          <div className="founding-login-actions"><ArrowButton href="/start" light>Apply for one of 15 places</ArrowButton><a href="https://app.theadviceengine.ai/"><LogIn />Approved adviser sign in</a></div>
+          <div><span className="kicker light">Adviser access</span><h2>Apply once. Then use the same Microsoft sign-in every time.</h2><p>Once your firm is checked and your access is opened, the existing Advice Engine sign-in takes you straight to the product with your normal work identity and MFA.</p></div>
+          <div className="founding-login-actions"><ArrowButton href="/start" light>Apply for access</ArrowButton><a href="https://app.theadviceengine.ai/"><LogIn />Approved adviser sign in</a></div>
         </div>
       </section>
 

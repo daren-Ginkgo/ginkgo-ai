@@ -14,7 +14,7 @@ const MAX_POSTED_MESSAGES = 12;
 const MAX_INPUT_CHARS = 1200;
 
 const WELCOME = "Hello! Ask me anything about The Advice Engine - what it does, pricing, "
-  + "security, or how the founding beta works. I can't give financial advice.";
+  + "security, or how the free trial works. I can't give financial advice.";
 
 const STARTERS = [
   "What does the engine actually do?",

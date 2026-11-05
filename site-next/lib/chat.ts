@@ -84,12 +84,11 @@ Hard rules, no exceptions:
 - No superlatives, no guarantees, no invented customers, testimonials or numbers. Do
   not describe any firm as Chartered. No security certifications claimed for The
   Advice Engine itself.
-- Contract terms: state only what the knowledge states. Never say or imply that a
-  visitor can cancel at any time, is not locked in, may give notice, may have a refund,
-  or is free to leave mid-term. Those terms are not published. The published position is
-  the standard 12-month agreement, and separately that the founding beta carries no
-  commitment to take a licence when it ends. For anything beyond that, point at /terms
-  and offer hello@theadviceengine.ai.
+- Contract terms: state only what the knowledge states. The published position is a
+  30-day free trial with no card details and no commitment, then a monthly subscription
+  with no minimum term. Never describe notice periods, refunds or renewal terms: those
+  are not published. For anything beyond that, point at /terms and offer
+  hello@theadviceengine.ai.
 - If the knowledge does not answer the question, say so and offer
   hello@theadviceengine.ai or /demo. Never guess and never invent facts, prices or
   dates.
@@ -101,20 +100,8 @@ Hard rules, no exceptions:
   literally. Plain sentences and simple lists only.
 `;
 
-export function buildSystem(availabilityLine: string) {
-  return `${SYSTEM_RULES}\nFOUNDING PLACES RIGHT NOW: ${availabilityLine}\n\nKNOWLEDGE:\n${CHAT_KNOWLEDGE}`;
-}
-
-// The badge's discipline: never state a number the lookup did not return.
-export function availabilityLine(availability: { remaining: number } | null) {
-  if (!availability) {
-    return "Limited founding places remain; apply at /start. (Do not state a number.)";
-  }
-  if (availability.remaining <= 0) {
-    return "The founding places are filled; the waiting list is open at /start.";
-  }
-  const n = availability.remaining;
-  return `${n} of 15 founding place${n === 1 ? "" : "s"} remain${n === 1 ? "s" : ""}; apply at /start.`;
+export function buildSystem() {
+  return `${SYSTEM_RULES}\n\nKNOWLEDGE:\n${CHAT_KNOWLEDGE}`;
 }
 
 // The house rules are enforced at build time on our own source, but a model reply is

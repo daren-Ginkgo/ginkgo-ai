@@ -39,7 +39,7 @@ function mockSender(result = true) {
   return { calls, send };
 }
 
-test("a founding applicant is acknowledged at their work email, with no BCC", async () => {
+test("an applicant is acknowledged at their work email, with no BCC", async () => {
   const { calls, send } = mockSender();
   const outcome = await acknowledgeApplication({ duplicate: false, application: application() }, BOOKING, send);
 
