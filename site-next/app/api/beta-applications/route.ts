@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     }
 
     const input = parsed.data;
-    // Expired test rows go first, so they never sit in the founding-places count.
+    // Expired test rows go first, so they never sit in the /funnel counts.
     await purgeExpiredApplications().catch(() => undefined);
     const result = await submitBetaApplication({
       fullName: input.fullName,

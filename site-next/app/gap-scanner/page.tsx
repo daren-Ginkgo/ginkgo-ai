@@ -22,7 +22,7 @@ export default function AdviceGapPage() {
         eyebrow="The Gap Scanner"
         title="Find the client needs already hiding in the file."
         copy="Point the engine at the evidence you already hold, especially meeting transcripts, and surface needs, concerns and agreed actions that were discussed but never carried forward. Every finding is tied back to its source for adviser verification."
-        primary={{ href: "/start", label: "Apply for a founding place" }}
+        primary={{ href: "/start", label: "Apply for access" }}
         secondary={{ href: "/microsoft", label: "See the OneDrive workflow" }}
       />
 
@@ -71,7 +71,7 @@ export default function AdviceGapPage() {
             <article><span>01 · Before an output</span><h3>Case-readiness gap analysis</h3><p>Does the selected source pack contain the evidence needed for this suitability report, review or cashflow?</p><ul><li><Check />Suggest the likely relevant files</li><li><Check />Flag missing, stale or conflicting information</li><li><Check />Add new evidence and recheck before drafting</li></ul></article>
             <article><span>02 · Across the relationship</span><h3>Gap Scanner</h3><p>Did the client raise a need, concern or objective that never appeared in the recorded action or outcome?</p><ul><li><Check />Quote and verify the original source</li><li><Check />Surface the unfinished conversation</li><li><Check />Prepare an adviser-owned next step</li></ul></article>
           </div>
-          <div className="gap-control-note"><strong>The adviser remains in control.</strong><span>The scanner does not invent facts, provide advice or make a judgement about earlier advice. It finds evidence and prepares a conversation for a named adviser to assess.</span><ArrowButton href="/start" light>Apply for a founding place</ArrowButton></div>
+          <div className="gap-control-note"><strong>The adviser remains in control.</strong><span>The scanner does not invent facts, provide advice or make a judgement about earlier advice. It finds evidence and prepares a conversation for a named adviser to assess.</span><ArrowButton href="/start" light>Apply for access</ArrowButton></div>
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 // The email an applicant receives the moment their application on /start is saved.
 //
 // The wording is firm-facing, so it is Daren's (signed off 4 Oct 2026; draft in
-// Advice Engine\Status and handovers). Edit the copy here; the send rules below and
+// Advice Engine\Status and handovers; revised 5 Nov 2026 for the 30-day trial). Edit the copy here; the send rules below and
 // the route stay as they are.
 //
 // Kept free of runtime imports (types only) so it runs under plain Node in
@@ -11,7 +11,7 @@
 // Rules:
 //  - never for a duplicate (they were acknowledged the first time)
 //  - never for a suspected-spam row: the address may not belong to whoever typed it
-//  - no BCC: Daren already gets his own "New founding application" email
+//  - no BCC: Daren already gets his own "New application" email
 //  - NEVER throws: the application is saved, and a mail failure must not fail it
 
 import type { StoredApplication } from "@/lib/azure-storage";
@@ -73,23 +73,23 @@ export function buildAcknowledgementEmail(application: StoredApplication, bookin
     subject: "We have your Advice Engine application",
     html: wrap(`  <p style="margin:0 0 16px">${name},</p>
 
-  <p style="margin:0 0 16px">Thank you for applying for a founding place on The Advice
+  <p style="margin:0 0 16px">Thank you for applying for access to The Advice
     Engine${onBehalf}. This is just to confirm your application has reached me.</p>
 
   <p style="margin:0 0 8px"><strong>What happens next</strong></p>
   <ol style="margin:0 0 16px;padding-left:20px">
-    <li style="margin:0 0 6px">I check your firm on the FCA register.</li>
-    <li style="margin:0 0 6px">I contact you personally, within two working days, by phone or
-      email, for a short practical conversation about your firm and the paperwork you most want
-      to fix.</li>
-    <li>If the beta is right for you, I approve your firm and you get a second email with
-      everything you need to sign in using your existing Microsoft 365 work account.</li>
+    <li style="margin:0 0 6px">I check your firm on the FCA register, usually
+      within two working days.</li>
+    <li style="margin:0 0 6px">You then get a second email with everything you need to sign
+      in using your existing Microsoft 365 work account.</li>
+    <li>Your 30 free days start at your first sign-in, not before. There are no card details
+      to give and no commitment.</li>
   </ol>
 
   <p style="margin:0 0 16px">There is no checkout, and nothing to pay or install. Please don't
-    send any client information before your place is confirmed.</p>
+    send any client information before your access is confirmed.</p>
 
-  <p style="margin:0 0 16px">If you would rather not wait for my call,
+  <p style="margin:0 0 16px">If you would like a walkthrough first,
     <a href="${bookingUrl}">choose a time in my diary here</a>.</p>
 
   ${CORRECTIONS}

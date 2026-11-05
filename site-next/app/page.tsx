@@ -137,11 +137,11 @@ export default function Home() {
             </p>
             <p className="founder-proof">Created by Daren Wallbank at Ginkgo Financial from the real work of running advice cases, not from a generic software brief.</p>
             <div className="hero-actions">
-              <ArrowButton href="/start">Apply for a founding place</ArrowButton>
+              <ArrowButton href="/start">Apply for access</ArrowButton>
               <a className="text-link" href="#simple-workflow">See the simple workflow <ArrowRight aria-hidden="true" /></a>
             </div>
             <div className="hero-assurance" aria-label="Trial assurances">
-              <span><Check aria-hidden="true" /> Free throughout beta</span>
+              <span><Check aria-hidden="true" /> 30 days free</span>
               <span><Check aria-hidden="true" /> No card details</span>
               <span><Check aria-hidden="true" /> Microsoft sign-in</span>
             </div>
@@ -361,11 +361,11 @@ export default function Home() {
         <div className="shell start-card">
           <div>
             <BetaAvailability variant="kicker" />
-            <h2>Help shape an engine built around real adviser work.</h2>
-            <p>Join free throughout beta, begin with a fictitious case and work directly with Daren. The beta runs until at least 1 November 2026, with no commitment to take a licence when it ends. Standard pricing runs from £200 per adviser per month: <a href="/pricing">see the pricing page</a>.</p>
+            <h2>Try an engine built around real adviser work.</h2>
+            <p>Apply for access and use the engine free for 30 days, starting with a fictitious case. No card details and no commitment. After 30 days, pricing runs from £200 per adviser per month, paid monthly with no minimum term: <a href="/pricing">see the pricing page</a>.</p>
           </div>
           <div className="start-actions">
-            <ArrowButton href="/start">Apply for a founding place</ArrowButton>
+            <ArrowButton href="/start">Apply for access</ArrowButton>
             <a href="/demo">Prefer a conversation? Book a demonstration.</a>
           </div>
         </div>

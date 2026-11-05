@@ -37,9 +37,9 @@ export function ArrowButton({
 export function SiteHeader() {
   return (
     <>
-      {/* Copy deck Part A (7 Sep 2026): the bar carries the founding-places
-          count alone; the network strapline moved to the hero as a personal
-          credential rather than a possessive framing. */}
+      {/* The bar carried the founding-places count until 5 Nov 2026, when the
+          founding offer closed; it now carries the 30-day trial. The network
+          strapline stays in the hero as a personal credential. */}
       <div className="announcement">
         <BetaAvailability variant="announcement" />
       </div>
@@ -63,7 +63,7 @@ export function SiteHeader() {
           <div className="nav-actions">
             <a className="sign-in" href="https://app.theadviceengine.ai/">Sign in</a>
             <Button asChild className="button button-primary nav-cta">
-              <a href="/start">Apply for a founding place</a>
+              <a href="/start">Apply for access</a>
             </Button>
           </div>
           <details className="mobile-nav">
@@ -79,7 +79,7 @@ export function SiteHeader() {
               <a href="/security">Security</a>
               <a href="/pricing">Pricing</a>
               <a href="/about">Daren &amp; Ginkgo</a>
-              <a href="/start">Apply for a founding place</a>
+              <a href="/start">Apply for access</a>
               <a href="/demo">Book a demonstration</a>
             </div>
           </details>
@@ -124,7 +124,7 @@ export function PageHero({
   eyebrow,
   title,
   copy,
-  primary = { href: "/start", label: "Apply for a founding place" },
+  primary = { href: "/start", label: "Apply for access" },
   secondary = { href: "/demo", label: "Book a demonstration" },
   image,
   imageAlt,
@@ -166,11 +166,11 @@ export function FinalCta() {
       <div className="shell start-card">
         <div>
           <BetaAvailability variant="kicker" />
-          <h2>Help shape The Advice Engine before launch.</h2>
-          <p>Founding advisers receive free access throughout beta and 50% off their individual subscription for 12 months after launch. The beta runs until at least 1 November 2026, with no commitment to take a licence when it ends.</p>
+          <h2>Try The Advice Engine free for 30 days.</h2>
+          <p>Apply for access and use the full engine free for 30 days from your first sign-in. No card details and no commitment. If you carry on after that, you pay monthly, with no minimum term.</p>
         </div>
         <div className="start-actions">
-          <ArrowButton href="/start">Apply for a founding place</ArrowButton>
+          <ArrowButton href="/start">Apply for access</ArrowButton>
           <a href="/demo">Book a demonstration</a>
         </div>
       </div>

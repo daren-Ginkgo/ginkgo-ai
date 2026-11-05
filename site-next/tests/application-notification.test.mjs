@@ -44,7 +44,7 @@ function mockSender(result = true) {
   return { calls, send };
 }
 
-test("a new founding application emails the owner with every field", async () => {
+test("a new application emails the owner with every field", async () => {
   const { calls, send } = mockSender();
   const outcome = await notifyNewApplication({ duplicate: false, application: application() }, OWNER, send);
 
@@ -53,7 +53,7 @@ test("a new founding application emails the owner with every field", async () =>
   const [mail] = calls;
   assert.equal(mail.to, OWNER);
   assert.equal(mail.bcc, false);
-  assert.equal(mail.subject, "New founding application: Alex Taylor, Taylor & Co <Advice>");
+  assert.equal(mail.subject, "New application: Alex Taylor, Taylor & Co <Advice>");
   for (const expected of [
     "alex.taylor@example-advice.co.uk",
     "Taylor &amp; Co &lt;Advice&gt;",
@@ -62,7 +62,7 @@ test("a new founding application emails the owner with every field", async () =>
     "Not sure",
     "Suitability reports<br>come back for rework.",
     "not supplied",
-    "Founding place",
+    "Pending your review",
     "https://theadviceengine.ai/funnel",
     londonTime("2026-10-04T08:40:00.000Z"),
   ]) assert.ok(mail.html.includes(expected), `body should include ${expected}`);

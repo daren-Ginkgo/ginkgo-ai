@@ -1,30 +1,15 @@
+// Presentational only, safe in both server and client trees. It showed the
+// founding-places count until 5 Nov 2026, when the founding offer closed and
+// the site moved to a straight 30-day free trial; it now carries that offer.
 export type Availability = { total: number; active: number; remaining: number };
 
-// Presentational only, safe in both server and client trees. When the real
-// count is not known it shows no number rather than a wrong one.
 export function AvailabilityBadge({
-  availability,
   variant = "default",
 }: {
-  availability: Availability | null;
   variant?: "default" | "announcement" | "kicker";
 }) {
-  if (!availability) {
-    if (variant === "announcement") {
-      return <span className="beta-availability beta-availability-announcement">Limited founding places</span>;
-    }
-    return <span className={`beta-availability beta-availability-${variant}`}><span>Limited founding places</span></span>;
-  }
-
-  const label = availability.remaining === 1 ? "founding place remaining" : "founding places remaining";
   if (variant === "announcement") {
-    return <span className="beta-availability beta-availability-announcement"><strong>{availability.remaining}</strong> {label}</span>;
+    return <span className="beta-availability beta-availability-announcement">30 days free · no card details · no commitment</span>;
   }
-
-  return (
-    <span className={`beta-availability beta-availability-${variant}`}>
-      <strong>{availability.remaining}</strong>
-      <span>{availability.remaining > 0 ? label : "places filled · waiting list open"}</span>
-    </span>
-  );
+  return <span className={`beta-availability beta-availability-${variant}`}><span>30 days free · no commitment</span></span>;
 }

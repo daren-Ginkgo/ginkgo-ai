@@ -7,7 +7,7 @@ Advice Engine product.
 ## Included
 
 - Sales-led Home, Product, Microsoft integration, About, Security and Pricing pages.
-- Founding Adviser beta application flow and live 15-place availability counter.
+- Apply-for-access flow for the 30-day free trial (the 15-place founding counter retired 5 Nov 2026).
 - Azure Table Storage persistence for applications and first-party conversion events.
 - Private `/funnel` dashboard protected by Azure App Service Microsoft authentication.
 - Legacy `.html` routes so existing bookmarks and search links keep working.

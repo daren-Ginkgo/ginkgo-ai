@@ -1,4 +1,4 @@
-// The email a founding adviser receives the moment their application is set to
+// The email an adviser receives the moment their application is set to
 // "approved" in /funnel.
 //
 // The wording is firm-facing, so it is Daren's (ONBOARDING.md: firm-facing wording is
@@ -60,8 +60,8 @@ export function buildApprovalEmail(application: StoredApplication) {
   <p style="margin:0 0 16px">${name},</p>
 
   <p style="margin:0 0 16px">Thank you for applying${firm ? ` on behalf of ${firm}` : ""}. I have
-    checked your firm's position on the FCA register and approved you as a founding adviser, so
-    your access is open now. There is nothing to accept, nothing to install and no payment
+    checked your firm's position on the FCA register and approved your access, so it is open
+    now. There is nothing to accept, nothing to install and no payment
     details are taken.</p>
 
   <p style="margin:0 0 8px"><strong>To get in</strong></p>
@@ -85,8 +85,8 @@ export function buildApprovalEmail(application: StoredApplication) {
     named, qualified adviser at your firm reviews and approves every document before it goes
     anywhere.</p>
 
-  <p style="margin:0 0 16px">The point of the founding beta is to find out which workflows
-    genuinely save you time and where the engine falls short, so tell me when it does. Any
+  <p style="margin:0 0 16px">I want to know which workflows genuinely save you time and
+    where the engine falls short, so tell me when it does. Any
     trouble signing in, reply to this email or write to
     <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>.</p>
 

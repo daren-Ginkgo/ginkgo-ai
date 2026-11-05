@@ -186,7 +186,6 @@ export async function submitBetaApplication(input: {
     }
   }
 
-  const before = await betaAvailability();
   const entity: ApplicationEntity = {
     partitionKey: APPLICATION_PARTITION,
     rowKey,
@@ -198,7 +197,9 @@ export async function submitBetaApplication(input: {
     adviserCount: input.adviserCount,
     microsoft365: input.microsoft365,
     bottleneck: input.bottleneck,
-    status: before.remaining > 0 ? "pending" : "waitlist",
+    // No cap since the founding offer closed (5 Nov 2026): every application is
+    // pending review. "waitlist" survives only on older rows.
+    status: "pending",
     isTest: suspectedSpam || testApplicant,
     suspectedSpam,
     createdAt: now,

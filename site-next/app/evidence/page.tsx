@@ -19,7 +19,7 @@ export default function EvidencePage() {
         eyebrow="Can you defend it?"
         title="Written to survive a file review."
         copy="A draft is only useful if you can stand behind it. Every figure in an Advice Engine draft points back to the document it came from. Every gap is flagged rather than filled. The named adviser reviews, approves and issues, and the file shows that they did."
-        primary={{ href: "/start", label: "Apply for a founding place" }}
+        primary={{ href: "/start", label: "Apply for access" }}
         secondary={{ href: "/outputs", label: "See the specimen outputs" }}
       />
 

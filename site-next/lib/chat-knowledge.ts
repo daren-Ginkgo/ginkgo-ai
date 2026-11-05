@@ -55,22 +55,17 @@ flag it for the adviser; do not guess. Say nothing about approval in either dire
 PRICING (from /pricing)
 Standard pricing: 250 pounds per adviser per month for firms with 1 to 4 advisers, 200
 pounds per adviser per month for 5 to 10 advisers, and firm-scale pricing for 11+
-(book a call). Standard 12-month agreement; first month free for new firms outside the
-founding beta. FOUNDING OFFER: fifteen individual Quilter advisers can join the
-pre-launch beta free of charge, and if they continue after commercial launch their
-individual subscription is discounted 50% for the first 12 months (this replaces the
-first-month-free offer). Apply at /start.
-BETA TERM: the founding beta runs until AT LEAST 1 November 2026, and there is no
-commitment to take a licence when it ends. "At least" is the whole of it: that date is
-the earliest the beta could close, not an announced end date, so never say the beta
-ends on 1 November 2026 or that it runs until that date. No closing date is published. That is the whole of what is published about
-commitment. Nothing is published about cancelling, giving notice, renewing or refunds
-once a licence IS taken, beyond the standard 12-month agreement above, so do not
+(book a call). Paid monthly, with no minimum term.
+FREE TRIAL: individual Quilter advisers apply for access at /start and use the engine
+free for 30 days from their first sign-in. No card details are taken and there is no
+commitment: if the firm does not subscribe, the trial simply stops. The earlier
+founding-adviser offer (free beta and 50% off) is closed to new applicants, so never
+offer it. Nothing is published about notice periods, renewals or refunds, so do not
 describe those terms: point at /terms and offer hello@theadviceengine.ai.
 
 GETTING STARTED AND CONTACT
-Apply for a founding place: /start (Daren, the founder, calls every founding adviser
-personally to set up their first sign-in). Book a walkthrough:
+Apply for access: /start (every firm is checked on the FCA register first, then the
+applicant gets an email with everything they need to sign in). Book a walkthrough:
 https://meetings.hubspot.com/daren8/advice-engine-demo- (the trailing hyphen is part of
 the link). Email: hello@theadviceengine.ai. See example outputs: /outputs. The evidence
 and QA approach: /evidence. The gap scanner: /gap-scanner.

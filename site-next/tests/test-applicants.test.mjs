@@ -49,5 +49,5 @@ test("Daren's notification for a test-address row is tagged [Test]", () => {
     approvalEmailedAt: "",
     expiresAt: "2026-10-14T09:00:00.000Z",
   });
-  assert.equal(subject, "[Test] New founding application: Alex Taylor, Taylor & Co");
+  assert.equal(subject, "[Test] New application: Alex Taylor, Taylor & Co");
 });
