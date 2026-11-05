@@ -60,18 +60,20 @@ pounds per adviser per month for 5 to 10 advisers, and firm-scale pricing for 11
 by giving at least 30 days' notice before that term ends. Prices are shown excluding
 VAT; VAT will be added once The Advice Engine is VAT registered (no date is published).
 Founder firms have their own agreed terms; these terms apply to every other firm.
-FAIR USE: 20 reports per adviser a month, building to 60 over any rolling 3 months. A
+FAIR USE: 20 reports a month for each account, pooled across the firm, building to 60
+per account over any rolling 3 months (2 accounts share 40 a month, building to 120). A
 report is each suitability report or annual review build, rebuilds included;
 re-downloads, Test Drive specimens, calculators and chat do not count. The engine never
 stops a user mid-case: a heads-up at 80% of the allowance, then 10 pounds per extra
 report on the next quarterly invoice. Firms expecting heavy use can agree a higher
-allowance. The allowance and the charge may change if AI costs change, notified in
-writing and applying from the start of the next 3-month term.
+allowance. Large firms may agree their own terms. Prices, the allowance and the charge may change
+if AI costs change, notified in writing at least 30 days ahead and applying from the
+start of the next 3-month term.
 FREE TRIAL: individual Quilter advisers apply for access at /start and use the engine
 free for 30 days from their first sign-in. No card details are taken and there is no
 commitment: if the firm does not subscribe, the trial simply stops. The earlier
 founding-adviser offer (free beta and 50% off) is closed to new applicants, so never
-offer it, and never describe the founder firms' terms. Nothing is published about refunds, how much notice is given before a price or allowance change, or whether the allowance is pooled across a firm, so do not
+offer it, and never describe the founder firms' terms. Nothing is published about refunds, so do not
 describe those terms: point at /terms and offer hello@theadviceengine.ai.
 
 GETTING STARTED AND CONTACT
