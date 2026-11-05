@@ -60,8 +60,8 @@ pounds per adviser per month for 5 to 10 advisers, and firm-scale pricing for 11
 by giving at least 30 days' notice before that term ends. Prices are shown excluding
 VAT; VAT will be added once The Advice Engine is VAT registered (no date is published).
 Founder firms have their own agreed terms; these terms apply to every other firm.
-FAIR USE: 20 reports a month for each account, pooled across the firm, building to 60
-per account over any rolling 3 months (2 accounts share 40 a month, building to 120). A
+FAIR USE: 15 reports a month for each account, pooled across the firm, building to 45
+per account over any rolling 3 months (2 accounts share 30 a month, building to 90). A
 report is each suitability report or annual review build, rebuilds included;
 re-downloads, Test Drive specimens, calculators and chat do not count. The engine never
 stops a user mid-case: a heads-up at 80% of the allowance, then 10 pounds per extra
