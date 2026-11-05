@@ -167,7 +167,7 @@ export function FinalCta() {
         <div>
           <BetaAvailability variant="kicker" />
           <h2>Try The Advice Engine free for 30 days.</h2>
-          <p>Apply for access and use the full engine free for 30 days from your first sign-in. No card details and no commitment. If you carry on after that, you pay monthly, with no minimum term.</p>
+          <p>Apply for access and use the full engine free for 30 days from your first sign-in. No card details and no commitment. If you carry on after that, you subscribe on a rolling 3-month term.</p>
         </div>
         <div className="start-actions">
           <ArrowButton href="/start">Apply for access</ArrowButton>
