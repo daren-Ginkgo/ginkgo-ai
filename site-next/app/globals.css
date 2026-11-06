@@ -1360,6 +1360,13 @@ svg {
   gap: 15px;
 }
 
+/* Two price cards since 6 Nov 2026 (the 11+ card was removed). */
+.pricing-grid-two {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 760px;
+  margin-inline: auto;
+}
+
 /* These cards were built for a dark section and left behind when
    .pricing-page became #eef0f4: a white-veil background, white borders and
    light-on-dark text, which put the feature list at 1.19:1 and the tier name
