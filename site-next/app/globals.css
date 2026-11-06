@@ -1463,7 +1463,7 @@ svg {
   color: var(--green);
 }
 
-/* Fair-use asterisks on the price cards (6 Nov 2026) and the note they point at. */
+/* Report asterisks on the price cards (6 Nov 2026) and the note they point at. */
 .price-asterisk {
   margin-left: 1px;
   color: inherit;
@@ -1484,7 +1484,7 @@ svg {
   font-weight: 700;
 }
 
-#fair-use {
+#terms {
   scroll-margin-top: 110px;
 }
 

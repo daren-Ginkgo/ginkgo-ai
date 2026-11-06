@@ -59,7 +59,7 @@ Standard pricing: 300 pounds per adviser per month for firms with 1 to 4 adviser
 by giving at least 30 days' notice before that term ends. Prices are shown excluding
 VAT; VAT will be added once The Advice Engine is VAT registered (no date is published).
 Founder firms have their own agreed terms; these terms apply to every other firm.
-FAIR USE: 10 reports a month for each account, pooled across the firm, building to 30
+REPORTS INCLUDED: 10 reports a month for each account, pooled across the firm, building to 30
 per account over any rolling 3 months (2 accounts share 20 a month, building to 60). A
 report is each suitability report or annual review build, rebuilds included. A DC to DC
 transfer report covering 3 or more schemes counts as 2 reports, and one report can cover
