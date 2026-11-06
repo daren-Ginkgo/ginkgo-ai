@@ -362,7 +362,7 @@ export default function Home() {
           <div>
             <BetaAvailability variant="kicker" />
             <h2>Try an engine built around real adviser work.</h2>
-            <p>Apply for access and use the engine free for 30 days, starting with a fictitious case. No card details and no commitment. After 30 days, pricing runs from £200 per adviser per month on a rolling 3-month term: <a href="/pricing">see the pricing page</a>.</p>
+            <p>Apply for access and use the engine free for 30 days, starting with a fictitious case. No card details and no commitment. After 30 days, pricing runs from £250 per adviser per month on a rolling 3-month term: <a href="/pricing">see the pricing page</a>.</p>
           </div>
           <div className="start-actions">
             <ArrowButton href="/start">Apply for access</ArrowButton>
