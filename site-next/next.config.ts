@@ -25,7 +25,6 @@ const contentSecurityPolicy = [
 ].join("; ");
 
 const securityHeaders = [
-  { key: "Content-Security-Policy", value: contentSecurityPolicy },
   { key: "X-Frame-Options", value: "DENY" },
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
@@ -41,7 +40,16 @@ const nextConfig: NextConfig = {
   // Do not advertise the framework (P1-11).
   poweredByHeader: false,
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      // The CSP goes on every route except the specimen PDFs under
+      // /specimens, which open in the browser's own PDF viewer; a page CSP
+      // protects nothing there and could stop some viewers rendering them.
+      {
+        source: "/:path((?!specimens/).*)",
+        headers: [{ key: "Content-Security-Policy", value: contentSecurityPolicy }],
+      },
+    ];
   },
   async redirects() {
     return [
