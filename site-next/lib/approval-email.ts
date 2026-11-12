@@ -6,7 +6,11 @@
 // the email says never touches the transport or the approval path.
 //
 // What it must get right, because approval IS the access switch:
-//  - there is nothing to accept, install or pay for: approval already opened the door
+//  - there is nothing to install or pay for: approval already opened the door
+//  - there IS one thing to accept: the engine's user agreement, at first sign-in (the
+//    gate has been on live since 13 Oct 2026). The five points below are the agreement's
+//    own plain-English summary, copied from legal/user-agreement-v0.1.md in the engine
+//    repo. When the engine bumps CURRENT_VERSION, check them against the new file.
 //  - she signs in at the engine with the SAME work domain she applied with (the grant
 //    is by email domain - beta_grants.py in the engine matches on it)
 //  - the 31 days start at her FIRST sign-in, not at approval, so nothing is burning
@@ -16,6 +20,7 @@ import type { StoredApplication } from "@/lib/azure-storage";
 
 const SIGN_IN_URL = "https://app.theadviceengine.ai";
 const CONTACT_EMAIL = "hello@theadviceengine.ai";
+const TERMS_URL = "https://theadviceengine.ai/terms";
 // The same booking link the site's /demo page and the chat widget use. The TRAILING
 // HYPHEN is part of the slug, not a typo - do not tidy it away. Also used by the
 // acknowledgement email, so this stays its one home.
@@ -61,8 +66,7 @@ export function buildApprovalEmail(application: StoredApplication) {
 
   <p style="margin:0 0 16px">Thank you for applying${firm ? ` on behalf of ${firm}` : ""}. I have
     checked your firm's position on the FCA register and approved your access, so it is open
-    now. There is nothing to accept, nothing to install and no payment
-    details are taken.</p>
+    now. There is nothing to install and no payment details are taken.</p>
 
   <p style="margin:0 0 8px"><strong>To get in</strong></p>
   <p style="margin:0 0 16px">
@@ -71,6 +75,26 @@ export function buildApprovalEmail(application: StoredApplication) {
     There is no separate password to set. Your firm's trial is created the moment you first sign
     in and runs for 31 days from that point, so nothing is counting down while this email sits in
     your inbox.</p>
+
+  <p style="margin:0 0 8px"><strong>One thing to confirm at your first sign-in</strong></p>
+  <p style="margin:0 0 8px">Before the engine opens, you are asked to confirm our user
+    agreement. It is a short read and comes down to five points:</p>
+  <ol style="margin:0 0 16px;padding-left:20px">
+    <li style="margin:0 0 6px">The engine, its prompts, logic, templates, workflows, output
+      design and documentation belong to The Advice Engine Ltd. You get a personal right to
+      use it for your firm's advice work, nothing more.</li>
+    <li style="margin:0 0 6px">You must not copy, extract, reverse engineer or recreate it, or
+      help anyone else do so, including by feeding its screens, prompts or outputs into another
+      AI tool to rebuild it.</li>
+    <li style="margin:0 0 6px">Everything you see about how it works is confidential, and stays
+      confidential after you stop using it.</li>
+    <li style="margin:0 0 6px">Your log-in is yours alone. Do not share it.</li>
+    <li>We monitor use to protect the service, and we can suspend access if we see
+      misuse.</li>
+  </ol>
+  <p style="margin:0 0 16px">The full terms are on screen when you sign in. If you would like
+    a copy for your files first, reply to this email and I will send it. Your firm's use of the
+    engine is also covered by our <a href="${TERMS_URL}">terms of use</a>.</p>
 
   ${diaryParagraph}
 
