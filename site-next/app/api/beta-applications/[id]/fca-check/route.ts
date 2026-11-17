@@ -1,11 +1,16 @@
+import { headers } from "next/headers";
 import { isFunnelAdmin } from "../../../../azure-auth";
+import { isEngineCallerId } from "@/lib/engine-caller";
 import { getApplication } from "@/lib/azure-storage";
 import { runFcaCheck } from "@/lib/fca";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(_request: Request, context: { params: Promise<{ id: string }> }) {
-  if (!(await isFunnelAdmin())) {
+  // Daren on /funnel, or the Advice Engine as itself (lib/engine-caller.ts), so its pop-up
+  // can show the same register check beside an application before Daren approves it.
+  const engine = isEngineCallerId((await headers()).get("x-ms-client-principal-id"));
+  if (!engine && !(await isFunnelAdmin())) {
     return Response.json({ error: "Not authorised" }, { status: 403 });
   }
 

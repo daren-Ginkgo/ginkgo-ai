@@ -1,6 +1,8 @@
+import { headers } from "next/headers";
 import { isFunnelAdmin } from "../../../azure-auth";
 import { buildApprovalEmail } from "@/lib/approval-email";
-import { markApprovalEmailed, recordConversion, updateApplication, type ApplicationStatus, type StoredApplication } from "@/lib/azure-storage";
+import { isEngineCallerId, isEngineChange, isUndecided } from "@/lib/engine-caller";
+import { getApplication, markApprovalEmailed, recordConversion, updateApplication, type ApplicationStatus, type StoredApplication } from "@/lib/azure-storage";
 import { BETA_STATUSES } from "@/lib/beta";
 import { mailConfigured, sendMail } from "@/lib/graph-mail";
 import { expiryFrom, isTestApplicant } from "@/lib/test-applicants";
@@ -26,6 +28,7 @@ export const dynamic = "force-dynamic";
 async function emailOnApproval(
   before: StoredApplication,
   nextStatus: ApplicationStatus | undefined,
+  source: string,
 ): Promise<"sent" | "failed" | "not-configured" | null> {
   if (nextStatus !== "approved" || before.status === "approved") return null;
   // A test row is never mailed, except one from a TEST_APPLICANT_EMAILS address,
@@ -45,7 +48,7 @@ async function emailOnApproval(
     // guard against a second one. Worst case a later re-approval mails again.
   }
   try {
-    await recordConversion("approval_email_sent", "/funnel", before.workEmail.split("@")[1] ?? "");
+    await recordConversion("approval_email_sent", source, before.workEmail.split("@")[1] ?? "");
   } catch {
     // Analytics, never a dependency.
   }
@@ -53,7 +56,11 @@ async function emailOnApproval(
 }
 
 export async function PATCH(request: Request, context: { params: Promise<{ id: string }> }) {
-  if (!(await isFunnelAdmin())) {
+  // Daren on /funnel, or the Advice Engine as itself (lib/engine-caller.ts), which may only
+  // approve or decline. Both go through the code below, so the email rules are the same.
+  const admin = await isFunnelAdmin();
+  const engine = !admin && isEngineCallerId((await headers()).get("x-ms-client-principal-id"));
+  if (!admin && !engine) {
     return Response.json({ error: "Not authorised" }, { status: 403 });
   }
 
@@ -64,6 +71,9 @@ export async function PATCH(request: Request, context: { params: Promise<{ id: s
   const isTestValid = payload.isTest === undefined || typeof payload.isTest === "boolean";
   const expiringValid = payload.expiring === undefined || typeof payload.expiring === "boolean";
   const hasChange = payload.status !== undefined || payload.isTest !== undefined || payload.expiring !== undefined;
+  if (engine && !isEngineChange(payload)) {
+    return Response.json({ error: "Not authorised" }, { status: 403 });
+  }
   if (!/^[a-f0-9]{64}$/.test(id) || !statusValid || !isTestValid || !expiringValid || !hasChange) {
     return Response.json({ error: "Invalid application update" }, { status: 400 });
   }
@@ -72,12 +82,21 @@ export async function PATCH(request: Request, context: { params: Promise<{ id: s
     : "";
 
   try {
+    // The engine decides only what is still undecided: a row Daren has already approved or
+    // declined on /funnel since the engine's pop-up opened is left exactly as it is.
+    if (engine) {
+      const current = await getApplication(id);
+      if (!current) return Response.json({ error: "Application not found" }, { status: 404 });
+      if (!isUndecided(current.status)) {
+        return Response.json({ error: "Already decided", status: current.status }, { status: 409 });
+      }
+    }
     const before = await updateApplication(id, {
       status: payload.status as ApplicationStatus | undefined,
       isTest: payload.isTest,
       expiresAt,
     });
-    const email = await emailOnApproval(before, payload.status as ApplicationStatus | undefined);
+    const email = await emailOnApproval(before, payload.status as ApplicationStatus | undefined, engine ? "/engine" : "/funnel");
     return Response.json({ updated: true, status: payload.status, isTest: payload.isTest, expiresAt, email });
   } catch (error) {
     const statusCode = error && typeof error === "object" && "statusCode" in error
