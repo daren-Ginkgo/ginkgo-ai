@@ -6155,3 +6155,58 @@ a.conversion-alt {
   .firm-view-mock-metrics > div, .firm-view-mock figcaption, .firm-view-mock-label { padding-left: 16px; padding-right: 16px; }
   .dev-banner { justify-content: flex-start; font-size: 0.8rem; }
 }
+
+/* /start: sign in to register (17 Nov 2026, firms register in the engine). */
+.start-register-card {
+  padding: clamp(28px, 4vw, 52px);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: white;
+  box-shadow: 0 22px 60px rgba(11,29,58,0.08);
+}
+
+.start-register-card > span {
+  color: var(--violet-text);
+  font-size: 0.69rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+}
+
+.start-register-card h2 {
+  margin: 10px 0 14px;
+}
+
+.start-register-card p {
+  color: var(--muted);
+}
+
+.start-register-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 10px;
+  padding: 15px 26px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.start-register-button svg,
+.start-register-demo svg {
+  width: 17px;
+}
+
+.start-register-note {
+  font-size: 0.86rem;
+}
+
+.start-register-demo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  color: var(--violet-text);
+  font-weight: 800;
+}
