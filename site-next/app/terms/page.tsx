@@ -8,9 +8,11 @@ export const metadata: Metadata = {
 
 // Ported verbatim from the pre-cutover terms.html (last updated 28 August
 // 2026). Content changes here are legal wording changes: Daren signs them off.
+// 17 Nov 2026: section 6 rewritten while launch pricing is finalised (the rolling
+// 3-month term, report allowance and extra-report charge were taken down with /pricing).
 export default function TermsPage() {
   return <main id="main-content"><SiteHeader />
-    <section className="page-hero"><div className="shell page-hero-grid"><div><span className="kicker">Legal</span><h1>Terms of use</h1><p>The agreement between your firm and us when you use The Advice Engine. Short, and written to be understood.</p><p className="terms-updated">Last updated 28 August 2026</p></div></div></section>
+    <section className="page-hero"><div className="shell page-hero-grid"><div><span className="kicker">Legal</span><h1>Terms of use</h1><p>The agreement between your firm and us when you use The Advice Engine. Short, and written to be understood.</p><p className="terms-updated">Last updated 17 November 2026</p></div></div></section>
     <section className="section privacy-section"><div className="shell narrow-shell privacy-copy">
       <h2>1. Who these terms are with</h2>
       <p>The Advice Engine is operated by The Advice Engine Ltd, registered in England and Wales, company number 17404907 (&ldquo;we&rdquo;, &ldquo;us&rdquo;). These terms apply between us and the firm whose adviser or staff member uses the service (&ldquo;your firm&rdquo;, &ldquo;you&rdquo;). If you are using the engine on behalf of a firm, you confirm you are authorised to accept these terms for it.</p>
@@ -37,8 +39,10 @@ export default function TermsPage() {
         <li>Use the engine within any data restriction that applies to your account. Where your account is limited to anonymised or fictitious data, do not enter real client details.</li>
         <li>Do not attempt to reverse engineer the service, resell access, or use it to build a competing product.</li>
       </ul>
-      <h2>6. Free trial</h2>
-      <p>New firms get 30 days free from their first sign-in. No payment details are taken, and the trial simply stops at the end of the 30 days unless your firm chooses to subscribe. Subscriptions run on a rolling 3-month term from the date your firm joins, and each 3-month term is charged up front. Either side can end a subscription at the end of the current 3-month term by giving at least 30 days&rsquo; notice before that term ends. Prices are shown excluding VAT, and VAT will be added once we are VAT registered. Subscriptions include a set number of reports, and reports above it are charged at the rate on our <a href="/pricing">pricing page</a> on the next quarterly invoice. The allowance and that charge may change if the AI costs behind each report change; any change to prices, the allowance or that charge is notified in writing at least 30 days in advance and takes effect from the start of the next 3-month term, never part way through one. Trials carry a fair-use daily allowance. We may withdraw a trial where these terms are broken.</p>
+      <h2>6. Free trial and pricing</h2>
+      <p>New firms get 30 days free from their first sign-in. No payment details are taken, and the trial simply stops at the end of the 30 days unless your firm chooses to carry on. Trials carry a fair-use daily allowance. We may withdraw a trial where these terms are broken.</p>
+      <p>As we approach launch, we are finalising our pricing, launch offers, usage allowances and subscription terms. They will be published on our <a href="/pricing">pricing page</a> before launch. Your firm will not be charged, or committed to a subscription, until those terms have been set out to it in writing and it has agreed to them. Prices will be shown excluding VAT, and VAT will be added once we are VAT registered.</p>
+      <p>Where your firm has already agreed terms with us in writing, those terms continue to apply to it.</p>
       <h2>7. Data</h2>
       <p>How we handle personal data, including the fact that your case material is not used to train AI models, is set out in our <a href="/privacy">privacy notice</a>, which forms part of these terms. In short: for your clients&rsquo; data your firm is the controller and we act as your processor.</p>
       <h2>8. Who owns what</h2>
