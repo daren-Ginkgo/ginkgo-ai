@@ -13,7 +13,6 @@ const publicRoutes = [
   "/compliance",
   "/quilter-data",
   "/security",
-  "/pricing",
   "/about",
   "/product",
   "/microsoft",

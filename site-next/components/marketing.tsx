@@ -56,7 +56,6 @@ export function SiteHeader() {
             <a href="/evidence">Evidence</a>
             <a href="/compliance">Compliance</a>
             <a href="/security">Security</a>
-            <a href="/pricing">Pricing</a>
             <a href="/gap-scanner">Gap Scanner</a>
             <a href="/about">Daren &amp; Ginkgo</a>
           </nav>
@@ -77,7 +76,6 @@ export function SiteHeader() {
               <a href="/gap-scanner">Gap Scanner</a>
               <a href="/microsoft">Microsoft 365</a>
               <a href="/security">Security</a>
-              <a href="/pricing">Pricing</a>
               <a href="/about">Daren &amp; Ginkgo</a>
               <a href="/start">Apply for access</a>
               <a href="/demo">Book a demonstration</a>
@@ -97,7 +95,6 @@ export function SiteFooter() {
         <div className="footer-links">
           <a href="/outputs">Outputs</a><a href="/evidence">Evidence</a>
           <a href="/compliance">Compliance</a><a href="/security">Security</a>
-          <a href="/pricing">Pricing</a>
           <a href="/about">Daren &amp; Ginkgo</a><a href="/demo">Book a demonstration</a>
           <a href="mailto:hello@theadviceengine.ai">Contact</a>
           <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
@@ -167,7 +164,7 @@ export function FinalCta() {
         <div>
           <BetaAvailability variant="kicker" />
           <h2>Try The Advice Engine free for 30 days.</h2>
-          <p>Apply for access and use the full engine free for 30 days from your first sign-in. No card details and no commitment. If you carry on after that, you subscribe on a rolling 3-month term.</p>
+          <p>Apply for access and use the full engine free for 30 days from your first sign-in. No card details and no commitment. Final pricing and terms are being finalised as we approach launch.</p>
         </div>
         <div className="start-actions">
           <ArrowButton href="/start">Apply for access</ArrowButton>
