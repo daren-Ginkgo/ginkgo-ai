@@ -56,6 +56,7 @@ export function SiteHeader() {
             <a href="/evidence">Evidence</a>
             <a href="/compliance">Compliance</a>
             <a href="/security">Security</a>
+            <a href="/pricing">Pricing</a>
             <a href="/gap-scanner">Gap Scanner</a>
             <a href="/about">Daren &amp; Ginkgo</a>
           </nav>
@@ -76,6 +77,7 @@ export function SiteHeader() {
               <a href="/gap-scanner">Gap Scanner</a>
               <a href="/microsoft">Microsoft 365</a>
               <a href="/security">Security</a>
+              <a href="/pricing">Pricing</a>
               <a href="/about">Daren &amp; Ginkgo</a>
               <a href="/start">Apply for access</a>
               <a href="/demo">Book a demonstration</a>
@@ -95,6 +97,7 @@ export function SiteFooter() {
         <div className="footer-links">
           <a href="/outputs">Outputs</a><a href="/evidence">Evidence</a>
           <a href="/compliance">Compliance</a><a href="/security">Security</a>
+          <a href="/pricing">Pricing</a>
           <a href="/about">Daren &amp; Ginkgo</a><a href="/demo">Book a demonstration</a>
           <a href="mailto:hello@theadviceengine.ai">Contact</a>
           <a href="/privacy">Privacy</a><a href="/terms">Terms</a>

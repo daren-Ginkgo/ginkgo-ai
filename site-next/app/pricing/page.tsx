@@ -4,8 +4,8 @@ import { BetaAvailability } from "@/components/beta-availability";
 
 // 17 Nov 2026: the published price cards, report allowance and commercial terms
 // were taken down while launch pricing is finalised. The route stays so old
-// links (and the /terms reference) land on this holding page, not a 404. It is
-// out of the nav and the sitemap until the final pricing goes back up.
+// links (and the /terms reference) land on this holding page, not a 404. It stays
+// in the nav and the sitemap so visitors can find the launch message.
 export const metadata: Metadata = {
   title: "Launch pricing",
   description: "Final pricing, launch offers, usage allowances and terms for The Advice Engine are being finalised ahead of launch. Try it free for 30 days in the meantime.",
