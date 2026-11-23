@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 // 2026). Content changes here are legal wording changes: Daren signs them off.
 // 17 Nov 2026: section 6 rewritten while launch pricing is finalised (the rolling
 // 3-month term, report allowance and extra-report charge were taken down with /pricing).
-// 23 Nov 2026: section 6 rewritten for pay and play (150 starting credits, VAT, founders).
+// 23 Nov 2026: section 6 rewritten for pay and play (150 starting credits, VAT).
 export default function TermsPage() {
   return <main id="main-content"><SiteHeader />
     <section className="page-hero"><div className="shell page-hero-grid"><div><span className="kicker">Legal</span><h1>Terms of use</h1><p>The agreement between your firm and us when you use The Advice Engine. Short, and written to be understood.</p><p className="terms-updated">Last updated 23 November 2026</p></div></div></section>
@@ -43,7 +43,6 @@ export default function TermsPage() {
       <h2>6. Pricing and payment</h2>
       <p>The Advice Engine is pay and play. There is no monthly fee, subscription or contract. Every firm starts with 150 free credits, enough for about five reports. After that, each report is paid for with credits bought in advance through the engine (one credit is one pound). Credits last 12 months from purchase and are not refundable once used. Current prices are shown in the engine&rsquo;s Settings. No charges are made before pay and play starts on 1 December 2026.</p>
       <p>There is currently no VAT on our fees. We expect to apply for VAT registration, and once that has happened VAT will be added to all our fees and credit purchases. We will tell firms before it applies.</p>
-      <p><strong>Founding advisers.</strong> Firms that helped us test The Advice Engine before launch under our founding adviser offer get double credits: every credit they buy in the first 6 months of pay and play comes with the same again. We confirm to each founding firm that it qualifies.</p>
       <p>Where your firm has already agreed terms with us in writing, those terms continue to apply to it.</p>
       <h2>7. Data</h2>
       <p>How we handle personal data, including the fact that your case material is not used to train AI models, is set out in our <a href="/privacy">privacy notice</a>, which forms part of these terms. In short: for your clients&rsquo; data your firm is the controller and we act as your processor.</p>
