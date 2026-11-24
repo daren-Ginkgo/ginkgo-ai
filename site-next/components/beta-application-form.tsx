@@ -65,7 +65,7 @@ export function BetaApplicationForm() {
         <CheckCircle2 />
         <span>{result.duplicate ? "Your application is already recorded" : "Application received"}</span>
         <h2>Thank you. Your application is in.</h2>
-        <p>There is no checkout and no payment is required. We check your firm on the FCA register, then email you everything you need to sign in. Your 30 free days start at your first sign-in.</p>
+        <p>There is no checkout and no payment is required. We check your firm on the FCA register, then email you everything you need to sign in. Your firm starts with 150 free credits.</p>
         {/* A duplicate gets no email, so no note. New domains often land in junk
             (Hotmail did on 4 Oct 2026), so say so before the applicant wonders. */}
         {!result.duplicate ? (
@@ -79,7 +79,7 @@ export function BetaApplicationForm() {
   return (
     <form className="beta-application-form" onSubmit={submitApplication} onFocus={markStarted}>
       <div className="beta-form-head">
-        <div><span>30-DAY FREE TRIAL</span><h2>Apply for access</h2></div>
+        <div><span>150 FREE CREDITS</span><h2>Apply for access</h2></div>
         <AvailabilityBadge />
       </div>
 

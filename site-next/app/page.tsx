@@ -140,9 +140,9 @@ export default function Home() {
               <ArrowButton href="/start">Apply for access</ArrowButton>
               <a className="text-link" href="#simple-workflow">See the simple workflow <ArrowRight aria-hidden="true" /></a>
             </div>
-            <div className="hero-assurance" aria-label="Trial assurances">
-              <span><Check aria-hidden="true" /> 30 days free</span>
-              <span><Check aria-hidden="true" /> No card details</span>
+            <div className="hero-assurance" aria-label="Assurances">
+              <span><Check aria-hidden="true" /> 150 free credits</span>
+              <span><Check aria-hidden="true" /> No subscription</span>
               <span><Check aria-hidden="true" /> Microsoft sign-in</span>
             </div>
           </div>
@@ -362,7 +362,7 @@ export default function Home() {
           <div>
             <BetaAvailability variant="kicker" />
             <h2>Try an engine built around real adviser work.</h2>
-            <p>Apply for access and use the engine free for 30 days, starting with a fictitious case. No card details and no commitment. Final pricing, launch offers and terms are being finalised as we approach launch.</p>
+            <p>Apply for access and start with a fictitious case. Pay as you go from 1 December 2026. Every firm starts with 150 free credits. No subscription, no contract.</p>
           </div>
           <div className="start-actions">
             <ArrowButton href="/start">Apply for access</ArrowButton>

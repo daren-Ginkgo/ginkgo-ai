@@ -82,8 +82,8 @@ export function buildAcknowledgementEmail(application: StoredApplication, bookin
       within two working days.</li>
     <li style="margin:0 0 6px">You then get a second email with everything you need to sign
       in using your existing Microsoft 365 work account.</li>
-    <li>Your 30 free days start at your first sign-in, not before. There are no card details
-      to give and no commitment.</li>
+    <li>Pay as you go from 1 December 2026. Every firm starts with 150 free credits. No
+      subscription, no contract, and no card details to give.</li>
   </ol>
 
   <p style="margin:0 0 16px">There is no checkout, and nothing to pay or install. Please don't

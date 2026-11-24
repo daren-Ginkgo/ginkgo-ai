@@ -11,7 +11,7 @@ const timeline = [
   { icon: Lightbulb, label: "The problem", title: "Too much expert time was being spent rebuilding the file.", copy: "Evidence sat across meeting notes, documents, calculations and previous correspondence. Starting the next piece of work often meant retracing the same ground." },
   { icon: Settings2, label: "The first workflows", title: "Turn repeatable advice work into controlled processes.", copy: "Instead of a blank AI chat, Daren shaped focused workflows around the job, the evidence it needed and the output an adviser could review." },
   { icon: Rocket, label: "The Advice Engine today", title: "Draft, check, calculate, find and organise in one engine.", copy: "The workflows developed into a broader platform with branded Word outputs, QA sheets, calculators and source-backed opportunity finding." },
-  { icon: Users, label: "Open to advisers", title: "Now open to individual Quilter advisers.", copy: "Any individual Quilter adviser can apply for access and use the engine free for 30 days." },
+  { icon: Users, label: "Open to advisers", title: "Now open to individual Quilter advisers.", copy: "Any individual Quilter adviser can apply for access. Every firm starts with 150 free credits." },
 ];
 
 export default function AboutPage() {

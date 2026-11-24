@@ -38,7 +38,7 @@ export function SiteHeader() {
   return (
     <>
       {/* The bar carried the founding-places count until 5 Nov 2026, when the
-          founding offer closed; it now carries the 30-day trial. The network
+          founding offer closed; it now carries pay as you go (24 Nov 2026). The network
           strapline stays in the hero as a personal credential. */}
       <div className="announcement">
         <BetaAvailability variant="announcement" />
@@ -166,8 +166,8 @@ export function FinalCta() {
       <div className="shell start-card">
         <div>
           <BetaAvailability variant="kicker" />
-          <h2>Try The Advice Engine free for 30 days.</h2>
-          <p>Apply for access and use the full engine free for 30 days from your first sign-in. No card details and no commitment. Final pricing and terms are being finalised as we approach launch.</p>
+          <h2>Try The Advice Engine.</h2>
+          <p>Apply for access and start with a fictitious case. Pay as you go from 1 December 2026. Every firm starts with 150 free credits. No subscription, no contract.</p>
         </div>
         <div className="start-actions">
           <ArrowButton href="/start">Apply for access</ArrowButton>

@@ -13,7 +13,7 @@
 //    repo. When the engine bumps CURRENT_VERSION, check them against the new file.
 //  - she signs in at the engine with the SAME work domain she applied with (the grant
 //    is by email domain - beta_grants.py in the engine matches on it)
-//  - the 31 days start at her FIRST sign-in, not at approval, so nothing is burning
+//  - pay as you go from 1 Dec 2026: 150 free credits per firm, no prices in this email
 //  - every output is a draft a qualified adviser must review: never imply otherwise
 
 import type { StoredApplication } from "@/lib/azure-storage";
@@ -72,9 +72,8 @@ export function buildApprovalEmail(application: StoredApplication) {
   <p style="margin:0 0 16px">
     Go to <a href="${SIGN_IN_URL}">${SIGN_IN_URL}</a> and sign in with your work Microsoft 365
     account${domain ? ` - the same <strong>@${domain}</strong> address you applied with` : ""}.
-    There is no separate password to set. Your firm's trial is created the moment you first sign
-    in and runs for 31 days from that point, so nothing is counting down while this email sits in
-    your inbox.</p>
+    There is no separate password to set. Pay as you go from 1 December 2026. Every firm starts
+    with 150 free credits. No subscription, no contract.</p>
 
   <p style="margin:0 0 8px"><strong>One thing to confirm at your first sign-in</strong></p>
   <p style="margin:0 0 8px">Before the engine opens, you are asked to confirm our user
