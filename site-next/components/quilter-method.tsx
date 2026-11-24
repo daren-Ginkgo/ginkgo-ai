@@ -29,7 +29,7 @@ const stages = [
     icon: FileCheck2,
     number: "05",
     title: "Show what still needs judgement",
-    copy: "Anything the evidence cannot safely resolve remains visible in the adviser QA sheet and information-needed list, never silently invented.",
+    copy: "Anything the evidence cannot safely resolve remains visible in the adviser QA file and information-needed list, never silently invented.",
   },
 ];
 

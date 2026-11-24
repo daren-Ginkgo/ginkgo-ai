@@ -44,13 +44,13 @@ export default function MicrosoftPage() {
         <div className="shell">
           <div className="section-intro split-intro">
             <div><span className="kicker">The connected workflow</span><h2>From Microsoft sign-in to a review-ready output.</h2></div>
-            <p>For advisers whose firm connection is enabled, the familiar sign-in becomes the front door to the client evidence they already hold. Upload remains available when folder access is not enabled.</p>
+            <p>For advisers whose firm connection is enabled, the familiar sign-in opens the client folders they already keep. Upload remains available when folder access is not enabled.</p>
           </div>
           <div className="microsoft-flow-grid">
             <div className="microsoft-steps">
               <article><span>01</span><LogIn /><div><h3>Sign in with Microsoft</h3><p>Use the adviser’s Microsoft 365 work account and normal MFA. No Advice Engine password is held.</p></div></article>
               <article><span>02</span><FolderSearch /><div><h3>Choose the client folder</h3><p>Select the approved OneDrive or SharePoint location that already contains the case record.</p></div></article>
-              <article><span>03</span><FileSearch /><div><h3>Ask for the work</h3><p>Choose suitability, annual review, cashflow, compliance or gap analysis. The workflow knows the evidence it is likely to need.</p></div></article>
+              <article><span>03</span><FileSearch /><div><h3>Pick the tile</h3><p>Suitability report, Full file check, an Annual Advice step or a tool. Each knows the evidence it is likely to need.</p></div></article>
               <article><span>04</span><FileCheck2 /><div><h3>Confirm and run</h3><p>Review the suggested files, approve the source pack and receive the draft, QA points and workings.</p></div></article>
             </div>
             <div className="connected-browser" aria-label="Fictitious OneDrive file selection example">
@@ -70,8 +70,8 @@ export default function MicrosoftPage() {
         <div className="shell">
           <div className="section-intro split-intro"><div><span className="kicker light">More than file selection</span><h2>Two analyses from the same client evidence.</h2></div><p>One asks whether the file is ready for a particular output. The other looks across the relationship for a client need that may have been left behind.</p></div>
           <div className="microsoft-analysis-grid">
-            <article><FileCheck2 /><span>Case-readiness analysis</span><h3>Do we have enough to create this report properly?</h3><p>The engine checks the selected material against what the workflow needs, flags stale, missing or conflicting evidence, and tells the adviser what else may be required.</p><ul><li><Check />Relevant documents suggested</li><li><Check />Missing evidence made visible</li><li><Check />New information can be added and rechecked</li></ul></article>
-            <article><ScanSearch /><span>Gap Scanner</span><h3>What did the client raise that the file never carried forward?</h3><p>The scanner searches selected meeting evidence for unfinished needs, verifies the source wording and prepares an agenda item for adviser consideration.</p><ul><li><Check />Source quote attached</li><li><Check />Potential opportunity clearly labelled</li><li><Check />Conversation prompt, not automated advice</li></ul><a href="/gap-scanner">Explore the Gap Scanner <ArrowRight /></a></article>
+            <article><FileCheck2 /><span>The data check</span><h3>Do we have enough to create this report properly?</h3><p>The engine checks the selected material against what the workflow needs, flags stale, missing or conflicting evidence, and tells the adviser what else may be required.</p><ul><li><Check />Relevant documents suggested</li><li><Check />Missing evidence made visible</li><li><Check />New information can be added and rechecked</li></ul></article>
+            <article><ScanSearch /><span>Advice gap scanner</span><h3>What did the client raise that the file never carried forward?</h3><p>The scanner searches selected meeting evidence for unfinished needs, verifies the source wording and prepares an agenda item for adviser consideration.</p><ul><li><Check />Source quote attached</li><li><Check />Potential opportunity clearly labelled</li><li><Check />Conversation prompt, not automated advice</li></ul><a href="/gap-scanner">Explore the advice gap scanner <ArrowRight /></a></article>
           </div>
         </div>
       </section>

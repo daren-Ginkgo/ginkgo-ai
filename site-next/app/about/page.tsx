@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 const timeline = [
   { icon: Lightbulb, label: "The problem", title: "Too much expert time was being spent rebuilding the file.", copy: "Evidence sat across meeting notes, documents, calculations and previous correspondence. Starting the next piece of work often meant retracing the same ground." },
   { icon: Settings2, label: "The first workflows", title: "Turn repeatable advice work into controlled processes.", copy: "Instead of a blank AI chat, Daren shaped focused workflows around the job, the evidence it needed and the output an adviser could review." },
-  { icon: Rocket, label: "The Advice Engine today", title: "Draft, check, calculate, find and organise in one engine.", copy: "The workflows developed into a broader platform with branded Word outputs, QA sheets, calculators and source-backed opportunity finding." },
-  { icon: Users, label: "Open to advisers", title: "Now open to individual Quilter advisers.", copy: "Any individual Quilter adviser can apply for access. Every firm starts with 150 free credits." },
+  { icon: Rocket, label: "The Advice Engine today", title: "Reports, annual reviews, tools and case assessment in one engine.", copy: "The workflows developed into a broader platform with branded Word outputs, QA files, calculators and source-backed opportunity finding." },
+  { icon: Users, label: "Open to firms", title: "Now open to Quilter firms.", copy: "Any Quilter firm can apply for access. Every firm starts with 150 free credits." },
 ];
 
 export default function AboutPage() {
@@ -53,7 +53,7 @@ export default function AboutPage() {
             <img src="/ginkgo-financial-logo.png" alt="Ginkgo Financial" />
             <figcaption>Where The Advice Engine was first conceived, built and tested in daily practice.</figcaption>
           </figure>
-          <div><span className="kicker">The proving ground</span><h2>Why Ginkgo matters to the story.</h2><p>Ginkgo Financial provided the real operating context in which The Advice Engine’s workflows were conceived and shaped. That matters because the product starts with adviser work and adviser responsibility, not with a technology searching for a use.</p><p>The next chapter is to learn with 15 founding Quilter advisers and refine the engine around a wider range of genuine advice workflows.</p></div>
+          <div><span className="kicker">The proving ground</span><h2>Why Ginkgo matters to the story.</h2><p>Ginkgo Financial provided the real operating context in which The Advice Engine’s workflows were conceived and shaped. That matters because the product starts with adviser work and adviser responsibility, not with a technology searching for a use.</p><p>The next chapter is to learn from every firm that uses it.</p></div>
         </div>
       </section>
 

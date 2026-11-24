@@ -55,6 +55,10 @@ const nextConfig: NextConfig = {
     return [
       // The 5 September 2026 cutover from the GitHub Pages site dropped these
       // root .html URLs. Permanent redirects to the closest live equivalent.
+      // 24 Nov 2026: /firm-view was a Q4 2026 placeholder; the view now exists in the
+      // engine as Settings > Firm settings (Users, Impact, Reporting). Not permanent,
+      // so it can be undone if Daren wants the page back.
+      { source: "/firm-view", destination: "/product", permanent: false },
       { source: "/index.html", destination: "/", permanent: true },
       { source: "/privacy.html", destination: "/privacy", permanent: true },
       { source: "/demo.html", destination: "/demo", permanent: true },

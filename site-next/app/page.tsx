@@ -35,8 +35,8 @@ const adviserJourney = [
   },
   {
     number: "02",
-    title: "Choose what you need",
-    copy: "Start a suitability report, annual review, cashflow, calculator, meeting pack or one of the engine’s other focused workflows.",
+    title: "Check data",
+    copy: "The engine suggests the report and your advice intention. You confirm it, and answer anything missing.",
     detail: "A defined job, not a blank chat box",
   },
   {
@@ -48,8 +48,8 @@ const adviserJourney = [
   {
     number: "04",
     title: "Review professional drafts",
-    copy: "Receive an editable document in your firm’s branding, together with the adviser QA sheet and workings needed to review it properly.",
-    detail: "Word draft · QA sheet · calculation workings",
+    copy: "Receive an editable document in your firm’s branding, together with the adviser QA file and workings needed to review it properly.",
+    detail: "Word draft · QA file · calculation workings",
   },
 ];
 
@@ -69,7 +69,7 @@ const jobs = [
 // "Outputs formatted for Quilter submission" line under the job table.
 const quilterLines = [
   [LineChart, "WealthSelect and Cirilium, from the factsheets", "Portfolio charges and performance pulled automatically and cited to the factsheet date."],
-  [Landmark, "Platform valuations, cross-checked", "Quilter Investment Platform values checked against the case pack; discrepancies flagged on the QA sheet."],
+  [Landmark, "Platform valuations, cross-checked", "Quilter Investment Platform values checked against the case pack; discrepancies flagged on the QA file."],
   [BookOpenCheck, "Quilter language throughout", "Attitude-to-risk terminology and report structure matched to what the file-check team expects."],
 ];
 
@@ -203,7 +203,7 @@ export default function Home() {
           <div className="section-intro split-intro workflow-sale-intro">
             <div>
               <span className="kicker">Designed to save adviser time</span>
-              <h2>Drag in the information.{" "}<br />Choose the work. Review the result.</h2>
+              <h2>Add the case.{" "}<br />Confirm the report. Review the draft.</h2>
             </div>
             <p>
               The engine is deliberately simple to use. It turns the client material already scattered across
@@ -276,7 +276,7 @@ export default function Home() {
             <span className="kicker light">What comes out</span>
             <h2>Judge the output.{" "}<br />Not the promise.</h2>
             <p>
-              A finished Word draft in your firm’s own styling, paired with the QA sheet an adviser
+              A finished Word draft in your firm’s own styling, paired with the QA file an adviser
               needs to review it properly. Missing facts are made visible rather than quietly invented.
             </p>
             <ul className="check-list">
@@ -310,7 +310,7 @@ export default function Home() {
               <div className="report-signoff">Prepared by The Advice Engine · Draft for named adviser review</div>
             </div>
             <div className="qa-overlay">
-              <div className="qa-overlay-head"><ShieldCheck aria-hidden="true" /><span>Adviser QA sheet</span><strong>A</strong></div>
+              <div className="qa-overlay-head"><ShieldCheck aria-hidden="true" /><span>Adviser QA file</span><strong>A</strong></div>
               <div><span>Framework review</span><b>Complete</b></div>
               <div><span>Source checks</span><b>Complete</b></div>
               <div><span>Items to confirm</span><b className="amber">2</b></div>

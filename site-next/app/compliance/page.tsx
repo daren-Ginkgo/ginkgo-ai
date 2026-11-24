@@ -28,7 +28,7 @@ const doesNot = [
 
 const trail = [
   { icon: FileText, title: "Every figure traced to a source", copy: "Each figure in a draft points back to the document and page it came from. If the evidence is absent, the draft says so rather than filling the gap." },
-  { icon: FileCheck2, title: "The adviser QA sheet", copy: "A separate, adviser-facing document listing the evidence used, the gaps, the conflicts and the points requiring judgement. It is part of the file, not an afterthought." },
+  { icon: FileCheck2, title: "The adviser QA file", copy: "A separate, adviser-facing document listing the evidence used, the gaps, the conflicts and the points requiring judgement. It is part of the file, not an afterthought." },
   { icon: ClipboardList, title: "The information-needed list", copy: "The unresolved items, in one place, so the adviser and the file-checker are looking at the same list before anything is issued." },
 ];
 
@@ -39,7 +39,7 @@ const faq = [
   { q: "What is kept after a session?", a: "Nothing from the case. The audit log records who ran what and when, never client content. Anthropic holds inputs and outputs briefly for trust and safety purposes and then deletes them: not indefinitely, and never for training. Voice recordings are turned into text and not kept." },
   { q: "How do advisers sign in?", a: "With the firm's own Microsoft 365 work account and MFA. There is no separate Advice Engine password, and the existing Microsoft identity controls continue to apply." },
   { q: "How does the engine reach the case files?", a: "Advisers upload files, or select them from an approved OneDrive or SharePoint folder. Folder access is delegated and read-only, as the signed-in adviser, within the permission the firm has granted. Suggested files are shown with a reason and the adviser confirms the source pack before anything is read." },
-  { q: "Can we see what the checks are before we run live client material?", a: "Yes. The Test Drive runs a fictitious case through the real pipeline, so the compliance team can assess the drafts, the QA sheet and the information-needed list before any live material is involved. Check your network's position on third party AI tools first; we will support your notification." },
+  { q: "Can we see what the checks are before we run live client material?", a: "Yes. The Test Drive runs a fictitious case through the real pipeline, so the compliance team can assess the drafts, the QA file and the information-needed list before any live material is involved. Check your network's position on third party AI tools first; we will support your notification." },
   { q: "Who are the subprocessors?", a: "Anthropic PBC for AI drafting and Microsoft Corporation for cloud hosting and speech-to-text. No other party processes client personal data on our behalf. We give customer firms at least 15 days' notice before adding or replacing a subprocessor. The list is published on the security page." },
   { q: "Where can I read the terms?", a: "The terms of use are published at /terms and the privacy notice at /privacy. A due-diligence pack is available on request from hello@theadviceengine.ai." },
 ];
@@ -103,7 +103,7 @@ export default function CompliancePage() {
             <h2>A named adviser reviews and signs every output. The file shows it.</h2>
           </div>
           <div>
-            <p>Every output is a draft until the named adviser at the using firm has reviewed it. The adviser QA sheet sits in the file alongside the document, so the review is visible to the file-checker, not assumed.</p>
+            <p>Every output is a draft until the named adviser at the using firm has reviewed it. The adviser QA file sits in the file alongside the document, so the review is visible to the file-checker, not assumed.</p>
             <p>The engine supports regulated work. It does not become the regulated adviser, and the firm remains responsible for its advice and its regulatory obligations.</p>
             <ArrowButton href="mailto:hello@theadviceengine.ai?subject=Advice%20Engine%20due%20diligence%20pack" light>Request the due-diligence pack</ArrowButton>
           </div>
@@ -115,7 +115,7 @@ export default function CompliancePage() {
           <div className="section-intro split-intro"><div><span className="kicker">Firm memory, not client memory</span><h2>The engine remembers your firm.{" "}<br />It does not remember your clients.</h2></div><p>The distinction matters to a data protection officer, so it is stated plainly: settings about the firm persist, and content about clients does not.</p></div>
           <div className="memory-grid">
             <article className="memory-firm"><Database aria-hidden="true" /><span>Remembered</span><h3>Your firm</h3><ul><li>Report templates and house style</li><li>Attitude-to-risk wording</li><li>Fee structure and standard disclosures</li><li>Who may use which workflow</li></ul></article>
-            <article className="memory-client"><KeyRound aria-hidden="true" /><span>Never remembered</span><h3>Your clients</h3><ul><li>Case packs and transcripts</li><li>Drafts and QA sheets</li><li>Valuations, figures and calculations</li><li>Anything about a named individual</li></ul></article>
+            <article className="memory-client"><KeyRound aria-hidden="true" /><span>Never remembered</span><h3>Your clients</h3><ul><li>Case packs and transcripts</li><li>Drafts and QA files</li><li>Valuations, figures and calculations</li><li>Anything about a named individual</li></ul></article>
           </div>
         </div>
       </section>

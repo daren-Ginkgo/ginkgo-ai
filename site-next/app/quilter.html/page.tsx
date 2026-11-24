@@ -29,7 +29,7 @@ export default function QuilterPage() {
             <span><CircleCheck />Built to match the Quilter templates and processes your firm already uses</span>
             <span><CircleCheck />Initial pre-review file check on every draft</span>
             <span><CircleCheck />Evidence-backed gap recovery and redraft</span>
-            <span><CircleCheck />Branded Word document, workings and QA sheet</span>
+            <span><CircleCheck />Branded Word document, workings and QA file</span>
             <span><Check />Independent software; adviser and firm retain responsibility</span>
           </div>
         </div>

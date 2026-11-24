@@ -57,7 +57,7 @@ export function SiteHeader() {
             <a href="/compliance">Compliance</a>
             <a href="/security">Security</a>
             <a href="/pricing">Pricing</a>
-            <a href="/gap-scanner">Gap Scanner</a>
+            <a href="/gap-scanner">Gap scanner</a>
             <a href="/about">Daren &amp; Ginkgo</a>
           </nav>
           <div className="nav-actions">
@@ -74,7 +74,7 @@ export function SiteHeader() {
               <a href="/compliance">Compliance</a>
               <a href="/quilter-data">Quilter data</a>
               <a href="/product">Product</a>
-              <a href="/gap-scanner">Gap Scanner</a>
+              <a href="/gap-scanner">Gap scanner</a>
               <a href="/microsoft">Microsoft 365</a>
               <a href="/security">Security</a>
               <a href="/pricing">Pricing</a>
@@ -107,7 +107,7 @@ export function SiteFooter() {
         <span>Explore</span>
         <a href="/product">Product</a>
         <a href="/quilter-data">Quilter data</a>
-        <a href="/gap-scanner">Gap Scanner</a>
+        <a href="/gap-scanner">Gap scanner</a>
         <a href="/microsoft">Microsoft 365</a>
         <a href="/finprom.html">Financial promotions</a>
       </div>

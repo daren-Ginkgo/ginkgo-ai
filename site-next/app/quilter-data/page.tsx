@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 // fictitious client with illustrative figures, and says so on the page.
 const layers = [
   { icon: LineChart, title: "WealthSelect and Cirilium", copy: "Portfolio charges and performance are drawn from the current factsheets and pulled into the draft automatically. Each figure is cited to the factsheet it came from and the date of that factsheet." },
-  { icon: Landmark, title: "Platform valuations", copy: "Quilter Investment Platform values are cross-checked against the case pack. Where the case pack and the platform disagree, the discrepancy is flagged on the adviser QA sheet rather than resolved silently." },
+  { icon: Landmark, title: "Platform valuations", copy: "Quilter Investment Platform values are cross-checked against the case pack. Where the case pack and the platform disagree, the discrepancy is flagged on the adviser QA file rather than resolved silently." },
   { icon: BookOpenCheck, title: "Quilter language", copy: "Attitude-to-risk terminology and the report structure match what Quilter's file-check team expects to read. The draft speaks the network's language from the first page." },
 ];
 
@@ -41,10 +41,10 @@ export default function QuilterDataPage() {
           <div>
             <span className="kicker">A worked example</span>
             <h2>A factsheet figure lands in the report with its source attached.</h2>
-            <p>The adviser selects the case pack. The engine identifies the portfolio, reads the current factsheet, and writes the charge into the draft with the factsheet date beside it. The adviser QA sheet records the same source, so the file-checker can follow the figure back without asking.</p>
+            <p>The adviser selects the case pack. The engine identifies the portfolio, reads the current factsheet, and writes the charge into the draft with the factsheet date beside it. The adviser QA file records the same source, so the file-checker can follow the figure back without asking.</p>
             <div className="output-features">
               <div><FileText aria-hidden="true" /><span><strong>Cited in the draft</strong>The paragraph names the factsheet and its date, not just the number.</span></div>
-              <div><Check aria-hidden="true" /><span><strong>Checked on the QA sheet</strong>The same figure and source appear on the adviser QA sheet for review.</span></div>
+              <div><Check aria-hidden="true" /><span><strong>Checked on the QA file</strong>The same figure and source appear on the adviser QA file for review.</span></div>
             </div>
             <ArrowButton href="/outputs">See the specimen outputs</ArrowButton>
           </div>

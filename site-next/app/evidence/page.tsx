@@ -58,16 +58,16 @@ export default function EvidencePage() {
         </div>
       </section>
 
-      {/* 3. The adviser QA sheet, rendered as its own artefact */}
+      {/* 3. The adviser QA file, rendered as its own artefact */}
       <section className="section evidence-qa-section">
         <div className="shell output-story-grid">
           <div>
-            <span className="kicker">The adviser QA sheet</span>
+            <span className="kicker">The adviser QA file</span>
             <h2>A client-facing draft and an adviser-facing challenge.</h2>
-            <p>The two outputs serve different purposes. The Word document communicates clearly; the QA sheet makes the unresolved work impossible to miss: evidence, gaps, conflicts and points requiring judgement.</p>
+            <p>The two outputs serve different purposes. The Word document communicates clearly; the QA file makes the unresolved work impossible to miss: evidence, gaps, conflicts and points requiring judgement.</p>
           </div>
           <div className="output-document">
-            <div className="output-document-top"><span>Adviser QA sheet</span><b>Separate from the client draft</b></div>
+            <div className="output-document-top"><span>Adviser QA file</span><b>Separate from the client draft</b></div>
             <h2>Adviser QA</h2>
             <p>Annual Review Outcome · Alex and Sam Taylor · Fictitious specimen</p>
             <div className="output-rule" />
@@ -81,8 +81,8 @@ export default function EvidencePage() {
               <div><span>Final decision</span><strong>Adviser</strong></div>
             </div>
             {/* PLACEHOLDER: abbreviated specimen assembled from the live QA
-                fragments. Daren to supply the full QA sheet example content. */}
-            <small>Abbreviated specimen · the full QA sheet example is to follow</small>
+                fragments. Daren to supply the full QA file example content. */}
+            <small>Abbreviated specimen · the full QA file example is to follow</small>
           </div>
         </div>
       </section>

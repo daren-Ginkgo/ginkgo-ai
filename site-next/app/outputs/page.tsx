@@ -13,7 +13,7 @@ export default function OutputsPage() {
   return (
     <main id="main-content">
       <SiteHeader />
-      <PageHero eyebrow="Outputs and workflow demonstrations" title="Judge the work, not the promise." copy="See how transcripts, client documents and household data become branded Word drafts, adviser QA sheets, cashflow reports and calculation workings. The engine covers every advice area, initial and ongoing, with the single exception of defined benefit transfer advice." primary={{ href: "#full-journey", label: "Read a complete client file" }} secondary={{ href: "#workflow-demos", label: "See the workflows" }} />
+      <PageHero eyebrow="Outputs and workflow demonstrations" title="Judge the work, not the promise." copy="See how transcripts, client documents and household data become branded Word drafts, adviser QA files, cashflow reports and calculation workings. The engine covers every advice area, initial and ongoing, with the single exception of defined benefit transfer advice." primary={{ href: "#full-journey", label: "Read a complete client file" }} secondary={{ href: "#workflow-demos", label: "See the workflows" }} />
       {/* The specimens sit at the top of this page, where the download list used to
           be (the 8 September decision to lead with the work, not the promise). What
           changed on 12 September is the form: they are READ ON SCREEN and there is
@@ -98,10 +98,10 @@ export default function OutputsPage() {
           <div>
             <span className="kicker">The complete review pack</span>
             <h2>A client-facing draft and an adviser-facing challenge.</h2>
-            <p>The two outputs serve different purposes. The Word document communicates clearly; the QA sheet makes the unresolved work impossible to miss.</p>
+            <p>The two outputs serve different purposes. The Word document communicates clearly; the QA file makes the unresolved work impossible to miss.</p>
             <div className="output-features">
               <div><FileText /><span><strong>Branded Word draft</strong>Editable, structured and ready for the firm’s final review.</span></div>
-              <div><FileCheck2 /><span><strong>Adviser QA sheet</strong>Evidence, gaps, conflicts and points requiring judgement.</span></div>
+              <div><FileCheck2 /><span><strong>Adviser QA file</strong>Evidence, gaps, conflicts and points requiring judgement.</span></div>
               <div><ShieldCheck /><span><strong>Clear responsibility</strong>Every specimen and live output remains a draft until adviser sign-off.</span></div>
             </div>
             <ArrowButton href="/start">Try a fictitious case</ArrowButton>

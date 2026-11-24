@@ -10,10 +10,10 @@ import documents from "@/lib/specimen-documents.json";
  * screen (Daren, 11 September 2026).
  *
  * NOT DOWNLOADABLE, AND ONLY THE CLIENT-FACING DOCUMENTS. A .docx is a reusable
- * template and a rendered page is not, and the adviser QA sheet, the pre-meeting
+ * template and a rendered page is not, and the adviser QA file, the pre-meeting
  * briefing and the suitability compliance check carry Quilter's checklist item
  * numbering, paraphrased requirement wording and the WealthSelect charge table. Those
- * three are not published in any form. What the QA sheet FOUND is quoted below instead,
+ * three are not published in any form. What the QA file FOUND is quoted below instead,
  * and every quoted finding is about the engine's own drafts contradicting each other -
  * none of it reproduces anyone's checklist.
  *
@@ -138,7 +138,7 @@ export function JourneySpecimen() {
             Avery Drafter, a fictitious client: age 45, £100,000 to invest, retirement at 67, a
             balanced attitude to risk. One generated case pack ran through four pipelines in the
             order a real client meets them, so the documents answer one another rather than
-            standing alone. Shown here as text, because these came out of the test window. A
+            standing alone. Shown here as text, because these came out of the Test drive. A
             live run hands the adviser branded Word documents in the firm&rsquo;s own styling,
             ready for final editing.
           </p>
@@ -219,7 +219,7 @@ export function JourneySpecimen() {
           <FileText aria-hidden="true" />
           <span>
             <strong>Live outputs are branded Word documents.</strong> These specimens came out
-            of the test window, so they are shown here as text. A real run hands the adviser a
+            of the Test drive, so they are shown here as text. A real run hands the adviser a
             Word document in the firm&rsquo;s own styling, ready for final editing.
           </span>
         </div>

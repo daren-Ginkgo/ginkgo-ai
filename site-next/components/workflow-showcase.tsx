@@ -159,7 +159,7 @@ const workflows: Workflow[] = [
     ],
     pack: [
       { icon: FileText, title: "Branded Word draft", note: "Editable and ready for adviser review" },
-      { icon: FileCheck2, title: "Adviser QA sheet", note: "Evidence, omissions and judgement points" },
+      { icon: FileCheck2, title: "Adviser QA file", note: "Evidence, omissions and judgement points" },
       { icon: Calculator, title: "Calculation workings", note: "Source-labelled figures carried into the case" },
     ],
   },

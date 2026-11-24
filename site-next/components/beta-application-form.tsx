@@ -99,7 +99,7 @@ export function BetaApplicationForm() {
       </div>
 
       <div className="beta-form-checks">
-        <label><input name="isQuilterAdviser" type="checkbox" required /><span><strong>I confirm that I am an individual Quilter adviser.</strong>Access is currently open to individual advisers in the Quilter network.</span></label>
+        <label><input name="isQuilterAdviser" type="checkbox" required /><span><strong>I confirm that my firm is a Quilter firm.</strong>Access is open to advice firms in the Quilter network.</span></label>
         <label><input name="contactConsent" type="checkbox" required /><span><strong>I agree to be contacted about my application and access to The Advice Engine.</strong>Your application details will be used only to assess your application and manage your access. See the <a href="/privacy">privacy notice</a>.</span></label>
       </div>
 
