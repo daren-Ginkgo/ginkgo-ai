@@ -49,7 +49,12 @@ export async function POST(request: Request) {
     // Em dashes and markdown emphasis are stripped on the way out: the rules forbid
     // both, but a model reply is neither our source nor deterministic.
     return Response.json({ reply: houseStyle(reply) });
-  } catch {
+  } catch (err) {
+    // TEMPORARY diagnostic (25 Nov 2026): error class and Anthropic HTTP status only.
+    // Never the key, never the visitor's message.
+    const msg = err instanceof Error ? err.message : "";
+    console.error("chat failed:", err instanceof Error ? err.name : typeof err,
+      /^Anthropic returned/.test(msg) ? msg : "");
     return Response.json({ error: UNAVAILABLE }, { status: 500 });
   }
 }

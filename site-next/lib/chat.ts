@@ -17,9 +17,11 @@ import { CHAT_KNOWLEDGE } from "@/lib/chat-knowledge";
 
 const ANTHROPIC_URL = "https://api.anthropic.com/v1/messages";
 const ANTHROPIC_VERSION = "2023-06-01";
-const DEFAULT_MODEL = "claude-haiku-4-5-20251001";
+const DEFAULT_MODEL = "claude-haiku-5-5";
 const TIMEOUT_MS = 30000;
-const MAX_ANSWER_TOKENS = 600;
+// Haiku 5.5 thinks by default and thinking counts toward max_tokens, so the cap leaves
+// room for it; effort "low" keeps a short FAQ answer from thinking much at all.
+const MAX_ANSWER_TOKENS = 1200;
 
 // Caps. A visitor gets a real conversation; a scraper gets a closed door.
 export const LIMITS = {
@@ -131,6 +133,8 @@ export async function askAnthropic(system: string, messages: ChatPayload["messag
     body: JSON.stringify({
       model: chatModel(),
       max_tokens: MAX_ANSWER_TOKENS,
+      // effort is rejected by 4.5-and-older models, which a CHAT_MODEL override could name.
+      ...(/-4-5|-3-/.test(chatModel()) ? {} : { output_config: { effort: "low" } }),
       system,
       messages,
     }),
